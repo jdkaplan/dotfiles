@@ -1,0 +1,14 @@
+alias startx='ssh-agent startx'
+
+alias ls='ls --color=auto'
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -l'
+
+alias units='units --verbose'
+alias trr='transmission-remote'
+
+alias s='sl'
+
+alias emacs='emacsclient --alternate-editor="" --tty'
+alias emacs-kill='emacsclient -e "(kill-emacs)"'

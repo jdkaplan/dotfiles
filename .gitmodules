@@ -1,0 +1,6 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "zsh/z-zsh"]
+	path = zsh/z-zsh
+	url = https://github.com/sjl/z-zsh.git

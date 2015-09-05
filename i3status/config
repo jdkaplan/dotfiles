@@ -1,0 +1,35 @@
+general {
+    colors = true
+    interval = 1
+}
+
+order += "ethernet enp3s0f1"
+order += "wireless wlp2s0"
+order += "volume master"
+order += "battery 0"
+order += "tztime local"
+
+ethernet enp3s0f1 {
+    format_up = "E: %ip"
+    format_down = ""
+}
+wireless wlp2s0 {
+    format_up = "%essid %ip"
+    format_down = "W: down"
+}
+
+battery 0 {
+    format = "%status %percentage"
+    low_threshold = 15
+    threshold_type = percentage
+    integer_battery_capacity = true
+    last_full_capacity = true
+}
+
+tztime local {
+    format = "%a %d %b %T"
+}
+
+volume master {
+    format = "♪: %volume"
+}

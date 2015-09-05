@@ -1,0 +1,14 @@
+# autosave
+auto-save-list
+
+# autocomplete history
+ac-comphist.dat
+
+# temporary files
+*~
+
+# package management
+elpa
+
+# bookmarks
+bookmarks

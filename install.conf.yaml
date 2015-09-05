@@ -6,3 +6,5 @@
     ~/.config/i3status: i3status/
     ~/.config/zsh: zsh/
     ~/.zshrc: zsh/.zshrc
+    ~/.hgrc: hg/.hgrc
+    ~/.config/git/config: git/config

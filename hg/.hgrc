@@ -1,0 +1,11 @@
+[ui]
+username = Jeremy Kaplan <jdkaplan@mit.edu>
+[extensions]
+color =
+hgext.bookmarks =
+shelve =
+record =
+[trusted]
+users = hartz
+[bookmarks]
+track.current = True

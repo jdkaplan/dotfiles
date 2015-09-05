@@ -1,0 +1,9 @@
+[user]
+	name = Jeremy Kaplan
+	email = jeremydkaplan@gmail.com
+[color]
+	ui = true
+[push]
+	default = simple
+[alias]
+    lg = log --oneline --graph --decorate

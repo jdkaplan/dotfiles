@@ -10,3 +10,4 @@
     ~/.config/git/config: git/config
     ~/.vim: vim/
     ~/.vimrc: vim/.vimrc
+    ~/.mbsyncrc: isync/.mbsyncrc

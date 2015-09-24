@@ -1,0 +1,43 @@
+IMAPAccount gmail
+    Host imap.gmail.com
+    User jeremydkaplan@gmail.com
+    PassCmd "pass email/jeremydkaplan@gmail.com"
+    SSLType IMAPS
+    CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore gmail-remote
+    Account gmail
+
+MaildirStore gmail-local
+    # The trailing "/" is important
+    Path ~/.mail/gmail/
+    Inbox ~/.mail/gmail/Inbox
+
+Channel gmail
+    Master :gmail-remote:
+    Slave :gmail-local:
+    Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+    Create Both
+    SyncState *
+
+
+IMAPAccount mit
+    Host imap.exchange.mit.edu
+    User jdkaplan
+    PassCmd "pass email/jdkaplan@mit.edu"
+    SSLType IMAPS
+    CertificateFile /etc/ssl/certs/ca-certificates
+
+IMAPStore mit-remote
+    Account mit
+
+MaildirStore mit-local
+    Path ~/.mail/mit
+    Inbox ~/.mail/mit/Inbox
+
+Channel mit
+    Master :mit-remote:
+    Slave :mit-local:
+    Patterns *
+    Create Both
+    SyncState *

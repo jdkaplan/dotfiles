@@ -26,13 +26,13 @@ IMAPAccount mit
     User jdkaplan
     PassCmd "pass email/jdkaplan@mit.edu"
     SSLType IMAPS
-    CertificateFile /etc/ssl/certs/ca-certificates
+    CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 IMAPStore mit-remote
     Account mit
 
 MaildirStore mit-local
-    Path ~/.mail/mit
+    Path ~/.mail/mit/
     Inbox ~/.mail/mit/Inbox
 
 Channel mit

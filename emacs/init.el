@@ -53,6 +53,8 @@
  '(initial-scratch-message "")
  '(menu-bar-mode nil)
  '(mouse-wheel-mode nil)
+ '(proof-assistants (quote (coq)))
+ '(proof-splash-enable nil)
  '(require-final-newline t)
  '(scheme-program-name "mit-scheme")
  '(split-height-threshold 0)
@@ -235,7 +237,7 @@ they line up with the line containing the corresponding opening bracket."
 (require 'scala-mode)
 
 (require 'haskell-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -269,4 +271,5 @@ they line up with the line containing the corresponding opening bracket."
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'jdkaplan t)
 
-(add-to-list 'auto-mode-alist '(("/tmp/mutt.*" . mail-mode)))
+;; Proof General
+(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")

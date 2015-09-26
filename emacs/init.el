@@ -19,6 +19,7 @@
     scala-mode
     undo-tree
     web-mode
+    yaml-mode
     )
   "A list of packages to ensure are installed at launch.")
 

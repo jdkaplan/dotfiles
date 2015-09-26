@@ -58,6 +58,8 @@
  '(proof-splash-enable nil)
  '(require-final-newline t)
  '(scheme-program-name "mit-scheme")
+ '(show-paren-delay 0)
+ '(show-paren-mode 1)
  '(split-height-threshold 0)
  '(split-width-threshold 0)
  '(tab-width 4)
@@ -126,21 +128,6 @@
 
 ;; python3
 (add-to-list 'auto-mode-alist '("\\.py3\\'" . python-mode))
-
-;; highlight matching parens
-(require 'paren)
-(defun lispy-parens ()
-  "Setup parens display for lisp modes"
-  (setq show-paren-delay 0)
-  (setq show-paren-style 'parenthesis)
-  (make-variable-buffer-local 'show-paren-mode)
-  (show-paren-mode 1)
-  (set-face-attribute 'show-paren-match-face nil :foreground "orange")
-  (set-face-attribute 'show-paren-match-face nil :background "black")
-  (set-face-attribute 'show-paren-match-face nil :weight 'extra-bold))
-
-(add-hook 'emacs-lisp-mode-hook 'lispy-parens)
-(add-hook 'scheme-mode-hook 'lispy-parens)
 
 ;; Missing things from scheme IDE
 (defun scheme-send-buffer ()

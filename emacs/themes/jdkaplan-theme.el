@@ -19,6 +19,8 @@
  '(font-lock-variable-name-face ((t (:foreground "#00c7ff" ))))
  '(minibuffer-prompt ((t (:foreground "#c7c7c7" :bold t ))))
  '(font-lock-warning-face ((t (:foreground "red" :bold t ))))
+
+ '(show-paren-match-face ((t (:foreground "orange" :background "black" :bold t))))
  )
 
 (provide-theme 'jdkaplan)

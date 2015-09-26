@@ -8,7 +8,5 @@ alias ll='ls -l'
 alias units='units --verbose'
 alias trr='transmission-remote'
 
-alias s='sl'
-
 alias emacs='emacsclient --alternate-editor="" --tty'
-alias emacs-kill='emacsclient -e "(kill-emacs)"'
+alias kill-emacs='emacsclient -e "(kill-emacs)"'

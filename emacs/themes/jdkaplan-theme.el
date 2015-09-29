@@ -20,7 +20,7 @@
  '(minibuffer-prompt ((t (:foreground "#c7c7c7" :bold t ))))
  '(font-lock-warning-face ((t (:foreground "red" :bold t ))))
 
- '(show-paren-match-face ((t (:foreground "orange" :background "black" :bold t))))
+ '(show-paren-match-face ((t (:foreground "orange" :background "black"))))
  )
 
 (provide-theme 'jdkaplan)

@@ -61,8 +61,6 @@
  '(scheme-program-name "mit-scheme")
  '(show-paren-delay 0)
  '(show-paren-mode 1)
- '(split-height-threshold 0)
- '(split-width-threshold 0)
  '(tab-width 4)
  '(tool-bar-mode t)
  '(visible-cursor nil))

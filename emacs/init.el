@@ -56,6 +56,7 @@
  '(mouse-wheel-mode nil)
  '(proof-assistants (quote (coq)))
  '(proof-splash-enable nil)
+ '(proof-three-window-mode-policy (quote hybrid))
  '(require-final-newline t)
  '(scheme-program-name "mit-scheme")
  '(show-paren-delay 0)
@@ -71,7 +72,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(hl-line ((t (:background "black")))))
+ '(hl-line ((t (:background "black"))))
+ '(proof-locked-face ((t (:underline nil :weight bold)))))
 
 (require 'autopair)
 (autopair-global-mode)
@@ -89,24 +91,21 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-;; pretty-greek
-(defun pretty-greek ()
-  (let ((greek '("alpha" "beta" "gamma" "delta" "epsilon" "zeta" "eta" "theta" "iota" "kappa" "lambda" "mu" "nu" "xi" "omicron" "pi" "rho" "sigma_final" "sigma" "tau" "upsilon" "phi" "chi" "psi" "omega")))
-    (loop for word in greek
-          for code = 97 then (+ 1 code)
-          do  (let ((greek-char (make-char 'greek-iso8859-7 code)))
-                (font-lock-add-keywords nil
-                                        `((,(concatenate 'string "\\(^\\|[^a-zA-Z0-9]\\)\\(" word "\\)[a-zA-Z]")
-                                           (0 (progn (decompose-region (match-beginning 2) (match-end 2))
-                                                     nil)))))
-                (font-lock-add-keywords nil
-                                        `((,(concatenate 'string "\\(^\\|[^a-zA-Z0-9]\\)\\(" word "\\)[^a-zA-Z]")
-                                           (0 (progn (compose-region (match-beginning 2) (match-end 2)
-                                                                     ,greek-char)
-                                                     nil)))))))))
+;; prettify symbols
+(global-prettify-symbols-mode 1)
 
-(add-hook 'tex-mode-hook 'pretty-greek)
-(add-hook 'prog-mode-hook 'pretty-greek)
+(setq coq-symbols
+      '(
+        ("forall" ?∀)
+        ("->" ?→)
+        ("exists" ?∃)
+        ("=>" ?⇒)
+        ))
+
+(add-hook 'coq-mode-hook
+          (lambda ()
+            (dolist (binding coq-symbols)
+              (push binding prettify-symbols-alist))))
 
 (put 'narrow-to-region 'disabled nil)
 (global-hl-line-mode 1)

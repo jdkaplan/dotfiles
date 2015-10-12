@@ -282,3 +282,10 @@ they line up with the line containing the corresponding opening bracket."
 
 ;; Proof General
 (load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+
+;; sup
+(add-to-list 'auto-mode-alist '("/sup.*eml$" . message-mode))
+(add-hook 'message-mode-hook
+          (lambda ()
+            (auto-fill-mode 1)
+            (search-forward-regexp "^$")))

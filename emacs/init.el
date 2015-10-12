@@ -9,6 +9,7 @@
   '(
     autopair
     evil
+    evil-leader
     evil-surround
     go-mode
     goto-chg
@@ -35,6 +36,29 @@
   (dolist (p my-packages)
     (when (not (package-installed-p p))
             (package-install p))))
+
+(require 'evil-leader)
+(global-evil-leader-mode)
+
+(evil-leader/set-leader ";")
+(evil-leader/set-key
+  "<SPC>" 'evil-ex
+
+  "e" 'find-file
+  "b" 'switch-to-buffer
+  "k" 'kill-buffer
+  "w" 'save-buffer
+  "q" 'kill-buffer-and-window
+
+  "\"" 'split-window-right
+  "%" 'split-window-below
+  "0" 'delete-window
+
+  "h" 'evil-window-left
+  "j" 'evil-window-down
+  "k" 'evil-window-up
+  "l" 'evil-window-right
+ )
 
 (require 'evil)
 (evil-mode 1)

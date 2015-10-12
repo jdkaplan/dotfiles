@@ -9,4 +9,5 @@ alias units='units --verbose'
 alias trr='transmission-remote'
 
 alias emacs='emacsclient --alternate-editor="" --tty'
-alias kill-emacs='emacsclient -e "(kill-emacs)"'
+
+alias vol='pulseaudio-ctl set'

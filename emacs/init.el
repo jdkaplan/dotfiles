@@ -46,7 +46,6 @@
 
   "e" 'find-file
   "b" 'switch-to-buffer
-  "k" 'kill-buffer
   "w" 'save-buffer
   "q" 'kill-buffer-and-window
 

@@ -1,0 +1,13 @@
+loadplugins '\.(js|penta)$'
+group user
+set cdpath=''
+
+set passkeys+=feedly.com:jkJK
+
+nmap J gt
+nmap K gT
+
+hi StatusLineNormal   -a font-size: 9pt;
+hi StatusLineBroken   -a font-size: 9pt;
+hi StatusLineSecure   -a font-size: 9pt;
+hi StatusLineExtended -a font-size: 9pt;

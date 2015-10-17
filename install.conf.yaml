@@ -11,3 +11,4 @@
     ~/.vim: vim/
     ~/.vimrc: vim/.vimrc
     ~/.mbsyncrc: isync/.mbsyncrc
+    ~/.pentadactylrc: pentadactyl/.pentadactylrc

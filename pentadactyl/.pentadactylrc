@@ -3,6 +3,8 @@ group user
 set cdpath=''
 
 set passkeys+=feedly.com:jkJK
+set passkeys+=pandora.com:<Right><Space>
+set passkeys+=reddit.com:jkJKazxXcC=-[]1234567890
 
 nmap J gt
 nmap K gT

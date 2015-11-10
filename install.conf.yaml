@@ -12,3 +12,5 @@
     ~/.vimrc: vim/.vimrc
     ~/.mbsyncrc: isync/.mbsyncrc
     ~/.pentadactylrc: pentadactyl/.pentadactylrc
+    ~/.Xresources: X/.Xresources
+    ~/.Xdefaults: X/.Xdefaults

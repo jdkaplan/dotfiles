@@ -16,19 +16,6 @@ URxvt*intensityStyles: false
 URxvt*urgentOnBell: true
 URxvt*iso14755: false
 
-URxvt*perl-ext-common: default,tabbedex,clipboard
-
-URxvt*tabbed.tabbar-fg: 235
-URxvt*tabbed.tabbar-bg: 0
-URxvt*tabbed.tab-fg: 245
-URxvt*tabbed.tab-bg: 0
-URxvt*tabbed.autohide: true
-
-URxvt*tabbed.no-tabbedex-keys: true
-URxvt*keysym.C-T: perl:tabbedex:new_tab
-URxvt*keysym.C-Next: perl:tabbedex:next_tab
-URxvt*keysym.C-Prior: perl:tabbedex:prev_tab
-
 Xautolock.corners: 000-
 Xautolock.time: 10
 Xautolock.locker: i3lock

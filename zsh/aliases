@@ -11,3 +11,7 @@ alias trr='transmission-remote'
 alias emacs='emacsclient --alternate-editor="" --tty'
 
 alias vol='pulseaudio-ctl set'
+
+alias ssh-add-all='for key in ~/.ssh/id_rsa^*.pub; do ssh-add $key; done'
+
+eval $(thefuck --alias)

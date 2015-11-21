@@ -8,7 +8,7 @@ URxvt*cursorBlink: false
 URxvt*transparent: true
 URxvt.shading: 20
 
-URxvt*font: xft:Input Mono Narrow ExLight:size=10
+URxvt*font: xft:Input Mono Narrow Light:size=10
 
 URxvt*buffered: true
 URxvt*intensityStyles: false

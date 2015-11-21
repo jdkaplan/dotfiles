@@ -49,6 +49,7 @@
   "b" 'switch-to-buffer
   "w" 'save-buffer
   "q" 'kill-buffer-and-window
+  "x" 'server-edit
 
   "\"" 'split-window-right
   "%" 'split-window-below
@@ -87,6 +88,7 @@
  '(show-paren-mode 1)
  '(tab-width 4)
  '(tool-bar-mode t)
+ '(vc-follow-symlinks nil)
  '(visible-cursor nil))
 
 (custom-set-faces

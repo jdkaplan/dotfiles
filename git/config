@@ -7,7 +7,5 @@
 	default = simple
 [alias]
     lg = log --oneline --graph --decorate
-[merge]
-	ff = false
 [credential]
 	helper = cache

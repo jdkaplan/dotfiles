@@ -15,4 +15,3 @@
     ~/.Xresources: X/.Xresources
     ~/.Xdefaults: X/.Xdefaults
     ~/.profile: etc/.profile
-    ~/.sup: sup/

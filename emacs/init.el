@@ -79,9 +79,6 @@
  '(initial-scratch-message "")
  '(menu-bar-mode nil)
  '(mouse-wheel-mode nil)
- '(proof-assistants (quote (coq)))
- '(proof-splash-enable nil)
- '(proof-three-window-mode-policy (quote hybrid))
  '(require-final-newline t)
  '(scheme-program-name "mit-scheme")
  '(show-paren-delay 0)
@@ -97,7 +94,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(hl-line ((t (:background "black"))))
- '(proof-locked-face ((t (:underline nil :weight bold))))
  '(tuareg-font-lock-operator-face ((t (:inherit font-lock-keyword-face)))))
 
 (require 'autopair)
@@ -282,9 +278,6 @@ they line up with the line containing the corresponding opening bracket."
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'jdkaplan t)
-
-;; Proof General
-(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
 ;; sup
 (add-to-list 'auto-mode-alist '("/sup.*eml$" . message-mode))

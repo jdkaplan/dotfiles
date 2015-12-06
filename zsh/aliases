@@ -8,7 +8,6 @@ alias ll='ls -l'
 alias units='units --verbose'
 alias trr='transmission-remote'
 
-alias emacs='emacsclient --alternate-editor="" --tty'
 
 alias vol='pulseaudio-ctl set'
 

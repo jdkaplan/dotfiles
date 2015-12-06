@@ -1,4 +1,4 @@
-export EDITOR='emacsclient --alternate-editor="" --tty'
+export EDITOR='emacs'
 export VISUAL=$EDITOR
 
 export WORKON_HOME=$HOME/.virtualenvs

@@ -80,7 +80,7 @@
  '(menu-bar-mode nil)
  '(mouse-wheel-mode nil)
  '(require-final-newline t)
- '(scheme-program-name "mit-scheme")
+ '(scheme-program-name "racket")
  '(show-paren-delay 0)
  '(show-paren-mode 1)
  '(tab-width 4)

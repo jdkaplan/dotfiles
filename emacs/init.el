@@ -48,11 +48,11 @@
   "e" 'find-file
   "b" 'switch-to-buffer
   "w" 'save-buffer
-  "q" 'kill-buffer-and-window
-  "x" 'server-edit
+  "q" 'kill-this-buffer
+  "x" 'kill-buffer-and-window
 
-  "\"" 'split-window-right
-  "%" 'split-window-below
+  "\"" 'split-window-below
+  "%" 'split-window-right
   "0" 'delete-window
 
   "h" 'evil-window-left

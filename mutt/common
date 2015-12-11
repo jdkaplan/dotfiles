@@ -1,0 +1,14 @@
+set header_cache = ~/.cache/mutt
+
+set send_charset = "us-ascii:utf-8"
+set text_flowed = yes
+
+unset imap_passive
+set imap_keepalive = 300
+set mail_check = 60
+set timeout = 120
+set imap_check_subscribed
+
+set sort = threads
+
+set beep_new = yes

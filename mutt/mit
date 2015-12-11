@@ -1,0 +1,34 @@
+source ~/.mutt/common
+
+set my_username = "jdkaplan"
+set my_password = `pass show email/jdkaplan@mit.edu`
+
+set smtp_pass = $my_password
+
+set folder = "~/.mail/mit/"
+
+set spoolfile = "+Inbox"
+set record = +Sent
+set postponed = +Drafts
+
+set copy = yes
+
+mailboxes `\
+for file in ~/.mail/mit/*; do \
+    box=$(basename "$file"); \
+    if [ ! "$box" = '.' -a \
+         ! "$box" = '..' -a \
+         ! "$box" = '.mbsyncstate' -a \
+         ! "$box" = '.uidvalidity' ]; then \
+        echo -n "\"+$box\" "; \
+    fi; \
+done; \
+`
+
+set realname = "Jeremy Kaplan"
+set from = "$my_username@mit.edu"
+set envelope_from = yes
+set use_from = yes
+set smtp_url = "smtps://$my_username@outgoing.mit.edu:465"
+set ssl_force_tls = yes
+set ssl_starttls = yes

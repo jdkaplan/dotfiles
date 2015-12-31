@@ -14,3 +14,5 @@ hi StatusLineNormal   -a font-size: 9pt;
 hi StatusLineBroken   -a font-size: 9pt;
 hi StatusLineSecure   -a font-size: 9pt;
 hi StatusLineExtended -a font-size: 9pt;
+
+set defsearch=ddg

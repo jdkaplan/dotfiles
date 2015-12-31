@@ -15,3 +15,4 @@
     ~/.Xresources: X/.Xresources
     ~/.Xdefaults: X/.Xdefaults
     ~/.profile: etc/.profile
+    ~/.urlview: urlview/.urlview

@@ -12,3 +12,6 @@ set imap_check_subscribed
 set sort = threads
 
 set beep_new = yes
+
+macro pager \cu <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+macro attach w <pipe-entry>'pipefox'<enter> 'Send attachment to firefox'

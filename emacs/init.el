@@ -46,6 +46,7 @@
   "<SPC>" 'evil-ex
 
   "e" 'find-file
+  "f" 'find-file
   "b" 'switch-to-buffer
   "w" 'save-buffer
   "q" 'kill-this-buffer

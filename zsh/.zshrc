@@ -40,15 +40,22 @@ else
     local gray="%{$fg[white]%}"
 fi
 
+function parse_git_branch {
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    echo "${colon}${orange}${ref#refs/heads/}%f"
+}
+
 local lbrkt="${gray}[%f"
 local rbrkt="${gray}]%f"
 local colon="${gray}:%f"
 local user="${purple}%n%f"
 local host="${blue}%m%f"
 local dir="${green}%~%f"
+local branch="\$(parse_git_branch)"
 
+setopt prompt_subst
 export PROMPT="%# "
-export RPROMPT="${lbrkt}${user}${colon}${host}${colon}${dir}${rbrkt}"
+export RPROMPT="${lbrkt}${user}${colon}${host}${colon}${dir}${branch}${rbrkt}"
 
 # aliases
 source $HOME/.config/zsh/aliases

@@ -19,6 +19,7 @@
     php-mode
     scala-mode
     tuareg
+    typescript-mode
     undo-tree
     web-mode
     yaml-mode

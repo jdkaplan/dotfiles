@@ -16,3 +16,5 @@ hi StatusLineSecure   -a font-size: 9pt;
 hi StatusLineExtended -a font-size: 9pt;
 
 set defsearch=ddg
+
+set scroll=45

@@ -19,3 +19,4 @@
     ~/.urlview: urlview/.urlview
     ~/.config/user-dirs.dirs: etc/user-dirs.dirs
     ~/.todo.cfg: todotxt/.todo.cfg
+    ~/.tmux.conf: tmux/.tmux.conf

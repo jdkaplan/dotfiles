@@ -3,6 +3,7 @@ auto-save-list
 
 # autocomplete history
 ac-comphist.dat
+ido.last
 
 # temporary files
 *~

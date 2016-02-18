@@ -1,5 +1,5 @@
 URxvt*depth: 32
-URxvt*background: [90]#000000
+URxvt*background: [80]#000000
 URxvt*foreground: [100]#FFFFFF
 URxvt*scrollBar: false
 URxvt*saveLines: 65535

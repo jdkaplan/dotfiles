@@ -1,0 +1,28 @@
+#!/bin/sh
+
+PATH=$PATH:"$PANEL_CONFIG_DIR"
+
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+	printf "%s\n" "The panel is already running." >&2
+	exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+bspc config bottom_padding $PANEL_HEIGHT
+bspc control --subscribe > "$PANEL_FIFO" &
+sleep 0.3s
+clock 'C' '+%a %H:%M:%S' > "$PANEL_FIFO" &
+sleep 0.3s
+battery 'B' '%' > "$PANEL_FIFO" &
+sleep 0.3s
+volume 'V' '%' > "$PANEL_FIFO" &
+
+source panel_colors
+
+cat "$PANEL_FIFO" | panel_bar | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -b &
+
+wait

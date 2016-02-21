@@ -19,3 +19,6 @@
     ~/.urlview: urlview/.urlview
     ~/.config/user-dirs.dirs: etc/user-dirs.dirs
     ~/.tmux.conf: tmux/.tmux.conf
+    ~/.config/bspwm: bspwm/
+    ~/.config/sxhkd: sxhkd/
+    ~/.config/panel: panel/

@@ -1,0 +1,11 @@
+#/bin/sh
+
+prefix=$1
+format=$2
+
+while [ true ]; do
+    echo -n "$prefix"
+    echo -n $(date "$format")
+    echo
+    sleep 1s
+done

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+prefix=$1
+suffix=$2
+
+while [ true ]; do
+    echo -n "$prefix"
+    echo -n $(acpi --battery | cut -d, -f2 | tr -d ' ')
+    echo -n "$suffix"
+    echo
+    sleep 1s
+done

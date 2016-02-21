@@ -7,6 +7,8 @@ set passkeys+=pandora.com:<Right><Space>
 set passkeys+=reddit.com:jkJKazxXcC=-[]1234567890
 set passkeys+=youtube.com:k
 
+:autocmd LocationChange ^https?://docs\.google\.com/ :normal! <C-z>
+
 nmap J gt
 nmap K gT
 

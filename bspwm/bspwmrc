@@ -13,9 +13,6 @@ bspc config initial_polarity second_child
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
-echo 'xss-lock'
 xss-lock -- i3lock -e -i ~/images/lockscreen.png &
-echo 'nitrogen'
 nitrogen --restore &
-echo 'panel'
 $PANEL_CONFIG_DIR/panel &

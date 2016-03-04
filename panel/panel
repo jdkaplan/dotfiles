@@ -9,13 +9,10 @@ fi
 
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
-[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-mkfifo "$PANEL_FIFO"
-
 bspc config bottom_padding $PANEL_HEIGHT
 
 source panel_colors
 
-panel_bar | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -b &
+$PANEL_CONFIG_DIR/panel_bar.py | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -b &
 
 wait

@@ -7,7 +7,7 @@ set passkeys+=pandora.com:<Right><Space>
 set passkeys+=reddit.com:jkJKazxXcC=-[]1234567890
 set passkeys+=youtube.com:k
 
-:autocmd LocationChange ^https?://docs\.google\.com/ :normal! <C-z>
+autocmd LocationChange ^https?://docs\.google\.com/ :normal! <C-z>
 
 nmap J gt
 nmap K gT
@@ -17,6 +17,7 @@ hi StatusLineBroken   -a font-size: 9pt;
 hi StatusLineSecure   -a font-size: 9pt;
 hi StatusLineExtended -a font-size: 9pt;
 
-set defsearch=ddg
+nmap -builtin s :open ddg<Space>
+nmap -builtin S :tabopen ddg<Space>
 
 set scroll=45

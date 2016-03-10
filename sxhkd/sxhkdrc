@@ -65,7 +65,7 @@ super + {1-9,0}
 	bspc desktop -f ^{1-9,10}
 
 super + shift + {1-9,0}
-    bspc desktop -f ^{1-9,10}; bspc window last -d focused; bspc window -f last
+    bspc desktop -f ^{1-9,10}; bspc window last -d focused
 
 ~button1
 	bspc pointer -g focus

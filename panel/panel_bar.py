@@ -12,44 +12,35 @@ PERIOD = 1
 # Lemonbar seems to struggle if you update too fast
 MIN_UPDATE_INTERVAL = 0.01
 PATH = os.path.dirname(os.path.realpath(__file__))
-COLOR_ACTIVE_MONITOR_FG = '#FF34322E'
-COLOR_ACTIVE_MONITOR_BG = '#FF58C5F1'
-COLOR_INACTIVE_MONITOR_FG = '#FF58C5F1'
-COLOR_INACTIVE_MONITOR_BG = '#FF34322E'
-COLOR_FOCUSED_OCCUPIED_FG = '#FFF6F9FF'
-COLOR_FOCUSED_OCCUPIED_BG = '#FF5C5955'
-COLOR_FOCUSED_FREE_FG = '#FFF6F9FF'
-COLOR_FOCUSED_FREE_BG = '#FF6D561C'
-COLOR_FOCUSED_URGENT_FG = '#FF34322E'
-COLOR_FOCUSED_URGENT_BG = '#FFF9A299'
+
+PANEL_FOREGROUND='#FF888888'
+PANEL_BACKGROUND='#FF111111'
+
+COLOR_FOCUSED_FG = '#FFE0E0E0'
 COLOR_OCCUPIED_FG = '#FFA3A6AB'
-COLOR_OCCUPIED_BG = '#FF34322E'
-COLOR_FREE_FG = '#FF6F7277'
-COLOR_FREE_BG = '#FF34322E'
-COLOR_URGENT_FG = '#FFF9A299'
 COLOR_URGENT_BG = '#FF34322E'
-COLOR_LAYOUT_FG = '#FFA3A6AB'
-COLOR_LAYOUT_BG = '#FF34322E'
-COLOR_STATUS_FG = '#FFA3A6AB'
-COLOR_STATUS_BG = '#FF34322E'
+
 DIVIDER = ' | '
 
 
-def color_string(string, fg=COLOR_STATUS_FG, bg=COLOR_STATUS_BG):
+def color_string(string, fg=PANEL_FOREGROUND, bg=PANEL_BACKGROUND):
     return "%%{F%s}%%{B%s} %s %%{B-}%%{F-}" % (fg, bg, string)
 
 
 def status_update(data):
+    # monitor, occupied, free, urgent (with uppercase meaning focused)
     colors = {
-        'M': None,  # (COLOR_ACTIVE_MONITOR_FG, COLOR_ACTIVE_MONITOR_BG),
-        'm': (COLOR_INACTIVE_MONITOR_FG, COLOR_INACTIVE_MONITOR_BG),
-        'O': (COLOR_FOCUSED_OCCUPIED_FG, COLOR_FOCUSED_OCCUPIED_BG),
-        'F': (COLOR_FOCUSED_FREE_FG, COLOR_FOCUSED_FREE_BG),
-        'U': (COLOR_FOCUSED_URGENT_FG, COLOR_FOCUSED_URGENT_BG),
-        'o': (COLOR_OCCUPIED_FG, COLOR_OCCUPIED_BG),
-        'f': None,  # (COLOR_FREE_FG, COLOR_FREE_BG),
-        'u': (COLOR_URGENT_FG, COLOR_URGENT_BG),
-        'L': None,  # (COLOR_LAYOUT_FG, COLOR_LAYOUT_BG),
+        'm': None,
+        'M': None,
+        'o': {},
+        'O': {'fg': COLOR_FOCUSED_FG},
+        'f': None,
+        'F': {'fg': COLOR_FOCUSED_FG},
+        'u': {'bg': COLOR_URGENT_BG},
+        'U': {'fg': COLOR_FOCUSED_FG, 'bg': COLOR_URGENT_BG},
+        'L': None,              # focused desktop layout
+        'T': None,              # focused node state
+        'G': None,              # focused node active flags
     }
     data = data.decode('utf-8')
     assert data[0] == 'W'
@@ -62,7 +53,7 @@ def status_update(data):
         color = colors[item[0]]
         if color is not None:
             name = item[1:]
-            wm_info += color_string(name, *color)
+            wm_info += color_string(name, **color)
     return 'status', wm_info
 
 

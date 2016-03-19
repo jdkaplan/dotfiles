@@ -1,6 +1,10 @@
 #!/bin/sh
 
-PATH=$PATH:"$PANEL_CONFIG_DIR"
+PANEL_HEIGHT=24
+PANEL_FONT_FAMILY="-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1"
+
+COLOR_FOREGROUND='#FFAAAAAA'
+COLOR_BACKGROUND='#FF111111'
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
 	printf "%s\n" "The panel is already running." >&2
@@ -11,8 +15,9 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
 bspc config bottom_padding $PANEL_HEIGHT
 
-source panel_colors
+$XDG_CONFIG_HOME/panel/panel_bar.py | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -b &
 
-$PANEL_CONFIG_DIR/panel_bar.py | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -b &
+sleep 1
+xdo lower $(xdo id -a bar)
 
 wait

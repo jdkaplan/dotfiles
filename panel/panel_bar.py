@@ -124,7 +124,7 @@ def main(argv):
         'clock': clock_update(None)[1],
     }
     # These processes trigger when events happen.
-    bspc_control = subprocess.Popen(["bspc", "control", "--subscribe"],
+    bspc_control = subprocess.Popen(["bspc", "subscribe"],
                                     stdout=subprocess.PIPE)
     listening = [bspc_control]
     # Make stdout nonblocking.

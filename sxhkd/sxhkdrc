@@ -20,7 +20,7 @@ super + shift + semicolon
 
 # volume keys
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    pulseaudio-ctl {mute,south,north}
+    pulseaudio-ctl {mute,down,up}
 
 
 #

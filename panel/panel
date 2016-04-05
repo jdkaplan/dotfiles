@@ -4,7 +4,7 @@ PANEL_HEIGHT=24
 PANEL_FONT_FAMILY="-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1"
 
 COLOR_FOREGROUND='#FFAAAAAA'
-COLOR_BACKGROUND='#FF111111'
+COLOR_BACKGROUND='#FF222222'
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
 	printf "%s\n" "The panel is already running." >&2

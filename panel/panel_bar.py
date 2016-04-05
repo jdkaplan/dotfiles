@@ -14,18 +14,18 @@ MIN_UPDATE_INTERVAL = 0.01
 PATH = os.path.dirname(os.path.realpath(__file__))
 
 PANEL_FOREGROUND='#FF888888'
-PANEL_BACKGROUND='#FF111111'
+PANEL_BACKGROUND='#FF222222'
 
 COLOR_FOCUSED_FG = '#FFE0E0E0'
 COLOR_OCCUPIED_FG = '#FFA3A6AB'
-COLOR_URGENT_BG = '#FF34322E'
+COLOR_URGENT_BG = '#FF880000'
 
-DIVIDER = ' | '
-
+DIVIDER = '|'
 
 def color_string(string, fg=PANEL_FOREGROUND, bg=PANEL_BACKGROUND):
     return "%%{F%s}%%{B%s} %s %%{B-}%%{F-}" % (fg, bg, string)
 
+divider = color_string(DIVIDER, fg='#FF444444')
 
 def status_update(data):
     # monitor, occupied, free, urgent (with uppercase meaning focused)
@@ -87,12 +87,15 @@ def battery_update(_):
     state, charge, *_ = status.split(', ')
     state = state
     charge = int(charge[:-1])
-    return 'battery', color_string("%s %d%%%%" % (state, charge))
+    colors = {}
+    if state != 'Charging' and charge < 5:
+        colors['bg'] = COLOR_URGENT_BG
+    return 'battery', color_string("%s %d%%%%" % (state, charge), **colors)
 
 
 def make_string(status, clock, volume, battery, wifi):
     print("%%{1}%s%%{c}%%{r}%s%s%s%s%s%s%s" %
-          (status, wifi, DIVIDER, battery, DIVIDER, volume, DIVIDER, clock))
+          (status, wifi, divider, battery, divider, volume, divider, clock))
 
 
 def open_socket(address):

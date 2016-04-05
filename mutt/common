@@ -15,3 +15,9 @@ set beep_new = yes
 
 macro pager \cu <pipe-entry>'urlview'<enter> 'Follow links with urlview'
 macro attach w <pipe-entry>'pipefox'<enter> 'Send attachment to firefox'
+
+color index default default ~N
+color index default default ~O
+color index default default ~F
+color index default default ~T
+color index default default ~D

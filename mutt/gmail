@@ -23,3 +23,6 @@ set use_from = yes
 set smtp_url = "smtps://$my_username@smtp.gmail.com:465"
 set ssl_force_tls = yes
 set ssl_starttls = yes
+
+color index default brightred ~N
+color index default brightred ~O

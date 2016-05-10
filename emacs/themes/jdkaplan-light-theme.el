@@ -1,0 +1,28 @@
+(deftheme jdkaplan-light "jdkaplan's light theme")
+(custom-theme-set-faces
+ 'jdkaplan-light
+ '(default ((t (:background "#e4e4e4" :foreground "#262626" ))))
+ '(fringe ((t (:background "#eeeeee" ))))
+ '(cursor ((t (:background "#262626" ))))
+ '(mode-line-inactive ((t (:background "#eeeeee" :foreground "#444444" ))))
+ '(mode-line ((t (:background "#bbbbbb" :foreground "#1e1e1e" ))))
+ '(vertical-border ((t (:background "#dddddd" :foreground "#262626" ))))
+ '(region ((t (:background "#dddddd" ))))
+ '(secondary-selection ((t (:background "#e1e1e1" ))))
+ '(font-lock-builtin-face ((t (:foreground "#bf4e1e" ))))
+ '(font-lock-comment-face ((t (:foreground "#888888" ))))
+ '(font-lock-function-name-face ((t (:foreground "#00bccd" ))))
+ '(font-lock-keyword-face ((t (:foreground "#138211" ))))
+ '(font-lock-string-face ((t (:foreground "#a87f00" ))))
+ '(font-lock-type-face ((t (:foreground "#bca600" ))))
+ '(font-lock-constant-face ((t (:foreground "#9158df" ))))
+ '(font-lock-variable-name-face ((t (:foreground "#00bccd" ))))
+ '(minibuffer-prompt ((t (:foreground "#1e1e1e" :bold t ))))
+ '(font-lock-warning-face ((t (:foreground "red" :bold t ))))
+ '(hl-line ((t (:background "#eeeeee"))))
+ '(isearch ((t (:background "#d8d8d8"))))
+
+ '(show-paren-match-face ((t (:foreground "orange"))))
+ )
+
+(provide-theme 'jdkaplan-light)

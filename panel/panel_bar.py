@@ -10,7 +10,7 @@ import socket
 
 PERIOD = 1
 # Lemonbar seems to struggle if you update too fast
-MIN_UPDATE_INTERVAL = 0.01
+MIN_UPDATE_INTERVAL = 0
 PATH = os.path.dirname(os.path.realpath(__file__))
 
 PANEL_FOREGROUND='#FF888888'
@@ -19,6 +19,7 @@ PANEL_BACKGROUND='#FF222222'
 COLOR_FOCUSED_FG = '#FFE0E0E0'
 COLOR_OCCUPIED_FG = '#FFA3A6AB'
 COLOR_URGENT_BG = '#FF880000'
+COLOR_WARNING_BG = '#FFeeee00'
 
 DIVIDER = '|'
 
@@ -65,10 +66,14 @@ def clock_update(_):
 def volume_update(_):
     info = subprocess.check_output(['pulseaudio-ctl', 'full-status'])
     info = info[:-1].decode('utf-8')
-    volume, muted, _ = info.split(' ')
+    volume, mute, _ = info.split(' ')
     volume = int(volume)
-    muted = "-" if muted == "yes" else "%%"
-    return 'volume', color_string("Vol: %d%s" % (volume, muted))
+    muted = mute == 'yes'
+    mute_icon = "-" if muted else "%%"
+    kwargs = {}
+    if not muted:
+        kwargs['bg'] = COLOR_WARNING_BG
+    return 'volume', color_string("Vol: %d%s" % (volume, mute_icon), **kwargs)
 
 def wifi_update(_):
     info = subprocess.check_output(['netctl-auto', 'current'])

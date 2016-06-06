@@ -43,6 +43,7 @@ def status_update(data):
         'T': None,              # focused node state
         'G': None,              # focused node active flags
     }
+
     data = data.decode('utf-8')
     assert data[0] == 'W'
     data = data[1:-1]
@@ -69,7 +70,7 @@ def volume_update(_):
     volume, mute, _ = info.split(' ')
     volume = int(volume)
     muted = mute == 'yes'
-    mute_icon = "-" if muted else "%%"
+    mute_icon = "-" if muted else "%"
     kwargs = {}
     if not muted:
         kwargs['bg'] = COLOR_WARNING_BG
@@ -95,7 +96,7 @@ def battery_update(_):
     colors = {}
     if state != 'Charging' and charge < 5:
         colors['bg'] = COLOR_URGENT_BG
-    return 'battery', color_string("%s %d%%%%" % (state, charge), **colors)
+    return 'battery', color_string("%s %d%%" % (state, charge), **colors)
 
 
 def make_string(status, clock, volume, battery, wifi):

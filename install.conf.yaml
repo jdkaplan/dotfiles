@@ -6,6 +6,7 @@
     ~/.config/i3status: i3status/
     ~/.config/zsh: zsh/
     ~/.zshrc: zsh/.zshrc
+    ~/.zshenv: zsh/.zshenv
     ~/.zprofile: zsh/.zprofile
     ~/.hgrc: hg/.hgrc
     ~/.config/git: git
@@ -15,10 +16,10 @@
     ~/.pentadactylrc: pentadactyl/.pentadactylrc
     ~/.Xresources: X/.Xresources
     ~/.Xdefaults: X/.Xdefaults
-    ~/.profile: etc/.profile
     ~/.urlview: urlview/.urlview
     ~/.config/user-dirs.dirs: etc/user-dirs.dirs
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.config/bspwm: bspwm/
     ~/.config/sxhkd: sxhkd/
     ~/.config/panel: panel/
+    ~/.config/nvim: neovim/

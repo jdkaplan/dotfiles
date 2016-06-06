@@ -70,7 +70,3 @@ eval $(dircolors $HOME/.config/zsh/dircolors.256dark)
 
 autoload -U select-word-style
 select-word-style bash
-
-export PATH=$PATH:$HOME/bin
-
-[ -f ~/.profile ] && source ~/.profile

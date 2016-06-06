@@ -29,14 +29,15 @@ if [[ $TERM =~ '256color' ]]; then
     local blue="%F{81}"
     local orange="%F{166}"
     local purple="%F{135}"
-    local hotpink="%F{161}"
+    local red="%F{196}"
     local green="%F{118}"
     local gray="%F{241}"
 else
     local blue="%{$fg[cyan]%}"
     local orange="%{$fg[yellow]%}"
     local purple="%{$fg[magenta]%}"
-    local hotpink="%{$fg[red]%}"
+    local red="%{$fg[red]%}"
+    local green="%{$fg[green]%}"
     local gray="%{$fg[white]%}"
 fi
 
@@ -49,7 +50,11 @@ local lbrkt="${gray}[%f"
 local rbrkt="${gray}]%f"
 local colon="${gray}:%f"
 local user="${purple}%n%f"
-local host="${blue}%m%f"
+if [[ $SHELL_TYPE == "local" ]]; then
+    local host="${blue}%m%f"
+else
+    local host="${red}%m%f"
+fi
 local dir="${green}%~%f"
 local branch="\$(parse_git_branch)"
 

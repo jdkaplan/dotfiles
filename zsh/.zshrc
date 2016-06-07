@@ -50,16 +50,18 @@ local lbrkt="${gray}[%f"
 local rbrkt="${gray}]%f"
 local colon="${gray}:%f"
 local user="${purple}%n%f"
-if [[ $SHELL_TYPE == "local" ]]; then
+if [[ $LOCAL_SESSION -eq 1 ]]; then
     local host="${blue}%m%f"
+    local prompt="%# "
 else
     local host="${red}%m%f"
+    local prompt="${red}%#%f "
 fi
 local dir="${green}%~%f"
 local branch="\$(parse_git_branch)"
 
 setopt prompt_subst
-export PROMPT="%# "
+export PROMPT="${prompt}"
 export RPROMPT="${lbrkt}${user}${colon}${host}${colon}${dir}${branch}${rbrkt}"
 
 # aliases

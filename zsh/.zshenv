@@ -8,10 +8,10 @@ source /usr/bin/virtualenvwrapper.sh
 
 export XDG_CONFIG_HOME=$HOME/.config
 
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_CLIENT" ] || [ -n "$SSH_CLIENT" ]; then
-    SHELL_TYPE='remote/ssh'
+if [ -n "$SSH_TTY" ] || [ -n "$SSH_CLIENT" ] || [ -n "$SSH_CONNECTION" ]; then
+    LOCAL_SESSION=0
 else
-    SHELL_TYPE='local'
+    LOCAL_SESSION=1
 fi
 
-export SHELL_TYPE
+export LOCAL_SESSION

@@ -3,8 +3,10 @@ export PATH=$PATH:$HOME/bin
 export EDITOR='emacs'
 export VISUAL=$EDITOR
 
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+if [[ -a /usr/bin/virtualenvwrapper.sh ]]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/bin/virtualenvwrapper.sh
+fi
 
 export XDG_CONFIG_HOME=$HOME/.config
 

@@ -94,14 +94,14 @@ def battery_update(_):
     state = state
     charge = int(charge[:-1])
     colors = {}
-    if state != 'Charging' and charge < 5:
+    if state != 'Charging' and charge < 10:
         colors['bg'] = COLOR_URGENT_BG
     return 'battery', color_string("%s %d%%" % (state, charge), **colors)
 
 
 def make_string(status, clock, volume, battery, wifi):
     print("%%{1}%s%%{c}%%{r}%s%s%s%s%s%s%s" %
-          (status, wifi, divider, battery, divider, volume, divider, clock))
+          (status, wifi, divider, volume, divider, battery, divider, clock))
 
 
 def open_socket(address):

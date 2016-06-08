@@ -1,6 +1,6 @@
 URxvt*depth: 32
-URxvt*background: [80]#000000
-URxvt*foreground: [100]#FFFFFF
+URxvt*background: #000000
+URxvt*foreground: #FFFFFF
 URxvt*scrollBar: false
 URxvt*saveLines: 65535
 URxvt*pastableTabs: true

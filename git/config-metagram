@@ -1,0 +1,11 @@
+[user]
+	name = Jeremy Kaplan
+	email = jdkaplan@metagram.net
+[color]
+	ui = true
+[push]
+	default = simple
+[alias]
+    lg = log --oneline --graph --decorate
+[credential]
+	helper = cache

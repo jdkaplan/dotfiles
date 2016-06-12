@@ -9,7 +9,7 @@
     ~/.zshenv: zsh/.zshenv
     ~/.zprofile: zsh/.zprofile
     ~/.hgrc: hg/.hgrc
-    ~/.config/git: git
+    ~/.config/git/config: git/config-gmail
     ~/.vim: vim/
     ~/.vimrc: vim/.vimrc
     ~/.mbsyncrc: isync/.mbsyncrc

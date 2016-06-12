@@ -1,0 +1,16 @@
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.emacs.d: emacs/
+    ~/.config/zsh: zsh/
+    ~/.zshrc: zsh/.zshrc
+    ~/.zshenv: zsh/.zshenv
+    ~/.zprofile: zsh/.zprofile
+    ~/.hgrc: hg/.hgrc
+    ~/.config/git/config: git/config-mit
+    ~/.vim: vim/
+    ~/.vimrc: vim/.vimrc
+    ~/.pentadactylrc: pentadactyl/.pentadactylrc
+    ~/.tmux.conf: tmux/.tmux.conf
+    ~/.config/nvim: neovim/
+    ~/.xonshrc: xonsh/.xonshrc

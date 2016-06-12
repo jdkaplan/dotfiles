@@ -1,0 +1,37 @@
+source ~/.mutt/common
+
+set my_email = "jdkaplan@metagram.net"
+set my_password = `pass show email/jdkaplan@metagram.net`
+
+set smtp_pass = $my_password
+
+set folder = "~/.mail/metagram/"
+
+set spoolfile = "+Inbox"
+set record = +Sent
+set postponed = +Drafts
+
+set copy = yes
+
+mailboxes `\
+for file in ~/.mail/metagram/*; do \
+    box=$(basename "$file"); \
+    if [ ! "$box" = '.' -a \
+         ! "$box" = '..' -a \
+         ! "$box" = '.mbsyncstate' -a \
+         ! "$box" = '.uidvalidity' ]; then \
+        echo -n "\"+$box\" "; \
+    fi; \
+done; \
+`
+
+set realname = "Jeremy Kaplan"
+set from = "$my_email"
+set envelope_from = yes
+set use_from = yes
+set smtp_url = "smtps://$my_email@metagram.net:465"
+set ssl_force_tls = yes
+set ssl_starttls = yes
+
+color index default green ~N
+color index default green ~O

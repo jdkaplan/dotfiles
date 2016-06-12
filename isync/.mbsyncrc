@@ -41,3 +41,26 @@ Channel mit
     Patterns *
     Create Both
     SyncState *
+
+
+
+IMAPAccount metagram
+    Host metagram.net
+    User jdkaplan@metagram.net
+    PassCmd "pass email/jdkaplan@metagram.net"
+    SSLType IMAPS
+    CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore metagram-remote
+    Account metagram
+
+MaildirStore metagram-local
+    Path ~/.mail/metagram/
+    Inbox ~/.mail/metagram/Inbox
+
+Channel metagram
+    Master :metagram-remote:
+    Slave :metagram-local:
+    Patterns *
+    Create Both
+    SyncState *

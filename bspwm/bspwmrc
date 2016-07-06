@@ -15,11 +15,11 @@ bspc config remove_unplugged_monitors true
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
+bspc rule -r *:*
 bspc rule -a Gimp state=floating
 bspc rule -a Slack desktop='^8'
-bspc config external_rules_command "$XDG_CONFIG_HOME/bspwm/external_rules"
 
 pulseaudio --check || pulseaudio
-ps -u jdkaplan | grep -o xss-lock || xss-lock -- i3lock -e -i ~/images/lockscreen.png &
+ps -u jdkaplan | grep -oq xss-lock || xss-lock -- i3lock -e -i ~/images/lockscreen.png &
 nitrogen --restore &
-ps -u jdkaplan | grep -o panel && pkill panel; $XDG_CONFIG_HOME/panel/panel &
+ps -u jdkaplan | grep -oq panel && pkill panel; $XDG_CONFIG_HOME/panel/panel &

@@ -14,11 +14,11 @@
     go-mode
     goto-chg
     haskell-mode
-    jinja2-mode
+    jsx-mode
+    js2-mode
     markdown-mode
     php-mode
     scala-mode
-    tuareg
     typescript-mode
     undo-tree
     web-mode
@@ -98,7 +98,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(tuareg-font-lock-operator-face ((t (:inherit font-lock-keyword-face)))))
+ )
 
 (require 'autopair)
 (autopair-global-mode)
@@ -118,19 +118,6 @@
 
 ;; prettify symbols
 (global-prettify-symbols-mode 1)
-
-(setq coq-symbols
-      '(
-        ("forall" ?∀)
-        ("->" ?→)
-        ("exists" ?∃)
-        ("=>" ?⇒)
-        ))
-
-(add-hook 'coq-mode-hook
-          (lambda ()
-            (dolist (binding coq-symbols)
-              (push binding prettify-symbols-alist))))
 
 (put 'narrow-to-region 'disabled nil)
 (global-hl-line-mode 1)
@@ -176,7 +163,6 @@
 
 (require 'php-mode)
 
-
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
@@ -200,9 +186,6 @@
 
 ;; delete trailing whitespace on save
 (add-hook 'prog-mode-hook (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
-
-(require 'jinja2-mode)
-(add-to-list 'auto-mode-alist '("\\.jinja2\\'" . jinja2-mode))
 
 ;; found at https://gist.github.com/NFicano/1356280
 ;; modified for 24.3
@@ -252,13 +235,10 @@ they line up with the line containing the corresponding opening bracket."
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
 (add-hook 'web-mode-hook
           (lambda ()
@@ -271,11 +251,6 @@ they line up with the line containing the corresponding opening bracket."
             (setq web-mode-enable-html-colorization t)
             (setq web-mode-enable-css-colorization t)
 
-            (set-face-attribute 'web-mode-html-attr-name-face nil :foreground "#3387cc")
-            (set-face-attribute 'web-mode-html-attr-equal-face nil :foreground "gray60")
-            (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "gray60")
-            (set-face-attribute 'web-mode-html-tag-face nil :foreground "#e9c062")
-
             (define-key web-mode-map (kbd "C-c /") 'web-mode-element-close)))
 
 (require 'go-mode-autoloads)
@@ -284,9 +259,5 @@ they line up with the line containing the corresponding opening bracket."
 (load-theme 'jdkaplan t)
 ;; (load-theme 'jdkaplan-light t)
 
-;; sup
-(add-to-list 'auto-mode-alist '("/sup.*eml$" . message-mode))
-(add-hook 'message-mode-hook
-          (lambda ()
-            (auto-fill-mode 1)
-            (search-forward-regexp "^$")))
+(require 'jsx-mode)
+(require 'js2-mode)

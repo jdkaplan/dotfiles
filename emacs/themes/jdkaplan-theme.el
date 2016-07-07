@@ -58,7 +58,7 @@
    `(web-mode-html-tag-face ((t (:foreground ,bluegray ))))
    `(web-mode-block-delimiter-face ((t (:foreground ,orange ))))
 
-   `(show-paren-match-face ((t (:foreground ,white :background ,brown :bold t ))))
+   `(show-paren-match-face ((t (:foreground ,teal :bold t ))))
    )
 
   )

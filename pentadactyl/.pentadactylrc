@@ -6,6 +6,7 @@ set passkeys+=feedly.com:jkJK
 set passkeys+=pandora.com:<Right><Space>
 set passkeys+=reddit.com:jkJKazxXcC=-[]1234567890
 set passkeys+=youtube.com:k
+set passkeys+=soundcloud.com:<Space><Left><Right><Up><Down>lLMPRS1234567890
 
 nmap J gt
 nmap K gT

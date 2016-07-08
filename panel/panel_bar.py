@@ -77,10 +77,11 @@ def volume_update(_):
     return 'volume', color_string("Vol: %d%s" % (volume, mute_icon), **kwargs)
 
 def wifi_update(_):
-    info = subprocess.check_output(['netctl-auto', 'current'])
-    info = info[:-1].decode('utf-8')
-    if info:
-        interface, network = info.split('-', 1)
+    info = subprocess.check_output(['netctl-auto', 'list'])
+    active = [line for line in info.splitlines() if line[0] == '*']
+
+    if active:
+        interface, network = active[0].split('-', 1)
     else:
         interface, network = 'wlp2s0', '-'
     return 'wifi', color_string('{}: {}'.format(interface, network))

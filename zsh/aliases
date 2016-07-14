@@ -8,11 +8,10 @@ alias ll='ls -l'
 alias units='units --verbose'
 alias trr='transmission-remote'
 
-
 alias vol='pulseaudio-ctl set'
 
 alias ssh-add-all='for key in ~/.ssh/id_rsa^*.pub; do ssh-add $key; done'
 
 which thefuck > /dev/null && eval $(thefuck --alias)
 
-alias todo='todo.sh'
+alias shutdown='sudo shutdown now'

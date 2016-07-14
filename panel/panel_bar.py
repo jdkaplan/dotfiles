@@ -78,7 +78,8 @@ def volume_update(_):
 
 def wifi_update(_):
     info = subprocess.check_output(['netctl-auto', 'list'])
-    active = [line for line in info.splitlines() if line[0] == '*']
+    lines = [line.decode('utf-8') for line in info.splitlines()]
+    active = [line[2:] for line in lines if line[0] == '*']
 
     if active:
         interface, network = active[0].split('-', 1)

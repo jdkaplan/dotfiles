@@ -5,8 +5,8 @@
       (lightblack "#262626")
       (darkgray "#3a3a3a")
       (gray "#444444")
-      (lightgray "#c7c7c7")
-      (lightergray "#aaaaaa")
+      (lightgray "#aaaaaa")
+      (lightergray "#c7c7c7")
       (darkwhite "#e4e4e4")
       (white "#eeeeee")
 
@@ -30,6 +30,9 @@
       (neutralbrown "#c78f6b")
       )
 
+  (send-string-to-terminal "\033]11;black\007")
+  (send-string-to-terminal "\033]12;white\007")
+
   (custom-theme-set-faces
    'jdkaplan
    `(default ((t (:foreground ,darkwhite :background ,lightblack ))))
@@ -41,14 +44,14 @@
    `(region ((t (:background ,darkgray ))))
    `(secondary-selection ((t (:background ,black ))))
    `(font-lock-builtin-face ((t (:foreground ,lightorange ))))
-   `(font-lock-comment-face ((t (:foreground ,lightergray ))))
+   `(font-lock-comment-face ((t (:foreground ,lightgray ))))
    `(font-lock-function-name-face ((t (:foreground ,paleblue ))))
    `(font-lock-keyword-face ((t (:foreground ,lime ))))
    `(font-lock-string-face ((t (:foreground ,goldenrod ))))
    `(font-lock-type-face ((t (:foreground ,yellow ))))
    `(font-lock-constant-face ((t (:foreground ,purple ))))
    `(font-lock-variable-name-face ((t (:foreground ,paleblue ))))
-   `(minibuffer-prompt ((t (:foreground ,lightgray :bold t ))))
+   `(minibuffer-prompt ((t (:foreground ,lightergray :bold t ))))
    `(font-lock-warning-face ((t (:foreground ,red :bold t ))))
    `(hl-line ((t (:background "black"))))
 
@@ -60,6 +63,5 @@
 
    `(show-paren-match-face ((t (:foreground ,teal :bold t ))))
    )
-
   )
 (provide-theme 'jdkaplan)

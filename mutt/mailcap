@@ -1,0 +1,8 @@
+application; default-open %t %s; copiousoutput
+audio; default-open %t %s; copiousoutput
+image; default-open %t %s; copiousoutput
+misc; default-open %t %s; copiousoutput
+text; default-open %t %s; copiousoutput
+video; default-open %t %s; copiousoutput
+x-content; default-open %t %s; copiousoutput
+x-scheme-handler; default-open %t %s; copiousoutput

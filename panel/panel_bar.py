@@ -100,10 +100,26 @@ def battery_update(_):
         colors['bg'] = COLOR_URGENT_BG
     return 'battery', color_string("%s %d%%" % (state, charge), **colors)
 
+def mail_update(_):
+    counts = []
+    account_colors = {
+        'gmail': '#990000',
+        'metagram': '#009900',
+        'mit': '#000099',
+    }
+    for account, color in sorted(account_colors.items()):
+        mail_path = os.path.expanduser('~/.mail/{}/Inbox/new'.format(account))
+        message_count = len(os.listdir(mail_path))
+        colors = {}
+        if message_count:
+            colors['bg'] = color
+            colors['fg'] = '#FFFFFF'
+        counts.append(color_string(str(message_count), **colors))
+    return 'mail', color_string(''.join(counts))
 
-def make_string(status, clock, volume, battery, wifi):
-    print("%%{1}%s%%{c}%%{r}%s%s%s%s%s%s%s" %
-          (status, wifi, divider, volume, divider, battery, divider, clock))
+def make_string(status, clock, volume, battery, wifi, mail):
+    print("%%{1}%s%%{c}%%{r}%s%s%s%s%s%s%s%s%s" %
+          (status, mail, divider, wifi, divider, volume, divider, battery, divider, clock))
 
 
 def open_socket(address):
@@ -124,6 +140,7 @@ def main(argv):
         'battery': battery_update(None)[1],
         'volume': volume_update(None)[1],
         'clock': clock_update(None)[1],
+        'mail': mail_update(None)[1],
     }
     # These processes trigger when events happen.
     bspc_control = subprocess.Popen(["bspc", "subscribe"],
@@ -172,6 +189,7 @@ def main(argv):
         state_strings['clock'] = clock_update(None)[1]
         state_strings['volume'] = volume_update(None)[1]
         state_strings['battery'] = battery_update(None)[1]
+        state_strings['mail'] = mail_update(None)[1]
         if time.time() - previous_update < MIN_UPDATE_INTERVAL:
             timeout = MIN_UPDATE_INTERVAL - (time.time()-previous_update)
         else:

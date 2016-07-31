@@ -26,6 +26,9 @@ DIVIDER = '|'
 def color_string(string, fg=PANEL_FOREGROUND, bg=PANEL_BACKGROUND):
     return "%%{F%s}%%{B%s} %s %%{B-}%%{F-}" % (fg, bg, string)
 
+def button(text, executable):
+    return '%{A:' + os.path.expanduser(executable) + ':}' + text + '%{A}'
+
 divider = color_string(DIVIDER, fg='#FF444444')
 
 def status_update(data):
@@ -114,13 +117,15 @@ def mail_update(_):
         if message_count:
             colors['bg'] = color
             colors['fg'] = '#FFFFFF'
-        counts.append(color_string(str(message_count), **colors))
-    return 'mail', color_string(''.join(counts))
+        mutt_config_path = os.path.expanduser('~/.mutt/{}'.format(account))
+        text = button(str(message_count), 'urxvt -e mutt -F {}'.format(mutt_config_path))
+        counts.append(color_string(text, **colors))
+    return 'mail', ''.join(counts)
 
 def make_string(status, clock, volume, battery, wifi, mail):
-    print("%%{1}%s%%{c}%%{r}%s%s%s%s%s%s%s%s%s" %
-          (status, mail, divider, wifi, divider, volume, divider, battery, divider, clock))
-
+    bar = "%%{1}%s%%{c}%%{r}%s%s%s%s%s%s%s%s%s" % \
+          (status, mail, divider, wifi, divider, volume, divider, battery, divider, clock)
+    print(bar)
 
 def open_socket(address):
     try:

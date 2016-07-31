@@ -15,9 +15,15 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
 bspc config bottom_padding $PANEL_HEIGHT
 
-$XDG_CONFIG_HOME/panel/panel_bar.py | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -b &
+$XDG_CONFIG_HOME/panel/panel_bar.py | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -b | while read -r line; do sh -c "$line"; done &
 
-sleep 1
-xdo lower $(xdo id -a bar)
+wid=$(xdo id -a bar)
+tries_left=20
+while [ -z "$wid" -a "$tries_left" -gt 0 ] ; do
+	sleep 0.05
+	wid=$(xdo id -a "$PANEL_WM_NAME")
+	tries_left=$((tries_left - 1))
+done
+[ -n "$wid" ] && xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"
 
 wait

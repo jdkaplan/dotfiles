@@ -261,3 +261,5 @@ they line up with the line containing the corresponding opening bracket."
 
 (require 'jsx-mode)
 (require 'js2-mode)
+
+(add-to-list 'auto-mode-alist '("/tmp/mutt.*" . mail-mode))

@@ -1,0 +1,9 @@
+- link:
+    ~/.config/bspwm: bspwm/
+    ~/.config/sxhkd: sxhkd/
+    ~/.config/panel: panel/
+    ~/.mbsyncrc: isync/.mbsyncrc
+    ~/.mutt: mutt/
+    ~/.Xresources: X/.Xresources
+    ~/.Xdefaults: X/.Xdefaults
+    ~/.urlview: urlview/.urlview

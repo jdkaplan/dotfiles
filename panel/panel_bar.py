@@ -117,11 +117,11 @@ def mail_update(_):
         'mit': '#000099',
     }
     for account, color in sorted(account_colors.items()):
+        mail_path = os.path.expanduser('~/.mail/{}/Inbox/new'.format(account))
         try:
-            mail_path = os.path.expanduser('~/.mail/{}/Inbox/new'.format(account))
+            message_count = len(os.listdir(mail_path))
         except FileNotFoundError:
             continue
-        message_count = len(os.listdir(mail_path))
         colors = {}
         if message_count:
             colors['bg'] = color

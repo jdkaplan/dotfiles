@@ -92,6 +92,12 @@ def wifi_update(_):
 
 
 def battery_update(_):
+    ps_info = subprocess.check_output(['ls', '/sys/class/power_supply'])
+    ps_list = ps_info.decode('utf-8').splitlines()
+    batteries = [ps for ps in ps_list if ps.startswith('BAT')]
+    if not batteries:
+        return 'battery', None
+
     info = subprocess.check_output(['acpi', '--battery'])
     info = info[:-1].decode('utf-8')
     _, status = info.split(': ')
@@ -126,8 +132,10 @@ def mail_update(_):
     return 'mail', ''.join(counts)
 
 def make_string(status, clock, volume, battery, wifi, mail):
-    bar = "%%{1}%s%%{c}%%{r}%s%s%s%s%s%s%s%s%s" % \
-          (status, mail, divider, wifi, divider, volume, divider, battery, divider, clock)
+    left = '%{l}' + divider.join([status])
+    center = '%{c}' + divider.join([])
+    right = '%{r}' + divider.join(filter(None, [mail, wifi, volume, battery, clock]))
+    bar = left + center + right
     print(bar)
 
 def open_socket(address):

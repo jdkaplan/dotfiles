@@ -87,7 +87,7 @@ def wifi_update(_):
     if active:
         interface, network = active[0].split('-', 1)
     else:
-        interface, network = 'wlp2s0', '-'
+        interface, network = 'none', '-'
     return 'wifi', color_string('{}: {}'.format(interface, network))
 
 
@@ -111,7 +111,10 @@ def mail_update(_):
         'mit': '#000099',
     }
     for account, color in sorted(account_colors.items()):
-        mail_path = os.path.expanduser('~/.mail/{}/Inbox/new'.format(account))
+        try:
+            mail_path = os.path.expanduser('~/.mail/{}/Inbox/new'.format(account))
+        except FileNotFoundError:
+            continue
         message_count = len(os.listdir(mail_path))
         colors = {}
         if message_count:

@@ -25,3 +25,9 @@ color index default default ~D
 set mailcap_path = ~/.mutt/mailcap
 auto_view text/html
 alternative_order text/plain text/html
+
+set fast_reply = yes
+set include = yes
+
+set sort = threads
+set sort_aux = last-date-received

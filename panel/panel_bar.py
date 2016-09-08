@@ -134,7 +134,7 @@ def mail_update(_):
 def make_string(status, clock, volume, battery, wifi, mail):
     left = '%{l}' + divider.join([status])
     center = '%{c}' + divider.join([])
-    right = '%{r}' + divider.join(filter(None, [mail, wifi, volume, battery, clock]))
+    right = '%{r}' + divider.join(filter(None, [wifi, mail, volume, battery, clock]))
     bar = left + center + right
     print(bar)
 

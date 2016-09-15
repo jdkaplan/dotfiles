@@ -1,0 +1,11 @@
+[ui]
+username = Jeremy Kaplan <jeremydkaplan@gmail.com>
+[extensions]
+color =
+hgext.bookmarks =
+shelve =
+record =
+[trusted]
+users = hartz
+[bookmarks]
+track.current = True

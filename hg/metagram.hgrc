@@ -1,0 +1,11 @@
+[ui]
+username = Jeremy Kaplan <jdkaplan@metagram.net>
+[extensions]
+color =
+hgext.bookmarks =
+shelve =
+record =
+[trusted]
+users = hartz
+[bookmarks]
+track.current = True

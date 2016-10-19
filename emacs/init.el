@@ -14,7 +14,6 @@
     go-mode
     goto-chg
     haskell-mode
-    jsx-mode
     js2-mode
     markdown-mode
     php-mode
@@ -259,7 +258,6 @@ they line up with the line containing the corresponding opening bracket."
 (load-theme 'jdkaplan t)
 ;; (load-theme 'jdkaplan-light t)
 
-(require 'jsx-mode)
 (require 'js2-mode)
 
 (add-to-list 'auto-mode-alist '("/tmp/mutt.*" . mail-mode))

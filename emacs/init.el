@@ -83,6 +83,9 @@
  '(initial-scratch-message "")
  '(menu-bar-mode nil)
  '(mouse-wheel-mode nil)
+ '(package-selected-packages
+   (quote
+    (yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode go-mode evil-surround evil-leader evil autopair)))
  '(require-final-newline t)
  '(scheme-program-name "racket")
  '(show-paren-delay 0)
@@ -238,6 +241,9 @@ they line up with the line containing the corresponding opening bracket."
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+
+(setq web-mode-content-types-alist
+      '(("jsx" . "\\.jsx?\\'")))
 
 (add-hook 'web-mode-hook
           (lambda ()

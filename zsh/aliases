@@ -1,4 +1,4 @@
-alias startx='ssh-agent startx'
+alias startx='ssh-agent startx; vlock'
 
 alias ls='ls --color=auto'
 alias l='ls'

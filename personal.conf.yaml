@@ -2,6 +2,7 @@
     ~/.config/bspwm: bspwm/
     ~/.config/sxhkd: sxhkd/
     ~/.config/panel: panel/
+    ~/.config/qutebrowser: qutebrowser/
     ~/.mbsyncrc: isync/.mbsyncrc
     ~/.mutt: mutt/
     ~/.Xresources: X/.Xresources

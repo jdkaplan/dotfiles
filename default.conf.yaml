@@ -1,3 +1,6 @@
+- shell:
+    - mkdir -p ~/.config
+
 - clean: ['~', '~/.config']
 
 - link:

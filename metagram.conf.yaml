@@ -1,3 +1,6 @@
+- shell:
+    - mkdir -p ~/.config/git
+
 - link:
     ~/.config/git/config: git/config-metagram
     ~/.hgrc: hg/metagram.hgrc

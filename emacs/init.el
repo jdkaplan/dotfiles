@@ -11,7 +11,6 @@
     evil
     evil-leader
     evil-surround
-    go-mode
     goto-chg
     haskell-mode
     js2-mode
@@ -85,7 +84,7 @@
  '(mouse-wheel-mode nil)
  '(package-selected-packages
    (quote
-    (yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode go-mode evil-surround evil-leader evil autopair)))
+    (yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
  '(require-final-newline t)
  '(scheme-program-name "racket")
  '(show-paren-delay 0)
@@ -257,8 +256,6 @@ they line up with the line containing the corresponding opening bracket."
             (setq web-mode-enable-css-colorization t)
 
             (define-key web-mode-map (kbd "C-c /") 'web-mode-element-close)))
-
-(require 'go-mode-autoloads)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'jdkaplan t)

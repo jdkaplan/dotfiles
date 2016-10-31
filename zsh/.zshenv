@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 export EDITOR='emacs'
 export VISUAL=$EDITOR

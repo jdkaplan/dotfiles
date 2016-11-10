@@ -3,7 +3,6 @@
     ~/.config/sxhkd: sxhkd/
     ~/.config/panel: panel/
     ~/.config/qutebrowser: qutebrowser/
-    ~/.config/tako: tako/
     ~/.mbsyncrc: isync/.mbsyncrc
     ~/.mutt: mutt/
     ~/.pentadactylrc: pentadactyl/.pentadactylrc

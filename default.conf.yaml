@@ -6,12 +6,12 @@
 - link:
     ~/.emacs.d: emacs/
     ~/.config/nvim: neovim/
+    ~/.config/tako: tako/
     ~/.config/zsh: zsh/
     ~/.config/user-dirs.dirs: etc/user-dirs.dirs
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vim: vim/
     ~/.vimrc: vim/.vimrc
-    ~/.xonshrc: xonsh/.xonshrc
     ~/.zshrc: zsh/.zshrc
     ~/.zshenv: zsh/.zshenv
     ~/.zprofile: zsh/.zprofile

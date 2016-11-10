@@ -140,6 +140,7 @@
 
 ;; python3
 (add-to-list 'auto-mode-alist '("\\.py3\\'" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.tako\\'" . python-mode))
 
 ;; Missing things from scheme IDE
 (defun scheme-send-buffer ()

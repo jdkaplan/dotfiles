@@ -1,7 +1,7 @@
 source ~/.mutt/common
 
 set my_username = "jdkaplan"
-set my_password = `pass show email/jdkaplan@mit.edu`
+set my_password = "`pass show email/jdkaplan@mit.edu`"
 
 set smtp_pass = $my_password
 

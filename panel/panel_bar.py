@@ -127,7 +127,7 @@ def mail_update(_):
             colors['bg'] = color
             colors['fg'] = '#FFFFFF'
         mutt_config_path = os.path.expanduser('~/.mutt/{}'.format(account))
-        text = button(str(message_count), 'urxvt -e mutt -F {}'.format(mutt_config_path))
+        text = button(str(message_count), 'urxvt -e mutt -F {} &'.format(mutt_config_path))
         counts.append(color_string(text, **colors))
     return 'mail', ''.join(counts)
 

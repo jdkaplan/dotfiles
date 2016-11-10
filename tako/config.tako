@@ -1,0 +1,66 @@
+import re
+
+$TAKO_SETTINGS.auto_pushd = True
+
+$TAKO_SETTINGS.aliases.update({
+        'startx': 'ssh-agent startx ; vlock',
+        'la': 'ls -a',
+        'll': 'ls -l',
+        'units': 'units --verbose',
+        'trr': 'transmission-remote',
+        'vol': 'pulseaudio-ctl set',
+})
+
+if '256color' in $TERM:
+    colors = {
+        'blue': 81,
+        'orange': 166,
+        'purple': 135,
+        'red': 196,
+        'green': 118,
+        'gray': 241,
+    }
+
+    def colorize(color, text):
+        prefix = '\x1b[38;5;{}m'.format(colors[color])
+        suffix = '\x1b[0m'
+        return prefix + text + suffix
+else:
+    colors = {
+        'blue': 'BLUE',
+        'orange': 'YELLOW',
+        'purple': 'PURPLE',
+        'red': 'RED',
+        'green': 'GREEN',
+        'gray': 'WHITE',
+    }
+    def colorize(color, text):
+        prefix = '{%s}' % colors[color]
+        suffix = '{NO_COLOR}'
+        return prefix + text + suffix
+
+def git_branch():
+    ref=$(git symbolic-ref HEAD err> /dev/null)
+    if not ref: return None
+    prefix = colorize('gray', ':')
+    branch = colorize('orange', re.sub('^refs/heads/', '', ref.strip()))
+    return prefix + branch
+
+$TAKO_SETTINGS.prompt_fields['git_branch'] = git_branch
+
+username = colorize('purple', '{user}')
+host = colorize('blue', '{hostname}')
+directory = colorize('green', '{cwd}')
+lbrkt = colorize('gray', '[')
+rbrkt = colorize('gray', ']')
+colon = colorize('gray', ':')
+
+$TAKO_SETTINGS.prompt = lbrkt + colon.join([
+        username,
+        host,
+        directory,
+]) + '{git_branch}' + rbrkt + '\n{prompt_end} '
+
+'{color_155}'
+
+$TAKO_SETTINGS.show_traceback = True

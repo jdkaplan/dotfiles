@@ -18,3 +18,5 @@ URxvt*iso14755: false
 Xautolock.corners: 000-
 Xautolock.time: 10
 Xautolock.locker: i3lock
+
+Xft.dpi: 120

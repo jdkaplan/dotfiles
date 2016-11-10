@@ -144,3 +144,17 @@ super + button{1-3}
 # end move/resize
 super + @button{1-3}
 	bspc pointer -u
+
+
+#
+# backlight brightness
+#
+
+XF86MonBrightness{Up,Down}
+	xbacklight -{inc,dec} 10
+
+# XF86Display
+# XF86Tools
+# XF86Search
+# XF86LaunchA
+# XF86Explorer

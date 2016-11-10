@@ -5,7 +5,6 @@
     ~/.config/qutebrowser: qutebrowser/
     ~/.mbsyncrc: isync/.mbsyncrc
     ~/.mutt: mutt/
-    ~/.pentadactylrc: pentadactyl/.pentadactylrc
     ~/.Xresources: X/.Xresources
     ~/.Xdefaults: X/.Xdefaults
     ~/.urlview: urlview/.urlview

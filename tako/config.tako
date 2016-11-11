@@ -1,4 +1,8 @@
 import re
+# from tako.tools import COLORS_256
+
+COLORS_256 = {'COLOR_{}'.format(code): '\x1b[38;5;{}m'.format(code) for code in range(256)}
+COLORS_256['NO_COLOR'] = '\x1b[0m'
 
 $TAKO_SETTINGS.auto_pushd = True
 
@@ -22,8 +26,8 @@ if '256color' in $TERM:
     }
 
     def colorize(color, text):
-        prefix = '\x1b[38;5;{}m'.format(colors[color])
-        suffix = '\x1b[0m'
+        prefix = '{COLOR_' + str(colors[color]) + '}'
+        suffix = '{NO_COLOR}'
         return prefix + text + suffix
 else:
     colors = {
@@ -42,8 +46,8 @@ else:
 def git_branch():
     ref=$(git symbolic-ref HEAD err> /dev/null)
     if not ref: return None
-    prefix = colorize('gray', ':')
-    branch = colorize('orange', re.sub('^refs/heads/', '', ref.strip()))
+    prefix = COLORS_256['COLOR_' + str(colors['gray'])] + ':'
+    branch = COLORS_256['COLOR_' + str(colors['orange'])] + re.sub('^refs/heads/', '', ref.strip())
     return prefix + branch
 
 $TAKO_SETTINGS.prompt_fields['git_branch'] = git_branch

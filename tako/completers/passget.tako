@@ -1,0 +1,34 @@
+from os.path import isdir, join
+
+ROOT = __tako_env__.get('PASSWORD_STORE_DIR', $HOME + '/.password-store')
+SUFFIX = '.gpg'
+
+def make_display(directory):
+    def display(completion):
+        if isdir(join(ROOT, directory, completion)):
+            return completion + '/'
+        if completion.endswith(SUFFIX):
+            return join(directory, completion[:-len(SUFFIX)])
+        return completion
+    return display
+
+def passget_completer(prefix, line, begidx, endidx, ctx):
+    '''
+    Completes with
+    '''
+    if not line.startswith('passget'): return {}
+
+    directory = ''
+
+    if '/' in prefix:
+        pre_dir, pre = prefix.rsplit('/', 1)
+        if isdir(join(ROOT, directory, pre_dir)):
+            directory = join(directory, pre_dir)
+            prefix = pre
+
+    completions = $(ls @(join(ROOT, directory)))
+
+    display = make_display(directory)
+    return {display(i) for i in completions if i.startswith(prefix)}
+
+completer add passget passget_completer

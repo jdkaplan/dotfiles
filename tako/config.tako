@@ -1,14 +1,43 @@
 import re
+from os import listdir
+from os.path import isfile, join
+
+def source_many(directory, predicate):
+    for filename in listdir(directory):
+        if not predicate(filename): continue
+        source @(join(directory, filename))
+
+is_tako = lambda filename: re.match('^.*\.tako', filename)
+source_many('/etc/profile.d', is_tako)
+source_many($HOME + '/.config/tako/completers', is_tako)
 
 $TAKO_SETTINGS.auto_pushd = True
 
+$WORKON_HOME = $HOME + '/.virtualenvs'
+$XDG_CONFIG_HOME = $HOME + '/.config'
+$SXHKD_SHELL = '/bin/sh'
+$EDITOR = 'emacs'
+$VISUAL = $EDITOR
+$PATH.insert(0, $HOME + '/bin')
+$PATH.insert(0, $HOME + '/.local/bin')
+
+$LS_COLORS = $(dircolors @($HOME + '/.config/zsh/dircolors.256dark'))[0][len("'LS_COLORS="):-len("';")]
+
+def _workon(args, stdin=None):
+    if len(args) < 1:
+        return 'Need name of virtualenv\n'
+    source @('/'.join([$WORKON_HOME, args[0], 'bin/activate.tako']))
+    source @('/'.join([$WORKON_HOME, args[0], 'bin/postactivate.tako']))
+
 $TAKO_SETTINGS.aliases.update({
         'startx': 'ssh-agent startx ; vlock',
-        'la': 'ls -a',
+        'ls': 'ls --color=auto',
+        'la': 'ls -A',
         'll': 'ls -l',
         'units': 'units --verbose',
         'trr': 'transmission-remote',
         'vol': 'pulseaudio-ctl set',
+        'workon': _workon,
 })
 
 if '256color' in $TERM:
@@ -48,19 +77,21 @@ def git_branch():
 
 $TAKO_SETTINGS.prompt_fields['git_branch'] = git_branch
 
-username = colorize('purple', '{user}')
-host = colorize('blue', '{hostname}')
-directory = colorize('green', '{cwd}')
-lbrkt = colorize('gray', '[')
-rbrkt = colorize('gray', ']')
-colon = colorize('gray', ':')
+def make_prompt():
+    username = colorize('purple', '{user}')
+    host = colorize('blue', '{hostname}')
+    directory = colorize('green', '{cwd}')
+    lbrkt = colorize('gray', '[')
+    rbrkt = colorize('gray', ']')
+    colon = colorize('gray', ':')
 
-$TAKO_SETTINGS.prompt = lbrkt + colon.join([
-        username,
-        host,
-        directory,
-]) + '{git_branch}' + rbrkt + '\n{prompt_end} '
+    return lbrkt + colon.join([
+            username,
+            host,
+            directory,
+    ]) + '{git_branch}' + rbrkt + '\n{prompt_end} '
 
-'{color_155}'
+$TAKO_SETTINGS.prompt = make_prompt()
 
 $TAKO_SETTINGS.show_traceback = True
+$TAKO_SETTINGS.traceback_logfile = $HOME + '/tmp/tako.log'

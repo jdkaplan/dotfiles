@@ -15,6 +15,7 @@
     haskell-mode
     js2-mode
     markdown-mode
+    nlinum
     php-mode
     scala-mode
     typescript-mode
@@ -84,7 +85,7 @@
  '(mouse-wheel-mode nil)
  '(package-selected-packages
    (quote
-    (yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
+    (nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
  '(require-final-newline t)
  '(scheme-program-name "racket")
  '(show-paren-delay 0)
@@ -113,7 +114,7 @@
 ;; longlines mode everywhere
 (global-visual-line-mode t)
 
-;; show line/column numbers
+;; show line/column numbers in statusbar
 (setq line-number-mode t)
 (setq column-number-mode t)
 
@@ -168,23 +169,17 @@
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;; linum-mode
-(add-hook 'prog-mode-hook (lambda () (linum-mode 1)))
-(unless window-system
-  (add-hook 'linum-before-numbering-hook
-            (lambda ()
-              (setq-local linum-format-fmt
-                          (let ((w (length (number-to-string
-                                            (count-lines (point-min) (point-max))))))
-                            (concat "%" (number-to-string w) "d"))))))
+;; line numbers
+(defun my-nlinum-mode-hook ()
+  (when nlinum-mode
+    (setq-local nlinum-format
+                (concat "%" (number-to-string
+                             ;; Guesstimate number of buffer lines.
+                             (ceiling (log (max 1 (/ (buffer-size) 80)) 10)))
+                        "d "))))
+(add-hook 'nlinum-mode-hook #'my-nlinum-mode-hook)
 
-(defun linum-format-func (line)
-  (concat
-   (propertize (format linum-format-fmt line) 'face 'linum)
-   (propertize " " 'face 'linum)))
-
-(unless window-system
-  (setq linum-format 'linum-format-func))
+(add-hook 'prog-mode-hook (lambda () (nlinum-mode 1)))
 
 ;; delete trailing whitespace on save
 (add-hook 'prog-mode-hook (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))

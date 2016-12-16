@@ -10,6 +10,7 @@ set folder = "~/.mail/mit/"
 set spoolfile = "+Inbox"
 set record = +Sent
 set postponed = +Drafts
+set trash = +Trash
 
 set copy = yes
 

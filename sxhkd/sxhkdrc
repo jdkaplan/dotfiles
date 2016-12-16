@@ -19,8 +19,14 @@ super + shift + semicolon
     i3lock -e -i ~/images/lockscreen.png
 
 # volume keys
-XF86Audio{Mute,LowerVolume,RaiseVolume}
-    pulseaudio-ctl {mute,down,up}
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86Audio{LowerVolume,RaiseVolume}
+    pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
+XF86AudioMicMute
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 
 #

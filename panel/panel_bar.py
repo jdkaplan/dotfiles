@@ -68,9 +68,13 @@ def clock_update(_):
 
 
 def volume_update(_):
-    info = subprocess.check_output(['pulseaudio-ctl', 'full-status'])
-    info = info[:-1].decode('utf-8')
-    volume, mute, _ = info.split(' ')
+    info = subprocess.check_output(['pactl', 'list', 'sinks']).decode('utf-8')
+    info = (line.strip() for line in info[:-1].split('\n'))
+    for line in info:
+        if line.startswith('Volume:'):
+            volume = line.split('/')[1].strip()[:-1]
+        elif line.startswith('Mute:'):
+            mute = line.split(' ')[1].strip()
     volume = int(volume)
     muted = mute == 'yes'
     mute_icon = "-" if muted else "%"

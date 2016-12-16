@@ -39,10 +39,6 @@ super + shift + q
 super + m
 	bspc desktop -l next
 
-# if the current node is automatic, send it to the last manual, otherwise pull the last leaf
-super + y
-	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
-
 # swap the current node and the biggest node
 super + g
 	bspc node -s biggest
@@ -153,8 +149,8 @@ super + @button{1-3}
 XF86MonBrightness{Up,Down}
 	xbacklight -{inc,dec} 10
 
-# XF86Display
-# XF86Tools
-# XF86Search
-# XF86LaunchA
-# XF86Explorer
+# XF86Display  # F7
+# XF86Tools    # F9
+# XF86Search   # F10
+# XF86LaunchA  # F11
+# XF86Explorer # F12

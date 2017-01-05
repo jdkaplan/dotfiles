@@ -26,8 +26,18 @@ $LS_COLORS = $(dircolors @($HOME + '/.config/zsh/dircolors.256dark'))[0][len("'L
 def _workon(args, stdin=None):
     if len(args) < 1:
         return 'Need name of virtualenv\n'
-    source @('/'.join([$WORKON_HOME, args[0], 'bin/activate.tako']))
-    source @('/'.join([$WORKON_HOME, args[0], 'bin/postactivate.tako']))
+
+    source_order = [
+        'preactivate',
+        'activate',
+        'postactivate',
+    ]
+
+    for f in filter(isfile, [
+            join($WORKON_HOME, args[0], 'bin', '{}.tako'.format(name))
+            for name in source_order
+    ]):
+        source @(f)
 
 $TAKO_SETTINGS.aliases.update({
         'startx': 'ssh-agent startx ; vlock',

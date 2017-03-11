@@ -25,3 +25,7 @@ pulseaudio --check || pulseaudio
 nitrogen --restore &
 redshift &
 ps -u jdkaplan | grep -oq panel && pkill panel; $XDG_CONFIG_HOME/panel/panel &
+
+qutebrowser &
+telegram-desktop &
+slack &

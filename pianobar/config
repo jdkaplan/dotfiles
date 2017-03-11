@@ -1,0 +1,2 @@
+user = 'jeremydkaplan@gmail.com'
+password_command = pass show pandora.com | head -n 1

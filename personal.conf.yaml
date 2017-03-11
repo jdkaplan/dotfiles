@@ -1,7 +1,8 @@
 - link:
     ~/.config/bspwm: bspwm/
-    ~/.config/sxhkd: sxhkd/
     ~/.config/panel: panel/
+    ~/.config/pianobar: pianobar/
+    ~/.config/sxhkd: sxhkd/
     ~/.config/qutebrowser: qutebrowser/
     ~/.mbsyncrc: isync/.mbsyncrc
     ~/.mutt: mutt/

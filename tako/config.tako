@@ -21,7 +21,7 @@ $VISUAL = $EDITOR
 $PATH.insert(0, $HOME + '/bin')
 $PATH.insert(0, $HOME + '/.local/bin')
 
-$LS_COLORS = $(dircolors @($HOME + '/.config/zsh/dircolors.256dark'))[0][len("'LS_COLORS="):-len("';")]
+$LS_COLORS = $(dircolors @($HOME + '/.config/zsh/dircolors.256dark'))[len("LS_COLORS='"):-len("';\nexport LS_COLORS")]
 
 def _workon(args, stdin=None):
     if len(args) < 1:
@@ -48,9 +48,10 @@ $TAKO_SETTINGS.aliases.update({
         'trr': 'transmission-remote',
         'vol': 'pulseaudio-ctl set',
         'workon': _workon,
+        'octave': 'octave-cli',
 })
 
-if 'TERM' in __tako_env__:
+if 'TERM' in ${...}:
     if '256color' in $TERM:
         colors = {
             'blue': 81,
@@ -83,7 +84,7 @@ if 'TERM' in __tako_env__:
         ref=$(git symbolic-ref HEAD err> /dev/null)
         if not ref: return None
         prefix = colorize('gray', ':')
-        branch = colorize('orange', re.sub('^refs/heads/', '', ref[0].strip()))
+        branch = colorize('orange', re.sub('^refs/heads/', '', ref.strip()))
         return prefix + branch
 
     $TAKO_SETTINGS.prompt_fields['git_branch'] = git_branch
@@ -106,3 +107,4 @@ if 'TERM' in __tako_env__:
 
 $TAKO_SETTINGS.show_traceback = True
 $TAKO_SETTINGS.traceback_logfile = $HOME + '/tmp/tako.log'
+$TAKO_SETTINGS.case_sensitive_completions = False

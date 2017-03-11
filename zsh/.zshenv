@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
 
 export EDITOR='emacs'
 export VISUAL=$EDITOR

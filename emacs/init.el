@@ -76,6 +76,7 @@
  '(custom-safe-themes
    (quote
     ("ce08249e5bb367822a811e84a7a9cc44c4228605ab7cbbb6896039529720809a" "2b280ad6cde9097a8677663009decae239a35d70a180d2321baf9e467696f6c8" default)))
+ '(fill-column 80)
  '(global-subword-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-buffer-menu t)
@@ -261,3 +262,7 @@ they line up with the line containing the corresponding opening bracket."
 (require 'js2-mode)
 
 (add-to-list 'auto-mode-alist '("/tmp/mutt.*" . mail-mode))
+
+
+(add-hook 'markdown-mode-hook 'turn-on-auto-fill)
+(add-hook 'tex-mode-hook 'turn-on-auto-fill)

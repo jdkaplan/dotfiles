@@ -7,7 +7,7 @@ def source_many(directory, predicate):
         if not predicate(filename): continue
         source @(join(directory, filename))
 
-is_tako = lambda filename: re.match('^.*\.tako', filename)
+is_tako = (lambda re: lambda filename: re.match('^.*\.tako$', filename))(re)
 source_many('/etc/profile.d', is_tako)
 source_many($HOME + '/.config/tako/completers', is_tako)
 
@@ -39,6 +39,9 @@ def _workon(args, stdin=None):
     ]):
         source @(f)
 
+def _sympy(args, stdin=None):
+    source @($HOME + '/.config/tako/sympy.tako')
+
 $TAKO_SETTINGS.aliases.update({
         'startx': 'ssh-agent startx ; vlock',
         'ls': 'ls --color=auto',
@@ -49,6 +52,8 @@ $TAKO_SETTINGS.aliases.update({
         'vol': 'pulseaudio-ctl set',
         'workon': _workon,
         'octave': 'octave-cli',
+        'bc': 'bc -l',
+        'sympy': _sympy,
 })
 
 if 'TERM' in ${...}:
@@ -81,6 +86,7 @@ if 'TERM' in ${...}:
             return prefix + text + suffix
 
     def git_branch():
+        import re
         ref=$(git symbolic-ref HEAD err> /dev/null)
         if not ref: return None
         prefix = colorize('gray', ':')
@@ -108,3 +114,5 @@ if 'TERM' in ${...}:
 $TAKO_SETTINGS.show_traceback = True
 $TAKO_SETTINGS.traceback_logfile = $HOME + '/tmp/tako.log'
 $TAKO_SETTINGS.case_sensitive_completions = False
+
+completer bash enable out> /dev/null

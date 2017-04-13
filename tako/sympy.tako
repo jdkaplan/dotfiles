@@ -1,0 +1,5 @@
+from sympy import *
+
+init_printing(use_unicode=True)
+
+$TAKO_SETTINGS.number_mode = 'python'

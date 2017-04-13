@@ -1,6 +1,6 @@
 from os.path import isdir, join
 
-ROOT = __tako_env__.get('PASSWORD_STORE_DIR', $HOME + '/.password-store')
+ROOT = ${...}.get('PASSWORD_STORE_DIR', $HOME + '/.password-store')
 SUFFIX = '.gpg'
 
 def make_display(directory):
@@ -13,9 +13,6 @@ def make_display(directory):
     return display
 
 def passget_completer(prefix, line, begidx, endidx, ctx):
-    '''
-    Completes with
-    '''
     if not line.startswith('passget'): return {}
 
     directory = ''
@@ -26,7 +23,7 @@ def passget_completer(prefix, line, begidx, endidx, ctx):
             directory = join(directory, pre_dir)
             prefix = pre
 
-    completions = $(ls @(join(ROOT, directory)))
+    completions = $(ls @(join(ROOT, directory))).splitlines()
 
     display = make_display(directory)
     return {display(i) for i in completions if i.startswith(prefix)}

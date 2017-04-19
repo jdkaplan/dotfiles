@@ -42,6 +42,15 @@ def _workon(args, stdin=None):
 def _sympy(args, stdin=None):
     source @($HOME + '/.config/tako/sympy.tako')
 
+def _reminder(args, stdin=None):
+    time, text = args
+    command = 'notify-send {} {}'.format(time, repr(text))
+    filename = $(mktemp)
+    with open(filename, 'w') as f: f.write(command)
+    at -M @(time) -f @(filename) all> /dev/null
+    atq
+    rm @(filename)
+
 $TAKO_SETTINGS.aliases.update({
         'startx': 'ssh-agent startx ; vlock',
         'ls': 'ls --color=auto',
@@ -54,6 +63,7 @@ $TAKO_SETTINGS.aliases.update({
         'octave': 'octave-cli',
         'bc': 'bc -l',
         'sympy': _sympy,
+        'reminder': _reminder,
 })
 
 if 'TERM' in ${...}:

@@ -104,7 +104,7 @@ def battery_update(_):
 
     info = subprocess.check_output(['acpi', '--battery'])
     info = info[:-1].decode('utf-8')
-    _, status = info.split(': ')
+    _, status = info.splitlines()[0].split(': ')
     state, charge, *_ = status.split(', ')
     state = state
     charge = int(charge[:-1])

@@ -88,7 +88,7 @@ def wifi_update(_):
     lines = [line.decode('utf-8') for line in info.splitlines()]
     active = [line[2:] for line in lines if line[0] == '*']
 
-    if active:
+    if active and ''.join(active) != 'FAIL':
         interface, network = active[0].split('-', 1)
     else:
         interface, network = 'none', '-'

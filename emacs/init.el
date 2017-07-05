@@ -1,6 +1,5 @@
 (require 'package)
-(push '("melpa" . "http://melpa.milkbox.net/packages/")
-      package-archives)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
 (require 'cl)
@@ -77,13 +76,17 @@
    (quote
     ("ce08249e5bb367822a811e84a7a9cc44c4228605ab7cbbb6896039529720809a" "2b280ad6cde9097a8677663009decae239a35d70a180d2321baf9e467696f6c8" default)))
  '(fill-column 80)
+ '(global-hl-line-mode t)
+ '(global-prettify-symbols-mode t)
  '(global-subword-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-buffer-menu t)
  '(inhibit-startup-screen t)
  '(initial-scratch-message "")
+ '(js2-highlight-level 1)
  '(menu-bar-mode nil)
  '(mouse-wheel-mode nil)
+ '(nlinum-format "%d ")
  '(package-selected-packages
    (quote
     (nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
@@ -94,7 +97,15 @@
  '(tab-width 4)
  '(tool-bar-mode t)
  '(vc-follow-symlinks nil)
- '(visible-cursor nil))
+ '(visible-cursor nil)
+ '(web-mode-code-indent-offset 4)
+ '(web-mode-css-indent-offset 2)
+ '(web-mode-enable-auto-expanding nil)
+ '(web-mode-enable-auto-pairing t)
+ '(web-mode-enable-css-colorization nil)
+ '(web-mode-markup-indent-offset 2)
+ '(web-mode-script-padding 0)
+ '(web-mode-style-padding 0))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -112,18 +123,7 @@
 ;; remove line wrap character
 (set-display-table-slot standard-display-table 'wrap ?\ )
 
-;; longlines mode everywhere
-(global-visual-line-mode t)
-
-;; show line/column numbers in statusbar
-(setq line-number-mode t)
-(setq column-number-mode t)
-
-;; prettify symbols
-(global-prettify-symbols-mode 1)
-
 (put 'narrow-to-region 'disabled nil)
-(global-hl-line-mode 1)
 
 ;; comment current line
 ;; Original idea from
@@ -140,92 +140,18 @@
     (comment-dwim arg)))
 (global-set-key "\M-;" 'comment-dwim-line)
 
-;; python3
-(add-to-list 'auto-mode-alist '("\\.py3\\'" . python-mode))
+;; tako
 (add-to-list 'auto-mode-alist '("\\.tako\\'" . python-mode))
-
-;; Missing things from scheme IDE
-(defun scheme-send-buffer ()
-  (interactive)
-  (let ((oldbuf (current-buffer)))
-    (run-scheme scheme-program-name)
-    (switch-to-buffer oldbuf)
-    (scheme-send-region (point-min) (point-max))))
-
-(defun scheme-send-buffer-and-go ()
-  (interactive)
-  (let ((oldbuf (current-buffer)))
-    (if (= (length (window-list)) 1)
-        (split-window-right))
-    (other-window 1)
-    (run-scheme scheme-program-name)
-    (other-window -1))
-  (scheme-send-region (point-min) (point-max)))
-
-(eval-after-load 'scheme
-  '(define-key scheme-mode-map (kbd "C-c C-s") 'scheme-send-buffer))
 
 (require 'php-mode)
 
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;; line numbers
-(defun my-nlinum-mode-hook ()
-  (when nlinum-mode
-    (setq-local nlinum-format
-                (concat "%" (number-to-string
-                             ;; Guesstimate number of buffer lines.
-                             (ceiling (log (max 1 (/ (buffer-size) 80)) 10)))
-                        "d "))))
-(add-hook 'nlinum-mode-hook #'my-nlinum-mode-hook)
-
-(add-hook 'prog-mode-hook (lambda () (nlinum-mode 1)))
+(add-hook 'prog-mode-hook 'nlinum-mode)
 
 ;; delete trailing whitespace on save
 (add-hook 'prog-mode-hook (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
-
-;; found at https://gist.github.com/NFicano/1356280
-;; modified for 24.3
-
-(defadvice python-indent-calculate-indentation (around fix-list-indentation)
-  "Fix indentation in continuation lines within lists"
-  (unless (save-excursion
-            (beginning-of-line)
-            (when (python-info-continuation-line-p)
-              (let* ((syntax (syntax-ppss))
-                     (open-start (cadr syntax))
-                     (point (point)))
-                (when open-start
-                  ;; Inside bracketed expression.
-                  (goto-char (1+ open-start))
-                  ;; Indent relative to statement start, one
-                  ;; level per bracketing level.
-                  (goto-char (1+ open-start))
-                  (python-nav-beginning-of-statement)
-                  (setq ad-return-value (+ (current-indentation) (* (car syntax) python-indent)))))))
-    ad-do-it))
-
-(defadvice python-indent-calculate-indentation (around outdent-closing-brackets)
- "Handle lines beginning with a closing bracket and indent them so that
-they line up with the line containing the corresponding opening bracket."
-  (save-excursion
-    (beginning-of-line)
-    (let ((syntax (syntax-ppss)))
-      (if (and (not (eq 'string (syntax-ppss-context syntax)))
-               (python-info-continuation-line-p)
-               (cadr syntax)
-               (skip-syntax-forward "-")
-               (looking-at "\\s)"))
-          (progn
-            (forward-char 1)
-            (ignore-errors (backward-sexp))
-            (setq ad-return-value (current-indentation)))
-        ad-do-it))))
-
-
-;; Activate Python ident advice
-(ad-activate 'python-indent-calculate-indentation)
 
 (require 'scala-mode)
 
@@ -239,21 +165,10 @@ they line up with the line containing the corresponding opening bracket."
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-
-(setq web-mode-content-types-alist
-      '(("jsx" . "\\.jsx?\\'")))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 
 (add-hook 'web-mode-hook
           (lambda ()
-            (setq web-mode-markup-indent-offset 2)
-            (setq web-mode-css-indent-offset 2)
-            (setq web-mode-code-indent-offset 4)
-            (setq web-mode-enable-auto-pairing t)
-            (setq web-mode-enable-auto-expanding t)
-
-            (setq web-mode-enable-html-colorization t)
-            (setq web-mode-enable-css-colorization t)
-
             (define-key web-mode-map (kbd "C-c /") 'web-mode-element-close)))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
@@ -261,9 +176,9 @@ they line up with the line containing the corresponding opening bracket."
 ;; (load-theme 'jdkaplan-light t)
 
 (require 'js2-mode)
+;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (add-to-list 'auto-mode-alist '("/tmp/mutt.*" . mail-mode))
-
 
 (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
 (add-hook 'tex-mode-hook 'turn-on-auto-fill)

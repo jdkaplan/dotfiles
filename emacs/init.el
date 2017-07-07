@@ -79,6 +79,7 @@
  '(global-hl-line-mode t)
  '(global-prettify-symbols-mode t)
  '(global-subword-mode t)
+ '(global-visual-line-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-buffer-menu t)
  '(inhibit-startup-screen t)

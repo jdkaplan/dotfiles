@@ -20,6 +20,7 @@ $EDITOR = 'emacs'
 $VISUAL = $EDITOR
 $PATH.insert(0, $HOME + '/bin')
 $PATH.insert(0, $HOME + '/.local/bin')
+$_JAVA_AWT_WM_NONREPARENTING = 1
 
 $LS_COLORS = $(dircolors @($HOME + '/.config/zsh/dircolors.256dark'))[len("LS_COLORS='"):-len("';\nexport LS_COLORS")]
 

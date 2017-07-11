@@ -169,6 +169,9 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 
+(setq web-mode-content-types-alist '())
+(add-to-list 'web-mode-content-types-alist '("jsx" . "\\.jsx?\\'"))
+
 (add-hook 'web-mode-hook
           (lambda ()
             (define-key web-mode-map (kbd "C-c /") 'web-mode-element-close)))

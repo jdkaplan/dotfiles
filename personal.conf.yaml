@@ -1,6 +1,7 @@
 - link:
     ~/.config/i3: i3/
     ~/.config/pianobar: pianobar/
+    ~/.config/polybar: polybar/
     ~/.config/qutebrowser: qutebrowser/
     ~/.mbsyncrc: isync/.mbsyncrc
     ~/.mutt: mutt/

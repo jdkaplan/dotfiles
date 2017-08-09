@@ -10,6 +10,7 @@
     evil
     evil-leader
     evil-surround
+    go-mode
     goto-chg
     haskell-mode
     js2-mode
@@ -101,11 +102,11 @@
  '(vc-follow-symlinks nil)
  '(visible-cursor nil)
  '(web-mode-code-indent-offset 4)
- '(web-mode-css-indent-offset 2)
+ '(web-mode-css-indent-offset 4)
  '(web-mode-enable-auto-expanding nil)
  '(web-mode-enable-auto-pairing t)
  '(web-mode-enable-css-colorization nil)
- '(web-mode-markup-indent-offset 2)
+ '(web-mode-markup-indent-offset 4)
  '(web-mode-script-padding 0)
  '(web-mode-style-padding 0))
 
@@ -187,3 +188,5 @@
 
 (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
 (add-hook 'tex-mode-hook 'turn-on-auto-fill)
+
+(require 'go-mode)

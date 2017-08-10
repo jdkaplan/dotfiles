@@ -72,6 +72,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
  '(custom-safe-themes
    (quote
     ("ce08249e5bb367822a811e84a7a9cc44c4228605ab7cbbb6896039529720809a" "2b280ad6cde9097a8677663009decae239a35d70a180d2321baf9e467696f6c8" default)))

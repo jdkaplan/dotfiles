@@ -10,7 +10,10 @@ new_float none
 hide_edge_borders none
 
 for_window [class="^.*"] border pixel 0
+assign [class="Liferea"] 6
+assign [class="TelegramDesktop"] 7
 assign [class="Slack"] 8
+assign [class="discord"] 9
 
 focus_follows_mouse yes
 mouse_warping output
@@ -68,6 +71,8 @@ bindsym $super+$alt+s layout stacking
 bindsym $super+$alt+t layout tabbed
 bindsym $super+e      layout toggle split
 
+bindsym $super+y sticky toggle
+
 # change focus between tiling / floating windows
 bindsym $super+Shift+space focus mode_toggle
 
@@ -111,13 +116,14 @@ bindsym $super+Shift+0 move container to workspace number 10; workspace number 1
 # screen management
 bindsym $super+comma  focus output left
 bindsym $super+period focus output right
-bindsym $super+Shift+comma  move workspace to output left; focus output left
-bindsym $super+Shift+period move workspace to output right; focus output right
+bindsym $super+Shift+comma  move workspace to output left
+bindsym $super+Shift+period move workspace to output right
 
 # volume
 bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/pulseaudio-ctl down
 bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/pulseaudio-ctl up
 bindsym XF86AudioMute        exec --no-startup-id /usr/bin/pulseaudio-ctl mute
+bindsym XF86AudioMicMute     exec --no-startup-id /usr/bin/pulseaudio-ctl mute-input
 
 # reload the configuration file
 bindsym $super+Escape reload
@@ -168,4 +174,6 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id redshift
 exec --no-startup-id polybar eDP1
 exec --no-startup-id i3-msg 'workspace 1; exec qutebrowser'
+exec --no-startup-id i3-msg 'exec telegram-desktop'
 exec --no-startup-id i3-msg 'exec slack'
+exec --no-startup-id i3-msg 'exec discord'

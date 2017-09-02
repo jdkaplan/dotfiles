@@ -61,7 +61,7 @@ screenchange-reload = true
 type = internal/i3
 
 pin-workspaces = true
-enable-click = false
+enable-click = true
 enable-scroll = false
 
 label-focused = %index%

@@ -1,3 +1,6 @@
+$TAKO_SETTINGS.show_traceback = True
+$TAKO_SETTINGS.traceback_logfile = $HOME + '/tmp/tako.log'
+
 import re
 from os import listdir
 from os.path import isfile, join
@@ -122,8 +125,6 @@ if 'TERM' in ${...}:
 
     $TAKO_SETTINGS.prompt = make_prompt()
 
-$TAKO_SETTINGS.show_traceback = True
-$TAKO_SETTINGS.traceback_logfile = $HOME + '/tmp/tako.log'
 $TAKO_SETTINGS.case_sensitive_completions = False
 
 completer bash enable out> /dev/null

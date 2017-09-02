@@ -173,7 +173,7 @@ exec --no-startup-id 'pulseaudio --check || pulseaudio'
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id redshift
 exec --no-startup-id polybar eDP1
-exec --no-startup-id i3-msg 'workspace 1; exec qutebrowser'
+exec --no-startup-id i3-msg 'workspace 1; exec --no-startup-id qutebrowser'
 exec --no-startup-id i3-msg 'exec telegram-desktop'
-exec --no-startup-id i3-msg 'exec slack'
+exec --no-startup-id i3-msg 'exec --no-startup-id slack'
 exec --no-startup-id i3-msg 'exec discord'

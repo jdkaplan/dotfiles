@@ -18,7 +18,6 @@ $TAKO_SETTINGS.auto_pushd = True
 
 $WORKON_HOME = $HOME + '/.virtualenvs'
 $XDG_CONFIG_HOME = $HOME + '/.config'
-$SXHKD_SHELL = '/bin/sh'
 $EDITOR = 'emacs'
 $VISUAL = $EDITOR
 

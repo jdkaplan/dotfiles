@@ -18,4 +18,4 @@ fi
 
 export LOCAL_SESSION
 
-export SXHKD_SHELL='/bin/sh'
+export SHELL=$(which zsh)

@@ -2,42 +2,6 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
-(require 'cl)
-
-(defvar my-packages
-  '(
-    autopair
-    evil
-    evil-leader
-    evil-surround
-    go-mode
-    goto-chg
-    haskell-mode
-    js2-mode
-    markdown-mode
-    nlinum
-    php-mode
-    scala-mode
-    typescript-mode
-    undo-tree
-    web-mode
-    yaml-mode
-    )
-  "A list of packages to ensure are installed at launch.")
-
-(defun my-packages-installed-p ()
-  (loop for p in my-packages
-        when (not (package-installed-p p)) do (return nil)
-        finally (return t)))
-
-(unless (my-packages-installed-p)
-  ;; check for new packages (package versions)
-  (package-refresh-contents)
-  ;; install the missing packages
-  (dolist (p my-packages)
-    (when (not (package-installed-p p))
-            (package-install p))))
-
 (require 'evil-leader)
 (global-evil-leader-mode)
 
@@ -92,7 +56,7 @@
  '(nlinum-format "%d ")
  '(package-selected-packages
    (quote
-    (nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
+    (go-mode helm-projectile helm nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
  '(require-final-newline t)
  '(scheme-program-name "racket")
  '(show-paren-delay 0)

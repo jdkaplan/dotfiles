@@ -10,7 +10,8 @@
   "<SPC>" 'evil-ex
 
   "e" 'find-file
-  "f" 'find-file
+  "f" 'helm-for-files
+  "p" 'helm-projectile-find-file
   "b" 'switch-to-buffer
   "w" 'save-buffer
   "q" 'kill-this-buffer
@@ -154,3 +155,15 @@
 (add-hook 'tex-mode-hook 'turn-on-auto-fill)
 
 (require 'go-mode)
+
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(setq projectile-enable-caching t)
+
+(require 'helm-config)
+(helm-mode 1)
+(helm-projectile-on)
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (setq prettify-symbols-alist '(("lambda" . ?λ)))))

@@ -13,3 +13,8 @@ elpa
 
 # bookmarks
 bookmarks
+
+# projectile
+projectile-bookmarks.eld
+projectile.cache
+recentf

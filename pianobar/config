@@ -1,2 +1,2 @@
 user = 'jeremydkaplan@gmail.com'
-password_command = gopass show shared/pandora.com | head -n 1
+password_command = gopass show personal/pandora.com | head -n 1

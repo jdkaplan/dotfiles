@@ -1,7 +1,7 @@
 IMAPAccount gmail
     Host imap.gmail.com
     User jeremydkaplan@gmail.com
-    PassCmd "pass email/jeremydkaplan@gmail.com"
+    PassCmd "gopass show personal/email/jeremydkaplan@gmail.com | head -n 1"
     SSLType IMAPS
     CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -24,7 +24,7 @@ Channel gmail
 IMAPAccount mit
     Host imap.exchange.mit.edu
     User jdkaplan
-    PassCmd "pass email/jdkaplan@mit.edu"
+    PassCmd "gopass show personal/email/jdkaplan@mit.edu | head -n 1"
     SSLType IMAPS
     CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -47,7 +47,7 @@ Channel mit
 IMAPAccount metagram
     Host metagram.net
     User jdkaplan@metagram.net
-    PassCmd "pass email/jdkaplan@metagram.net"
+    PassCmd "gopass show personal/email/jdkaplan@metagram.net | head -n 1"
     SSLType IMAPS
     CertificateFile /etc/ssl/certs/ca-certificates.crt
 

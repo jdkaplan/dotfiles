@@ -1,7 +1,7 @@
 source ~/.mutt/common
 
 set my_email = "jdkaplan@metagram.net"
-set my_password = "`pass show email/jdkaplan@metagram.net`"
+set my_password = "`gopass show personal/email/jdkaplan@metagram.net | head -n 1`"
 
 set smtp_pass = $my_password
 

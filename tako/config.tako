@@ -2,13 +2,13 @@ $TAKO_SETTINGS.show_traceback = True
 $TAKO_SETTINGS.traceback_logfile = $HOME + '/tmp/tako.log'
 
 import re
-from os import listdir
-from os.path import isfile, join
+import os
+import os.path
 
 def source_many(directory, predicate):
-    for filename in listdir(directory):
+    for filename in os.listdir(directory):
         if not predicate(filename): continue
-        source @(join(directory, filename))
+        source @(os.path.join(directory, filename))
 
 is_tako = (lambda re: lambda filename: re.match('^.*\.tako$', filename))(re)
 source_many('/etc/profile.d', is_tako)
@@ -40,8 +40,8 @@ def _workon(args, stdin=None):
         'postactivate',
     ]
 
-    for f in filter(isfile, [
-            join($WORKON_HOME, args[0], 'bin', '{}.tako'.format(name))
+    for f in filter(os.path.isfile, [
+            os.path.join($WORKON_HOME, args[0], 'bin', '{}.tako'.format(name))
             for name in source_order
     ]):
         source @(f)

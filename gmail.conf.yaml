@@ -1,6 +1,0 @@
-- shell:
-    - mkdir -p ~/.config/git
-
-- link:
-    ~/.config/git/config: git/config-gmail
-    ~/.hgrc: hg/gmail.hgrc

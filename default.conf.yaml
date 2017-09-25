@@ -4,7 +4,9 @@
 - clean: ['~', '~/.config']
 
 - link:
+    ~/.hgrc: hg/.hgrc
     ~/.emacs.d: emacs/
+    ~/.config/git: git/
     ~/.config/nvim: neovim/
     ~/.config/tako: tako/
     ~/.config/zsh: zsh/

@@ -1,13 +1,19 @@
 [user]
 	name = Jeremy Kaplan
-	email = jdkaplan@mit.edu
+	email = jdkaplan@metagram.net
 [color]
 	ui = true
 [push]
 	default = simple
 [alias]
 	lg = log --oneline --graph --decorate
+	root = rev-parse --show-toplevel
 [credential]
 	helper = cache
 [commit]
 	verbose = true
+[core]
+	excludesfile = /home/jdkaplan/.gitignore
+
+[includeIf "gitdir:~/projects/"]
+	path = config-personal

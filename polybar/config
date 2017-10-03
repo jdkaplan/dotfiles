@@ -22,6 +22,10 @@ monitor = DP2-1
 inherit = mixins/bar
 monitor = DP2-2
 
+[bar/HDMI2]
+inherit = mixins/bar
+monitor = HDMI2
+
 [mixins/bar]
 bottom = true
 fixed-center = false
@@ -118,6 +122,8 @@ label = %date% %time%
 
 [module/volume]
 type = internal/volume
+
+mapped = true
 
 format-volume = <label-volume>
 format-volume-underline = #e83c3a

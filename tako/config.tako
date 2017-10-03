@@ -131,3 +131,6 @@ if 'TERM' in ${...}:
 $TAKO_SETTINGS.case_sensitive_completions = False
 
 completer bash enable out> /dev/null
+
+if not !(which bload).returncode:
+    bload

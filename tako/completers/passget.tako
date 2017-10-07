@@ -2,6 +2,6 @@ from os.path import isdir, join
 
 def passget_completer(prefix, line, begidx, endidx, ctx):
     if not line.startswith('passget'): return set()
-    return {secret for secret in !(gopass ls --flat) if secret.startswith(prefix)}
+    return {secret for secret in ?(gopass ls --flat) if secret.startswith(prefix)}
 
 completer add passget passget_completer

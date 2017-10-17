@@ -47,6 +47,7 @@
  '(global-prettify-symbols-mode t)
  '(global-subword-mode t)
  '(global-visual-line-mode t)
+ '(helm-split-window-in-side-p t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-buffer-menu t)
  '(inhibit-startup-screen t)
@@ -167,3 +168,8 @@
 (add-hook 'python-mode-hook
           (lambda ()
             (setq prettify-symbols-alist '(("lambda" . ?λ)))))
+
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (font-lock-add-keywords nil
+                                    '(("\\(FIXME\\|TODO\\|BUG\\|QQ\\):" 0 font-lock-warning-face t)))))

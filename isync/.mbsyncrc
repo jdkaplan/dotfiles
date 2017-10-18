@@ -12,6 +12,7 @@ MaildirStore gmail-local
     # The trailing "/" is important
     Path ~/.mail/gmail/
     Inbox ~/.mail/gmail/Inbox
+    Subfolders Verbatim
 
 Channel gmail
     Master :gmail-remote:
@@ -34,6 +35,7 @@ IMAPStore mit-remote
 MaildirStore mit-local
     Path ~/.mail/mit/
     Inbox ~/.mail/mit/Inbox
+    Subfolders Verbatim
 
 Channel mit
     Master :mit-remote:
@@ -57,6 +59,7 @@ IMAPStore metagram-remote
 MaildirStore metagram-local
     Path ~/.mail/metagram/
     Inbox ~/.mail/metagram/Inbox
+    Subfolders Verbatim
 
 Channel metagram
     Master :metagram-remote:

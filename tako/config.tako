@@ -16,7 +16,6 @@ source_many($HOME + '/.config/tako/completers', is_tako)
 
 $TAKO_SETTINGS.auto_pushd = True
 
-$WORKON_HOME = $HOME + '/.virtualenvs'
 $XDG_CONFIG_HOME = $HOME + '/.config'
 $EDITOR = 'emacs'
 $VISUAL = $EDITOR
@@ -29,22 +28,6 @@ for path in [
         $PATH.insert(0, path)
 
 $LS_COLORS = $(dircolors @($HOME + '/.config/zsh/dircolors.256dark'))[len("LS_COLORS='"):-len("';\nexport LS_COLORS")]
-
-def _workon(args, stdin=None):
-    if len(args) < 1:
-        return 'Need name of virtualenv\n'
-
-    source_order = [
-        'preactivate',
-        'activate',
-        'postactivate',
-    ]
-
-    for f in filter(os.path.isfile, [
-            os.path.join($WORKON_HOME, args[0], 'bin', '{}.tako'.format(name))
-            for name in source_order
-    ]):
-        source @(f)
 
 def _sympy(args, stdin=None):
     source @($HOME + '/.config/tako/sympy.tako')
@@ -66,7 +49,6 @@ $TAKO_SETTINGS.aliases.update({
         'units': 'units --verbose',
         'trr': 'transmission-remote',
         'vol': 'pulseaudio-ctl set',
-        'workon': _workon,
         'octave': 'octave-cli',
         'bc': 'bc -l',
         'sympy': _sympy,

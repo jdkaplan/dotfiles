@@ -45,7 +45,7 @@
  '(fill-column 80)
  '(global-hl-line-mode t)
  '(global-prettify-symbols-mode t)
- '(global-subword-mode t)
+ '(global-subword-mode nil)
  '(global-visual-line-mode t)
  '(helm-split-window-in-side-p t)
  '(indent-tabs-mode nil)
@@ -156,6 +156,10 @@
 (add-hook 'tex-mode-hook 'turn-on-auto-fill)
 
 (require 'go-mode)
+(add-hook 'go-mode-hook
+          (lambda ()
+            (define-key go-mode-map (kbd "C-c C-f j") 'godef-jump)
+            (define-key go-mode-map (kbd "C-c C-f k") 'godef-jump-other-window)))
 
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)

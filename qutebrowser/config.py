@@ -467,7 +467,7 @@ c.completion.shrink = True
 ## menu. For QtWebEngine, see `--enable-webengine-inspector` in
 ## `qutebrowser --help` instead.
 ## Type: Bool
-c.content.developer_extras = True
+# c.content.developer_extras = True
 
 ## Try to pre-fetch DNS entries to speed up browsing.
 ## Type: Bool
@@ -839,7 +839,7 @@ c.editor.command = ['urxvt', '-e', 'emacs', '{}']
 ## Valid values:
 ##   - javascript: Better but slower
 ##   - python: Slightly worse but faster
-c.hints.find_implementation = 'javascript'
+# c.hints.find_implementation = 'javascript'
 
 ## Hide unmatched hints in rapid mode.
 ## Type: Bool
@@ -1399,10 +1399,10 @@ c.zoom.default = '125%'
 # config.bind('gd', 'download')
 # config.bind('gf', 'view-source')
 # config.bind('gg', 'scroll-to-perc 0')
-# config.bind('gl', 'tab-move -')
+config.bind('gl', 'tab-move +')
+config.bind('gh', 'tab-move -')
 # config.bind('gm', 'tab-move')
 # config.bind('go', 'set-cmd-text :open {url:pretty}')
-# config.bind('gr', 'tab-move +')
 # config.bind('gt', 'set-cmd-text -s :buffer')
 # config.bind('gu', 'navigate up')
 # config.bind('h', 'scroll left')

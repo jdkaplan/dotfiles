@@ -58,7 +58,7 @@
  '(nlinum-format "%d ")
  '(package-selected-packages
    (quote
-    (go-mode helm-projectile helm nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
+    (evil-org org go-mode helm-projectile helm nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
  '(require-final-newline t)
  '(scheme-program-name "racket")
  '(show-paren-delay 0)
@@ -177,3 +177,15 @@
           (lambda ()
             (font-lock-add-keywords nil
                                     '(("\\(FIXME\\|TODO\\|BUG\\|QQ\\):" 0 font-lock-warning-face t)))))
+
+(require 'org-install)
+(require 'evil-org)
+(add-hook 'org-mode-hook 'evil-org-mode)
+(evil-org-set-key-theme '(navigation insert textobjects additional))
+(setq org-startup-folded "showeverything")
+(setq org-todo-keyword-faces
+      '(("NEW" . "white")
+        ("QUALIFIED" . "lightblue")
+        ("STARTED" . "orange" )
+        ("BLOCKED" . "red")
+        ("DONE" . "green")))

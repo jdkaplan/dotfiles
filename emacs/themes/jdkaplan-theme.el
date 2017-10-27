@@ -25,6 +25,7 @@
       (paleblue "#66C4FF")
       (bluegray "#8bcef0")
       (purple "#b98fff")
+      (magenta "#ea69d7")
       (tan "#d49804")
       (brown "#a87f00")
       (neutralbrown "#c78f6b")
@@ -62,6 +63,15 @@
    `(web-mode-block-delimiter-face ((t (:foreground ,orange ))))
 
    `(show-paren-match-face ((t (:foreground ,teal :bold t ))))
+
+   `(outline-1 ((t (:foreground ,yellow ))))
+   `(outline-2 ((t (:foreground ,palegreen ))))
+   `(outline-3 ((t (:foreground ,lime ))))
+   `(outline-4 ((t (:foreground ,teal ))))
+   `(outline-5 ((t (:foreground ,paleblue ))))
+   `(outline-6 ((t (:foreground ,purple ))))
+   `(outline-7 ((t (:foreground ,magenta ))))
+   `(outline-8 ((t (:foreground ,orange ))))
    )
   )
 (provide-theme 'jdkaplan)

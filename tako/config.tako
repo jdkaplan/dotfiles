@@ -1,6 +1,7 @@
 $TAKO_SETTINGS.show_traceback = True
 $TAKO_SETTINGS.traceback_logfile = $HOME + '/tmp/tako.log'
 
+import datetime
 import re
 import os
 import os.path
@@ -41,18 +42,28 @@ def _reminder(args, stdin=None):
     atq
     rm @(filename)
 
+def _screenshot(args, stdin=None):
+    if not args:
+        timestamp = datetime.datetime.now().isoformat()
+        fname = '{}/images/screenshots/{}.png'.format($HOME, timestamp)
+        args = [fname]
+
+    /usr/bin/import @(args)
+
 $TAKO_SETTINGS.aliases.update({
-        'startx': 'ssh-agent startx ; vlock',
-        'ls': 'ls --color=auto',
-        'la': 'ls -A',
-        'll': 'ls -l',
-        'units': 'units --verbose',
-        'trr': 'transmission-remote',
-        'vol': 'pulseaudio-ctl set',
-        'octave': 'octave-cli',
-        'bc': 'bc -l',
-        'sympy': _sympy,
-        'reminder': _reminder,
+    'startx': 'ssh-agent startx ; vlock',
+    'ls': 'ls --color=auto',
+    'la': 'ls -A',
+    'll': 'ls -l',
+    'units': 'units --verbose',
+    'trr': 'transmission-remote',
+    'vol': 'pulseaudio-ctl set',
+    'octave': 'octave-cli',
+    'bc': 'bc -l',
+    'sympy': _sympy,
+    'reminder': _reminder,
+    'enscript': 'enscript -M Letter',
+    'screenshot': _screenshot,
 })
 
 if 'TERM' in ${...}:

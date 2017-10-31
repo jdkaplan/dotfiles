@@ -47,6 +47,7 @@ def _screenshot(args, stdin=None):
         timestamp = datetime.datetime.now().isoformat()
         fname = '{}/images/screenshots/{}.png'.format($HOME, timestamp)
         args = [fname]
+        print('Saving to {}'.format(fname))
 
     /usr/bin/import @(args)
 

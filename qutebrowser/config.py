@@ -828,7 +828,7 @@ c.editor.command = ['urxvt', '-e', 'emacs', '{}']
 
 ## Chars used for hint strings.
 ## Type: UniqueCharString
-# c.hints.chars = 'aoeuidhtns'
+c.hints.chars = 'aoeuidhtns'
 
 ## The dictionary file to be used by the word hints.
 ## Type: File

@@ -189,3 +189,5 @@
         ("STARTED" . "orange" )
         ("BLOCKED" . "red")
         ("DONE" . "green")))
+
+(evil-define-key '(normal visual) evil-org-mode-map (kbd "TAB") 'org-cycle)

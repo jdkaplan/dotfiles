@@ -58,7 +58,7 @@
  '(nlinum-format "%d ")
  '(package-selected-packages
    (quote
-    (evil-org org go-mode helm-projectile helm nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
+    (lua-mode evil-org org go-mode helm-projectile helm nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
  '(require-final-newline t)
  '(scheme-program-name "racket")
  '(show-paren-delay 0)

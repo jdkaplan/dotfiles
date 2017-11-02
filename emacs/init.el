@@ -183,6 +183,10 @@
 (add-hook 'org-mode-hook 'evil-org-mode)
 (evil-org-set-key-theme '(navigation insert textobjects additional))
 (setq org-startup-folded "showeverything")
+
+(setq org-todo-keywords
+      '((sequence "NEW(n)" "QUALIFIED(q)" "STARTED(s)" "BLOCKED(b)" "|" "DONE(d)")))
+
 (setq org-todo-keyword-faces
       '(("NEW" . "white")
         ("QUALIFIED" . "lightblue")

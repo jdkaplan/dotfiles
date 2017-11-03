@@ -10,7 +10,8 @@ new_float none
 hide_edge_borders none
 
 for_window [class="^.*"] border pixel 0
-assign [class="Liferea"] 6
+assign [class="Liferea"] 5
+for_window [class="Spotify"] move to workspace 6
 assign [class="TelegramDesktop"] 7
 assign [class="Slack"] 8
 assign [class="discord"] 9

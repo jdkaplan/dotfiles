@@ -176,7 +176,7 @@
 (add-hook 'prog-mode-hook
           (lambda ()
             (font-lock-add-keywords nil
-                                    '(("\\(FIXME\\|TODO\\|BUG\\|QQ\\):" 0 font-lock-warning-face t)))))
+                                    '(("\\(FIXME\\|TODO\\|BUG\\|\\?\\?\\):" 0 font-lock-warning-face t)))))
 
 (require 'org-install)
 (require 'evil-org)

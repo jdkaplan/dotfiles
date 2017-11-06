@@ -2,37 +2,6 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
-(require 'evil-leader)
-(global-evil-leader-mode)
-
-(evil-leader/set-leader ";")
-(evil-leader/set-key
-  "<SPC>" 'evil-ex
-
-  "e" 'find-file
-  "f" 'helm-for-files
-  "p" 'helm-projectile-find-file
-  "b" 'switch-to-buffer
-  "w" 'save-buffer
-  "q" 'kill-this-buffer
-  "x" 'kill-buffer-and-window
-
-  "\"" 'split-window-below
-  "%" 'split-window-right
-  "0" 'delete-window
-
-  "h" 'evil-window-left
-  "j" 'evil-window-down
-  "k" 'evil-window-up
-  "l" 'evil-window-right
- )
-
-(require 'evil)
-(evil-mode 1)
-
-(require 'evil-surround)
-(global-evil-surround-mode 1)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -42,6 +11,7 @@
  '(custom-safe-themes
    (quote
     ("ce08249e5bb367822a811e84a7a9cc44c4228605ab7cbbb6896039529720809a" "2b280ad6cde9097a8677663009decae239a35d70a180d2321baf9e467696f6c8" default)))
+ '(evil-respect-visual-line-mode t)
  '(fill-column 80)
  '(global-hl-line-mode t)
  '(global-prettify-symbols-mode t)
@@ -81,6 +51,37 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ )
+
+(require 'evil)
+(evil-mode 1)
+
+(require 'evil-surround)
+(global-evil-surround-mode 1)
+
+(require 'evil-leader)
+(global-evil-leader-mode)
+
+(evil-leader/set-leader ";")
+(evil-leader/set-key
+  "<SPC>" 'evil-ex
+
+  "e" 'find-file
+  "f" 'helm-for-files
+  "p" 'helm-projectile-find-file
+  "b" 'switch-to-buffer
+  "w" 'save-buffer
+  "q" 'kill-this-buffer
+  "x" 'kill-buffer-and-window
+
+  "\"" 'split-window-below
+  "%" 'split-window-right
+  "0" 'delete-window
+
+  "h" 'evil-window-left
+  "j" 'evil-window-down
+  "k" 'evil-window-up
+  "l" 'evil-window-right
  )
 
 (require 'autopair)

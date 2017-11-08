@@ -26,6 +26,7 @@
  '(menu-bar-mode nil)
  '(mouse-wheel-mode nil)
  '(nlinum-format "%d ")
+ '(org-adapt-indentation nil)
  '(package-selected-packages
    (quote
     (lua-mode evil-org org go-mode helm-projectile helm nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
@@ -186,10 +187,12 @@
 (setq org-startup-folded "showeverything")
 
 (setq org-todo-keywords
-      '((sequence "NEW(n)" "QUALIFIED(q)" "STARTED(s)" "BLOCKED(b)" "|" "DONE(d)")))
+      '((sequence "NEW(n)" "QUALIFIED(q)" "STARTED(s)" "BLOCKED(b)" "|" "DONE(d)")
+        (sequence "TODO(t)" "|" "DONE(d)")))
 
 (setq org-todo-keyword-faces
       '(("NEW" . "white")
+        ("TODO" . "gray")
         ("QUALIFIED" . "lightblue")
         ("STARTED" . "orange" )
         ("BLOCKED" . "red")

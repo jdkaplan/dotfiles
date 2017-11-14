@@ -6,16 +6,10 @@ URxvt*pastableTabs: true
 URxvt*cursorBlink: false
 URxvt*transparent: true
 URxvt.shading: 20
-
-URxvt*font: xft:Input Mono Narrow Light:size=10
-
 URxvt*buffered: true
 URxvt*intensityStyles: false
 URxvt*urgentOnBell: true
 URxvt*iso14755: false
-
-Xautolock.corners: 000-
-Xautolock.time: 10
-Xautolock.locker: i3lock
+URxvt*font: xft:Input Mono Narrow Light:size=10
 
 Xft.dpi: 120

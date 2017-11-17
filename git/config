@@ -8,8 +8,9 @@
 [alias]
 	lg = log --oneline --graph --decorate
 	root = rev-parse --show-toplevel
-	sb = show-branch
 	ap = add -p
+	co = checkout
+	sb = show-branch
 [credential]
 	helper = cache
 [commit]

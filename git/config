@@ -6,10 +6,15 @@
 [push]
 	default = simple
 [alias]
+	ap = add -p
+	c = commit
+	co = checkout
+	cp = cherry-pick
+	d = diff
+	dc = diff --cached
 	lg = log --oneline --graph --decorate
 	root = rev-parse --show-toplevel
-	ap = add -p
-	co = checkout
+	s = status
 	sb = show-branch
 [credential]
 	helper = cache

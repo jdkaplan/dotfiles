@@ -65,6 +65,7 @@ $TAKO_SETTINGS.aliases.update({
     'reminder': _reminder,
     'enscript': 'enscript -M Letter',
     'screenshot': _screenshot,
+    'g': 'git',
 })
 
 if 'TERM' in ${...}:

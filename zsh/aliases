@@ -15,3 +15,5 @@ alias ssh-add-all='for key in ~/.ssh/id_rsa^*.pub; do ssh-add $key; done'
 which thefuck > /dev/null && eval $(thefuck --alias)
 
 alias shutdown='sudo shutdown now'
+
+alias g='git'

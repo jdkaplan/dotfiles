@@ -8,6 +8,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(electric-pair-mode t)
  '(evil-respect-visual-line-mode t)
  '(fill-column 80)
  '(global-hl-line-mode t)
@@ -28,7 +29,7 @@
  '(org-n-level-faces 3)
  '(package-selected-packages
    (quote
-    (lua-mode evil-org org go-mode helm-projectile helm nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))
+    (evil evil-leader evil-org evil-surround go-mode helm helm-projectile lua-mode markdown-mode nlinum org scala-mode web-mode)))
  '(require-final-newline t)
  '(scheme-program-name "racket")
  '(show-paren-delay 0)
@@ -84,9 +85,6 @@
   "l" 'evil-window-right
  )
 
-(require 'autopair)
-(autopair-global-mode)
-
 (require 'ido)
 (ido-mode t)
 
@@ -113,8 +111,6 @@
 ;; tako
 (add-to-list 'auto-mode-alist '("\\.tako\\'" . python-mode))
 
-(require 'php-mode)
-
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
@@ -124,9 +120,6 @@
 (add-hook 'prog-mode-hook (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 
 (require 'scala-mode)
-
-(require 'haskell-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
@@ -146,9 +139,6 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'jdkaplan t)
-
-(require 'js2-mode)
-;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (add-to-list 'auto-mode-alist '("/tmp/mutt.*" . mail-mode))
 

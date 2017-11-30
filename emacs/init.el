@@ -27,6 +27,8 @@
  '(mouse-wheel-mode nil)
  '(nlinum-format "%d ")
  '(org-adapt-indentation nil)
+ '(org-cycle-level-faces nil)
+ '(org-n-level-faces 3)
  '(package-selected-packages
    (quote
     (lua-mode evil-org org go-mode helm-projectile helm nlinum coffee-mode yaml-mode web-mode typescript-mode scala-mode php-mode markdown-mode js2-mode haskell-mode evil-surround evil-leader evil autopair)))

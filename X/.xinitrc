@@ -13,8 +13,6 @@ xset s off
 xset s 0 0
 xset r rate 250
 
-xsetroot -cursor_name left_ptr
-
 setxkbmap -layout us,us -variant dvorak, -option grp:ctrls_toggle,shift:both_capslock,caps:escape,compose:prsc
 
 exec i3

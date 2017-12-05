@@ -10,6 +10,12 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('Shougo/dein.vim')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/denite.nvim')
+  call dein#add('fatih/vim-go')
+  call dein#add('scrooloose/nerdcommenter')
+  call dein#add('neomake/neomake')
+  call dein#add('ntpeters/vim-better-whitespace')
+  call dein#add('tpope/vim-surround')
+  call dein#add('tpope/vim-repeat')
 
   call dein#end()
   call dein#save_state()
@@ -75,6 +81,14 @@ map ;q :q<CR>
 map ;x :x<CR>
 
 let g:deoplete#enable_at_startup = 1
+
+let g:NERDSpaceDelims = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+map gcc \c<Space>
+
+call neomake#configure#automake('w')
+set formatoptions+=n
 
 autocmd BufEnter * EnableStripWhitespaceOnSave
 autocmd BufNewFile,BufRead *.tako set filetype=python

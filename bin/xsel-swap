@@ -1,0 +1,5 @@
+#!/usr/bin/env tako
+
+tmp = ?(xsel)               # primary -> tmp
+xsel -b | xsel -i           # clipboard -> primary
+echo @(tmp) | xsel -bi      # tmp -> clipboard

@@ -1,0 +1,11 @@
+#!/usr/bin/env tako
+
+from datetime import datetime
+
+image_dir = $HOME + '/images/wallpapers/BitDay/'
+hour = datetime.now().hour
+image_number = int(hour / 2)
+image_file = image_dir + '{}.png'.format(image_number)
+
+ln -s -f @(image_file) @($HOME + '/images/wallpaper.png')
+nitrogen --restore

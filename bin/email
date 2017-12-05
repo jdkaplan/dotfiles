@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mutt -F ~/.mutt/$1

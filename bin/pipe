@@ -1,0 +1,6 @@
+#!/bin/sh
+
+command=$1
+file=$(mktemp --suffix=$2)
+cat < /dev/stdin > $file
+$command $file

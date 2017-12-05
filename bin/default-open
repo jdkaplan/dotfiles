@@ -1,0 +1,10 @@
+#!/bin/sh
+
+mimetype=$1
+original=$2
+ext=$(grep "$mimetype" /etc/mime.types | awk '{print $2}')
+
+destination=$(mktemp --suffix=".$ext")
+cp $original $destination
+xdg-open $destination &> /dev/null
+cat $destination

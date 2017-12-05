@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [[ -z "$1" ]]; then
+    echo 'Nothing to get'
+    exit 1
+fi
+
+contents=$(gopass show $1) || exit 1
+echo "$contents" | grep '^user:' | cut -d' ' -f2 | xsel -b
+echo 'Username clipped'
+read
+
+gopass show --clip $1

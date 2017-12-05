@@ -42,6 +42,9 @@ set wrapmargin=0
 set ignorecase
 set smartcase
 
+set cursorline
+set cursorcolumn
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/

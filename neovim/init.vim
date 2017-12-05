@@ -45,15 +45,17 @@ set smartcase
 set cursorline
 set cursorcolumn
 
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+set shortmess+=I
+
+set virtualedit=
+set display+=lastline
+noremap <silent> k gk
+noremap <silent> j gj
 
 map ; :
 noremap ;; ;
+
+map ;n :nohlsearch<CR>
 
 map ;h :wincmd h<CR>
 map ;j :wincmd j<CR>
@@ -73,3 +75,6 @@ map ;q :q<CR>
 map ;x :x<CR>
 
 let g:deoplete#enable_at_startup = 1
+
+autocmd BufEnter * EnableStripWhitespaceOnSave
+autocmd BufNewFile,BufRead *.tako set filetype=python

@@ -1,0 +1,8 @@
+#!/usr/bin/env tako
+
+import sys
+
+assert len(sys.argv) >= 2
+
+fmt = 'https://aur.archlinux.org/cgit/aur.git/snapshot/{}.tar.gz'
+wget @(fmt.format(sys.argv[1]))

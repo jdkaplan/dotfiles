@@ -28,6 +28,7 @@ endif
 filetype plugin indent on
 syntax enable
 set number
+set hidden
 
 set t_Co=256
 
@@ -75,8 +76,8 @@ map ;0 :close<CR>
 map ;w :w<CR>
 
 map ;b :Denite buffer<CR>
-map ;e :Denite file buffer<CR>
-map ;f :Denite file buffer<CR>
+map ;e :Denite file_rec buffer<CR>
+map ;f :Denite file_rec buffer<CR>
 map ;q :q<CR>
 map ;x :x<CR>
 

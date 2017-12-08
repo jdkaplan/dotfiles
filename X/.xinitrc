@@ -11,7 +11,7 @@ xset -b
 xset -dpms
 xset s off
 xset s 0 0
-xset r rate 250
+xset r rate 250 50
 
 setxkbmap -layout us,us -variant dvorak, -option grp:ctrls_toggle,shift:both_capslock,caps:escape,compose:prsc
 

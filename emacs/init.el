@@ -149,7 +149,8 @@
 (add-hook 'go-mode-hook
           (lambda ()
             (define-key go-mode-map (kbd "C-c C-f j") 'godef-jump)
-            (define-key go-mode-map (kbd "C-c C-f k") 'godef-jump-other-window)))
+            (define-key go-mode-map (kbd "C-c C-f k") 'godef-jump-other-window)
+            (add-hook 'before-save-hook #'gofmt-before-save)))
 
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)

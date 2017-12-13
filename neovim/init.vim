@@ -57,6 +57,12 @@ set smartcase
 
 set cursorline
 
+set splitbelow
+set splitright
+
+set modelines=0
+set lazyredraw
+
 set shortmess+=I
 
 set virtualedit=

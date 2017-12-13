@@ -73,7 +73,7 @@ noremap <silent> j gj
 map ; :
 noremap ;; ;
 
-map ;n :nohlsearch<CR>
+map <silent> ;<Space> :nohlsearch<CR>
 
 map ;h :wincmd h<CR>
 map ;j :wincmd j<CR>
@@ -83,10 +83,13 @@ map ;l :wincmd l<CR>
 map ;" :split<CR>
 map ;% :vsplit<CR>
 map ;0 :close<CR>
+map ;1 :only<CR>
 
 map ;w :w<CR>
 map ;q :q<CR>
 map ;x :x<CR>
+
+set wildignore+=*.swp,*~
 
 map ;b :Denite buffer<CR>
 map ;f :Denite file_rec buffer<CR>
@@ -107,6 +110,9 @@ let g:neomake_serialize = 1
 let g:neomake_serialize_abort_on_error = 1
 let g:neomake_go_enabled_makers = ['go', 'govet']
 nmap <Leader>e :lopen<CR>
+nmap <Leader>E :lclose<CR>
+nmap <Leader>n :lnext<CR>
+nmap <Leader>N :lprevious<CR>
 
 autocmd BufEnter * EnableStripWhitespaceOnSave
 autocmd BufNewFile,BufRead *.tako set filetype=python

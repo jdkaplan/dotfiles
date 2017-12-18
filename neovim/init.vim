@@ -11,7 +11,7 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('fatih/vim-go')
-  call dein#add('hdima/python-syntax')
+  call dein#add('vim-python/python-syntax')
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('neomake/neomake')
   call dein#add('ntpeters/vim-better-whitespace')
@@ -113,6 +113,7 @@ nmap <Leader>e :lopen<CR>
 nmap <Leader>E :lclose<CR>
 nmap <Leader>n :lnext<CR>
 nmap <Leader>N :lprevious<CR>
+autocmd FileType python :NeomakeDisableBuffer
 
 autocmd BufEnter * EnableStripWhitespaceOnSave
 autocmd BufNewFile,BufRead *.tako set filetype=python

@@ -1,6 +1,6 @@
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
-export EDITOR='emacs'
+export EDITOR='nvim'
 export VISUAL=$EDITOR
 
 if [[ -a /usr/bin/virtualenvwrapper.sh ]]; then

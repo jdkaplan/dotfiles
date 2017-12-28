@@ -18,7 +18,7 @@ source_many($HOME + '/.config/tako/completers', is_tako)
 $TAKO_SETTINGS.auto_pushd = True
 
 $XDG_CONFIG_HOME = $HOME + '/.config'
-$EDITOR = 'emacs'
+$EDITOR = 'nvim'
 $VISUAL = $EDITOR
 
 for path in [

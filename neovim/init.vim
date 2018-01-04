@@ -11,11 +11,13 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('fatih/vim-go')
+  call dein#add('kana/vim-textobj-user')
+  call dein#add('glts/vim-textobj-comment')
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('neomake/neomake')
   call dein#add('ntpeters/vim-better-whitespace')
-  call dein#add('scrooloose/nerdcommenter')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-repeat')
   call dein#add('tpope/vim-surround')
   call dein#add('vim-python/python-syntax')
@@ -100,10 +102,6 @@ autocmd CompleteDone * silent! pclose!
 set completeopt+=noselect
 set completeopt+=menuone
 set completeopt+=longest
-
-let g:NERDSpaceDelims = 1
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
 
 call neomake#configure#automake('w')
 let g:neomake_serialize = 1

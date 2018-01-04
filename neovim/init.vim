@@ -13,6 +13,7 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('fatih/vim-go')
   call dein#add('kana/vim-textobj-user')
   call dein#add('glts/vim-textobj-comment')
+  call dein#add('jeetsukumaran/vim-buffergator')
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('neomake/neomake')
   call dein#add('ntpeters/vim-better-whitespace')
@@ -129,3 +130,11 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+let g:buffergator_viewport_split_policy = 'B'
+let g:buffergator_autoupdate = 1
+let g:buffergator_sort_regime = 'filepath'
+let g:buffergator_display_regime = 'bufname'
+let g:buffergator_show_full_directory_path = 0
+let g:buffergator_suppress_keymaps = 1
+map <leader>b :BuffergatorToggle<CR>

@@ -23,7 +23,7 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('tpope/vim-repeat')
   call dein#add('tpope/vim-surround')
   call dein#add('vim-python/python-syntax')
-  call dein#add('zchee/deoplete-go')
+  call dein#add('zchee/deoplete-go', {'build': 'make'})
 
   call dein#end()
   call dein#save_state()
@@ -100,6 +100,7 @@ map ;f :Denite file_rec buffer<CR>
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1
+inoremap <expr> <C-n> deoplete#mappings#manual_complete()
 autocmd CompleteDone * silent! pclose!
 set completeopt+=noselect
 set completeopt+=menuone

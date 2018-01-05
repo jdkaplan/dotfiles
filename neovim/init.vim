@@ -10,6 +10,7 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('Shougo/dein.vim')
   call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/neosnippet.vim')
   call dein#add('fatih/vim-go')
   call dein#add('kana/vim-textobj-user')
   call dein#add('glts/vim-textobj-comment')
@@ -132,7 +133,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 let g:go_fmt_command = "goimports"
-
+let g:go_snippet_engine = "neosnippet"
 
 let g:buffergator_viewport_split_policy = 'B'
 let g:buffergator_autoupdate = 1
@@ -141,3 +142,7 @@ let g:buffergator_display_regime = 'bufname'
 let g:buffergator_show_full_directory_path = 0
 let g:buffergator_suppress_keymaps = 1
 map <leader>b :BuffergatorToggle<CR>
+
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)

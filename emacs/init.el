@@ -15,7 +15,6 @@
  '(global-prettify-symbols-mode t)
  '(global-subword-mode nil)
  '(global-visual-line-mode t)
- '(helm-split-window-in-side-p t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-buffer-menu t)
  '(inhibit-startup-screen t)
@@ -29,7 +28,7 @@
  '(org-n-level-faces 3)
  '(package-selected-packages
    (quote
-    (evil evil-leader evil-org evil-surround go-mode helm helm-projectile lua-mode markdown-mode nlinum org scala-mode web-mode)))
+    (evil evil-leader evil-org evil-surround go-mode lua-mode markdown-mode nlinum org scala-mode web-mode)))
  '(require-final-newline t)
  '(scheme-program-name "racket")
  '(show-paren-delay 0)
@@ -68,8 +67,7 @@
   "<SPC>" 'evil-ex
 
   "e" 'find-file
-  "f" 'helm-for-files
-  "p" 'helm-projectile-find-file
+  "f" 'find-file
   "b" 'switch-to-buffer
   "w" 'save-buffer
   "q" 'kill-this-buffer
@@ -151,14 +149,6 @@
             (define-key go-mode-map (kbd "C-c C-f j") 'godef-jump)
             (define-key go-mode-map (kbd "C-c C-f k") 'godef-jump-other-window)
             (add-hook 'before-save-hook #'gofmt-before-save)))
-
-(projectile-global-mode)
-(setq projectile-completion-system 'helm)
-(setq projectile-enable-caching t)
-
-(require 'helm-config)
-(helm-mode 1)
-(helm-projectile-on)
 
 (add-hook 'python-mode-hook
           (lambda ()

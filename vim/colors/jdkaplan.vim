@@ -18,7 +18,7 @@ hi ExtraWhitespace cterm=none                  ctermbg=160
 hi Folded          cterm=none      ctermfg=220 ctermbg=59
 hi Function        cterm=none      ctermfg=45
 hi Identifier      cterm=none      ctermfg=45
-hi LineNr          cterm=none      ctermfg=188
+hi LineNr          cterm=none      ctermfg=240
 hi MatchParen      cterm=none      ctermfg=209 ctermbg=235
 hi Normal          cterm=none      ctermfg=254 ctermbg=235
 hi NonText         cterm=none      ctermfg=110 ctermbg=238

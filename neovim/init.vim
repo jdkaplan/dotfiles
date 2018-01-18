@@ -16,7 +16,6 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('glts/vim-textobj-comment')
   call dein#add('jeetsukumaran/vim-buffergator')
   call dein#add('jiangmiao/auto-pairs')
-  call dein#add('neomake/neomake')
   call dein#add('ntpeters/vim-better-whitespace')
   call dein#add('scrooloose/nerdtree')
   call dein#add('tpope/vim-abolish')
@@ -24,6 +23,7 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('tpope/vim-repeat')
   call dein#add('tpope/vim-surround')
   call dein#add('vim-python/python-syntax')
+  call dein#add('w0rp/ale')
   call dein#add('zchee/deoplete-go', {'build': 'make'})
 
   call dein#end()
@@ -107,15 +107,18 @@ set completeopt+=noselect
 set completeopt+=menuone
 set completeopt+=longest
 
-call neomake#configure#automake('w')
-let g:neomake_serialize = 1
-let g:neomake_serialize_abort_on_error = 1
-let g:neomake_go_enabled_makers = ['go', 'govet']
+let g:ale_sign_error = '!'
+let g:ale_sign_warning = '?'
+let g:ale_linters = {
+\    'go': [
+\        'goimports',
+\        'go vet',
+\    ],
+\}
+nmap <silent> <Leader>n <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>N <Plug>(ale_next_wrap)
 nmap <Leader>e :lopen<CR>
 nmap <Leader>E :lclose<CR>
-nmap <Leader>n :lnext<CR>
-nmap <Leader>N :lprevious<CR>
-autocmd FileType python :NeomakeDisableBuffer
 
 autocmd BufEnter * EnableStripWhitespaceOnSave
 autocmd BufNewFile,BufRead *.tako set filetype=python

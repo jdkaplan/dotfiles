@@ -110,9 +110,11 @@ set completeopt+=longest
 let g:ale_sign_error = '!'
 let g:ale_sign_warning = '?'
 let g:ale_linters = {
+\    '-': [],
 \    'go': [
 \        'goimports',
 \        'go vet',
+\        'go build',
 \    ],
 \}
 nmap <silent> <Leader>n <Plug>(ale_previous_wrap)

@@ -12,7 +12,10 @@
 	cp = cherry-pick
 	d = diff
 	dc = diff --cached
+	dn = diff --name-only --relative
+	dw = diff --word-diff
 	lg = log --oneline --graph --decorate
+	rb = rebase
 	root = rev-parse --show-toplevel
 	s = status
 	sb = show-branch

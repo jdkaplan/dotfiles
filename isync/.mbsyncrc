@@ -22,30 +22,6 @@ Channel gmail
     SyncState *
 
 
-IMAPAccount mit
-    Host imap.exchange.mit.edu
-    User jdkaplan
-    PassCmd "gopass show personal/email/jdkaplan@mit.edu | head -n 1"
-    SSLType IMAPS
-    CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-IMAPStore mit-remote
-    Account mit
-
-MaildirStore mit-local
-    Path ~/.mail/mit/
-    Inbox ~/.mail/mit/Inbox
-    Subfolders Verbatim
-
-Channel mit
-    Master :mit-remote:
-    Slave :mit-local:
-    Patterns *
-    Create Both
-    SyncState *
-
-
-
 IMAPAccount metagram
     Host metagram.net
     User jdkaplan@metagram.net

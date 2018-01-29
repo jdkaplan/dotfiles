@@ -2,7 +2,7 @@ alias startx='ssh-agent startx; vlock'
 
 alias ls='ls --color=auto'
 alias l='ls'
-alias la='ls -a'
+alias la='ls -A'
 alias ll='ls -l'
 
 alias units='units --verbose'

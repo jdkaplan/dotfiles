@@ -14,6 +14,7 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neosnippet.vim')
+  call dein#add('airblade/vim-rooter')
   call dein#add('fatih/vim-go')
   call dein#add('kana/vim-textobj-user')
   call dein#add('glts/vim-textobj-comment')
@@ -166,3 +167,6 @@ map <leader>b :BuffergatorToggle<CR>
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+
+let g:rooter_manual_only = 1
+noremap <leader>cd :execute 'cd' fnameescape(FindRootDirectory())<CR>:pwd<CR>

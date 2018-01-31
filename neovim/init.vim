@@ -1,6 +1,9 @@
 if &compatible
   set nocompatible
 endif
+
+let &shell = '/bin/sh'
+
 set runtimepath+=~/.config/nvim/plugins/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.config/nvim/plugins')
@@ -110,12 +113,23 @@ set completeopt+=longest
 
 let g:ale_sign_error = '!'
 let g:ale_sign_warning = '?'
+let g:ale_fix_on_save = 1
 let g:ale_linters = {
 \    '-': [],
 \    'go': [
 \        'goimports',
 \        'go vet',
 \        'go build',
+\    ],
+\    'python': [
+\        'flake8',
+\        'mypy',
+\    ],
+\}
+let g:ale_fixers = {
+\    '-': [],
+\    'python': [
+\        'yapf',
 \    ],
 \}
 nmap <silent> <Leader>n <Plug>(ale_previous_wrap)

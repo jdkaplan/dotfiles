@@ -69,7 +69,23 @@ $TAKO_SETTINGS.aliases.update({
 })
 
 if 'TERM' in ${...}:
-    if '256color' in $TERM:
+    if 'truecolor' in $COLORTERM or '24bit' in $COLORTERM:
+        colors = {
+            'blue': (95, 215, 255),
+            'orange': (215, 95, 0),
+            'purple': (175, 95, 255),
+            'red': (255, 0, 0),
+            'green': (135, 255, 0),
+            'gray': (98, 98, 98),
+        }
+
+        def colorize(color, text):
+            r, g, b = colors[color]
+            prefix = '\x1b[38;2;{};{};{}m'.format(r, g, b)
+            suffix = '\x1b[0m'
+            return prefix + text + suffix
+
+    elif '256color' in $TERM:
         colors = {
             'blue': 81,
             'orange': 166,

@@ -21,6 +21,15 @@ $XDG_CONFIG_HOME = $HOME + '/.config'
 $EDITOR = 'nvim'
 $VISUAL = $EDITOR
 
+for t in [
+    'termite',
+    'urxvt',
+    'xterm',
+]:
+    if ?(which @(t)):
+        $TERMINAL = t
+        break
+
 for path in [
         $HOME + '/bin',
         $HOME + '/.local/bin',

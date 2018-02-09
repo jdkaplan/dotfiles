@@ -75,10 +75,11 @@ $TAKO_SETTINGS.aliases.update({
     'enscript': 'enscript -M Letter',
     'screenshot': _screenshot,
     'g': 'git',
+    'rg': 'rg -S',
 })
 
 if 'TERM' in ${...}:
-    if 'truecolor' in $COLORTERM or '24bit' in $COLORTERM:
+    if 'COLORTERM' in ${...} and ('truecolor' in $COLORTERM or '24bit' in $COLORTERM):
         colors = {
             'blue': (95, 215, 255),
             'orange': (215, 95, 0),

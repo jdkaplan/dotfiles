@@ -145,10 +145,10 @@ let g:ale_fixers = {
 \        'yapf',
 \    ],
 \}
-nmap <silent> <Leader>n <Plug>(ale_previous_wrap)
-nmap <silent> <Leader>N <Plug>(ale_next_wrap)
-nmap <Leader>e :lopen<CR>
-nmap <Leader>E :lclose<CR>
+nmap <silent> ;n <Plug>(ale_next_wrap)
+nmap <silent> ;N <Plug>(ale_previous_wrap)
+nmap <Leader>e :lclose<CR>
+nmap <Leader>E :lopen<CR>
 
 autocmd BufEnter * EnableStripWhitespaceOnSave
 autocmd BufNewFile,BufRead *.tako set filetype=python

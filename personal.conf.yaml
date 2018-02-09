@@ -3,6 +3,7 @@
     ~/.config/pianobar: pianobar/
     ~/.config/polybar: polybar/
     ~/.config/qutebrowser: qutebrowser/
+    ~/.config/termite: termite/
     ~/.mbsyncrc: isync/.mbsyncrc
     ~/.mutt: mutt/
     ~/.xinitrc: X/.xinitrc

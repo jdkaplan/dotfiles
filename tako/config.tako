@@ -22,7 +22,6 @@ $EDITOR = 'nvim'
 $VISUAL = $EDITOR
 
 for t in [
-    'termite',
     'urxvt',
     'xterm',
 ]:

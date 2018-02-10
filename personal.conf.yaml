@@ -1,4 +1,5 @@
 - link:
+    ~/.config/dunst: dunst/
     ~/.config/i3: i3/
     ~/.config/pianobar: pianobar/
     ~/.config/polybar: polybar/

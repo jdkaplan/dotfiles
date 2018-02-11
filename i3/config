@@ -114,6 +114,11 @@ bindsym $super+Shift+8 move container to workspace number 8; workspace number 8
 bindsym $super+Shift+9 move container to workspace number 9; workspace number 9
 bindsym $super+Shift+0 move container to workspace number 10; workspace number 10
 
+# magic workspace movement
+bindsym $super+grave workspace back_and_forth
+bindsym $super+bracketleft  workspace prev_on_output
+bindsym $super+bracketright workspace next_on_output
+
 # screen management
 bindsym $super+comma  focus output left
 bindsym $super+period focus output right

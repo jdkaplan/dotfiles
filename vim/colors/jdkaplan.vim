@@ -43,3 +43,5 @@ hi Visual               cterm=none      ctermfg=254 ctermbg=237
 
 hi ALEWarningSign                       ctermfg=184 ctermbg=238
 hi ALEErrorSign                         ctermfg=160 ctermbg=238
+
+hi DeniteMatched   NONE cterm=none      ctermfg=184 ctermbg=235

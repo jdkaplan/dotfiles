@@ -112,6 +112,11 @@ call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 
+call denite#custom#option("_", {
+\    "highlight_matched_char": "DeniteMatched",
+\    "highlight_matched_range": "None",
+\})
+
 map ;b :Denite buffer<CR>
 map ;f :Denite file_rec<CR>
 map ;g :Denite grep<CR>

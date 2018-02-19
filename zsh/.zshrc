@@ -5,6 +5,7 @@ SAVEHIST=1000000
 DIRSTACKSIZE=100
 setopt appendhistory extendedglob nomatch
 setopt autopushd pushdsilent pushdtohome histignorespace
+setopt printexitvalue
 unsetopt beep autocd notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -59,10 +60,11 @@ else
 fi
 local dir="${green}%~%f"
 local branch="\$(parse_git_branch)"
+local exit_code="%(?.${green}.${red})%?%f"
 
 setopt prompt_subst
 export PROMPT="${prompt}"
-export RPROMPT="${lbrkt}${user}${colon}${host}${colon}${dir}${branch}${rbrkt}"
+export RPROMPT="${exit_code} ${lbrkt}${user}${colon}${host}${colon}${dir}${branch}${rbrkt}"
 
 # aliases
 source $HOME/.config/zsh/aliases

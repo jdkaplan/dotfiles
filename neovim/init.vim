@@ -182,9 +182,14 @@ let g:buffergator_show_full_directory_path = 0
 let g:buffergator_suppress_keymaps = 1
 map <leader>b :BuffergatorToggle<CR>
 
+let g:neosnippet#snippets_directory='~/.config/nvim/neosnippets/neosnippets'
+let g:neosnippet#disable_runtime_snippets = {
+\    '_' : 1,
+\}
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+let g:neosnippet#enable_completed_snippet=1
 
 let g:rooter_manual_only = 1
 noremap <leader>cd :execute 'cd' fnameescape(FindRootDirectory())<CR>:pwd<CR>

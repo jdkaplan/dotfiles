@@ -148,9 +148,10 @@ if 'TERM' in ${...}:
 
     $TAKO_SETTINGS.prompt = make_prompt()
 
-$TAKO_SETTINGS.case_sensitive_completions = False
+    $TAKO_SETTINGS.case_sensitive_completions = False
 
-completer bash enable out> /dev/null
+    completer bash enable out> /dev/null
 
-if not ?(which bload).returncode:
-    bload
+    if not ?(which bload).returncode:
+        bload
+

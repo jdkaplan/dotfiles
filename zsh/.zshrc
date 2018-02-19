@@ -60,7 +60,7 @@ else
 fi
 local dir="${green}%~%f"
 local branch="\$(parse_git_branch)"
-local exit_code="%(?.${green}.${red})%?%f"
+local exit_code="%(?..${red}%?%f)"
 
 setopt prompt_subst
 export PROMPT="${prompt}"

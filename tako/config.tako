@@ -133,14 +133,15 @@ if 'TERM' in ${...}:
     $TAKO_SETTINGS.prompt_fields['git_branch'] = git_branch
 
     def _return_code():
-        code = ''
+        code = 0
         def _set(result):
             nonlocal code
-            code = result.returncode if hasattr(result, 'returncode') else ''
+            code = result.returncode if hasattr(result, 'returncode') else 0
 
         def _get():
-            color = 'red' if code else 'green'
-            return colorize(color, str(code))
+            if not code:
+                return ''
+            return colorize('red', str(code))
 
         return _set, _get
 

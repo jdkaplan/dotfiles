@@ -132,6 +132,21 @@ if 'TERM' in ${...}:
 
     $TAKO_SETTINGS.prompt_fields['git_branch'] = git_branch
 
+    def _return_code():
+        code = ''
+        def _set(result):
+            nonlocal code
+            code = result.returncode if hasattr(result, 'returncode') else ''
+
+        def _get():
+            color = 'red' if code else 'green'
+            return colorize(color, str(code))
+
+        return _set, _get
+
+    _set_code, _get_code = _return_code()
+    $TAKO_SETTINGS.prompt_fields['return_code'] = _get_code
+
     def make_prompt():
         username = colorize('purple', '{user}')
         host = colorize('blue', '{hostname}')
@@ -144,7 +159,7 @@ if 'TERM' in ${...}:
                 username,
                 host,
                 directory,
-        ]) + '{git_branch}' + rbrkt + '\n{prompt_end} '
+        ]) + '{git_branch}' + rbrkt + ' {return_code}' + '\n{prompt_end} '
 
     $TAKO_SETTINGS.prompt = make_prompt()
 
@@ -155,3 +170,4 @@ if 'TERM' in ${...}:
     if not ?(which bload).returncode:
         bload
 
+    $TAKO_SETTINGS.hooks['post_command'].append(_set_code)

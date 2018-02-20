@@ -5,7 +5,6 @@ SAVEHIST=1000000
 DIRSTACKSIZE=100
 setopt appendhistory extendedglob nomatch
 setopt autopushd pushdsilent pushdtohome histignorespace
-setopt printexitvalue
 unsetopt beep autocd notify
 bindkey -e
 # End of lines configured by zsh-newuser-install

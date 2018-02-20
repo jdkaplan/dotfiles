@@ -40,6 +40,7 @@ hi Type                 cterm=none      ctermfg=184
 hi Underlined           cterm=underline ctermfg=254
 hi VertSplit            cterm=none      ctermfg=239
 hi Visual               cterm=none      ctermfg=254 ctermbg=237
+hi Whitespace           cterm=none      ctermfg=239 ctermbg=235
 
 hi ALEWarningSign                       ctermfg=184 ctermbg=238
 hi ALEErrorSign                         ctermfg=160 ctermbg=238

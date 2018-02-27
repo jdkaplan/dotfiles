@@ -180,6 +180,7 @@ let g:buffergator_sort_regime = 'filepath'
 let g:buffergator_display_regime = 'bufname'
 let g:buffergator_show_full_directory_path = 0
 let g:buffergator_suppress_keymaps = 1
+let g:buffergator_autodismiss_on_select = 0
 map <leader>b :BuffergatorToggle<CR>
 
 let g:neosnippet#snippets_directory='~/.config/nvim/neosnippets/neosnippets'

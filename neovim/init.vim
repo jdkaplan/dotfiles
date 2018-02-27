@@ -103,11 +103,11 @@ map ;x :x<CR>
 set wildignore+=*.swp,*~
 
 call denite#custom#var('file_rec', 'command',
-\    ['rg', '--files'],
+\    ['rg', '--files', '--hidden'],
 \)
 call denite#custom#var('grep', 'command', ['rg'])
 call denite#custom#var('grep', 'default_opts',
-\    ['--vimgrep', '--no-heading', '--smart-case'])
+\    ['--vimgrep', '--no-heading', '--smart-case', '--hidden'])
 call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])

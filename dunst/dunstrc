@@ -51,11 +51,15 @@
     timeout = 0
 
 [gopass]
-    appname="gopass"
+    appname = "gopass"
     background = "#000000"
     timeout = 5
 
 [slack]
-    appname="Electron"
+    appname = "Electron"
     background = "#000000"
     timeout = 5
+
+[ding]
+    summary = "Ding!"
+    script = ~/.config/dunst/ding

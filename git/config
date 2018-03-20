@@ -14,7 +14,7 @@
 	dc = diff --cached
 	dn = diff --name-only --relative
 	dw = diff --word-diff
-	lg = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%an'
+	lg = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%an%C(reset) %C(green)<%ar>%C(reset)'
 	rb = rebase
 	root = rev-parse --show-toplevel
 	s = status

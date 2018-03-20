@@ -161,6 +161,7 @@ autocmd BufNewFile,BufRead *.tako set filetype=python
 
 map <leader>t :NERDTreeToggle<CR>
 noremap <leader>a :NERDTreeFind<CR>
+noremap <leader>m :NERDTreeFind<Space>
 
 let g:python_highlight_all = 1
 

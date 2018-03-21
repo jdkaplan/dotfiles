@@ -132,10 +132,9 @@ adapter = AC
 full-at = 99
 
 format-charging = <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = #2affb5
 
 format-discharging = <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = #ffb52a
 
-format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}

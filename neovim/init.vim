@@ -194,6 +194,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 let g:neosnippet#enable_completed_snippet=1
 
 let g:rooter_manual_only = 1
+let g:rooter_patterns = ['.root', '.git', '.git/']
 noremap <leader>cd :execute 'cd' fnameescape(FindRootDirectory())<CR>:pwd<CR>
 
 let g:AutoPairsMultilineClose = 0

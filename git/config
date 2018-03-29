@@ -7,6 +7,8 @@
 	default = simple
 [alias]
 	ap = add -p
+	b = branch
+	bv = branch -v
 	c = commit
 	co = checkout
 	cp = cherry-pick
@@ -15,6 +17,7 @@
 	dn = diff --name-only --relative
 	dw = diff --word-diff
 	lg = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%an%C(reset) %C(green)<%ar>%C(reset)'
+	mb = merge-base HEAD
 	rb = rebase
 	root = rev-parse --show-toplevel
 	s = status

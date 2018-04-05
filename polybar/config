@@ -1,3 +1,6 @@
+[local]
+include-file = /home/jdkaplan/.config/polybar/local
+
 [colors]
 background = #222
 background-alt = #444
@@ -85,7 +88,7 @@ label-empty-padding = 2
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = ${local.wlan_interface}
 
 format-connected = <label-connected>
 format-connected-underline = #9f78e1
@@ -95,7 +98,7 @@ format-disconnected = <label-disconnected>
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = ${local.eth_interface}
 
 format-connected-underline = #55aa55
 label-connected = %local_ip%
@@ -129,7 +132,7 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 
-full-at = 99
+full-at = ${local.battery_full}
 
 format-charging = <label-charging>
 format-charging-underline = #2affb5

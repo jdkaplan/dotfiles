@@ -172,3 +172,8 @@ if 'TERM' in ${...}:
         bload
 
     $TAKO_SETTINGS.hooks['post_command'].append(_set_code)
+
+try:
+    source @(os.path.join($HOME, '.config/tako/local.tako'))
+except:
+    pass

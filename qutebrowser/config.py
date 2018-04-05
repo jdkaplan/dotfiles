@@ -1550,3 +1550,9 @@ config.bind('gh', 'tab-move -')
 
 ## Bindings for register mode
 # config.bind('<Escape>', 'leave-mode', mode='register')
+
+try:
+    import local
+    local.apply(c, config)
+except ImportError:
+    pass

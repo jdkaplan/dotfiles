@@ -86,19 +86,19 @@ noremap ;; ;
 
 map <silent> ;<Space> :nohlsearch<CR>
 
-map ;h :wincmd h<CR>
-map ;j :wincmd j<CR>
-map ;k :wincmd k<CR>
-map ;l :wincmd l<CR>
+map <silent> ;h :wincmd h<CR>
+map <silent> ;j :wincmd j<CR>
+map <silent> ;k :wincmd k<CR>
+map <silent> ;l :wincmd l<CR>
 
-map ;" :split<CR>
-map ;% :vsplit<CR>
-map ;0 :close<CR>
-map ;1 :only<CR>
+map <silent> ;" :split<CR>
+map <silent> ;% :vsplit<CR>
+map <silent> ;0 :close<CR>
+map <silent> ;1 :only<CR>
 
-map ;w :w<CR>
-map ;q :q<CR>
-map ;x :x<CR>
+map <silent> ;w :w<CR>
+map <silent> ;q :q<CR>
+map <silent> ;x :x<CR>
 
 set wildignore+=*.swp,*~
 
@@ -118,9 +118,9 @@ call denite#custom#option("_", {
 \    "highlight_matched_range": "None",
 \})
 
-map ;b :Denite buffer<CR>
-map ;f :Denite file_rec<CR>
-map ;g :Denite grep<CR>
+map <silent> ;b :Denite buffer<CR>
+map <silent> ;f :Denite file_rec<CR>
+map <silent> ;g :Denite grep<CR>
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1
@@ -153,14 +153,14 @@ let g:ale_fixers = {
 \}
 nmap <silent> ;n <Plug>(ale_next_wrap)
 nmap <silent> ;N <Plug>(ale_previous_wrap)
-nmap <Leader>e :lclose<CR>
-nmap <Leader>E :lopen<CR>
+nmap <silent> <Leader>e :lclose<CR>
+nmap <silent> <Leader>E :lopen<CR>
 
 autocmd BufEnter * EnableStripWhitespaceOnSave
 autocmd BufNewFile,BufRead *.tako set filetype=python
 
-map <leader>t :NERDTreeToggle<CR>
-noremap <leader>a :NERDTreeFind<CR>
+map <silent> <leader>t :NERDTreeToggle<CR>
+noremap <silent> <leader>a :NERDTreeFind<CR>
 noremap <leader>m :NERDTreeFind<Space>
 
 let g:python_highlight_all = 1
@@ -182,7 +182,7 @@ let g:buffergator_display_regime = 'bufname'
 let g:buffergator_show_full_directory_path = 0
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_autodismiss_on_select = 0
-map <leader>b :BuffergatorToggle<CR>
+map <silent> <leader>b :BuffergatorToggle<CR>
 
 let g:neosnippet#snippets_directory='~/.config/nvim/neosnippets/neosnippets'
 let g:neosnippet#disable_runtime_snippets = {
@@ -195,6 +195,6 @@ let g:neosnippet#enable_completed_snippet=1
 
 let g:rooter_manual_only = 1
 let g:rooter_patterns = ['.root', '.git', '.git/']
-noremap <leader>cd :execute 'cd' fnameescape(FindRootDirectory())<CR>:pwd<CR>
+noremap <silent> <leader>cd :execute 'cd' fnameescape(FindRootDirectory())<CR>:pwd<CR>
 
 let g:AutoPairsMultilineClose = 0

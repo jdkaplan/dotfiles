@@ -173,7 +173,9 @@ if 'TERM' in ${...}:
 
     $TAKO_SETTINGS.hooks['post_command'].append(_set_code)
 
-try:
-    source @(os.path.join($HOME, '.config/tako/local.tako'))
-except:
-    pass
+_localconf = os.path.join($HOME, '.config/tako/local.tako')
+if os.path.isfile(_localconf):
+    try:
+        source @(_localconf)
+    except:
+        pass

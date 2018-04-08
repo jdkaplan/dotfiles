@@ -1,6 +1,3 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-
 syntax on
 filetype plugin indent on
 set number
@@ -45,20 +42,20 @@ noremap <silent> j gj
 map ; :
 noremap ;; ;
 
-map ;h :wincmd h<CR>
-map ;j :wincmd j<CR>
-map ;k :wincmd k<CR>
-map ;l :wincmd l<CR>
+map <silent> ;<Space> :nohlsearch<CR>
 
-map ;" :split<CR>
-map ;% :vsplit<CR>
-map ;0 :close<CR>
+map <silent> ;h :wincmd h<CR>
+map <silent> ;j :wincmd j<CR>
+map <silent> ;k :wincmd k<CR>
+map <silent> ;l :wincmd l<CR>
 
-map ;w :w<CR>
+map <silent> ;" :split<CR>
+map <silent> ;% :vsplit<CR>
+map <silent> ;0 :close<CR>
+map <silent> ;1 :only<CR>
 
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+map <silent> ;w :w<CR>
+map <silent> ;q :q<CR>
+map <silent> ;x :x<CR>
+
+set wildignore+=*.swp,*~

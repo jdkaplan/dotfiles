@@ -1,0 +1,4 @@
+[flake8]
+ignore =
+    # Long lines are sometimes necessary, and 80 characters is too short anyway
+    E501

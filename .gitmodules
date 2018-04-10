@@ -6,7 +6,7 @@
 	url = https://github.com/sjl/z-zsh.git
 [submodule "tako/plugins"]
 	path = tako/plugins
-	url = git@gitlab.com:jdkaplan/tako-plugins.git
+	url = https://gitlab.com/jdkaplan/tako-plugins.git
 [submodule "neovim/neosnippets"]
 	path = neovim/neosnippets
 	url = https://github.com/Shougo/neosnippet-snippets.git

@@ -10,6 +10,7 @@
 	b = branch
 	bv = branch -v
 	c = commit
+	chk = commit -a -n -m 'CHECKPOINT'
 	co = checkout
 	cp = cherry-pick
 	d = diff

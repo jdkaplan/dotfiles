@@ -21,7 +21,9 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('glts/vim-textobj-comment')
   call dein#add('jeetsukumaran/vim-buffergator')
   call dein#add('jiangmiao/auto-pairs')
+  call dein#add('mxw/vim-jsx')
   call dein#add('ntpeters/vim-better-whitespace')
+  call dein#add('pangloss/vim-javascript')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('scrooloose/nerdtree')
   call dein#add('tpope/vim-abolish')
@@ -144,6 +146,9 @@ let g:ale_linters = {
 \        'go vet',
 \        'go build',
 \    ],
+\    'javascript': [
+\        'flow',
+\    ],
 \    'python': [
 \        'flake8',
 \        'mypy',
@@ -151,6 +156,9 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \    '-': [],
+\    'javascript': [
+\        'prettier',
+\    ],
 \    'python': [
 \        'yapf',
 \    ],
@@ -209,3 +217,8 @@ let g:rooter_patterns = ['.root', '.git', '.git/']
 noremap <silent> <leader>cd :execute 'cd' fnameescape(FindRootDirectory())<CR>:pwd<CR>
 
 let g:AutoPairsMultilineClose = 0
+
+let g:javascript_plugin_flow = 1
+let g:ale_javascript_flow_use_respect_pragma = 0
+
+let g:jsx_ext_required = 1

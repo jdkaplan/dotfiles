@@ -2,4 +2,4 @@
 
 tmp = ?(xsel)               # primary -> tmp
 xsel -b | xsel -i           # clipboard -> primary
-echo @(tmp) | xsel -bi      # tmp -> clipboard
+echo -n @(tmp) | xsel -bi   # tmp -> clipboard

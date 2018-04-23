@@ -3,6 +3,8 @@ if &compatible
 endif
 
 let &shell = '/bin/sh'
+let g:python3_host_prog = expand('~/.virtualenvs/neovim3/bin/python')
+let g:python_host_prog  = expand('~/.virtualenvs/neovim2/bin/python')
 
 set runtimepath+=~/.config/nvim/plugins/repos/github.com/Shougo/dein.vim
 

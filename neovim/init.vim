@@ -145,6 +145,7 @@ let g:ale_linters = {
 \    '-': [],
 \    'go': [
 \        'goimports',
+\        'gometalinter',
 \        'go vet',
 \        'go build',
 \    ],

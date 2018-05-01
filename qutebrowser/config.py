@@ -1251,6 +1251,7 @@ c.url.searchengines = {
     'DEFAULT': 'https://duckduckgo.com/?q={}',
     'aur': 'https://aur.archlinux.org/packages/?K={}',
     'godoc': 'https://godoc.org/?q={}',
+    'mdn': 'https://developer.mozilla.org/search?q={}',
     'py2': 'https://docs.python.org/2/search.html?q={}',
     'py3': 'https://docs.python.org/3/search.html?q={}',
 }

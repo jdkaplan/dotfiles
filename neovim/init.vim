@@ -116,6 +116,7 @@ call denite#custom#var('file_rec', 'command',
 \)
 
 map <silent> ;g :Denite grep<CR>
+map <silent> ;* :DeniteCursorWord grep<CR>
 call denite#custom#var('grep', 'command', ['rg'])
 call denite#custom#var('grep', 'default_opts',
 \    ['--vimgrep', '--no-heading', '--smart-case', '--hidden'])

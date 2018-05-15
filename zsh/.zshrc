@@ -62,8 +62,14 @@ local branch="\$(parse_git_branch)"
 local exit_code="%(?..${red}%?%f)"
 
 setopt prompt_subst
-export PROMPT="${prompt}"
-export RPROMPT="${exit_code} ${lbrkt}${user}${colon}${host}${colon}${dir}${branch}${rbrkt}"
+if [[ $LOCAL_SESSION -eq 1 ]]; then
+    export PROMPT="${prompt}"
+    export RPROMPT="${exit_code} ${lbrkt}${user}${colon}${host}${colon}${dir}${branch}${rbrkt}"
+else
+    export PROMPT="${lbrkt}${user}${colon}${host}${colon}${dir}${branch}${rbrkt} ${exit_code}
+${prompt}"
+    export RPROMPT=""
+fi
 
 # aliases
 source $HOME/.config/zsh/aliases

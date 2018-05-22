@@ -85,4 +85,4 @@ eval $(dircolors $HOME/.config/zsh/dircolors.256dark)
 autoload -U select-word-style
 select-word-style bash
 
-which direnv > /dev/null && eval "$(direnv hook zsh)"
+which direnv > /dev/null && eval "$(direnv hook zsh)" || true

@@ -22,6 +22,10 @@ monitor = DP2-1
 inherit = mixins/bar
 monitor = DP2-2
 
+[bar/HDMI1]
+inherit = mixins/bar
+monitor = HDMI1
+
 [bar/HDMI2]
 inherit = mixins/bar
 monitor = HDMI2

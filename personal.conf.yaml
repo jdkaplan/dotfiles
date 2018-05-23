@@ -8,6 +8,7 @@
     ~/.mbsyncrc: isync/.mbsyncrc
     ~/.mutt: mutt/
     ~/.xinitrc: X/.xinitrc
+    ~/.xsessionrc: X/.xsessionrc
     ~/.Xresources: X/.Xresources
     ~/.Xdefaults: X/.Xdefaults
     ~/.urlview: urlview/.urlview

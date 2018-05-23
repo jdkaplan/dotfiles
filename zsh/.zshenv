@@ -1,5 +1,3 @@
-export PATH=$HOME/bin:$HOME/.local/bin:$PATH
-
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 

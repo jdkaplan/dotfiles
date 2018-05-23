@@ -28,7 +28,7 @@
 [commit]
 	verbose = true
 [core]
-	excludesfile = /home/jdkaplan/.gitignore
+	excludesfile = ~/.gitignore
 
 [includeIf "gitdir:~/projects/"]
 	path = config-personal

@@ -14,6 +14,10 @@ alert = #bd2c40
 inherit = mixins/bar
 monitor = eDP1
 
+[bar/eDP-1]
+inherit = mixins/bar
+monitor = eDP-1
+
 [bar/DP2-1]
 inherit = mixins/bar
 monitor = DP2-1

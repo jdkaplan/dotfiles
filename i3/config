@@ -115,7 +115,7 @@ bindsym $super+Shift+9 move container to workspace number 9; workspace number 9
 bindsym $super+Shift+0 move container to workspace number 10; workspace number 10
 
 # magic workspace movement
-bindsym $super+grave workspace back_and_forth
+bindsym $super+grave        workspace back_and_forth
 bindsym $super+bracketleft  workspace prev_on_output
 bindsym $super+bracketright workspace next_on_output
 

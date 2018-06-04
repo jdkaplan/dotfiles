@@ -72,7 +72,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center =
-modules-right = wlan volume battery date
+modules-right = eth wlan volume battery date
 
 [global/wm]
 margin-bottom = 0

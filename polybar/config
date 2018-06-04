@@ -18,6 +18,10 @@ monitor = eDP1
 inherit = mixins/bar
 monitor = eDP-1
 
+[bar/DP-2]
+inherit = mixins/bar
+monitor = DP-2
+
 [bar/DP2-1]
 inherit = mixins/bar
 monitor = DP2-1
@@ -33,6 +37,10 @@ monitor = HDMI1
 [bar/HDMI2]
 inherit = mixins/bar
 monitor = HDMI2
+
+[bar/HDMI-1]
+inherit = mixins/bar
+monitor = HDMI-1
 
 [mixins/bar]
 bottom = true

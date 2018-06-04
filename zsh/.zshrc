@@ -79,6 +79,8 @@ function precmd () {
     z --add "$(pwd -P)"
 }
 
+source $HOME/.config/zsh/j.sh
+
 # ls colors
 eval $(dircolors $HOME/.config/zsh/dircolors.256dark)
 

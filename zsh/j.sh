@@ -13,7 +13,9 @@ function _j_add() {
 }
 function _j_delete() {
     local name=$1;
-    grep -Ev "^${name}\|" "$STORE" | sponge "$STORE"
+    local regexp="^${name}\|"
+    grep -E  "$regexp" "$STORE"
+    grep -Ev "$regexp" "$STORE" | sponge "$STORE"
 }
 
 function _j_jump() {

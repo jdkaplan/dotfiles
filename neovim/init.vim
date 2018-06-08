@@ -17,6 +17,7 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('airblade/vim-rooter')
+  call dein#add('airblade/vim-gitgutter')
   call dein#add('davidhalter/jedi-vim')
   call dein#add('fatih/vim-go')
   call dein#add('kana/vim-textobj-user')
@@ -79,6 +80,7 @@ set splitright
 
 set modelines=0
 set lazyredraw
+set updatetime=250
 
 set shortmess+=I
 
@@ -226,3 +228,9 @@ let g:javascript_plugin_flow = 1
 let g:ale_javascript_flow_use_respect_pragma = 0
 
 let g:jsx_ext_required = 1
+
+let g:gitgutter_enabled = 0
+let g:gitgutter_map_keys = 0
+map <silent> <leader>g :GitGutterToggle<CR>
+nmap <silent> ]h <Plug>GitGutterNextHunk
+nmap <silent> [h <Plug>GitGutterPrevHunk

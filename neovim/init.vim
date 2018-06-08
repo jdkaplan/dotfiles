@@ -50,6 +50,7 @@ filetype plugin indent on
 syntax enable
 set number
 set hidden
+set ruler
 
 set t_Co=256
 

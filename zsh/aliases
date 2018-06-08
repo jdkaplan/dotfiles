@@ -9,3 +9,12 @@ alias units='units --verbose'
 alias trr='transmission-remote'
 alias g='git'
 alias rg='rg -S'
+
+alias timestamp='date "+%Y-%m-%d_%H-%M-%S"'
+
+screenshot() {
+    local ts="$(timestamp)"
+    local f="${HOME}/images/screenshots/${ts}.png"
+    import "$f"
+    echo "$f"
+}

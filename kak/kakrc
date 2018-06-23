@@ -1,0 +1,3 @@
+colorscheme jdkaplan
+
+add-highlighter global number_lines

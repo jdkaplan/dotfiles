@@ -9,6 +9,7 @@
     ~/.config/git: git/
     ~/.gitignore: git/gitignore
     ~/.config/flake8: etc/flake8
+    ~/.config/kak: kak/
     ~/.config/nvim: neovim/
     ~/.config/tako: tako/
     ~/.config/zsh: zsh/

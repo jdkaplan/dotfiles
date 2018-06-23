@@ -175,7 +175,6 @@ gaps inner 5
 smart_gaps on
 
 # startup
-exec --no-startup-id 'pulseaudio --check || pulseaudio'
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id redshift
 exec --no-startup-id polybar eDP1

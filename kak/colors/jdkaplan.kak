@@ -41,18 +41,18 @@ face global operator  ${green}
 face global attribute ${cyan}
 face global comment   ${gray_AF}
 face global meta      magenta
-face global builtin   default+b
+face global builtin   +b
 
 # For markup          
 face global title  +u
-face global header default
+# face global header default
 face global bold   +b
 face global italic +i
-face global mono   default
-face global block  default
-face global link   default
-face global bullet default
-face global list   default
+# face global mono   default
+# face global block  default
+# face global link   default
+# face global bullet default
+# face global list   default
 
 # builtin faces
 face global Default            ${gray_E4},${gray_26}
@@ -60,10 +60,11 @@ face global PrimaryCursor      ${black},${white}
 face global PrimarySelection   ${black},${gray_80}
 face global SecondaryCursor    ${white},${gray_58}
 face global SecondarySelection ${white},${gray_3A}
-face global PrimaryCursorEol   black,cyan
-face global SecondaryCursorEol black,cyan
+face global PrimaryCursorEol   ${black},${white}
+face global SecondaryCursorEol ${black},${gray_58}
 face global LineNumbers        ${gray_8A},default
-face global LineNumberCursor   default,default+r
+face global LineNumberCursor   ${gray_8A},default
+face global LineNumbersWrapped ${gray_26},${gray_26}
 face global MenuForeground     white,blue
 face global MenuBackground     blue,white
 face global MenuInfo           cyan
@@ -74,9 +75,9 @@ face global StatusLineMode     ${gray_EE},${gray_44}
 face global StatusLineInfo     ${gray_EE},${gray_44}
 face global StatusLineValue    ${gray_EE},${gray_44}
 
-face global StatusCursor       black,cyan
-face global Prompt             yellow,default
+# face global StatusCursor       black,cyan
+# face global Prompt             yellow,default
 face global MatchingChar       ${lightorange},${gray_26}+b
-face global BufferPadding      blue,default
+face global BufferPadding      ${gray_80},${gray_3A}
 "
 }

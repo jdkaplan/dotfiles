@@ -34,3 +34,5 @@
 	path = config-personal
 [merge]
 	conflictStyle = diff3
+[diff]
+	wsErrorHighlight = all

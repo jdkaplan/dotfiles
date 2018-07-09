@@ -18,3 +18,7 @@ screenshot() {
     import "$f"
     echo "$f"
 }
+
+docker-ip() {
+    docker inspect "$1" | jq -r '.[0].NetworkSettings.Networks.bridge.IPAddress'
+}

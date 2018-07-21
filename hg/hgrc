@@ -1,5 +1,6 @@
 [ui]
 username = Jeremy Kaplan <jdkaplan@metagram.net>
+ignore = ~/.config/hg/hgignore
 [extensions]
 color =
 hgext.bookmarks =

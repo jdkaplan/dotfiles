@@ -57,7 +57,7 @@
 
 [slack]
     appname = "Electron"
-    background = "#000000"
+    background = "#131b43"
     timeout = 5
 
 [ding]

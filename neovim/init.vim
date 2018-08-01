@@ -18,7 +18,6 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('airblade/vim-rooter')
   call dein#add('airblade/vim-gitgutter')
-  call dein#add('davidhalter/jedi-vim')
   call dein#add('fatih/vim-go')
   call dein#add('kana/vim-textobj-user')
   call dein#add('glts/vim-textobj-comment')
@@ -176,7 +175,7 @@ let g:ale_fixers = {
 \        'prettier',
 \    ],
 \    'python': [
-\        'yapf',
+\        'black',
 \    ],
 \}
 nmap <silent> ;n <Plug>(ale_next_wrap)
@@ -192,13 +191,6 @@ noremap <silent> <leader>a :NERDTreeFind<CR>
 noremap <leader>m :NERDTreeFind<Space>
 
 let g:python_highlight_all = 1
-
-let g:jedi#completions_enabled = 0
-let g:jedi#force_py_version = 3
-let g:jedi#popup_on_dot = 0
-let g:jedi#show_call_signatures = "0"
-let g:jedi#rename_command = ""
-let g:jedi#usages_command = ""
 
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_interfaces = 1

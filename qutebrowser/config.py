@@ -11,7 +11,7 @@ config.load_autoconfig()
 # Aliases for commands. The keys of the given dictionary are the
 # aliases, while the values are the commands they map to.
 # Type: Dict
-# c.aliases = {'w': 'session-save', 'q': 'quit', 'wq': 'quit --save'}
+c.aliases.update({"rmqs": "spawn --userscript clean-url"})
 
 # How often (in milliseconds) to auto-save config/cookies/etc.
 # Type: Int

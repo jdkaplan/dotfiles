@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+
+import os
+from urllib.parse import urlparse, urlunparse
+
+mode = os.environ["QUTE_MODE"]
+url = os.environ["QUTE_URL"]
+fifo = os.environ["QUTE_FIFO"]
+
+(scheme, netloc, path, params, query, fragment) = urlparse(url)
+clean = urlunparse((scheme, netloc, path, params, "", fragment))
+
+with open(fifo, "w") as f:
+    f.write(":open {}".format(clean))

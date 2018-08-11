@@ -1,1305 +1,1305 @@
-## Documentation:
-##   qute://help/configuring.html
-##   qute://help/settings.html
+# Documentation:
+#   qute://help/configuring.html
+#   qute://help/settings.html
 
-## This is here so configs done via the GUI are still loaded.
-## Remove it to not load settings done via the GUI.
+c, config = eval("c, config")
+
+# This is here so configs done via the GUI are still loaded.
+# Remove it to not load settings done via the GUI.
 config.load_autoconfig()
 
-## Aliases for commands. The keys of the given dictionary are the
-## aliases, while the values are the commands they map to.
-## Type: Dict
+# Aliases for commands. The keys of the given dictionary are the
+# aliases, while the values are the commands they map to.
+# Type: Dict
 # c.aliases = {'w': 'session-save', 'q': 'quit', 'wq': 'quit --save'}
 
-## How often (in milliseconds) to auto-save config/cookies/etc.
-## Type: Int
+# How often (in milliseconds) to auto-save config/cookies/etc.
+# Type: Int
 # c.auto_save.interval = 15000
 
-## Always restore open sites when qutebrowser is reopened.
-## Type: Bool
+# Always restore open sites when qutebrowser is reopened.
+# Type: Bool
 # c.auto_save.session = False
 
-## The backend to use to display websites. qutebrowser supports two
-## different web rendering engines / backends, QtWebKit and QtWebEngine.
-## QtWebKit was discontinued by the Qt project with Qt 5.6, but picked up
-## as a well maintained fork: https://github.com/annulen/webkit/wiki -
-## qutebrowser only supports the fork. QtWebEngine is Qt's official
-## successor to QtWebKit. It's slightly more resource hungry that
-## QtWebKit and has a couple of missing features in qutebrowser, but is
-## generally the preferred choice. This setting requires a restart.
-## Type: String
-## Valid values:
-##   - webengine: Use QtWebEngine (based on Chromium)
-##   - webkit: Use QtWebKit (based on WebKit, similar to Safari)
-c.backend = 'webengine'
+# The backend to use to display websites. qutebrowser supports two
+# different web rendering engines / backends, QtWebKit and QtWebEngine.
+# QtWebKit was discontinued by the Qt project with Qt 5.6, but picked up
+# as a well maintained fork: https://github.com/annulen/webkit/wiki -
+# qutebrowser only supports the fork. QtWebEngine is Qt's official
+# successor to QtWebKit. It's slightly more resource hungry that
+# QtWebKit and has a couple of missing features in qutebrowser, but is
+# generally the preferred choice. This setting requires a restart.
+# Type: String
+# Valid values:
+#   - webengine: Use QtWebEngine (based on Chromium)
+#   - webkit: Use QtWebKit (based on WebKit, similar to Safari)
+c.backend = "webengine"
 
-## This setting can be used to map keys to other keys. When the key used
-## as dictionary-key is pressed, the binding for the key used as
-## dictionary-value is invoked instead. This is useful for global
-## remappings of keys, for example to map Ctrl-[ to Escape. Note that
-## when a key is bound (via `bindings.default` or `bindings.commands`),
-## the mapping is ignored.
-## Type: Dict
+# This setting can be used to map keys to other keys. When the key used
+# as dictionary-key is pressed, the binding for the key used as
+# dictionary-value is invoked instead. This is useful for global
+# remappings of keys, for example to map Ctrl-[ to Escape. Note that
+# when a key is bound (via `bindings.default` or `bindings.commands`),
+# the mapping is ignored.
+# Type: Dict
 # c.bindings.key_mappings = {'<Ctrl-[>': '<Escape>', '<Ctrl-6>': '<Ctrl-^>', '<Ctrl-M>': '<Return>', '<Ctrl-J>': '<Return>', '<Shift-Return>': '<Return>', '<Enter>': '<Return>', '<Shift-Enter>': '<Return>', '<Ctrl-Enter>': '<Ctrl-Return>'}
 
-## Background color of the completion widget category headers.
-## Type: QssColor
+# Background color of the completion widget category headers.
+# Type: QssColor
 # c.colors.completion.category.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #888888, stop:1 #505050)'
 
-## Bottom border color of the completion widget category headers.
-## Type: QssColor
+# Bottom border color of the completion widget category headers.
+# Type: QssColor
 # c.colors.completion.category.border.bottom = 'black'
 
-## Top border color of the completion widget category headers.
-## Type: QssColor
+# Top border color of the completion widget category headers.
+# Type: QssColor
 # c.colors.completion.category.border.top = 'black'
 
-## Foreground color of completion widget category headers.
-## Type: QtColor
+# Foreground color of completion widget category headers.
+# Type: QtColor
 # c.colors.completion.category.fg = 'white'
 
-## Background color of the completion widget for even rows.
-## Type: QssColor
+# Background color of the completion widget for even rows.
+# Type: QssColor
 # c.colors.completion.even.bg = '#333333'
 
-## Text color of the completion widget.
-## Type: QtColor
+# Text color of the completion widget.
+# Type: QtColor
 # c.colors.completion.fg = 'white'
 
-## Background color of the selected completion item.
-## Type: QssColor
+# Background color of the selected completion item.
+# Type: QssColor
 # c.colors.completion.item.selected.bg = '#e8c000'
 
-## Bottom border color of the selected completion item.
-## Type: QssColor
+# Bottom border color of the selected completion item.
+# Type: QssColor
 # c.colors.completion.item.selected.border.bottom = '#bbbb00'
 
-## Top border color of the completion widget category headers.
-## Type: QssColor
+# Top border color of the completion widget category headers.
+# Type: QssColor
 # c.colors.completion.item.selected.border.top = '#bbbb00'
 
-## Foreground color of the selected completion item.
-## Type: QtColor
+# Foreground color of the selected completion item.
+# Type: QtColor
 # c.colors.completion.item.selected.fg = 'black'
 
-## Foreground color of the matched text in the completion.
-## Type: QssColor
+# Foreground color of the matched text in the completion.
+# Type: QssColor
 # c.colors.completion.match.fg = '#ff4444'
 
-## Background color of the completion widget for odd rows.
-## Type: QssColor
+# Background color of the completion widget for odd rows.
+# Type: QssColor
 # c.colors.completion.odd.bg = '#444444'
 
-## Color of the scrollbar in completion view
-## Type: QssColor
+# Color of the scrollbar in completion view
+# Type: QssColor
 # c.colors.completion.scrollbar.bg = '#333333'
 
-## Color of the scrollbar handle in completion view.
-## Type: QssColor
+# Color of the scrollbar handle in completion view.
+# Type: QssColor
 # c.colors.completion.scrollbar.fg = 'white'
 
-## Background color for the download bar.
-## Type: QssColor
+# Background color for the download bar.
+# Type: QssColor
 # c.colors.downloads.bar.bg = 'black'
 
-## Background color for downloads with errors.
-## Type: QtColor
+# Background color for downloads with errors.
+# Type: QtColor
 # c.colors.downloads.error.bg = 'red'
 
-## Foreground color for downloads with errors.
-## Type: QtColor
+# Foreground color for downloads with errors.
+# Type: QtColor
 # c.colors.downloads.error.fg = 'white'
 
-## Color gradient start for download backgrounds.
-## Type: QtColor
+# Color gradient start for download backgrounds.
+# Type: QtColor
 # c.colors.downloads.start.bg = '#0000aa'
 
-## Color gradient start for download text.
-## Type: QtColor
+# Color gradient start for download text.
+# Type: QtColor
 # c.colors.downloads.start.fg = 'white'
 
-## Color gradient stop for download backgrounds.
-## Type: QtColor
+# Color gradient stop for download backgrounds.
+# Type: QtColor
 # c.colors.downloads.stop.bg = '#00aa00'
 
-## Color gradient end for download text.
-## Type: QtColor
+# Color gradient end for download text.
+# Type: QtColor
 # c.colors.downloads.stop.fg = 'white'
 
-## Color gradient interpolation system for download backgrounds.
-## Type: ColorSystem
-## Valid values:
-##   - rgb: Interpolate in the RGB color system.
-##   - hsv: Interpolate in the HSV color system.
-##   - hsl: Interpolate in the HSL color system.
-##   - none: Don't show a gradient.
+# Color gradient interpolation system for download backgrounds.
+# Type: ColorSystem
+# Valid values:
+#   - rgb: Interpolate in the RGB color system.
+#   - hsv: Interpolate in the HSV color system.
+#   - hsl: Interpolate in the HSL color system.
+#   - none: Don't show a gradient.
 # c.colors.downloads.system.bg = 'rgb'
 
-## Color gradient interpolation system for download text.
-## Type: ColorSystem
-## Valid values:
-##   - rgb: Interpolate in the RGB color system.
-##   - hsv: Interpolate in the HSV color system.
-##   - hsl: Interpolate in the HSL color system.
-##   - none: Don't show a gradient.
+# Color gradient interpolation system for download text.
+# Type: ColorSystem
+# Valid values:
+#   - rgb: Interpolate in the RGB color system.
+#   - hsv: Interpolate in the HSV color system.
+#   - hsl: Interpolate in the HSL color system.
+#   - none: Don't show a gradient.
 # c.colors.downloads.system.fg = 'rgb'
 
-## Background color for hints. Note that you can use a `rgba(...)` value
-## for transparency.
-## Type: QssColor
+# Background color for hints. Note that you can use a `rgba(...)` value
+# for transparency.
+# Type: QssColor
 # c.colors.hints.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))'
 
-## Font color for hints.
-## Type: QssColor
+# Font color for hints.
+# Type: QssColor
 # c.colors.hints.fg = 'black'
 
-## Font color for the matched part of hints.
-## Type: QssColor
+# Font color for the matched part of hints.
+# Type: QssColor
 # c.colors.hints.match.fg = 'green'
 
-## Background color of the keyhint widget.
-## Type: QssColor
+# Background color of the keyhint widget.
+# Type: QssColor
 # c.colors.keyhint.bg = 'rgba(0, 0, 0, 80%)'
 
-## Text color for the keyhint widget.
-## Type: QssColor
+# Text color for the keyhint widget.
+# Type: QssColor
 # c.colors.keyhint.fg = '#FFFFFF'
 
-## Highlight color for keys to complete the current keychain.
-## Type: QssColor
+# Highlight color for keys to complete the current keychain.
+# Type: QssColor
 # c.colors.keyhint.suffix.fg = '#FFFF00'
 
-## Background color of an error message.
-## Type: QssColor
+# Background color of an error message.
+# Type: QssColor
 # c.colors.messages.error.bg = 'red'
 
-## Border color of an error message.
-## Type: QssColor
+# Border color of an error message.
+# Type: QssColor
 # c.colors.messages.error.border = '#bb0000'
 
-## Foreground color of an error message.
-## Type: QssColor
+# Foreground color of an error message.
+# Type: QssColor
 # c.colors.messages.error.fg = 'white'
 
-## Background color of an info message.
-## Type: QssColor
+# Background color of an info message.
+# Type: QssColor
 # c.colors.messages.info.bg = 'black'
 
-## Border color of an info message.
-## Type: QssColor
+# Border color of an info message.
+# Type: QssColor
 # c.colors.messages.info.border = '#333333'
 
-## Foreground color an info message.
-## Type: QssColor
+# Foreground color an info message.
+# Type: QssColor
 # c.colors.messages.info.fg = 'white'
 
-## Background color of a warning message.
-## Type: QssColor
+# Background color of a warning message.
+# Type: QssColor
 # c.colors.messages.warning.bg = 'darkorange'
 
-## Border color of a warning message.
-## Type: QssColor
+# Border color of a warning message.
+# Type: QssColor
 # c.colors.messages.warning.border = '#d47300'
 
-## Foreground color a warning message.
-## Type: QssColor
+# Foreground color a warning message.
+# Type: QssColor
 # c.colors.messages.warning.fg = 'white'
 
-## Background color for prompts.
-## Type: QssColor
+# Background color for prompts.
+# Type: QssColor
 # c.colors.prompts.bg = '#444444'
 
-## Border used around UI elements in prompts.
-## Type: String
+# Border used around UI elements in prompts.
+# Type: String
 # c.colors.prompts.border = '1px solid gray'
 
-## Foreground color for prompts.
-## Type: QssColor
+# Foreground color for prompts.
+# Type: QssColor
 # c.colors.prompts.fg = 'white'
 
-## Background color for the selected item in filename prompts.
-## Type: QssColor
+# Background color for the selected item in filename prompts.
+# Type: QssColor
 # c.colors.prompts.selected.bg = 'grey'
 
-## Background color of the statusbar in caret mode.
-## Type: QssColor
+# Background color of the statusbar in caret mode.
+# Type: QssColor
 # c.colors.statusbar.caret.bg = 'purple'
 
-## Foreground color of the statusbar in caret mode.
-## Type: QssColor
+# Foreground color of the statusbar in caret mode.
+# Type: QssColor
 # c.colors.statusbar.caret.fg = 'white'
 
-## Background color of the statusbar in caret mode with a selection.
-## Type: QssColor
+# Background color of the statusbar in caret mode with a selection.
+# Type: QssColor
 # c.colors.statusbar.caret.selection.bg = '#a12dff'
 
-## Foreground color of the statusbar in caret mode with a selection.
-## Type: QssColor
+# Foreground color of the statusbar in caret mode with a selection.
+# Type: QssColor
 # c.colors.statusbar.caret.selection.fg = 'white'
 
-## Background color of the statusbar in command mode.
-## Type: QssColor
+# Background color of the statusbar in command mode.
+# Type: QssColor
 # c.colors.statusbar.command.bg = 'black'
 
-## Foreground color of the statusbar in command mode.
-## Type: QssColor
+# Foreground color of the statusbar in command mode.
+# Type: QssColor
 # c.colors.statusbar.command.fg = 'white'
 
-## Background color of the statusbar in private browsing + command mode.
-## Type: QssColor
+# Background color of the statusbar in private browsing + command mode.
+# Type: QssColor
 # c.colors.statusbar.command.private.bg = 'grey'
 
-## Foreground color of the statusbar in private browsing + command mode.
-## Type: QssColor
+# Foreground color of the statusbar in private browsing + command mode.
+# Type: QssColor
 # c.colors.statusbar.command.private.fg = 'white'
 
-## Background color of the statusbar in insert mode.
-## Type: QssColor
+# Background color of the statusbar in insert mode.
+# Type: QssColor
 # c.colors.statusbar.insert.bg = 'darkgreen'
 
-## Foreground color of the statusbar in insert mode.
-## Type: QssColor
+# Foreground color of the statusbar in insert mode.
+# Type: QssColor
 # c.colors.statusbar.insert.fg = 'white'
 
-## Background color of the statusbar.
-## Type: QssColor
+# Background color of the statusbar.
+# Type: QssColor
 # c.colors.statusbar.normal.bg = 'black'
 
-## Foreground color of the statusbar.
-## Type: QssColor
+# Foreground color of the statusbar.
+# Type: QssColor
 # c.colors.statusbar.normal.fg = 'white'
 
-## Background color of the statusbar in private browsing mode.
-## Type: QssColor
+# Background color of the statusbar in private browsing mode.
+# Type: QssColor
 # c.colors.statusbar.private.bg = '#666666'
 
-## Foreground color of the statusbar in private browsing mode.
-## Type: QssColor
+# Foreground color of the statusbar in private browsing mode.
+# Type: QssColor
 # c.colors.statusbar.private.fg = 'white'
 
-## Background color of the progress bar.
-## Type: QssColor
+# Background color of the progress bar.
+# Type: QssColor
 # c.colors.statusbar.progress.bg = 'white'
 
-## Foreground color of the URL in the statusbar on error.
-## Type: QssColor
+# Foreground color of the URL in the statusbar on error.
+# Type: QssColor
 # c.colors.statusbar.url.error.fg = 'orange'
 
-## Default foreground color of the URL in the statusbar.
-## Type: QssColor
+# Default foreground color of the URL in the statusbar.
+# Type: QssColor
 # c.colors.statusbar.url.fg = 'white'
 
-## Foreground color of the URL in the statusbar for hovered links.
-## Type: QssColor
+# Foreground color of the URL in the statusbar for hovered links.
+# Type: QssColor
 # c.colors.statusbar.url.hover.fg = 'aqua'
 
-## Foreground color of the URL in the statusbar on successful load
-## (http).
-## Type: QssColor
+# Foreground color of the URL in the statusbar on successful load
+# (http).
+# Type: QssColor
 # c.colors.statusbar.url.success.http.fg = 'white'
 
-## Foreground color of the URL in the statusbar on successful load
-## (https).
-## Type: QssColor
+# Foreground color of the URL in the statusbar on successful load
+# (https).
+# Type: QssColor
 # c.colors.statusbar.url.success.https.fg = 'lime'
 
-## Foreground color of the URL in the statusbar when there's a warning.
-## Type: QssColor
+# Foreground color of the URL in the statusbar when there's a warning.
+# Type: QssColor
 # c.colors.statusbar.url.warn.fg = 'yellow'
 
-## Background color of the tab bar.
-## Type: QtColor
+# Background color of the tab bar.
+# Type: QtColor
 # c.colors.tabs.bar.bg = '#555555'
 
-## Background color of unselected even tabs.
-## Type: QtColor
+# Background color of unselected even tabs.
+# Type: QtColor
 # c.colors.tabs.even.bg = 'darkgrey'
 
-## Foreground color of unselected even tabs.
-## Type: QtColor
+# Foreground color of unselected even tabs.
+# Type: QtColor
 # c.colors.tabs.even.fg = 'white'
 
-## Color for the tab indicator on errors.
-## Type: QtColor
+# Color for the tab indicator on errors.
+# Type: QtColor
 # c.colors.tabs.indicator.error = '#ff0000'
 
-## Color gradient start for the tab indicator.
-## Type: QtColor
+# Color gradient start for the tab indicator.
+# Type: QtColor
 # c.colors.tabs.indicator.start = '#0000aa'
 
-## Color gradient end for the tab indicator.
-## Type: QtColor
+# Color gradient end for the tab indicator.
+# Type: QtColor
 # c.colors.tabs.indicator.stop = '#00aa00'
 
-## Color gradient interpolation system for the tab indicator.
-## Type: ColorSystem
-## Valid values:
-##   - rgb: Interpolate in the RGB color system.
-##   - hsv: Interpolate in the HSV color system.
-##   - hsl: Interpolate in the HSL color system.
-##   - none: Don't show a gradient.
+# Color gradient interpolation system for the tab indicator.
+# Type: ColorSystem
+# Valid values:
+#   - rgb: Interpolate in the RGB color system.
+#   - hsv: Interpolate in the HSV color system.
+#   - hsl: Interpolate in the HSL color system.
+#   - none: Don't show a gradient.
 # c.colors.tabs.indicator.system = 'rgb'
 
-## Background color of unselected odd tabs.
-## Type: QtColor
+# Background color of unselected odd tabs.
+# Type: QtColor
 # c.colors.tabs.odd.bg = 'grey'
 
-## Foreground color of unselected odd tabs.
-## Type: QtColor
+# Foreground color of unselected odd tabs.
+# Type: QtColor
 # c.colors.tabs.odd.fg = 'white'
 
-## Background color of selected even tabs.
-## Type: QtColor
+# Background color of selected even tabs.
+# Type: QtColor
 # c.colors.tabs.selected.even.bg = 'black'
 
-## Foreground color of selected even tabs.
-## Type: QtColor
+# Foreground color of selected even tabs.
+# Type: QtColor
 # c.colors.tabs.selected.even.fg = 'white'
 
-## Background color of selected odd tabs.
-## Type: QtColor
+# Background color of selected odd tabs.
+# Type: QtColor
 # c.colors.tabs.selected.odd.bg = 'black'
 
-## Foreground color of selected odd tabs.
-## Type: QtColor
+# Foreground color of selected odd tabs.
+# Type: QtColor
 # c.colors.tabs.selected.odd.fg = 'white'
 
-## Background color for webpages if unset (or empty to use the theme's
-## color)
-## Type: QtColor
+# Background color for webpages if unset (or empty to use the theme's
+# color)
+# Type: QtColor
 # c.colors.webpage.bg = 'white'
 
-## How many commands to save in the command history. 0: no history / -1:
-## unlimited
-## Type: Int
+# How many commands to save in the command history. 0: no history / -1:
+# unlimited
+# Type: Int
 # c.completion.cmd_history_max_items = 100
 
-## The height of the completion, in px or as percentage of the window.
-## Type: PercOrInt
+# The height of the completion, in px or as percentage of the window.
+# Type: PercOrInt
 # c.completion.height = '50%'
 
-## Move on to the next part when there's only one possible completion
-## left.
-## Type: Bool
+# Move on to the next part when there's only one possible completion
+# left.
+# Type: Bool
 # c.completion.quick = True
 
-## Padding of scrollbar handle in the completion window (in px).
-## Type: Int
+# Padding of scrollbar handle in the completion window (in px).
+# Type: Int
 # c.completion.scrollbar.padding = 2
 
-## Width of the scrollbar in the completion window (in px).
-## Type: Int
+# Width of the scrollbar in the completion window (in px).
+# Type: Int
 # c.completion.scrollbar.width = 12
 
-## When to show the autocompletion window.
-## Type: String
-## Valid values:
-##   - always: Whenever a completion is available.
-##   - auto: Whenever a completion is requested.
-##   - never: Never.
+# When to show the autocompletion window.
+# Type: String
+# Valid values:
+#   - always: Whenever a completion is available.
+#   - auto: Whenever a completion is requested.
+#   - never: Never.
 # c.completion.show = 'always'
 
-## Shrink the completion to be smaller than the configured size if there
-## are no scrollbars.
-## Type: Bool
+# Shrink the completion to be smaller than the configured size if there
+# are no scrollbars.
+# Type: Bool
 c.completion.shrink = True
 
-## How to format timestamps (e.g. for the history completion).
-## Type: TimestampTemplate
+# How to format timestamps (e.g. for the history completion).
+# Type: TimestampTemplate
 # c.completion.timestamp_format = '%Y-%m-%d'
 
-## How many URLs to show in the web history. 0: no history / -1:
-## unlimited
-## Type: Int
+# How many URLs to show in the web history. 0: no history / -1:
+# unlimited
+# Type: Int
 # c.completion.web_history_max_items = -1
 
-## Whether quitting the application requires a confirmation.
-## Type: ConfirmQuit
-## Valid values:
-##   - always: Always show a confirmation.
-##   - multiple-tabs: Show a confirmation if multiple tabs are opened.
-##   - downloads: Show a confirmation if downloads are running
-##   - never: Never show a confirmation.
+# Whether quitting the application requires a confirmation.
+# Type: ConfirmQuit
+# Valid values:
+#   - always: Always show a confirmation.
+#   - multiple-tabs: Show a confirmation if multiple tabs are opened.
+#   - downloads: Show a confirmation if downloads are running
+#   - never: Never show a confirmation.
 # c.confirm_quit = ['never']
 
-## Whether support for the HTML 5 web application cache feature is
-## enabled. An application cache acts like an HTTP cache in some sense.
-## For documents that use the application cache via JavaScript, the
-## loader engine will first ask the application cache for the contents,
-## before hitting the network.
-## Type: Bool
+# Whether support for the HTML 5 web application cache feature is
+# enabled. An application cache acts like an HTTP cache in some sense.
+# For documents that use the application cache via JavaScript, the
+# loader engine will first ask the application cache for the contents,
+# before hitting the network.
+# Type: Bool
 # c.content.cache.appcache = True
 
-## The maximum number of pages to hold in the global memory page cache.
-## The Page Cache allows for a nicer user experience when navigating
-## forth or back to pages in the forward/back history, by pausing and
-## resuming up to _n_ pages. For more information about the feature,
-## please refer to: http://webkit.org/blog/427/webkit-page-cache-i-the-
-## basics/
-## Type: Int
+# The maximum number of pages to hold in the global memory page cache.
+# The Page Cache allows for a nicer user experience when navigating
+# forth or back to pages in the forward/back history, by pausing and
+# resuming up to _n_ pages. For more information about the feature,
+# please refer to: http://webkit.org/blog/427/webkit-page-cache-i-the-
+# basics/
+# Type: Int
 # c.content.cache.maximum_pages = 0
 
-## Size of the HTTP network cache. Null to use the default value.
-## Type: Int
+# Size of the HTTP network cache. Null to use the default value.
+# Type: Int
 # c.content.cache.size = None
 
-## Control which cookies to accept.
-## Type: String
-## Valid values:
-##   - all: Accept all cookies.
-##   - no-3rdparty: Accept cookies from the same origin only.
-##   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain.
-##   - never: Don't accept cookies at all.
+# Control which cookies to accept.
+# Type: String
+# Valid values:
+#   - all: Accept all cookies.
+#   - no-3rdparty: Accept cookies from the same origin only.
+#   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain.
+#   - never: Don't accept cookies at all.
 # c.content.cookies.accept = 'no-3rdparty'
 
-## Store cookies. Note this option needs a restart with QtWebEngine on Qt
-## < 5.9.
-## Type: Bool
+# Store cookies. Note this option needs a restart with QtWebEngine on Qt
+# < 5.9.
+# Type: Bool
 # c.content.cookies.store = True
 
-## Default encoding to use for websites. The encoding must be a string
-## describing an encoding such as _utf-8_, _iso-8859-1_, etc.
-## Type: String
+# Default encoding to use for websites. The encoding must be a string
+# describing an encoding such as _utf-8_, _iso-8859-1_, etc.
+# Type: String
 # c.content.default_encoding = 'iso-8859-1'
 
-## Enable extra tools for Web developers. This needs to be enabled for
-## `:inspector` to work and also adds an _Inspect_ entry to the context
-## menu. For QtWebEngine, see `--enable-webengine-inspector` in
-## `qutebrowser --help` instead.
-## Type: Bool
+# Enable extra tools for Web developers. This needs to be enabled for
+# `:inspector` to work and also adds an _Inspect_ entry to the context
+# menu. For QtWebEngine, see `--enable-webengine-inspector` in
+# `qutebrowser --help` instead.
+# Type: Bool
 # c.content.developer_extras = True
 
-## Try to pre-fetch DNS entries to speed up browsing.
-## Type: Bool
+# Try to pre-fetch DNS entries to speed up browsing.
+# Type: Bool
 # c.content.dns_prefetch = True
 
-## Expand each subframe to its contents. This will flatten all the frames
-## to become one scrollable page.
-## Type: Bool
+# Expand each subframe to its contents. This will flatten all the frames
+# to become one scrollable page.
+# Type: Bool
 # c.content.frame_flattening = False
 
-## Allow websites to request geolocations.
-## Type: BoolAsk
-## Valid values:
-##   - true
-##   - false
-##   - ask
+# Allow websites to request geolocations.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
 # c.content.geolocation = 'ask'
 
-## Value to send in the `Accept-Language` header.
-## Type: String
+# Value to send in the `Accept-Language` header.
+# Type: String
 # c.content.headers.accept_language = 'en-US,en'
 
-## Set custom headers for qutebrowser HTTP requests.
-## Type: Dict
+# Set custom headers for qutebrowser HTTP requests.
+# Type: Dict
 # c.content.headers.custom = {}
 
-## Value to send in the `DNT` header. When this is set to true,
-## qutebrowser asks websites to not track your identity. If set to null,
-## the DNT header is not sent at all.
-## Type: Bool
+# Value to send in the `DNT` header. When this is set to true,
+# qutebrowser asks websites to not track your identity. If set to null,
+# the DNT header is not sent at all.
+# Type: Bool
 # c.content.headers.do_not_track = True
 
-## Send the Referer header. The Referer header tells websites from which
-## website you were coming from when visting them.
-## Type: String
-## Valid values:
-##   - always: Always send the Referer.
-##   - never: Never send the Referer. This is not recommended, as some sites may break.
-##   - same-domain: Only send the Referer for the same domain. This will still protect your privacy, but shouldn't break any sites.
+# Send the Referer header. The Referer header tells websites from which
+# website you were coming from when visting them.
+# Type: String
+# Valid values:
+#   - always: Always send the Referer.
+#   - never: Never send the Referer. This is not recommended, as some sites may break.
+#   - same-domain: Only send the Referer for the same domain. This will still protect your privacy, but shouldn't break any sites.
 # c.content.headers.referer = 'same-domain'
 
-## User agent to send. Unset to send the default.
-## Type: String
+# User agent to send. Unset to send the default.
+# Type: String
 # c.content.headers.user_agent = None
 
-## Whether host blocking is enabled.
-## Type: Bool
+# Whether host blocking is enabled.
+# Type: Bool
 # c.content.host_blocking.enabled = True
 
-## List of URLs of lists which contain hosts to block.  The file can be
-## in one of the following formats:  - An `/etc/hosts`-like file - One
-## host per line - A zip-file of any of the above, with either only one
-## file, or a file named   `hosts` (with any extension).
-## Type: List of Url
+# List of URLs of lists which contain hosts to block.  The file can be
+# in one of the following formats:  - An `/etc/hosts`-like file - One
+# host per line - A zip-file of any of the above, with either only one
+# file, or a file named   `hosts` (with any extension).
+# Type: List of Url
 # c.content.host_blocking.lists = ['https://www.malwaredomainlist.com/hostslist/hosts.txt', 'http://someonewhocares.org/hosts/hosts', 'http://winhelp2002.mvps.org/hosts.zip', 'http://malwaredomains.lehigh.edu/files/justdomains.zip', 'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext']
 
-## List of domains that should always be loaded, despite being ad-
-## blocked. Domains may contain * and ? wildcards and are otherwise
-## required to exactly match the requested domain. Local domains are
-## always exempt from hostblocking.
-## Type: List of String
+# List of domains that should always be loaded, despite being ad-
+# blocked. Domains may contain * and ? wildcards and are otherwise
+# required to exactly match the requested domain. Local domains are
+# always exempt from hostblocking.
+# Type: List of String
 # c.content.host_blocking.whitelist = ['piwik.org']
 
-## Enable or disable hyperlink auditing (`<a ping>`).
-## Type: Bool
+# Enable or disable hyperlink auditing (`<a ping>`).
+# Type: Bool
 # c.content.hyperlink_auditing = False
 
-## Whether images are automatically loaded in web pages.
-## Type: Bool
+# Whether images are automatically loaded in web pages.
+# Type: Bool
 # c.content.images = True
 
-## Show javascript alerts.
-## Type: Bool
+# Show javascript alerts.
+# Type: Bool
 # c.content.javascript.alert = True
 
-## Whether JavaScript can read from or write to the clipboard. With
-## QtWebEngine, writing the clipboard as response to a user interaction
-## is always allowed.
-## Type: Bool
+# Whether JavaScript can read from or write to the clipboard. With
+# QtWebEngine, writing the clipboard as response to a user interaction
+# is always allowed.
+# Type: Bool
 # c.content.javascript.can_access_clipboard = False
 
-## Whether JavaScript can close tabs.
-## Type: Bool
+# Whether JavaScript can close tabs.
+# Type: Bool
 # c.content.javascript.can_close_tabs = False
 
-## Whether JavaScript can open new tabs without user interaction.
-## Type: Bool
+# Whether JavaScript can open new tabs without user interaction.
+# Type: Bool
 # c.content.javascript.can_open_tabs_automatically = False
 
-## Enables or disables JavaScript.
-## Type: Bool
+# Enables or disables JavaScript.
+# Type: Bool
 # c.content.javascript.enabled = True
 
-## Log levels to use for JavaScript console logging messages. When a
-## JavaScript message with the level given in the dictionary key is
-## logged, the corresponding dictionary value selects the qutebrowser
-## logger to use. On QtWebKit, the "unknown" setting is always used.
-## Type: Dict
+# Log levels to use for JavaScript console logging messages. When a
+# JavaScript message with the level given in the dictionary key is
+# logged, the corresponding dictionary value selects the qutebrowser
+# logger to use. On QtWebKit, the "unknown" setting is always used.
+# Type: Dict
 # c.content.javascript.log = {'unknown': 'debug', 'info': 'debug', 'warning': 'debug', 'error': 'debug'}
 
-## Use the standard JavaScript modal dialog for `alert()` and `confirm()`
-## Type: Bool
+# Use the standard JavaScript modal dialog for `alert()` and `confirm()`
+# Type: Bool
 # c.content.javascript.modal_dialog = False
 
-## Show javascript prompts.
-## Type: Bool
+# Show javascript prompts.
+# Type: Bool
 # c.content.javascript.prompt = True
 
-## Whether locally loaded documents are allowed to access other local
-## urls.
-## Type: Bool
+# Whether locally loaded documents are allowed to access other local
+# urls.
+# Type: Bool
 # c.content.local_content_can_access_file_urls = True
 
-## Whether locally loaded documents are allowed to access remote urls.
-## Type: Bool
+# Whether locally loaded documents are allowed to access remote urls.
+# Type: Bool
 c.content.local_content_can_access_remote_urls = True
 
-## Whether support for HTML 5 local storage and Web SQL is enabled.
-## Type: Bool
+# Whether support for HTML 5 local storage and Web SQL is enabled.
+# Type: Bool
 # c.content.local_storage = True
 
-## Allow websites to record audio/video.
-## Type: BoolAsk
-## Valid values:
-##   - true
-##   - false
-##   - ask
+# Allow websites to record audio/video.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
 # c.content.media_capture = 'ask'
 
-## Location of a netrc-file for HTTP authentication. If unset, `~/.netrc`
-## is used.
-## Type: File
+# Location of a netrc-file for HTTP authentication. If unset, `~/.netrc`
+# is used.
+# Type: File
 # c.content.netrc_file = None
 
-## Allow websites to show notifications.
-## Type: BoolAsk
-## Valid values:
-##   - true
-##   - false
-##   - ask
+# Allow websites to show notifications.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
 # c.content.notifications = 'ask'
 
-## Enable pdf.js to view PDF files in the browser. Note that the files
-## can still be downloaded by clicking the download button in the pdf.js
-## viewer.
-## Type: Bool
+# Enable pdf.js to view PDF files in the browser. Note that the files
+# can still be downloaded by clicking the download button in the pdf.js
+# viewer.
+# Type: Bool
 # c.content.pdfjs = False
 
-## Enables or disables plugins in Web pages.
-## Type: Bool
+# Enables or disables plugins in Web pages.
+# Type: Bool
 # c.content.plugins = False
 
-## Whether the background color and images are also drawn when the page
-## is printed.
-## Type: Bool
+# Whether the background color and images are also drawn when the page
+# is printed.
+# Type: Bool
 # c.content.print_element_backgrounds = True
 
-## Open new windows in private browsing mode which does not record
-## visited pages.
-## Type: Bool
+# Open new windows in private browsing mode which does not record
+# visited pages.
+# Type: Bool
 # c.content.private_browsing = False
 
-## The proxy to use. In addition to the listed values, you can use a
-## `socks://...` or `http://...` URL.
-## Type: Proxy
-## Valid values:
-##   - system: Use the system wide proxy.
-##   - none: Don't use any proxy
+# The proxy to use. In addition to the listed values, you can use a
+# `socks://...` or `http://...` URL.
+# Type: Proxy
+# Valid values:
+#   - system: Use the system wide proxy.
+#   - none: Don't use any proxy
 # c.content.proxy = 'system'
 
-## Send DNS requests over the configured proxy.
-## Type: Bool
+# Send DNS requests over the configured proxy.
+# Type: Bool
 # c.content.proxy_dns_requests = True
 
-## Validate SSL handshakes.
-## Type: BoolAsk
-## Valid values:
-##   - true
-##   - false
-##   - ask
+# Validate SSL handshakes.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
 # c.content.ssl_strict = 'ask'
 
-## A list of user stylesheet filenames to use.
-## Type: List of File, or File
+# A list of user stylesheet filenames to use.
+# Type: List of File, or File
 # c.content.user_stylesheets = None
 
-## Enables or disables WebGL.
-## Type: Bool
+# Enables or disables WebGL.
+# Type: Bool
 # c.content.webgl = True
 
-## Whether load requests should be monitored for cross-site scripting
-## attempts. Suspicious scripts will be blocked and reported in the
-## inspector's JavaScript console. Enabling this feature might have an
-## impact on performance.
-## Type: Bool
+# Whether load requests should be monitored for cross-site scripting
+# attempts. Suspicious scripts will be blocked and reported in the
+# inspector's JavaScript console. Enabling this feature might have an
+# impact on performance.
+# Type: Bool
 c.content.xss_auditing = True
 
-## The directory to save downloads to. If unset, a sensible os-specific
-## default is used.
-## Type: Directory
-c.downloads.location.directory = '~/downloads'
+# The directory to save downloads to. If unset, a sensible os-specific
+# default is used.
+# Type: Directory
+c.downloads.location.directory = "~/downloads"
 
-## Prompt the user for the download location. If set to false,
-## `downloads.location.directory` will be used.
-## Type: Bool
+# Prompt the user for the download location. If set to false,
+# `downloads.location.directory` will be used.
+# Type: Bool
 # c.downloads.location.prompt = True
 
-## Remember the last used download directory.
-## Type: Bool
+# Remember the last used download directory.
+# Type: Bool
 # c.downloads.location.remember = True
 
-## What to display in the download filename input.
-## Type: String
-## Valid values:
-##   - path: Show only the download path.
-##   - filename: Show only download filename.
-##   - both: Show download path and filename.
-c.downloads.location.suggestion = 'both'
+# What to display in the download filename input.
+# Type: String
+# Valid values:
+#   - path: Show only the download path.
+#   - filename: Show only download filename.
+#   - both: Show download path and filename.
+c.downloads.location.suggestion = "both"
 
-## The default program used to open downloads. If null, the default
-## internal handler is used. Any `{}` in the string will be expanded to
-## the filename, else the filename will be appended.
-## Type: String
+# The default program used to open downloads. If null, the default
+# internal handler is used. Any `{}` in the string will be expanded to
+# the filename, else the filename will be appended.
+# Type: String
 # c.downloads.open_dispatcher = None
 
-## Where to show the downloaded files.
-## Type: VerticalPosition
-## Valid values:
-##   - top
-##   - bottom
+# Where to show the downloaded files.
+# Type: VerticalPosition
+# Valid values:
+#   - top
+#   - bottom
 # c.downloads.position = 'top'
 
-## Number of milliseconds to wait before removing finished downloads. If
-## set to -1, downloads are never removed.
-## Type: Int
+# Number of milliseconds to wait before removing finished downloads. If
+# set to -1, downloads are never removed.
+# Type: Int
 # c.downloads.remove_finished = -1
 
-## The editor (and arguments) to use for the `open-editor` command. `{}`
-## gets replaced by the filename of the file to be edited.
-## Type: ShellCommand
-c.editor.command = ['urxvt', '-e', 'nvim', '{}']
+# The editor (and arguments) to use for the `open-editor` command. `{}`
+# gets replaced by the filename of the file to be edited.
+# Type: ShellCommand
+c.editor.command = ["urxvt", "-e", "nvim", "{}"]
 
-## Encoding to use for the editor.
-## Type: Encoding
+# Encoding to use for the editor.
+# Type: Encoding
 # c.editor.encoding = 'utf-8'
 
-## Font used in the completion categories.
-## Type: Font
+# Font used in the completion categories.
+# Type: Font
 # c.fonts.completion.category = 'bold 8pt monospace'
 
-## Font used in the completion widget.
-## Type: Font
+# Font used in the completion widget.
+# Type: Font
 # c.fonts.completion.entry = '8pt monospace'
 
-## Font used for the debugging console.
-## Type: QtFont
+# Font used for the debugging console.
+# Type: QtFont
 # c.fonts.debug_console = '8pt monospace'
 
-## Font used for the downloadbar.
-## Type: Font
+# Font used for the downloadbar.
+# Type: Font
 # c.fonts.downloads = '8pt monospace'
 
-## Font used for the hints.
-## Type: Font
+# Font used for the hints.
+# Type: Font
 # c.fonts.hints = 'bold 10pt monospace'
 
-## Font used in the keyhint widget.
-## Type: Font
+# Font used in the keyhint widget.
+# Type: Font
 # c.fonts.keyhint = '8pt monospace'
 
-## Font used for error messages.
-## Type: Font
+# Font used for error messages.
+# Type: Font
 # c.fonts.messages.error = '8pt monospace'
 
-## Font used for info messages.
-## Type: Font
+# Font used for info messages.
+# Type: Font
 # c.fonts.messages.info = '8pt monospace'
 
-## Font used for warning messages.
-## Type: Font
+# Font used for warning messages.
+# Type: Font
 # c.fonts.messages.warning = '8pt monospace'
 
-## Default monospace fonts. Whenever "monospace" is used in a font
-## setting, it's replaced with the fonts listed here.
-## Type: Font
+# Default monospace fonts. Whenever "monospace" is used in a font
+# setting, it's replaced with the fonts listed here.
+# Type: Font
 # c.fonts.monospace = '"xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
-## Font used for prompts.
-## Type: Font
+# Font used for prompts.
+# Type: Font
 # c.fonts.prompts = '8pt sans-serif'
 
-## Font used in the statusbar.
-## Type: Font
+# Font used in the statusbar.
+# Type: Font
 # c.fonts.statusbar = '8pt monospace'
 
-## Font used in the tab bar.
-## Type: QtFont
+# Font used in the tab bar.
+# Type: QtFont
 # c.fonts.tabs = '8pt monospace'
 
-## Font family for cursive fonts.
-## Type: FontFamily
+# Font family for cursive fonts.
+# Type: FontFamily
 # c.fonts.web.family.cursive = ''
 
-## Font family for fantasy fonts.
-## Type: FontFamily
+# Font family for fantasy fonts.
+# Type: FontFamily
 # c.fonts.web.family.fantasy = ''
 
-## Font family for fixed fonts.
-## Type: FontFamily
+# Font family for fixed fonts.
+# Type: FontFamily
 # c.fonts.web.family.fixed = ''
 
-## Font family for sans-serif fonts.
-## Type: FontFamily
+# Font family for sans-serif fonts.
+# Type: FontFamily
 # c.fonts.web.family.sans_serif = ''
 
-## Font family for serif fonts.
-## Type: FontFamily
+# Font family for serif fonts.
+# Type: FontFamily
 # c.fonts.web.family.serif = ''
 
-## Font family for standard fonts.
-## Type: FontFamily
+# Font family for standard fonts.
+# Type: FontFamily
 # c.fonts.web.family.standard = ''
 
-## The default font size for regular text.
-## Type: Int
+# The default font size for regular text.
+# Type: Int
 # c.fonts.web.size.default = 16
 
-## The default font size for fixed-pitch text.
-## Type: Int
+# The default font size for fixed-pitch text.
+# Type: Int
 # c.fonts.web.size.default_fixed = 13
 
-## The hard minimum font size.
-## Type: Int
+# The hard minimum font size.
+# Type: Int
 # c.fonts.web.size.minimum = 0
 
-## The minimum logical font size that is applied when zooming out.
-## Type: Int
+# The minimum logical font size that is applied when zooming out.
+# Type: Int
 # c.fonts.web.size.minimum_logical = 6
 
-## Controls when a hint can be automatically followed without pressing
-## Enter.
-## Type: String
-## Valid values:
-##   - always: Auto-follow whenever there is only a single hint on a page.
-##   - unique-match: Auto-follow whenever there is a unique non-empty match in either the hint string (word mode) or filter (number mode).
-##   - full-match: Follow the hint when the user typed the whole hint (letter, word or number mode) or the element's text (only in number mode).
-##   - never: The user will always need to press Enter to follow a hint.
+# Controls when a hint can be automatically followed without pressing
+# Enter.
+# Type: String
+# Valid values:
+#   - always: Auto-follow whenever there is only a single hint on a page.
+#   - unique-match: Auto-follow whenever there is a unique non-empty match in either the hint string (word mode) or filter (number mode).
+#   - full-match: Follow the hint when the user typed the whole hint (letter, word or number mode) or the element's text (only in number mode).
+#   - never: The user will always need to press Enter to follow a hint.
 # c.hints.auto_follow = 'unique-match'
 
-## A timeout (in milliseconds) to ignore normal-mode key bindings after a
-## successful auto-follow.
-## Type: Int
+# A timeout (in milliseconds) to ignore normal-mode key bindings after a
+# successful auto-follow.
+# Type: Int
 # c.hints.auto_follow_timeout = 0
 
-## CSS border value for hints.
-## Type: String
+# CSS border value for hints.
+# Type: String
 # c.hints.border = '1px solid #E3BE23'
 
-## Chars used for hint strings.
-## Type: UniqueCharString
-c.hints.chars = 'aoeuidhtns'
+# Chars used for hint strings.
+# Type: UniqueCharString
+c.hints.chars = "aoeuidhtns"
 
-## The dictionary file to be used by the word hints.
-## Type: File
+# The dictionary file to be used by the word hints.
+# Type: File
 # c.hints.dictionary = '/usr/share/dict/words'
 
-## Which implementation to use to find elements to hint.
-## Type: String
-## Valid values:
-##   - javascript: Better but slower
-##   - python: Slightly worse but faster
+# Which implementation to use to find elements to hint.
+# Type: String
+# Valid values:
+#   - javascript: Better but slower
+#   - python: Slightly worse but faster
 # c.hints.find_implementation = 'javascript'
 
-## Hide unmatched hints in rapid mode.
-## Type: Bool
+# Hide unmatched hints in rapid mode.
+# Type: Bool
 # c.hints.hide_unmatched_rapid_hints = True
 
-## Minimum number of chars used for hint strings.
-## Type: Int
+# Minimum number of chars used for hint strings.
+# Type: Int
 # c.hints.min_chars = 1
 
-## Mode to use for hints.
-## Type: String
-## Valid values:
-##   - number: Use numeric hints. (In this mode you can also type letters from the hinted element to filter and reduce the number of elements that are hinted.)
-##   - letter: Use the chars in the `hints.chars` setting.
-##   - word: Use hints words based on the html elements and the extra words.
+# Mode to use for hints.
+# Type: String
+# Valid values:
+#   - number: Use numeric hints. (In this mode you can also type letters from the hinted element to filter and reduce the number of elements that are hinted.)
+#   - letter: Use the chars in the `hints.chars` setting.
+#   - word: Use hints words based on the html elements and the extra words.
 # c.hints.mode = 'letter'
 
-## A comma-separated list of regexes to use for 'next' links.
-## Type: List of Regex
+# A comma-separated list of regexes to use for 'next' links.
+# Type: List of Regex
 # c.hints.next_regexes = ['\\bnext\\b', '\\bmore\\b', '\\bnewer\\b', '\\b[>→≫]\\b', '\\b(>>|»)\\b', '\\bcontinue\\b']
 
-## A comma-separated list of regexes to use for 'prev' links.
-## Type: List of Regex
+# A comma-separated list of regexes to use for 'prev' links.
+# Type: List of Regex
 # c.hints.prev_regexes = ['\\bprev(ious)?\\b', '\\bback\\b', '\\bolder\\b', '\\b[<←≪]\\b', '\\b(<<|«)\\b']
 
-## Scatter hint key chains (like Vimium) or not (like dwb). Ignored for
-## number hints.
-## Type: Bool
+# Scatter hint key chains (like Vimium) or not (like dwb). Ignored for
+# number hints.
+# Type: Bool
 # c.hints.scatter = True
 
-## Make chars in hint strings uppercase.
-## Type: Bool
+# Make chars in hint strings uppercase.
+# Type: Bool
 # c.hints.uppercase = False
 
-## The maximum time in minutes between two history items for them to be
-## considered being from the same browsing session. Items with less time
-## between them are grouped when being displayed in `:history`. Use -1 to
-## disable separation.
-## Type: Int
+# The maximum time in minutes between two history items for them to be
+# considered being from the same browsing session. Items with less time
+# between them are grouped when being displayed in `:history`. Use -1 to
+# disable separation.
+# Type: Int
 # c.history_gap_interval = 30
 
-## Find text on a page case-insensitively.
-## Type: String
-## Valid values:
-##   - always: Search case-insensitively
-##   - never: Search case-sensitively
-##   - smart: Search case-sensitively if there are capital chars
+# Find text on a page case-insensitively.
+# Type: String
+# Valid values:
+#   - always: Search case-insensitively
+#   - never: Search case-sensitively
+#   - smart: Search case-sensitively if there are capital chars
 # c.ignore_case = 'smart'
 
-## Forward unbound keys to the webview in normal mode.
-## Type: String
-## Valid values:
-##   - all: Forward all unbound keys.
-##   - auto: Forward unbound non-alphanumeric keys.
-##   - none: Don't forward any keys.
+# Forward unbound keys to the webview in normal mode.
+# Type: String
+# Valid values:
+#   - all: Forward all unbound keys.
+#   - auto: Forward unbound non-alphanumeric keys.
+#   - none: Don't forward any keys.
 # c.input.forward_unbound_keys = 'auto'
 
-## Leave insert mode if a non-editable element is clicked.
-## Type: Bool
+# Leave insert mode if a non-editable element is clicked.
+# Type: Bool
 # c.input.insert_mode.auto_leave = True
 
-## Automatically enter insert mode if an editable element is focused
-## after loading the page.
-## Type: Bool
+# Automatically enter insert mode if an editable element is focused
+# after loading the page.
+# Type: Bool
 # c.input.insert_mode.auto_load = False
 
-## Switch to insert mode when clicking flash and other plugins.
-## Type: Bool
+# Switch to insert mode when clicking flash and other plugins.
+# Type: Bool
 # c.input.insert_mode.plugins = False
 
-## Include hyperlinks in the keyboard focus chain when tabbing.
-## Type: Bool
+# Include hyperlinks in the keyboard focus chain when tabbing.
+# Type: Bool
 # c.input.links_included_in_focus_chain = True
 
-## Timeout (in milliseconds) for partially typed key bindings. If the
-## current input forms only partial matches, the keystring will be
-## cleared after this time.
-## Type: Int
+# Timeout (in milliseconds) for partially typed key bindings. If the
+# current input forms only partial matches, the keystring will be
+# cleared after this time.
+# Type: Int
 # c.input.partial_timeout = 5000
 
-## Enable Opera-like mouse rocker gestures. This disables the context
-## menu.
-## Type: Bool
+# Enable Opera-like mouse rocker gestures. This disables the context
+# menu.
+# Type: Bool
 # c.input.rocker_gestures = False
 
-## Enable Spatial Navigation. Spatial navigation consists in the ability
-## to navigate between focusable elements in a Web page, such as
-## hyperlinks and form controls, by using Left, Right, Up and Down arrow
-## keys. For example, if a user presses the Right key, heuristics
-## determine whether there is an element he might be trying to reach
-## towards the right and which element he probably wants.
-## Type: Bool
+# Enable Spatial Navigation. Spatial navigation consists in the ability
+# to navigate between focusable elements in a Web page, such as
+# hyperlinks and form controls, by using Left, Right, Up and Down arrow
+# keys. For example, if a user presses the Right key, heuristics
+# determine whether there is an element he might be trying to reach
+# towards the right and which element he probably wants.
+# Type: Bool
 # c.input.spatial_navigation = False
 
-## Keychains that shouldn't be shown in the keyhint dialog. Globs are
-## supported, so `;*` will blacklist all keychains starting with `;`. Use
-## `*` to disable keyhints.
-## Type: List of String
+# Keychains that shouldn't be shown in the keyhint dialog. Globs are
+# supported, so `;*` will blacklist all keychains starting with `;`. Use
+# `*` to disable keyhints.
+# Type: List of String
 # c.keyhint.blacklist = []
 
-## Time from pressing a key to seeing the keyhint dialog (ms).
-## Type: Int
+# Time from pressing a key to seeing the keyhint dialog (ms).
+# Type: Int
 # c.keyhint.delay = 500
 
-## Time (in ms) to show messages in the statusbar for. Set to 0 to never
-## clear messages.
-## Type: Int
+# Time (in ms) to show messages in the statusbar for. Set to 0 to never
+# clear messages.
+# Type: Int
 # c.messages.timeout = 2000
 
-## Show messages in unfocused windows.
-## Type: Bool
+# Show messages in unfocused windows.
+# Type: Bool
 # c.messages.unfocused = False
 
-## How to open links in an existing instance if a new one is launched.
-## This happens when e.g. opening a link from a terminal. See
-## `new_instance_open_target_window` to customize in which window the
-## link is opened in.
-## Type: String
-## Valid values:
-##   - tab: Open a new tab in the existing window and activate the window.
-##   - tab-bg: Open a new background tab in the existing window and activate the window.
-##   - tab-silent: Open a new tab in the existing window without activating the window.
-##   - tab-bg-silent: Open a new background tab in the existing window without activating the window.
-##   - window: Open in a new window.
+# How to open links in an existing instance if a new one is launched.
+# This happens when e.g. opening a link from a terminal. See
+# `new_instance_open_target_window` to customize in which window the
+# link is opened in.
+# Type: String
+# Valid values:
+#   - tab: Open a new tab in the existing window and activate the window.
+#   - tab-bg: Open a new background tab in the existing window and activate the window.
+#   - tab-silent: Open a new tab in the existing window without activating the window.
+#   - tab-bg-silent: Open a new background tab in the existing window without activating the window.
+#   - window: Open in a new window.
 # c.new_instance_open_target = 'tab'
 
-## Which window to choose when opening links as new tabs. When
-## `new_instance_open_target` is not set to `window`, this is ignored.
-## Type: String
-## Valid values:
-##   - first-opened: Open new tabs in the first (oldest) opened window.
-##   - last-opened: Open new tabs in the last (newest) opened window.
-##   - last-focused: Open new tabs in the most recently focused window.
-##   - last-visible: Open new tabs in the most recently visible window.
+# Which window to choose when opening links as new tabs. When
+# `new_instance_open_target` is not set to `window`, this is ignored.
+# Type: String
+# Valid values:
+#   - first-opened: Open new tabs in the first (oldest) opened window.
+#   - last-opened: Open new tabs in the last (newest) opened window.
+#   - last-focused: Open new tabs in the most recently focused window.
+#   - last-visible: Open new tabs in the most recently visible window.
 # c.new_instance_open_target_window = 'last-focused'
 
-## Show a filebrowser in upload/download prompts.
-## Type: Bool
+# Show a filebrowser in upload/download prompts.
+# Type: Bool
 # c.prompt.filebrowser = True
 
-## The rounding radius for the edges of prompts.
-## Type: Int
+# The rounding radius for the edges of prompts.
+# Type: Int
 # c.prompt.radius = 8
 
-## Additional arguments to pass to Qt, without leading `--`. With
-## QtWebEngine, some Chromium arguments (see
-## https://peter.sh/experiments/chromium-command-line-switches/ for a
-## list) will work. This setting requires a restart.
-## Type: List of String
+# Additional arguments to pass to Qt, without leading `--`. With
+# QtWebEngine, some Chromium arguments (see
+# https://peter.sh/experiments/chromium-command-line-switches/ for a
+# list) will work. This setting requires a restart.
+# Type: List of String
 # c.qt.args = []
 
-## Force a Qt platform to use. This sets the `QT_QPA_PLATFORM`
-## environment variable and is useful to force using the XCB plugin when
-## running QtWebEngine on Wayland.
-## Type: String
+# Force a Qt platform to use. This sets the `QT_QPA_PLATFORM`
+# environment variable and is useful to force using the XCB plugin when
+# running QtWebEngine on Wayland.
+# Type: String
 # c.qt.force_platform = None
 
-## Force software rendering for QtWebEngine. This is needed for
-## QtWebEngine to work with Nouveau drivers. This setting requires a
-## restart.
-## Type: Bool
+# Force software rendering for QtWebEngine. This is needed for
+# QtWebEngine to work with Nouveau drivers. This setting requires a
+# restart.
+# Type: Bool
 # c.qt.force_software_rendering = False
 
-## Show a scrollbar.
-## Type: Bool
+# Show a scrollbar.
+# Type: Bool
 # c.scrolling.bar = False
 
-## Enable smooth scrolling for web pages. Note smooth scrolling does not
-## work with the `:scroll-px` command.
-## Type: Bool
+# Enable smooth scrolling for web pages. Note smooth scrolling does not
+# work with the `:scroll-px` command.
+# Type: Bool
 c.scrolling.smooth = True
 
-## The name of the session to save by default. If this is set to null,
-## the session which was last loaded is saved.
-## Type: SessionName
+# The name of the session to save by default. If this is set to null,
+# the session which was last loaded is saved.
+# Type: SessionName
 # c.session_default_name = None
 
-## Spell checking languages. You can check for available languages and
-## install dictionaries using scripts/install_dict.py. Run the script
-## with -h/--help for instructions.
-## Type: List of String
-## Valid values:
-##   - af-ZA: Afrikaans (South Africa)
-##   - bg-BG: Bulgarian (Bulgaria)
-##   - ca-ES: Catalan (Spain)
-##   - cs-CZ: Czech (Czech Republic)
-##   - da-DK: Danish (Denmark)
-##   - de-DE: German (Germany)
-##   - el-GR: Greek (Greece)
-##   - en-CA: English (Canada)
-##   - en-GB: English (United Kingdom)
-##   - en-US: English (United States)
-##   - es-ES: Spanish (Spain)
-##   - et-EE: Estonian (Estonia)
-##   - fa-IR: Farsi (Iran)
-##   - fo-FO: Faroese (Faroe Islands)
-##   - fr-FR: French (France)
-##   - he-IL: Hebrew (Israel)
-##   - hi-IN: Hindi (India)
-##   - hr-HR: Croatian (Croatia)
-##   - hu-HU: Hungarian (Hungary)
-##   - id-ID: Indonesian (Indonesia)
-##   - it-IT: Italian (Italy)
-##   - ko: Korean
-##   - lt-LT: Lithuanian (Lithuania)
-##   - lv-LV: Latvian (Latvia)
-##   - nb-NO: Norwegian (Norway)
-##   - nl-NL: Dutch (Netherlands)
-##   - pl-PL: Polish (Poland)
-##   - pt-BR: Portuguese (Brazil)
-##   - pt-PT: Portuguese (Portugal)
-##   - ro-RO: Romanian (Romania)
-##   - ru-RU: Russian (Russia)
-##   - sh: Serbo-Croatian
-##   - sk-SK: Slovak (Slovakia)
-##   - sl-SI: Slovenian (Slovenia)
-##   - sq: Albanian
-##   - sr: Serbian
-##   - sv-SE: Swedish (Sweden)
-##   - ta-IN: Tamil (India)
-##   - tg-TG: Tajik (Tajikistan)
-##   - tr-TR: Turkish (Turkey)
-##   - uk-UA: Ukrainian (Ukraine)
-##   - vi-VN: Vietnamese (Viet Nam)
+# Spell checking languages. You can check for available languages and
+# install dictionaries using scripts/install_dict.py. Run the script
+# with -h/--help for instructions.
+# Type: List of String
+# Valid values:
+#   - af-ZA: Afrikaans (South Africa)
+#   - bg-BG: Bulgarian (Bulgaria)
+#   - ca-ES: Catalan (Spain)
+#   - cs-CZ: Czech (Czech Republic)
+#   - da-DK: Danish (Denmark)
+#   - de-DE: German (Germany)
+#   - el-GR: Greek (Greece)
+#   - en-CA: English (Canada)
+#   - en-GB: English (United Kingdom)
+#   - en-US: English (United States)
+#   - es-ES: Spanish (Spain)
+#   - et-EE: Estonian (Estonia)
+#   - fa-IR: Farsi (Iran)
+#   - fo-FO: Faroese (Faroe Islands)
+#   - fr-FR: French (France)
+#   - he-IL: Hebrew (Israel)
+#   - hi-IN: Hindi (India)
+#   - hr-HR: Croatian (Croatia)
+#   - hu-HU: Hungarian (Hungary)
+#   - id-ID: Indonesian (Indonesia)
+#   - it-IT: Italian (Italy)
+#   - ko: Korean
+#   - lt-LT: Lithuanian (Lithuania)
+#   - lv-LV: Latvian (Latvia)
+#   - nb-NO: Norwegian (Norway)
+#   - nl-NL: Dutch (Netherlands)
+#   - pl-PL: Polish (Poland)
+#   - pt-BR: Portuguese (Brazil)
+#   - pt-PT: Portuguese (Portugal)
+#   - ro-RO: Romanian (Romania)
+#   - ru-RU: Russian (Russia)
+#   - sh: Serbo-Croatian
+#   - sk-SK: Slovak (Slovakia)
+#   - sl-SI: Slovenian (Slovenia)
+#   - sq: Albanian
+#   - sr: Serbian
+#   - sv-SE: Swedish (Sweden)
+#   - ta-IN: Tamil (India)
+#   - tg-TG: Tajik (Tajikistan)
+#   - tr-TR: Turkish (Turkey)
+#   - uk-UA: Ukrainian (Ukraine)
+#   - vi-VN: Vietnamese (Viet Nam)
 # c.spellcheck.languages = []
 
-## Hide the statusbar unless a message is shown.
-## Type: Bool
+# Hide the statusbar unless a message is shown.
+# Type: Bool
 # c.statusbar.hide = False
 
-## Padding for the statusbar.
-## Type: Padding
+# Padding for the statusbar.
+# Type: Padding
 # c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 0}
 
-## The position of the status bar.
-## Type: VerticalPosition
-## Valid values:
-##   - top
-##   - bottom
+# The position of the status bar.
+# Type: VerticalPosition
+# Valid values:
+#   - top
+#   - bottom
 # c.statusbar.position = 'bottom'
 
-## Open new tabs (middleclick/ctrl+click) in the background.
-## Type: Bool
+# Open new tabs (middleclick/ctrl+click) in the background.
+# Type: Bool
 # c.tabs.background = False
 
-## On which mouse button to close tabs.
-## Type: String
-## Valid values:
-##   - right: Close tabs on right-click.
-##   - middle: Close tabs on middle-click.
-##   - none: Don't close tabs using the mouse.
+# On which mouse button to close tabs.
+# Type: String
+# Valid values:
+#   - right: Close tabs on right-click.
+#   - middle: Close tabs on middle-click.
+#   - none: Don't close tabs using the mouse.
 # c.tabs.close_mouse_button = 'middle'
 
-## Scaling for favicons in the tab bar. The tab size is unchanged, so big
-## favicons also require extra `tabs.padding`.
-## Type: Float
+# Scaling for favicons in the tab bar. The tab size is unchanged, so big
+# favicons also require extra `tabs.padding`.
+# Type: Float
 # c.tabs.favicons.scale = 1.0
 
-## Show favicons in the tab bar.
-## Type: Bool
+# Show favicons in the tab bar.
+# Type: Bool
 # c.tabs.favicons.show = True
 
-## Padding for tab indicators
-## Type: Padding
+# Padding for tab indicators
+# Type: Padding
 # c.tabs.indicator_padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
 
-## Behavior when the last tab is closed.
-## Type: String
-## Valid values:
-##   - ignore: Don't do anything.
-##   - blank: Load a blank page.
-##   - startpage: Load the start page.
-##   - default-page: Load the default page.
-##   - close: Close the window.
-c.tabs.last_close = 'blank'
+# Behavior when the last tab is closed.
+# Type: String
+# Valid values:
+#   - ignore: Don't do anything.
+#   - blank: Load a blank page.
+#   - startpage: Load the start page.
+#   - default-page: Load the default page.
+#   - close: Close the window.
+c.tabs.last_close = "blank"
 
-## Switch between tabs using the mouse wheel.
-## Type: Bool
+# Switch between tabs using the mouse wheel.
+# Type: Bool
 c.tabs.mousewheel_switching = False
 
-## How new tabs opened from another tab are positioned.
-## Type: NewTabPosition
-## Valid values:
-##   - prev: Before the current tab.
-##   - next: After the current tab.
-##   - first: At the beginning.
-##   - last: At the end.
+# How new tabs opened from another tab are positioned.
+# Type: NewTabPosition
+# Valid values:
+#   - prev: Before the current tab.
+#   - next: After the current tab.
+#   - first: At the beginning.
+#   - last: At the end.
 # c.tabs.new_position.related = 'next'
 
-## How new tabs which aren't opened from another tab are positioned.
-## Type: NewTabPosition
-## Valid values:
-##   - prev: Before the current tab.
-##   - next: After the current tab.
-##   - first: At the beginning.
-##   - last: At the end.
+# How new tabs which aren't opened from another tab are positioned.
+# Type: NewTabPosition
+# Valid values:
+#   - prev: Before the current tab.
+#   - next: After the current tab.
+#   - first: At the beginning.
+#   - last: At the end.
 # c.tabs.new_position.unrelated = 'last'
 
-## Padding around text for tabs
-## Type: Padding
+# Padding around text for tabs
+# Type: Padding
 # c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
 
-## The position of the tab bar.
-## Type: Position
-## Valid values:
-##   - top
-##   - bottom
-##   - left
-##   - right
+# The position of the tab bar.
+# Type: Position
+# Valid values:
+#   - top
+#   - bottom
+#   - left
+#   - right
 # c.tabs.position = 'top'
 
-## Which tab to select when the focused tab is removed.
-## Type: SelectOnRemove
-## Valid values:
-##   - prev: Select the tab which came before the closed one (left in horizontal, above in vertical).
-##   - next: Select the tab which came after the closed one (right in horizontal, below in vertical).
-##   - last-used: Select the previously selected tab.
+# Which tab to select when the focused tab is removed.
+# Type: SelectOnRemove
+# Valid values:
+#   - prev: Select the tab which came before the closed one (left in horizontal, above in vertical).
+#   - next: Select the tab which came after the closed one (right in horizontal, below in vertical).
+#   - last-used: Select the previously selected tab.
 # c.tabs.select_on_remove = 'next'
 
-## When to show the tab bar.
-## Type: String
-## Valid values:
-##   - always: Always show the tab bar.
-##   - never: Always hide the tab bar.
-##   - multiple: Hide the tab bar if only one tab is open.
-##   - switching: Show the tab bar when switching tabs.
+# When to show the tab bar.
+# Type: String
+# Valid values:
+#   - always: Always show the tab bar.
+#   - never: Always hide the tab bar.
+#   - multiple: Hide the tab bar if only one tab is open.
+#   - switching: Show the tab bar when switching tabs.
 # c.tabs.show = 'always'
 
-## Time to show the tab bar before hiding it when tabs.show is set to
-## 'switching'.
-## Type: Int
+# Time to show the tab bar before hiding it when tabs.show is set to
+# 'switching'.
+# Type: Int
 # c.tabs.show_switching_delay = 800
 
-## Open a new window for every tab.
-## Type: Bool
+# Open a new window for every tab.
+# Type: Bool
 # c.tabs.tabs_are_windows = False
 
-## Alignment of the text inside of tabs.
-## Type: TextAlignment
-## Valid values:
-##   - left
-##   - right
-##   - center
+# Alignment of the text inside of tabs.
+# Type: TextAlignment
+# Valid values:
+#   - left
+#   - right
+#   - center
 # c.tabs.title.alignment = 'left'
 
-## The format to use for the tab title. The following placeholders are
-## defined:  * `{perc}`: The percentage as a string like `[10%]`. *
-## `{perc_raw}`: The raw percentage, e.g. `10` * `{title}`: The title of
-## the current web page * `{title_sep}`: The string ` - ` if a title is
-## set, empty otherwise. * `{index}`: The index of this tab. * `{id}`:
-## The internal tab ID of this tab. * `{scroll_pos}`: The page scroll
-## position. * `{host}`: The host of the current web page. * `{backend}`:
-## Either ''webkit'' or ''webengine'' * `{private}` : Indicates when
-## private mode is enabled.
-## Type: FormatString
+# The format to use for the tab title. The following placeholders are
+# defined:  * `{perc}`: The percentage as a string like `[10%]`. *
+# `{perc_raw}`: The raw percentage, e.g. `10` * `{title}`: The title of
+# the current web page * `{title_sep}`: The string ` - ` if a title is
+# set, empty otherwise. * `{index}`: The index of this tab. * `{id}`:
+# The internal tab ID of this tab. * `{scroll_pos}`: The page scroll
+# position. * `{host}`: The host of the current web page. * `{backend}`:
+# Either ''webkit'' or ''webengine'' * `{private}` : Indicates when
+# private mode is enabled.
+# Type: FormatString
 # c.tabs.title.format = '{index}: {title}'
 
-## The format to use for the tab title for pinned tabs. The same
-## placeholders like for `tabs.title.format` are defined.
-## Type: FormatString
+# The format to use for the tab title for pinned tabs. The same
+# placeholders like for `tabs.title.format` are defined.
+# Type: FormatString
 # c.tabs.title.format_pinned = '{index}'
 
-## The width of the tab bar if it's vertical, in px or as percentage of
-## the window.
-## Type: PercOrInt
+# The width of the tab bar if it's vertical, in px or as percentage of
+# the window.
+# Type: PercOrInt
 # c.tabs.width.bar = '20%'
 
-## Width of the progress indicator (0 to disable).
-## Type: Int
+# Width of the progress indicator (0 to disable).
+# Type: Int
 # c.tabs.width.indicator = 3
 
-## Whether to wrap when changing tabs.
-## Type: Bool
+# Whether to wrap when changing tabs.
+# Type: Bool
 # c.tabs.wrap = True
 
-## Whether to start a search when something else than a URL is entered.
-## Type: String
-## Valid values:
-##   - naive: Use simple/naive check.
-##   - dns: Use DNS requests (might be slow!).
-##   - never: Never search automatically.
+# Whether to start a search when something else than a URL is entered.
+# Type: String
+# Valid values:
+#   - naive: Use simple/naive check.
+#   - dns: Use DNS requests (might be slow!).
+#   - never: Never search automatically.
 # c.url.auto_search = 'naive'
 
-## The page to open if :open -t/-b/-w is used without URL. Use
-## `about:blank` for a blank page.
-## Type: FuzzyUrl
-c.url.default_page = 'about:blank'
+# The page to open if :open -t/-b/-w is used without URL. Use
+# `about:blank` for a blank page.
+# Type: FuzzyUrl
+c.url.default_page = "about:blank"
 
-## The URL segments where `:navigate increment/decrement` will search for
-## a number.
-## Type: FlagList
-## Valid values:
-##   - host
-##   - path
-##   - query
-##   - anchor
+# The URL segments where `:navigate increment/decrement` will search for
+# a number.
+# Type: FlagList
+# Valid values:
+#   - host
+#   - path
+#   - query
+#   - anchor
 # c.url.incdec_segments = ['path', 'query']
 
-## Definitions of search engines which can be used via the address bar.
-## Maps a searchengine name (such as `DEFAULT`, or `ddg`) to a URL with a
-## `{}` placeholder. The placeholder will be replaced by the search term,
-## use `{{` and `}}` for literal `{`/`}` signs. The searchengine named
-## `DEFAULT` is used when `url.auto_search` is turned on and something
-## else than a URL was entered to be opened. Other search engines can be
-## used by prepending the search engine name to the search term, e.g.
-## `:open google qutebrowser`.
-## Type: Dict
+# Definitions of search engines which can be used via the address bar.
+# Maps a searchengine name (such as `DEFAULT`, or `ddg`) to a URL with a
+# `{}` placeholder. The placeholder will be replaced by the search term,
+# use `{{` and `}}` for literal `{`/`}` signs. The searchengine named
+# `DEFAULT` is used when `url.auto_search` is turned on and something
+# else than a URL was entered to be opened. Other search engines can be
+# used by prepending the search engine name to the search term, e.g.
+# `:open google qutebrowser`.
+# Type: Dict
 c.url.searchengines = {
-    'DEFAULT': 'https://duckduckgo.com/?q={}',
-    'aur': 'https://aur.archlinux.org/packages/?K={}',
-    'godoc': 'https://godoc.org/?q={}',
-    'mdn': 'https://developer.mozilla.org/search?q={}',
-    'py2': 'https://docs.python.org/2/search.html?q={}',
-    'py3': 'https://docs.python.org/3/search.html?q={}',
+    "DEFAULT": "https://duckduckgo.com/?q={}",
+    "aur": "https://aur.archlinux.org/packages/?K={}",
+    "godoc": "https://godoc.org/?q={}",
+    "mdn": "https://developer.mozilla.org/search?q={}",
+    "py2": "https://docs.python.org/2/search.html?q={}",
+    "py3": "https://docs.python.org/3/search.html?q={}",
 }
 
-## The page(s) to open at the start.
-## Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = [
-    'https://calendar.google.com/',
-]
+# The page(s) to open at the start.
+# Type: List of FuzzyUrl, or FuzzyUrl
+c.url.start_pages = ["https://calendar.google.com/"]
 
-## The URL parameters to strip with `:yank url`.
-## Type: List of String
+# The URL parameters to strip with `:yank url`.
+# Type: List of String
 # c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
 
-## Hide the window decoration when using wayland (requires restart)
-## Type: Bool
+# Hide the window decoration when using wayland (requires restart)
+# Type: Bool
 # c.window.hide_wayland_decoration = False
 
-## The format to use for the window title. The following placeholders are
-## defined:  * `{perc}`: The percentage as a string like `[10%]`. *
-## `{perc_raw}`: The raw percentage, e.g. `10` * `{title}`: The title of
-## the current web page * `{title_sep}`: The string ` - ` if a title is
-## set, empty otherwise. * `{id}`: The internal window ID of this window.
-## * `{scroll_pos}`: The page scroll position. * `{host}`: The host of
-## the current web page. * `{backend}`: Either ''webkit'' or
-## ''webengine'' * `{private}` : Indicates when private mode is enabled.
-## Type: FormatString
+# The format to use for the window title. The following placeholders are
+# defined:  * `{perc}`: The percentage as a string like `[10%]`. *
+# `{perc_raw}`: The raw percentage, e.g. `10` * `{title}`: The title of
+# the current web page * `{title_sep}`: The string ` - ` if a title is
+# set, empty otherwise. * `{id}`: The internal window ID of this window.
+# * `{scroll_pos}`: The page scroll position. * `{host}`: The host of
+# the current web page. * `{backend}`: Either ''webkit'' or
+# ''webengine'' * `{private}` : Indicates when private mode is enabled.
+# Type: FormatString
 # c.window.title_format = '{perc}{title}{title_sep}qutebrowser'
 
-## The default zoom level.
-## Type: Perc
-c.zoom.default = '125%'
+# The default zoom level.
+# Type: Perc
+c.zoom.default = "125%"
 
-## The available zoom levels.
-## Type: List of Perc
+# The available zoom levels.
+# Type: List of Perc
 # c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%']
 
-## How much to divide the mouse wheel movements to translate them into
-## zoom increments.
-## Type: Int
+# How much to divide the mouse wheel movements to translate them into
+# zoom increments.
+# Type: Int
 # c.zoom.mouse_divider = 512
 
-## Whether the zoom factor on a frame applies only to the text or to all
-## content.
-## Type: Bool
+# Whether the zoom factor on a frame applies only to the text or to all
+# content.
+# Type: Bool
 # c.zoom.text_only = False
 
-## Bindings for normal mode
+# Bindings for normal mode
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
@@ -1403,8 +1403,8 @@ c.zoom.default = '125%'
 # config.bind('gd', 'download')
 # config.bind('gf', 'view-source')
 # config.bind('gg', 'scroll-to-perc 0')
-config.bind('gl', 'tab-move +')
-config.bind('gh', 'tab-move -')
+config.bind("gl", "tab-move +")
+config.bind("gh", "tab-move -")
 # config.bind('gm', 'tab-move')
 # config.bind('go', 'set-cmd-text :open {url:pretty}')
 # config.bind('gt', 'set-cmd-text -s :buffer')
@@ -1455,7 +1455,7 @@ config.bind('gh', 'tab-move -')
 # config.bind('{{', 'navigate prev -t')
 # config.bind('}}', 'navigate next -t')
 
-## Bindings for caret mode
+# Bindings for caret mode
 # config.bind('$', 'move-to-end-of-line', mode='caret')
 # config.bind('0', 'move-to-start-of-line', mode='caret')
 # config.bind('<Ctrl-Space>', 'drop-selection', mode='caret')
@@ -1484,7 +1484,7 @@ config.bind('gh', 'tab-move -')
 # config.bind('{', 'move-to-end-of-prev-block', mode='caret')
 # config.bind('}', 'move-to-end-of-next-block', mode='caret')
 
-## Bindings for command mode
+# Bindings for command mode
 # config.bind('<Alt-B>', 'rl-backward-word', mode='command')
 # config.bind('<Alt-Backspace>', 'rl-backward-kill-word', mode='command')
 # config.bind('<Alt-D>', 'rl-kill-word', mode='command')
@@ -1512,22 +1512,22 @@ config.bind('gh', 'tab-move -')
 # config.bind('<Tab>', 'completion-item-focus next', mode='command')
 # config.bind('<Up>', 'command-history-prev', mode='command')
 
-## Bindings for hint mode
+# Bindings for hint mode
 # config.bind('<Ctrl-B>', 'hint all tab-bg', mode='hint')
 # config.bind('<Ctrl-F>', 'hint links', mode='hint')
 # config.bind('<Ctrl-R>', 'hint --rapid links tab-bg', mode='hint')
 # config.bind('<Escape>', 'leave-mode', mode='hint')
 # config.bind('<Return>', 'follow-hint', mode='hint')
 
-## Bindings for insert mode
+# Bindings for insert mode
 # config.bind('<Ctrl-E>', 'open-editor', mode='insert')
 # config.bind('<Escape>', 'leave-mode', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text {primary}', mode='insert')
 
-## Bindings for passthrough mode
+# Bindings for passthrough mode
 # config.bind('<Ctrl-V>', 'leave-mode', mode='passthrough')
 
-## Bindings for prompt mode
+# Bindings for prompt mode
 # config.bind('<Alt-B>', 'rl-backward-word', mode='prompt')
 # config.bind('<Alt-Backspace>', 'rl-backward-kill-word', mode='prompt')
 # config.bind('<Alt-D>', 'rl-kill-word', mode='prompt')
@@ -1552,11 +1552,12 @@ config.bind('gh', 'tab-move -')
 # config.bind('n', 'prompt-accept no', mode='prompt')
 # config.bind('y', 'prompt-accept yes', mode='prompt')
 
-## Bindings for register mode
+# Bindings for register mode
 # config.bind('<Escape>', 'leave-mode', mode='register')
 
 try:
     import local
+
     local.apply(c, config)
 except ImportError:
     pass

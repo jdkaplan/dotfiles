@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+timespec="$1"
+message="$2"
+cmd="notify-send '$1' '$2'"
+
+echo "$cmd" | at -M "$timespec"
+atq

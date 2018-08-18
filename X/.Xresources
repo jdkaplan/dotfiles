@@ -10,13 +10,11 @@ URxvt*buffered: true
 URxvt*intensityStyles: false
 URxvt*urgentOnBell: true
 URxvt*iso14755: false
-URxvt*font: xft:Input Mono Narrow Light:size=10
+URxvt*font: xft:Input Mono Narrow Light:size=8
 URxvt.perl-ext-common: confirm-paste,
 URxvt*scrollTtyOutput:  false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
-
-Xft.dpi: 120
 
 ! Black
 URxvt*color0:  #000000

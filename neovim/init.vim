@@ -153,12 +153,21 @@ let g:ale_linters = {
 \        'go vet',
 \        'go build',
 \    ],
+\    'bash': [
+\        'shellcheck',
+\    ],
 \    'javascript': [
 \        'flow',
 \    ],
 \    'python': [
 \        'flake8',
 \        'mypy',
+\    ],
+\    'sh': [
+\        'shellcheck',
+\    ],
+\    'zsh': [
+\        'shellcheck',
 \    ],
 \}
 let g:ale_fixers = {

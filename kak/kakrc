@@ -1,5 +1,5 @@
 colorscheme jdkaplan
 
-add-highlighter global number_lines -separator ' '
-add-highlighter global show_matching
-add-highlighter global wrap -word
+add-highlighter global/number-lines number-lines -separator ' '
+add-highlighter global/show-matching show-matching
+add-highlighter global/wrap wrap -word

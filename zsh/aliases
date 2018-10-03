@@ -24,3 +24,5 @@ docker-ip() {
 }
 
 alias shrug='echo -n "¯\\_(ツ)_/¯"'
+
+alias t='task'

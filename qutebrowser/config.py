@@ -1555,6 +1555,8 @@ config.bind("gh", "tab-move -")
 # Bindings for register mode
 # config.bind('<Escape>', 'leave-mode', mode='register')
 
+config.bind(";w", "hint links window")
+
 try:
     import local
 

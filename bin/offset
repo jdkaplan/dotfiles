@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ "$#" -lt 3 ]; then
+    cat <<-USAGE
+Usage: $0 filename line column
+USAGE
+    exit 1
+fi
+
+fname="$1"
+linum="$(("$2"))"
+beforelines="$((linum - 1))"
+colnum="$3"
+beforecols="$((colnum - 1))"
+
+offset=$({
+head --quiet --lines "$beforelines" "$fname"
+sed -n "${linum}p" "$fname" | awk '{ print substr($0,0,'"$beforecols"') }'
+} | wc -c)
+echo "$((offset - 1))"

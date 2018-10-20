@@ -28,13 +28,16 @@ for t in [
     if ?(which @(t)):
         $TERMINAL = t
         break
+del t
 
 for path in [
         $HOME + '/bin',
         $HOME + '/.local/bin',
+        $HOME + '/go/bin',
 ]:
     if path not in $PATH:
         $PATH.insert(0, path)
+del path
 
 $LS_COLORS = $(dircolors @($HOME + '/.config/zsh/dircolors.256dark'))[len("LS_COLORS='"):-len("';\nexport LS_COLORS")]
 
@@ -75,6 +78,8 @@ $TAKO_SETTINGS.aliases.update({
     'screenshot': _screenshot,
     'g': 'git',
     'rg': 'rg -S',
+    't': 'task',
+    'notes': 'chromium --new-window https://notebook.zoho.com',
 })
 
 if 'TERM' in ${...}:
@@ -179,3 +184,4 @@ if os.path.isfile(_localconf):
         source @(_localconf)
     except:
         pass
+del _localconf

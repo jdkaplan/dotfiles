@@ -22,3 +22,5 @@ screenshot() {
 docker-ip() {
     docker inspect "$1" | jq -r '.[0].NetworkSettings.Networks.bridge.IPAddress'
 }
+
+alias shrug='echo -n "¯\\_(ツ)_/¯"'

@@ -3,6 +3,7 @@ IMAPAccount gmail
     User jeremydkaplan@gmail.com
     PassCmd "gopass show personal/email/jeremydkaplan@gmail.com | head -n 1"
     SSLType IMAPS
+    SSLVersions TLSv1.1
     CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 IMAPStore gmail-remote

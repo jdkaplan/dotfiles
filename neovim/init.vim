@@ -171,6 +171,9 @@ let g:ale_linters = {
 \        'flake8',
 \        'mypy',
 \    ],
+\    'rust': [
+\        'cargo',
+\    ],
 \    'sh': [
 \        'shellcheck',
 \    ],
@@ -185,6 +188,9 @@ let g:ale_fixers = {
 \    ],
 \    'python': [
 \        'black',
+\    ],
+\    'rust': [
+\        'rustfmt',
 \    ],
 \}
 nmap <silent> ;n <Plug>(ale_next_wrap)

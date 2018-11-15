@@ -226,6 +226,7 @@ let g:rooter_patterns = ['.root', '.git', '.git/']
 noremap <silent> <leader>cd :execute 'cd' fnameescape(FindRootDirectory())<CR>:pwd<CR>
 
 let g:AutoPairsMultilineClose = 0
+let g:AutoPairsShortcutBackInsert = ''
 
 let g:javascript_plugin_flow = 1
 let g:ale_javascript_flow_use_respect_pragma = 0

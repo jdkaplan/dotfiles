@@ -4,5 +4,7 @@ xset s off
 xset s 0 0
 xset r rate 250 50
 
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.3
+
 # The first -option clears any existing options
 setxkbmap -layout us,us -variant dvorak, -option -option grp:ctrls_toggle,shift:both_capslock,caps:escape,compose:prsc

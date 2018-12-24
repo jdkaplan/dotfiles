@@ -1,3 +1,5 @@
+## Adapted from https://raw.githubusercontent.com/leira/base16-kakoune/cda1583edc4eae387c17eb37f195496aa21ace2a/colors/base16-default-light.kak
+
 evaluate-commands %sh{
     base00='rgb:f8f8f8'
     base01='rgb:e8e8e8'
@@ -7,14 +9,14 @@ evaluate-commands %sh{
     base05='rgb:383838'
     base06='rgb:282828'
     base07='rgb:181818'
-    base08='rgb:7cafc2' # blue
-    base09='rgb:ba8baf' # purple
-    base0A='rgb:f7ba5d' # yellow-orange
-    base0B='rgb:d88c47' # orange
-    base0C='rgb:8c5432' # brown
-    base0D='rgb:5189a0' # teal
-    base0E='rgb:9bb556' # green-brown
-    base0F='rgb:bc150f' # red
+    base08='rgb:ab4642' # red
+    base09='rgb:dc9656' # orange
+    base0A='rgb:f7ca88' # yellow-orange
+    base0B='rgb:a1b56c' # green-brown
+    base0C='rgb:86c1b9' # teal
+    base0D='rgb:7cafc2' # blue
+    base0E='rgb:ba8baf' # purple
+    base0F='rgb:a16946' # brown
 
     ## code
     echo "

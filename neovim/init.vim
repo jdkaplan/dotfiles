@@ -298,3 +298,5 @@ endfunction
 
 command FlowTypeAtPos call s:FlowType()
 autocmd FileType javascript nnoremap <buffer> <silent> K :FlowTypeAtPos<CR>
+
+command Crosshair :set virtualedit=all cursorcolumn

@@ -25,6 +25,10 @@ colors
 autoload -U zmv
 alias mmv='noglob zmv -W'
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 if [[ $TERM =~ '256color' ]]; then
     local blue="%F{81}"
     local orange="%F{166}"

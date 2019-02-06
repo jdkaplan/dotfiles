@@ -15,7 +15,7 @@ alias timestamp='date "+%Y-%m-%d_%H-%M-%S"'
 screenshot() {
     local ts="$(timestamp)"
     local f="${HOME}/images/screenshots/${ts}.png"
-    import "$f"
+    import "$@" "$f"
     echo "$f"
 }
 

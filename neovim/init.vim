@@ -63,6 +63,7 @@ set softtabstop=4
 set shiftwidth=4
 set smartindent
 set formatoptions+=n
+set nofoldenable
 
 set wrap
 set linebreak

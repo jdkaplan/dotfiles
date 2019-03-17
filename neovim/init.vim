@@ -13,6 +13,7 @@ if dein#load_state('~/.config/nvim/plugins')
 
   call dein#add('airblade/vim-gitgutter')
   call dein#add('airblade/vim-rooter')
+  call dein#add('cespare/vim-toml')
   call dein#add('fatih/vim-go')
   call dein#add('glts/vim-textobj-comment')
   call dein#add('jeetsukumaran/vim-buffergator')

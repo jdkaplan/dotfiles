@@ -2,7 +2,6 @@ xset -b
 xset -dpms
 xset s off
 xset s 0 0
-xset r rate 250 50
 
 xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.3
 

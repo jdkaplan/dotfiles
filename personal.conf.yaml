@@ -12,4 +12,5 @@
     ~/.mutt: mutt/
     ~/.urlview: urlview/.urlview
     ~/.xinitrc: X/.xinitrc
+    ~/.xserverrc: X/.xserverrc
     ~/.xsessionrc: X/.xsessionrc

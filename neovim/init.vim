@@ -304,3 +304,5 @@ autocmd FileType javascript nnoremap <buffer> <silent> K :FlowTypeAtPos<CR>
 
 command Crosshair :set virtualedit=all cursorcolumn
 command NoCrosshair :set virtualedit= nocursorcolumn
+
+let g:AutoPairsShortcutToggle = ''

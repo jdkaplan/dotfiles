@@ -16,6 +16,7 @@ screenshot() {
     local ts="$(timestamp)"
     local f="${HOME}/images/screenshots/${ts}.png"
     import "$@" "$f"
+    echo "$f" >&2
     echo "$f"
 }
 

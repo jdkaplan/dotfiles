@@ -189,7 +189,9 @@ nmap <silent> ;N <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>e :lclose<CR>
 nmap <silent> <Leader>E :lopen<CR>
 
-autocmd BufEnter * EnableStripWhitespaceOnSave
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+
 autocmd BufNewFile,BufRead *.tako set filetype=python
 
 map <silent> <leader>t :NERDTreeToggle<CR>

@@ -150,9 +150,7 @@ format-underline = #0a6cf5
 label = %date% %time%
 
 [module/volume]
-type = internal/volume
-
-mapped = true
+type = internal/pulseaudio
 
 format-volume = <label-volume>
 format-volume-underline = #e83c3a

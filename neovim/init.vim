@@ -117,8 +117,8 @@ set wildignore+=*.swp,*~
 
 map <silent> ;b :Denite buffer<CR>
 
-map <silent> ;f :Denite file_rec<CR>
-call denite#custom#var('file_rec', 'command',
+map <silent> ;f :Denite file/rec<CR>
+call denite#custom#var('file/rec', 'command',
 \    ['rg', '--files', '--hidden'],
 \)
 

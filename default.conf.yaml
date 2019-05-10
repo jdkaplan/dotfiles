@@ -14,6 +14,7 @@
     ~/.config/tako: tako/
     ~/.config/zsh: zsh/
     ~/.config/user-dirs.dirs: etc/user-dirs.dirs
+    ~/.psqlrc: psql/.psqlrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vim: vim/
     ~/.vimrc: vim/.vimrc

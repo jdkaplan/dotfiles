@@ -1,4 +1,6 @@
 - link:
+    ~/.Xdefaults: X/.Xdefaults
+    ~/.Xresources: X/.Xresources
     ~/.config/dunst: dunst/
     ~/.config/i3: i3/
     ~/.config/pianobar: pianobar/
@@ -8,8 +10,6 @@
     ~/.local/share/qutebrowser/userscripts: qutebrowser/userscripts
     ~/.mbsyncrc: isync/.mbsyncrc
     ~/.mutt: mutt/
+    ~/.urlview: urlview/.urlview
     ~/.xinitrc: X/.xinitrc
     ~/.xsessionrc: X/.xsessionrc
-    ~/.Xresources: X/.Xresources
-    ~/.Xdefaults: X/.Xdefaults
-    ~/.urlview: urlview/.urlview

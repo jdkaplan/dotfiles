@@ -4,21 +4,21 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.emacs.d: emacs/
+    ~/bin: bin/
+    ~/.config/flake8: etc/flake8
     ~/.config/git: git/
     ~/.config/hg: hg/
-    ~/.gitignore: git/gitignore
-    ~/.config/flake8: etc/flake8
     ~/.config/kak: kak/
     ~/.config/nvim: neovim/
     ~/.config/tako: tako/
-    ~/.config/zsh: zsh/
     ~/.config/user-dirs.dirs: etc/user-dirs.dirs
+    ~/.config/zsh: zsh/
+    ~/.emacs.d: emacs/
+    ~/.gitignore: git/gitignore
     ~/.psqlrc: psql/.psqlrc
     ~/.tmux.conf: tmux/.tmux.conf
-    ~/.vim: vim/
     ~/.vimrc: vim/.vimrc
-    ~/.zshrc: zsh/.zshrc
-    ~/.zshenv: zsh/.zshenv
+    ~/.vim: vim/
     ~/.zprofile: zsh/.zprofile
-    ~/bin: bin/
+    ~/.zshenv: zsh/.zshenv
+    ~/.zshrc: zsh/.zshrc

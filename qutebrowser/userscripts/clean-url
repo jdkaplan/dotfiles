@@ -3,7 +3,6 @@
 import os
 from urllib.parse import urlparse, urlunparse
 
-mode = os.environ["QUTE_MODE"]
 url = os.environ["QUTE_URL"]
 fifo = os.environ["QUTE_FIFO"]
 

@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+import os
+from urllib.parse import urlencode
+
+url = os.environ["QUTE_URL"]
+fifo = os.environ["QUTE_FIFO"]
+title = os.environ["QUTE_TITLE"]
+
+query = {"title": title, "url": url}
+
+share_link = "https://metagram.net/firehose/share?{}".format(urlencode(query))
+
+with open(fifo, "w") as f:
+    f.write(":open {}".format(share_link))

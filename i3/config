@@ -14,7 +14,6 @@ assign [class="Liferea"] 5
 for_window [class="Spotify"] move to workspace 6
 assign [class="TelegramDesktop"] 7
 assign [class="Slack"] 8
-assign [class="discord"] 9
 
 focus_follows_mouse yes
 mouse_warping output

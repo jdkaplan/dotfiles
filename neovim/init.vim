@@ -321,3 +321,5 @@ command Crosshair :set virtualedit=all cursorcolumn
 command NoCrosshair :set virtualedit= nocursorcolumn
 
 let g:AutoPairsShortcutToggle = ''
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

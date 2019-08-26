@@ -26,6 +26,4 @@ docker-ip() {
 
 alias shrug='echo -n "¯\\_(ツ)_/¯"'
 
-alias t='task'
-
 alias today='nvim $HOME/notes/$(date "+%F").md'

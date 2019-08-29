@@ -1,3 +1,11 @@
 #!/bin/sh
 
-xsel -c && xsel -sc && xsel -bc
+xsel_clear() {
+    xsel -c && xsel -sc && xsel -bc
+}
+
+if xsel_clear; then
+    notify-send -t 1000 'xsel-clear'
+else
+    notify-send -t 1000 -h 'string:bgcolor:#ff0000' 'xsel failed to clear'
+fi

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QT_SCALE_FACTOR=''
-QT_AUTO_SCREEN_SCALE_FACTOR=''
+export QT_SCALE_FACTOR=''
+export QT_AUTO_SCREEN_SCALE_FACTOR=''
 
 /usr/bin/qutebrowser "$@"

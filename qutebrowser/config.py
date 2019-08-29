@@ -1264,7 +1264,7 @@ c.url.searchengines = {
 
 # The page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = []
+c.url.start_pages = ["about:blank"]
 
 # The URL parameters to strip with `:yank url`.
 # Type: List of String

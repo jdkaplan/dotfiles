@@ -3,8 +3,16 @@
 	email = jdkaplan@metagram.net
 [color]
 	ui = true
+[diff]
+	wsErrorHighlight = all
+[merge]
+	conflictStyle = diff3
+	ff = only
+[pull]
+	ff = only
 [push]
 	default = simple
+
 [alias]
 	ap = add -p
 	b = branch
@@ -33,7 +41,3 @@
 
 [includeIf "gitdir:~/projects/"]
 	path = config-personal
-[merge]
-	conflictStyle = diff3
-[diff]
-	wsErrorHighlight = all

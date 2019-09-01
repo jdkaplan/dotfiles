@@ -165,9 +165,6 @@ let g:ale_linters = {
 \    'bash': [
 \        'shellcheck',
 \    ],
-\    'javascript': [
-\        'flow',
-\    ],
 \    'python': [
 \        'flake8',
 \        'mypy',
@@ -263,66 +260,6 @@ let g:gitgutter_map_keys = 0
 map <silent> <leader>g :GitGutterToggle<CR>
 nmap <silent> ]h <Plug>GitGutterNextHunk
 nmap <silent> [h <Plug>GitGutterPrevHunk
-
-" Sligthly adapted from
-" https://github.com/fatih/vim-go/blob/32ae8640716530bd55062379177da51efb37dfd2/autoload/go/doc.vim#L75
-let s:buf_nr = -1
-function! s:FlowType() abort
-    let content = system('npx flow type-at-pos '.fnameescape(expand('%')).' '.line('.').' '.col('.'))
-
-    " botright new
-    " setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-    " call append(0, split(content, "\n"))
-
-    " reuse existing buffer window if it exists otherwise create a new one
-    let is_visible = bufexists(s:buf_nr) && bufwinnr(s:buf_nr) != -1
-    if !bufexists(s:buf_nr)
-        new
-        sil file `="[Flow]"`
-        let s:buf_nr = bufnr('%')
-    elseif bufwinnr(s:buf_nr) == -1
-        split
-        execute s:buf_nr . 'buffer'
-    elseif bufwinnr(s:buf_nr) != bufwinnr('%')
-        execute bufwinnr(s:buf_nr) . 'wincmd w'
-    endif
-
-    " if window was not visible then resize it
-    if !is_visible
-        " cap window height to 20, but resize it for smaller contents
-        let max_height = go#config#DocMaxHeight()
-        let content_height = len(split(content, "\n"))
-        if content_height > max_height
-            exe 'resize ' . max_height
-        else
-            exe 'resize ' . content_height
-        endif
-    endif
-
-    setlocal filetype=js
-    setlocal bufhidden=delete
-    setlocal buftype=nofile
-    setlocal noswapfile
-    setlocal nobuflisted
-    setlocal nocursorline
-    setlocal nocursorcolumn
-    setlocal iskeyword+=:
-    setlocal iskeyword-=-
-
-    setlocal modifiable
-    %delete _
-    call append(0, split(content, "\n"))
-    sil $delete _
-    setlocal nomodifiable
-    sil normal! gg
-
-    " close easily with <esc> or enter
-    noremap <buffer> <silent> <CR> :<C-U>close<CR>
-    noremap <buffer> <silent> <Esc> :<C-U>close<CR>
-endfunction
-
-command FlowTypeAtPos call s:FlowType()
-autocmd FileType javascript nnoremap <buffer> <silent> K :FlowTypeAtPos<CR>
 
 command Crosshair :set virtualedit=all cursorcolumn
 command NoCrosshair :set virtualedit= nocursorcolumn

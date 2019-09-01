@@ -187,6 +187,9 @@ let g:ale_fixers = {
 \    'elixir': [
 \        'mix_format',
 \    ],
+\    'html': [
+\        'prettier',
+\    ],
 \    'javascript': [
 \        'prettier',
 \    ],

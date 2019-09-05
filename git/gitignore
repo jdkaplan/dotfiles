@@ -11,3 +11,6 @@ node_modules/
 .ignore
 .fdignore
 .root
+
+.envrc
+.direnv/

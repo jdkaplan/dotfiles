@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 alias startx='ssh-agent startx; vlock'
 
 alias ls='ls --color=auto'
@@ -27,3 +29,9 @@ docker-ip() {
 alias shrug='echo -n "¯\\_(ツ)_/¯"'
 
 alias today='nvim $HOME/notes/$(date "+%F").md'
+
+fe() {
+    local files
+    IFS=$'\n' files=($(fzf --query="$1" --multi --select-1 --exit-0))
+    [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}

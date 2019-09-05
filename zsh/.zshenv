@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 
@@ -17,3 +19,5 @@ fi
 export LOCAL_SESSION
 
 export SHELL=$(which zsh)
+
+export FZF_DEFAULT_COMMAND='fd'

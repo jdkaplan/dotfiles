@@ -27,6 +27,7 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('LnL7/vim-nix')
   call dein#add('mxw/vim-jsx')
   call dein#add('ntpeters/vim-better-whitespace')
+  call dein#add('MarcWeber/vim-addon-local-vimrc')
   call dein#add('pangloss/vim-javascript')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('scrooloose/nerdtree')
@@ -276,3 +277,5 @@ autocmd FileType javascript.jsx setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript     setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType json           setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml           setlocal ts=2 sts=2 sw=2 expandtab
+
+set secure

@@ -276,6 +276,8 @@ let g:AutoPairsShortcutToggle = ''
 autocmd FileType javascript.jsx setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript     setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType json           setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType typescript.tsx setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType typescript     setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml           setlocal ts=2 sts=2 sw=2 expandtab
 
 set secure

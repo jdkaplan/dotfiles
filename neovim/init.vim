@@ -199,6 +199,9 @@ let g:ale_fixers = {
 \    'rust': [
 \        'rustfmt',
 \    ],
+\    'typescript': [
+\        'prettier',
+\    ],
 \}
 nmap <silent> ;n <Plug>(ale_next_wrap)
 nmap <silent> ;N <Plug>(ale_previous_wrap)

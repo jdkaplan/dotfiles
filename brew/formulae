@@ -1,0 +1,16 @@
+ctags
+direnv
+entr
+fd
+fzf
+jq
+moreutils
+mosh
+neovim
+pyenv
+python3
+ripgrep
+shellcheck
+task
+tree
+wget

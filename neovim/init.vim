@@ -22,6 +22,8 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('jeetsukumaran/vim-buffergator')
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('jparise/vim-graphql')
+  call dein#add('junegunn/fzf')
+  call dein#add('junegunn/fzf.vim')
   call dein#add('kana/vim-textobj-user')
   call dein#add('leafgarland/typescript-vim')
   call dein#add('LnL7/vim-nix')
@@ -32,7 +34,6 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('scrooloose/nerdtree')
   call dein#add('Shougo/dein.vim') " let dein manage itself
-  call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('tpope/vim-abolish')
@@ -117,28 +118,30 @@ map <silent> ;x :x<CR>
 
 set wildignore+=*.swp,*~
 
-map <silent> ;b :Denite buffer<CR>
+map <silent> ;b :call fzf#run({
+\    'source': map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), 'bufname(v:val)'),
+\    'sink': 'e',
+\})<CR>
 
-map <silent> ;f :Denite file/rec<CR>
-call denite#custom#var('file/rec', 'command',
-\    ['rg', '--files', '--hidden'],
-\)
+map <silent> ;f :call fzf#run({'source': 'rg --files --hidden', 'sink': 'e'})<CR>
 
-map <silent> ;g :Denite grep<CR>
-map <silent> ;* :DeniteCursorWord grep<CR>
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts',
-\    ['--vimgrep', '--no-heading', '--smart-case', '--hidden'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#source('grep', 'converters', ['converter_abbr_word'])
+function! s:escape(path)
+	return substitute(a:path, ' ', '\\ ', 'g')
+endfunction
 
-call denite#custom#option("_", {
-\    "highlight_matched_char": "DeniteMatched",
-\    "highlight_matched_range": "None",
-\})
+function! RgHandler(line)
+	let parts = split(a:line, ':')
+	let [fn, lno] = parts[0 : 1]
+	execute 'e '. s:escape(fn)
+	execute lno
+	normal! zz
+endfunction
+
+map <silent> ;g :call fzf#run({
+\    'source': 'rg --vimgrep --no-heading --smart-case --hidden --regexp '.shellescape(input('Pattern: ')),
+\    'sink': function('RgHandler'),
+\    'options': '+m',
+\})<CR>
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1

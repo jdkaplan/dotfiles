@@ -271,8 +271,8 @@ let g:jsx_ext_required = 1
 let g:gitgutter_enabled = 0
 let g:gitgutter_map_keys = 0
 map <silent> <leader>g :GitGutterToggle<CR>
-nmap <silent> ]h <Plug>GitGutterNextHunk
-nmap <silent> [h <Plug>GitGutterPrevHunk
+nmap <silent> ]h <Plug>(GitGutterNextHunk)
+nmap <silent> [h <Plug>(GitGutterPrevHunk)
 
 command Crosshair :set virtualedit=all cursorcolumn
 command NoCrosshair :set virtualedit= nocursorcolumn

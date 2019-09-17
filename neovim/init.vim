@@ -142,6 +142,11 @@ map <silent> ;g :call fzf#run({
 \    'sink': function('RgHandler'),
 \    'options': '+m',
 \})<CR>
+map <silent> ;* :call fzf#run({
+\    'source': 'rg --vimgrep --no-heading --smart-case --hidden --regexp '.shellescape(expand('<cword>')),
+\    'sink': function('RgHandler'),
+\    'options': '+m',
+\})<CR>
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1

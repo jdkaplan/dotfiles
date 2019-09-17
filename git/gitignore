@@ -18,3 +18,5 @@ node_modules/
 .vimrc
 
 tags
+
+.DS_Store

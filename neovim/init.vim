@@ -6,51 +6,36 @@ let &shell = '/bin/sh'
 let g:python3_host_prog = expand('~/.virtualenvs/neovim3/bin/python')
 let g:python_host_prog  = expand('~/.virtualenvs/neovim2/bin/python')
 
-set runtimepath+=~/.config/nvim/plugins/repos/github.com/Shougo/dein.vim
-
-if dein#load_state('~/.config/nvim/plugins')
-  call dein#begin('~/.config/nvim/plugins')
-
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('airblade/vim-rooter')
-  call dein#add('cespare/vim-toml')
-  call dein#add('dense-analysis/ale')
-  call dein#add('elixir-editors/vim-elixir')
-  call dein#add('fatih/vim-go')
-  call dein#add('glts/vim-textobj-comment')
-  call dein#add('ianks/vim-tsx')
-  call dein#add('jeetsukumaran/vim-buffergator')
-  call dein#add('jiangmiao/auto-pairs')
-  call dein#add('jparise/vim-graphql')
-  call dein#add('junegunn/fzf')
-  call dein#add('junegunn/fzf.vim')
-  call dein#add('kana/vim-textobj-user')
-  call dein#add('leafgarland/typescript-vim')
-  call dein#add('LnL7/vim-nix')
-  call dein#add('mxw/vim-jsx')
-  call dein#add('ntpeters/vim-better-whitespace')
-  call dein#add('MarcWeber/vim-addon-local-vimrc')
-  call dein#add('pangloss/vim-javascript')
-  call dein#add('plasticboy/vim-markdown')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('Shougo/dein.vim') " let dein manage itself
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('tpope/vim-abolish')
-  call dein#add('tpope/vim-commentary')
-  call dein#add('tpope/vim-repeat')
-  call dein#add('tpope/vim-surround')
-  call dein#add('vim-python/python-syntax')
-  call dein#add('zchee/deoplete-go', {'build': 'make'})
-  call dein#add('zchee/deoplete-jedi')
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-if dein#check_install()
-    call dein#install()
-endif
+set runtimepath+=~/.config/nvim/autoload
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
+Plug 'cespare/vim-toml'
+Plug 'dense-analysis/ale'
+Plug 'elixir-editors/vim-elixir'
+Plug 'fatih/vim-go'
+Plug 'glts/vim-textobj-comment'
+Plug 'ianks/vim-tsx'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'jiangmiao/auto-pairs'
+Plug 'jparise/vim-graphql'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'leafgarland/typescript-vim'
+Plug 'LnL7/vim-nix'
+Plug 'mxw/vim-jsx'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'MarcWeber/vim-addon-local-vimrc'
+Plug 'pangloss/vim-javascript'
+Plug 'plasticboy/vim-markdown'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-python/python-syntax'
+call plug#end()
 
 filetype plugin indent on
 syntax enable
@@ -148,14 +133,6 @@ map <silent> ;* :call fzf#run({
 \    'options': '+m',
 \})<CR>
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#disable_auto_complete = 1
-inoremap <expr> <C-n> deoplete#mappings#manual_complete()
-autocmd CompleteDone * silent! pclose!
-set completeopt+=noselect
-set completeopt+=menuone
-set completeopt+=longest
-
 let g:ale_sign_error = '!'
 let g:ale_sign_warning = '?'
 let g:ale_echo_msg_format = '%linter%: %s'
@@ -241,7 +218,6 @@ let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 let g:go_fmt_command = "goimports"
-let g:go_snippet_engine = "neosnippet"
 
 let g:buffergator_viewport_split_policy = 'B'
 let g:buffergator_autoupdate = 1
@@ -251,15 +227,6 @@ let g:buffergator_show_full_directory_path = 0
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_autodismiss_on_select = 0
 map <silent> <leader>b :BuffergatorToggle<CR>
-
-let g:neosnippet#snippets_directory='~/.config/nvim/neosnippets/neosnippets'
-let g:neosnippet#disable_runtime_snippets = {
-\    '_' : 1,
-\}
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-let g:neosnippet#enable_completed_snippet=1
 
 let g:rooter_manual_only = 1
 let g:rooter_patterns = ['.root', '.git', '.git/']

@@ -7,6 +7,6 @@
 [submodule "tako/plugins"]
 	path = tako/plugins
 	url = https://gitlab.com/jdkaplan/tako-plugins.git
-[submodule "neovim/neosnippets"]
-	path = neovim/neosnippets
-	url = https://github.com/Shougo/neosnippet-snippets.git
+[submodule "neovim/plugins/github.com/junegunn/vim-plug"]
+	path = neovim/plugins/github.com/junegunn/vim-plug
+	url = https://github.com/junegunn/vim-plug.git

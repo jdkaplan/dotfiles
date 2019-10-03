@@ -5,6 +5,7 @@
 
 - link:
     ~/bin: bin/
+    ~/.config/direnv/direnvrc: direnv/direnvrc
     ~/.config/flake8: etc/flake8
     ~/.config/git: git/
     ~/.config/hg: hg/

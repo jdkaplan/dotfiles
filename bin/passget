@@ -7,9 +7,45 @@ fi
 
 set -euo pipefail
 
-contents=$(gopass show "$1") || exit 1
-echo "$contents" | grep '^user:' | cut -d' ' -f2 | xsel -b
-echo 'Username clipped'
-read -r _
+# This depends on having the custom `op` wrapper in this directory.
+# Specifically, it depends on automatically logging the user in if a session
+# token hasn't already been saved.  If the wrapper can't be installed,
+# uncomment this line instead:
+#
+# op list vaults >/dev/null 2>&1 || eval "$(op signin)"
 
-gopass show --clip "$1"
+url="$1"
+mapfile -t matches < <(op list items | jq -c '.[] | select(.overview.url and (.overview.url | contains("'"${url}"'"))) | { uuid: .uuid, url: .overview.url }')
+
+if [ "${#matches[@]}" -eq 1 ]; then
+    item="${matches[0]}"
+    uuid="$(echo "${item}" | jq -r '.uuid')"
+else
+    uuid="$(echo "${matches[@]}" \
+        | jq -r '"\n\(.uuid)\n\(.url)"' \
+        | zenity \
+            --list --radiolist \
+            --title 'passget' \
+            --text 'Choose a match' \
+            --column ' ' \
+            --column 'UUID' \
+            --column 'URL')"
+fi
+
+query_username='.details.fields[] | select(.name == "username") | .value'
+query_password='.details.fields[] | select(.name == "password") | .value'
+
+item="$(op get item "${uuid}")"
+echo "${item}" | jq -r "${query_username}" | xsel -bi
+echo 'Username clipped'
+
+read -r _
+echo "${item}" | jq -r "${query_password}" | xsel -bi
+echo 'Password clipped.  Clearing in 60 seconds.'
+
+at -M 'now + 1 minute' >/dev/null 2>&1 <<CMD
+xsel -c
+xsel -sc
+xsel -bc
+notify-send -h 'string:bgcolor:#000000' 'Clipboard cleared'
+CMD

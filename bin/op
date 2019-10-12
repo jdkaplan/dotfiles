@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+OP_SESSION_DIR="${XDG_RUNTIME_DIR}/op"
+OP_SESSION_FILE="${OP_SESSION_DIR}/session_token"
+
+# With `-p` the mode setting only applies to the deepest directory.  This is
+# exactly what I want here.
+#
+# shellcheck disable=SC2174
+[ -d "${OP_SESSION_DIR}" ] || mkdir -m 700 -p "${OP_SESSION_DIR}"
+
+session_token() {
+    cat "${OP_SESSION_FILE}"
+}
+
+# This whole script gets aliased as `op`, so make sure we don't recurse.
+op() {
+    /bin/op "$@"
+}
+
+validate() {
+    /bin/op list vaults --session="$(session_token)" >/dev/null 2>&1
+}
+
+signin() {
+    old_umask="$(umask)"
+    umask 177
+
+    token="$(/bin/op signin --output=raw)"
+    cat > "${OP_SESSION_FILE}" <<< "${token}"
+
+    umask "${old_umask}"
+}
+
+# It's easier to special-case the no-argument call like this.
+[ "$#" -eq 0 ] && exec /bin/op
+
+cmd="$1"
+if [ "${cmd}" = '_validate' ]; then
+    validate >/dev/null 2>&1
+    exit $?
+fi
+
+validate || signin
+
+if [ "${cmd}" = 'find' ]; then
+    url="$2"
+    query='.[] | select(.overview.url and (.overview.url | contains("'"${url}"'"))) | { uuid: .uuid, url: .overview.url }'
+    /bin/op list items --session="$(session_token)" | jq -c "${query}"
+    exit $?
+fi
+
+exec /bin/op "${@}" --session="$(session_token)"

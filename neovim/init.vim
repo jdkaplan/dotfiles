@@ -146,7 +146,6 @@ let g:ale_linters = {
 \    'go': [
 \        'goimports',
 \        'golangci-lint',
-\        'gometalinter',
 \        'go vet',
 \        'go build',
 \    ],

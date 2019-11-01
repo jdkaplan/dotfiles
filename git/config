@@ -32,6 +32,7 @@
 	root = rev-parse --show-toplevel
 	s = status
 	sb = show-branch
+	untracked = ls-files --others --exclude-standard
 [credential]
 	helper = cache
 [commit]

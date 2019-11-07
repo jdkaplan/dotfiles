@@ -16,6 +16,7 @@
     ~/.config/zsh: zsh/
     ~/.emacs.d: emacs/
     ~/.gitignore: git/gitignore
+    ~/.my.cnf: mysql/.my.cnf
     ~/.psqlrc: psql/.psqlrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vimrc: vim/.vimrc

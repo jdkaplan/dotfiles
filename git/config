@@ -28,6 +28,7 @@
 	lag = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%an%C(reset) %C(green)<%ar>%C(reset)'
 	lg = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%cn%C(reset) %C(green)<%cr>%C(reset)'
 	mb = merge-base HEAD
+	pushf = push --force-with-lease
 	rb = rebase
 	root = rev-parse --show-toplevel
 	s = status

@@ -1261,6 +1261,7 @@ c.url.searchengines = {
     "py2": "https://docs.python.org/2/search.html?q={}",
     "py3": "https://docs.python.org/3/search.html?q={}",
     "thesaurus": "https://www.thesaurus.com/browse/{}",
+    "ud": "https://www.urbandictionary.com/define.php?term={}",
 }
 
 # The page(s) to open at the start.

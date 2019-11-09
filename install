@@ -12,6 +12,17 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-for conf in default ${@}; do
-    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${conf}${CONFIG_SUFFIX}"
+load_config() {
+    config="$1"
+    if [ -f "${config}" ]; then
+        "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${config}"
+    else
+        echo "Skipping nonexistent file: ${config}"
+    fi
+}
+
+OS_NAME="$(uname -s | tr '[:upper:]' '[:lower:]')"
+
+for conf in default ${@} "${OS_NAME}"; do
+    load_config "${conf}${CONFIG_SUFFIX}"
 done

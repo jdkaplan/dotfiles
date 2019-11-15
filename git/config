@@ -41,5 +41,8 @@
 [core]
 	excludesfile = ~/.gitignore
 
+[include]
+	path = config-os
+
 [includeIf "gitdir:~/projects/"]
 	path = config-personal

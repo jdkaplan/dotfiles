@@ -4,3 +4,4 @@
 
 - link:
     ~/.config/zsh/os.zshrc: zsh/darwin.zshrc
+    ~/.config/git/config-os: git/config-darwin

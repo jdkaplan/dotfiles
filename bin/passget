@@ -17,7 +17,10 @@ set -euo pipefail
 url="$1"
 mapfile -t matches < <(op list items | jq -c '.[] | select(.overview.url and (.overview.url | contains("'"${url}"'"))) | { uuid: .uuid, url: .overview.url }')
 
-if [ "${#matches[@]}" -eq 1 ]; then
+if [ "${#matches[@]}" -eq 0 ]; then
+    >&2 echo "No matches found for ${url}"
+    exit 1
+elif [ "${#matches[@]}" -eq 1 ]; then
     item="${matches[0]}"
     uuid="$(echo "${item}" | jq -r '.uuid')"
 else

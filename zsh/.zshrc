@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.config/zsh/histfile
 HISTSIZE=1000000
@@ -85,12 +87,13 @@ function precmd () {
 
 source $HOME/.config/zsh/j.sh
 
-# ls colors
-eval $(dircolors $HOME/.config/zsh/dircolors.256dark)
-
 autoload -U select-word-style
 select-word-style bash
 
 which direnv > /dev/null && eval "$(direnv hook zsh)" || true
 
 setopt interactivecomments
+
+if [ -f "$HOME/.config/zsh/os.zshrc" ]; then
+    source "$HOME/.config/zsh/os.zshrc"
+fi

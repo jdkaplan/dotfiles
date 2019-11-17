@@ -5,3 +5,4 @@
 - link:
     ~/.config/zsh/os.zshrc: zsh/darwin.zshrc
     ~/.config/git/config-os: git/config-darwin
+    ~/.config/nvim/os-plugins.vim: neovim/darwin-plugins.vim

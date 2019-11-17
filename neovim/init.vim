@@ -8,6 +8,9 @@ let g:python_host_prog  = expand('~/.virtualenvs/neovim2/bin/python')
 
 set runtimepath+=~/.config/nvim/autoload
 call plug#begin('~/.local/share/nvim/plugged')
+if filereadable(expand("~/.config/nvim/os-plugins.vim"))
+    source ~/.config/nvim/os-plugins.vim
+endif
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'cespare/vim-toml'
@@ -19,7 +22,6 @@ Plug 'ianks/vim-tsx'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jparise/vim-graphql'
-Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'leafgarland/typescript-vim'

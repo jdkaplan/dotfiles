@@ -1,2 +1,3 @@
 - link:
     ~/.config/zsh/os.zshrc: zsh/linux.zshrc
+    ~/.config/nvim/os-plugins.vim: neovim/linux-plugins.vim

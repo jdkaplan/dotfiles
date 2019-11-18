@@ -4,6 +4,7 @@
 [color]
 	ui = true
 [diff]
+	colorMoved = default
 	wsErrorHighlight = all
 [merge]
 	conflictStyle = diff3

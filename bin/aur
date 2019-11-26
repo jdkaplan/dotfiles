@@ -1,8 +1,5 @@
-#!/usr/bin/env tako
+#!/usr/bin/env bash
 
-import sys
+set -exuo pipefail
 
-assert len(sys.argv) >= 2
-
-fmt = 'https://aur.archlinux.org/cgit/aur.git/snapshot/{}.tar.gz'
-wget @(fmt.format(sys.argv[1]))
+wget "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz"

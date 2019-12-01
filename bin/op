@@ -10,6 +10,7 @@ OP_SESSION_FILE="${OP_SESSION_DIR}/session_token"
 #
 # shellcheck disable=SC2174
 [ -d "${OP_SESSION_DIR}" ] || mkdir -m 700 -p "${OP_SESSION_DIR}"
+[ -f "${OP_SESSION_FILE}" ] || install -m 600 /dev/null "${OP_SESSION_FILE}"
 
 session_token() {
     cat "${OP_SESSION_FILE}"

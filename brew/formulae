@@ -13,5 +13,6 @@ python
 ripgrep
 shellcheck
 task
+tig
 tree
 wget

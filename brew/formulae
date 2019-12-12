@@ -4,6 +4,7 @@ direnv
 entr
 fd
 fzf
+htop
 jq
 moreutils
 mosh

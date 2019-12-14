@@ -1260,6 +1260,7 @@ c.url.searchengines = {
     "mdn": "https://developer.mozilla.org/search?q={}",
     "py2": "https://docs.python.org/2/search.html?q={}",
     "py3": "https://docs.python.org/3/search.html?q={}",
+    "rdoc": "https://ruby-doc.org/core-2.6.5/{}.html",
     "thesaurus": "https://www.thesaurus.com/browse/{}",
     "ud": "https://www.urbandictionary.com/define.php?term={}",
 }

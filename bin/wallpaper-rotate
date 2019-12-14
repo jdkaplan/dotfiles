@@ -1,11 +1,21 @@
-#!/usr/bin/env tako
+#!/usr/bin/env python3
 
 from datetime import datetime
+from pathlib import Path
+import subprocess
 
-image_dir = $HOME + '/images/wallpapers/BitDay/'
+HOME = Path.home()
+image_dir = HOME / 'images/wallpapers/BitDay'
+dest = HOME / 'images/wallpaper.png'
+
 hour = datetime.now().hour
 image_number = int(hour / 2)
-image_file = image_dir + '{}.png'.format(image_number)
 
-ln -s -f @(image_file) @($HOME + '/images/wallpaper.png')
-nitrogen --restore
+target = image_dir / '{}.png'.format(image_number)
+
+# ln -s -f
+dest.unlink(missing_ok = True)
+dest.symlink_to(target)
+
+# nitrogen --restore
+subprocess.run(['nitrogen', '--restore'])

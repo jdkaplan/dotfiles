@@ -1,5 +1,5 @@
-#!/usr/bin/env tako
+#!/usr/bin/env bash
 
-tmp = ?(xsel)               # primary -> tmp
-xsel -b | xsel -i           # clipboard -> primary
-echo -n @(tmp) | xsel -bi   # tmp -> clipboard
+tmp="$(xsel)"                  # primary -> tmp (stripping any trailing newlines)
+xsel -b | xsel -i              # clipboard -> primary
+printf '%s' "$tmp" | xsel -bi  # tmp -> clipboard (without adding a newline)

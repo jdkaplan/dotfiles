@@ -26,6 +26,9 @@
 	dc = diff --cached
 	dn = diff --name-only --relative
 	dw = diff --word-diff
+	f = fetch
+	fb = "!fb() { git fetch \"$1\" \"$2\":\"$2\"; }; fb"
+	fp = fetch --prune
 	lag = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%an%C(reset) %C(green)<%ar>%C(reset)'
 	lg = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%cn%C(reset) %C(green)<%cr>%C(reset)'
 	mb = merge-base HEAD

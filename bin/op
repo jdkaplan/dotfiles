@@ -2,11 +2,24 @@
 
 set -euo pipefail
 
+# The 1password-cli (op) seems to have a bug where it doesn't create this
+# tempdir with user write privileges, making it impossible to sign in.
+# So we'll create and chown it every time.
+OP_RUNTIME_DIR="/tmp/com.agilebits.op.$(id -u)"
+
+if [ -d "${OP_RUNTIME_DIR}" ]; then
+    chmod u+x "${OP_RUNTIME_DIR}"
+else
+    # With `-p` the mode setting only applies to the deepest directory.
+    #
+    # shellcheck disable=SC2174
+    mkdir -m 700 -p "${OP_RUNTIME_DIR}"
+fi
+
 OP_SESSION_DIR="${XDG_RUNTIME_DIR}/op"
 OP_SESSION_FILE="${OP_SESSION_DIR}/session_token"
 
-# With `-p` the mode setting only applies to the deepest directory.  This is
-# exactly what I want here.
+# With `-p` the mode setting only applies to the deepest directory.
 #
 # shellcheck disable=SC2174
 [ -d "${OP_SESSION_DIR}" ] || mkdir -m 700 -p "${OP_SESSION_DIR}"

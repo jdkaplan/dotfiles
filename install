@@ -24,10 +24,18 @@ load_config() {
 
 OS_NAME="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
-if [ -f "${PROFILES_FILE}" ]; then
-    mapfile -t profiles < "${PROFILES_FILE}"
-else
+if [ "$#" -gt 0 ]; then
     profiles=("${@}")
+elif [ -f "${PROFILES_FILE}" ]; then
+    # MacOS bash 3.2 doesn't have mapfile.  Workaround from
+    # http://mywiki.wooledge.org/BashFAQ/005#Loading_lines_from_a_file_or_stream
+    unset profiles
+    while IFS= read -r; do
+        profiles+=("$REPLY")
+    done < "${PROFILES_FILE}"
+    [[ $REPLY ]] && profiles+=("$REPLY")
+else
+    profiles=()
 fi
 
 for conf in default "${OS_NAME}" "${profiles[@]}"; do

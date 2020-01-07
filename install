@@ -8,6 +8,7 @@ DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROFILES_FILE="${BASEDIR}/.profiles"
 
 cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
@@ -23,6 +24,14 @@ load_config() {
 
 OS_NAME="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
-for conf in default ${@} "${OS_NAME}"; do
+if [ -f "${PROFILES_FILE}" ]; then
+    mapfile -t profiles < "${PROFILES_FILE}"
+else
+    profiles=("${@}")
+fi
+
+for conf in default "${OS_NAME}" "${profiles[@]}"; do
     load_config "${conf}${CONFIG_SUFFIX}"
 done
+
+printf "%s\n" "${profiles[@]}" > "${PROFILES_FILE}"

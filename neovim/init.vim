@@ -205,8 +205,6 @@ let g:better_whitespace_filetypes_blacklist=[]
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
 
-autocmd BufNewFile,BufRead *.tako set filetype=python
-
 map <silent> <leader>t :NERDTreeToggle<CR>
 noremap <silent> <leader>a :NERDTreeFind<CR>
 noremap <leader>m :NERDTreeFind<Space>

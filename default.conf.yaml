@@ -11,7 +11,6 @@
     ~/.config/hg: hg/
     ~/.config/kak: kak/
     ~/.config/nvim: neovim/
-    ~/.config/tako: tako/
     ~/.config/task: task/
     ~/.config/user-dirs.dirs: etc/user-dirs.dirs
     ~/.config/zsh: zsh/

@@ -106,9 +106,6 @@
     (comment-dwim arg)))
 (global-set-key "\M-;" 'comment-dwim-line)
 
-;; tako
-(add-to-list 'auto-mode-alist '("\\.tako\\'" . python-mode))
-
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 

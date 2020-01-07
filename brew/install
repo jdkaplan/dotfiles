@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+comm -13 <(brew list) brew/formulae | xargs brew install
+comm -13 <(brew cask list) brew/casks | xargs brew cask install

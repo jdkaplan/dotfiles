@@ -1,0 +1,12 @@
+- link:
+    ~/.Xdefaults: X/.Xdefaults
+    ~/.Xresources: X/.Xresources
+    ~/.config/dunst: dunst/
+    ~/.config/git/config-role: git/config-personal
+    ~/.config/i3: i3/
+    ~/.config/polybar: polybar/
+    ~/.config/qutebrowser: qutebrowser/
+    ~/.local/share/qutebrowser/userscripts: qutebrowser/userscripts
+    ~/.xinitrc: X/.xinitrc
+    ~/.xserverrc: X/.xserverrc
+    ~/.xsessionrc: X/.xsessionrc

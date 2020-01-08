@@ -1,5 +1,9 @@
 - shell:
-    - brew/install
+    -
+      command: brew/install
+      stdout: true
+      stderr: true
+      quiet: false
 
 - link:
     ~/.config/zsh/os.zshrc: zsh/darwin.zshrc

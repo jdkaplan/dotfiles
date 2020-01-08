@@ -39,6 +39,7 @@ else
 fi
 
 for conf in default "${OS_NAME}" "${profiles[@]}"; do
+    echo "Applying config: ${conf}"
     load_config "${conf}${CONFIG_SUFFIX}"
 done
 

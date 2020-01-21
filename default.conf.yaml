@@ -18,6 +18,7 @@
     ~/.gitignore: git/gitignore
     ~/.my.cnf: mysql/.my.cnf
     ~/.psqlrc: psql/.psqlrc
+    ~/.taskrc: task/.taskrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vimrc: vim/.vimrc
     ~/.vim: vim/

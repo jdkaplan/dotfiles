@@ -1,2 +1,8 @@
+# [Created by task 2.5.1 11/24/2019 23:09:25]
+
+include ~/.config/task/sync
+
+data.location=~/.task
+
 urgency.tags.coefficient = 0
 urgency.project.coefficient = 0

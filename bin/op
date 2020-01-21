@@ -66,4 +66,5 @@ if [ "${cmd}" = 'find' ]; then
     exit $?
 fi
 
+# TODO: bind file descriptors for `op encode`
 exec /bin/op "${@}" --session="$(session_token)"

@@ -39,3 +39,25 @@ fe() {
 alias t='task'
 
 alias hub-draft-pr="hub pull-request --draft --push"
+
+qrencode() {
+    if [ "$#" -gt 0 ]; then
+        printf "$*" | curl -F=\<- qrenco.de
+    else
+        curl -F=\<- qrenco.de
+    fi
+}
+
+wttr() {
+    local request="wttr.in/$1"
+    # Narrow output for narrow terminals
+    [ "$(tput cols)" -lt 125 ] && request+='?n'
+    curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
+}
+
+wttr2() {
+    local request="v2.wttr.in/$1"
+    # Narrow output for narrow terminals
+    [ "$(tput cols)" -lt 125 ] && request+='?n'
+    curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
+}

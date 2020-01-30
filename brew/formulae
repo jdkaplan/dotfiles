@@ -4,6 +4,7 @@ direnv
 entr
 fd
 fzf
+gpg2
 htop
 jq
 moreutils

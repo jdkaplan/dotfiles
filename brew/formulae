@@ -4,6 +4,7 @@ direnv
 entr
 fd
 fzf
+github/gh/gh
 gpg2
 htop
 jq

@@ -145,14 +145,14 @@ let g:ale_go_golangci_lint_package = 1
 let g:ale_go_golangci_lint_options = ''
 let g:ale_linters = {
 \    '-': [],
+\    'bash': [
+\        'shellcheck',
+\    ],
 \    'go': [
+\        'go build',
 \        'goimports',
 \        'golangci-lint',
 \        'go vet',
-\        'go build',
-\    ],
-\    'bash': [
-\        'shellcheck',
 \    ],
 \    'python': [
 \        'flake8',

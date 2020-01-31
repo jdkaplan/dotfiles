@@ -1254,6 +1254,7 @@ c.url.default_page = "about:blank"
 c.url.searchengines = {
     "DEFAULT": "https://duckduckgo.com/?q={}",
     "aur": "https://aur.archlinux.org/packages/?K={}",
+    "archwiki": "https://wiki.archlinux.org/index.php?search={}",
     "dict": "https://www.dictionary.com/browse/{}",
     "godoc": "https://godoc.org/?q={}",
     "gopkg": "https://golang.org/pkg/{}",

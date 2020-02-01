@@ -1,5 +1,6 @@
 - shell:
     - mkdir -p ~/.config
+    - mkdir -p ~/.config/direnv
 
 - clean: ['~', '~/.config']
 

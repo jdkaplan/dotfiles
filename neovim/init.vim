@@ -145,6 +145,9 @@ let g:ale_go_golangci_lint_package = 1
 let g:ale_go_golangci_lint_options = ''
 let g:ale_linters = {
 \    '-': [],
+\    'arduino': [
+\        'clang-tidy',
+\    ],
 \    'bash': [
 \        'shellcheck',
 \    ],
@@ -170,6 +173,9 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \    '-': [],
+\    'arduino': [
+\        'clang-format',
+\    ],
 \    'css': [
 \        'prettier',
 \    ],

@@ -6,3 +6,5 @@ data.location=~/.task
 
 urgency.tags.coefficient = 0
 urgency.project.coefficient = 0
+
+context.sprint=+sprint

@@ -37,6 +37,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'urbit/hoon.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-python/python-syntax'
 call plug#end()
@@ -269,6 +270,7 @@ autocmd FileType typescript     setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml           setlocal ts=2 sts=2 sw=2 expandtab
 
 autocmd FileType markdown setlocal commentstring=<!--%s-->
+autocmd FileType hoon     setlocal commentstring=::%s
 
 set secure
 

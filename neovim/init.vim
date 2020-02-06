@@ -186,6 +186,7 @@ let g:ale_fixers = {
 \        'prettier',
 \    ],
 \    'javascript': [
+\        'eslint',
 \        'prettier',
 \    ],
 \    'python': [

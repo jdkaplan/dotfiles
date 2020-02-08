@@ -6,6 +6,7 @@
       quiet: false
 
 - link:
-    ~/.config/zsh/os.zshrc: zsh/darwin.zshrc
     ~/.config/git/config-os: git/config-darwin
+    ~/.config/karabiner: karabiner/
     ~/.config/nvim/os-plugins.vim: neovim/darwin-plugins.vim
+    ~/.config/zsh/os.zshrc: zsh/darwin.zshrc

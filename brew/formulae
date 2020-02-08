@@ -5,7 +5,7 @@ entr
 fd
 fzf
 github/gh/gh
-gpg2
+gnupg
 htop
 jq
 moreutils

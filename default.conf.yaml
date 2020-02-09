@@ -1,6 +1,7 @@
 - shell:
     - mkdir -p ~/.config
     - mkdir -p ~/.config/direnv
+    - mkdir -p ~/.task
 
 - clean: ['~', '~/.config']
 
@@ -19,6 +20,7 @@
     ~/.gitignore: git/gitignore
     ~/.my.cnf: mysql/.my.cnf
     ~/.psqlrc: psql/.psqlrc
+    ~/.task/hooks: task/hooks/
     ~/.taskrc: task/.taskrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vimrc: vim/.vimrc

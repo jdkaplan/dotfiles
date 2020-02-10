@@ -2,5 +2,5 @@
 
 set -eo pipefail
 
-comm -13 <(brew list --full-name | sort) brew/formulae | xargs brew install -t
-comm -13 <(brew cask list) brew/casks | xargs brew cask install -t
+comm -13 <(brew list --full-name | sort) brew/formulae | xargs brew install
+comm -13 <(brew cask list) brew/casks | xargs brew cask install

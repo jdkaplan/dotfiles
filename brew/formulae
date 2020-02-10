@@ -3,6 +3,7 @@ dateutils
 direnv
 entr
 fd
+ffmpeg
 fzf
 github/gh/gh
 gnupg

@@ -212,6 +212,7 @@ let g:better_whitespace_enabled=1
 let g:better_whitespace_filetypes_blacklist=[]
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
+let g:better_whitespace_operator=''
 
 map <silent> <leader>t :NERDTreeToggle<CR>
 noremap <silent> <leader>a :NERDTreeFind<CR>
@@ -278,3 +279,5 @@ autocmd FileType markdown setlocal spell
 autocmd FileType text     setlocal spell
 
 autocmd BufNewFile,BufRead *.arb set filetype=ruby
+
+autocmd FileType ledger nmap <silent> <leader>s :call ledger#transaction_state_toggle(line('.'), ' !*')<CR>

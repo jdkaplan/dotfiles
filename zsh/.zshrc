@@ -27,7 +27,7 @@ colors
 autoload -U zmv
 alias mmv='noglob zmv -W'
 
-autoload -U edit-command-line
+autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 

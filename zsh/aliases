@@ -61,3 +61,14 @@ wttr2() {
     [ "$(tput cols)" -lt 125 ] && request+='?n'
     curl -H "Accept-Language: ${LANG%_*}" --compressed "$request"
 }
+
+mov2gif() {
+    local infile="$1"
+    local outfile=''
+    if [ "$#" -gt 1 ]; then
+        outfile="$2"
+    else
+        outfile="${1%.mov}.gif"
+    fi
+    ffmpeg -i "${infile}" -vf scale=800:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -layers Optimize -loop 0 - "${outfile}"
+}

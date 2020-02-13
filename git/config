@@ -1,3 +1,6 @@
+[blame]
+	markIgnoredLines = true
+	markUnblameableLines = true
 [color]
 	ui = true
 [diff]

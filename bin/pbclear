@@ -1,0 +1,10 @@
+#!/bin/sh
+
+clear_pasteboard() {
+    pbcopy -pboard "$1" < /dev/null
+}
+
+clear_pasteboard general
+clear_pasteboard ruler
+clear_pasteboard find
+clear_pasteboard font

@@ -48,6 +48,6 @@ echo 'Password clipped.  Clearing in 60 seconds.'
 
 # `at` doesn't forward the DISPLAY variable.  This workaround ensures that X is
 # available to xsel.
-at -M 'now' >/dev/null 2>&1 <<CMD
+at -M 'now + 1 minute' >/dev/null 2>&1 <<CMD
 DISPLAY="${DISPLAY}" xsel-clear
 CMD

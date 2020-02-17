@@ -46,9 +46,8 @@ read -r _
 echo "${item}" | jq -r "${query_password}" | xsel -bi
 echo 'Password clipped.  Clearing in 60 seconds.'
 
-at -M 'now + 1 minute' >/dev/null 2>&1 <<CMD
-xsel -c
-xsel -sc
-xsel -bc
-notify-send -h 'string:bgcolor:#000000' 'Clipboard cleared'
+# `at` doesn't forward the DISPLAY variable.  This workaround ensures that X is
+# available to xsel.
+at -M 'now' >/dev/null 2>&1 <<CMD
+DISPLAY="${DISPLAY}" xsel-clear
 CMD

@@ -22,6 +22,7 @@ default = simple
 [alias]
 ap = add -p
 b = branch
+bn = symbolic-ref --short HEAD
 bv = branch -vv
 c = commit
 chk = commit -a -n -m 'CHECKPOINT'
@@ -38,6 +39,7 @@ lag = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%an%C(reset) %C
 lg = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%cn%C(reset) %C(green)<%cr>%C(reset)'
 mb = merge-base HEAD
 pushf = push --force-with-lease
+pushu = "!pushu() { git push --set-upstream \"${1:-origin}\" \"${2:-$(git bn)}\"; }; pushu"
 rb = rebase
 root = rev-parse --show-toplevel
 sb = show-branch

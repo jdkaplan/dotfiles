@@ -20,5 +20,6 @@ shellcheck
 task
 tig
 tree
+watch
 wget
 youtube-dl

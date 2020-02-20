@@ -1,53 +1,61 @@
 [blame]
-	markIgnoredLines = true
-	markUnblameableLines = true
+markIgnoredLines = true
+markUnblameableLines = true
+
 [color]
-	ui = true
+ui = true
+
 [diff]
-	colorMoved = default
-	wsErrorHighlight = all
+colorMoved = default
+wsErrorHighlight = all
+
 [merge]
-	conflictStyle = diff3
-	ff = only
+conflictStyle = diff3
+ff = only
+
 [pull]
-	ff = only
+ff = only
+
 [push]
-	default = simple
+default = simple
 
 [alias]
-	ap = add -p
-	b = branch
-	bv = branch -vv
-	c = commit
-	chk = commit -a -n -m 'CHECKPOINT'
-	co = checkout
-	cp = cherry-pick
-	d = diff
-	dc = diff --cached
-	dn = diff --name-only --relative
-	dw = diff --word-diff
-	f = fetch
-	fb = "!fb() { git fetch \"$1\" \"$2\":\"$2\"; }; fb"
-	fp = fetch --prune
-	lag = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%an%C(reset) %C(green)<%ar>%C(reset)'
-	lg = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%cn%C(reset) %C(green)<%cr>%C(reset)'
-	mb = merge-base HEAD
-	pushf = push --force-with-lease
-	rb = rebase
-	root = rev-parse --show-toplevel
-	s = status
-	sb = show-branch
-	untracked = ls-files --others --exclude-standard
+ap = add -p
+b = branch
+bv = branch -vv
+c = commit
+chk = commit -a -n -m 'CHECKPOINT'
+co = checkout
+cp = cherry-pick
+dc = diff --cached
+d = diff
+dn = diff --name-only --relative
+dw = diff --word-diff
+fb = "!fb() { git fetch \"$1\" \"$2\":\"$2\"; }; fb"
+f = fetch
+fp = fetch --prune
+lag = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%an%C(reset) %C(green)<%ar>%C(reset)'
+lg = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%cn%C(reset) %C(green)<%cr>%C(reset)'
+mb = merge-base HEAD
+pushf = push --force-with-lease
+rb = rebase
+root = rev-parse --show-toplevel
+sb = show-branch
+s = status
+untracked = ls-files --others --exclude-standard
+
 [credential]
-	helper = cache
+helper = cache
+
 [commit]
-	verbose = true
+verbose = true
+
 [core]
-	excludesfile = ~/.gitignore
+excludesfile = ~/.gitignore
 
 [include]
-	path = config-os
-	path = config-role
+path = config-os
+path = config-role
 
 [includeIf "gitdir:~/projects/"]
-	path = config-personal
+path = config-personal

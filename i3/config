@@ -184,3 +184,4 @@ exec --no-startup-id redshift
 exec --no-startup-id polybar eDP1
 exec --no-startup-id i3-msg 'workspace 1; exec --no-startup-id qutebrowser'
 exec --no-startup-id unclutter
+exec --no-startup-id autorandr --change

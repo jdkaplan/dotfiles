@@ -37,8 +37,13 @@ fi
 
 query_username='.details.fields[] | select(.name == "username") | .value'
 query_password='.details.fields[] | select(.name == "password") | .value'
+query_url='.overview.url'
 
 item="$(op get item "${uuid}")"
+
+url="$(echo "${item}" | jq -r "${query_url}")"
+echo "Login for ${url} (${uuid})"
+
 echo "${item}" | jq -r "${query_username}" | xsel -bi
 echo 'Username clipped'
 

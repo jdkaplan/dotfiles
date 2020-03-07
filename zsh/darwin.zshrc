@@ -2,3 +2,5 @@
 
 alias ls='ls -G'
 export LSCOLORS='Exgxbxdxcxegedabagacad'
+
+alias units='gunits --verbose'

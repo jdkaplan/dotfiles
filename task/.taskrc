@@ -7,8 +7,6 @@ data.location=~/.task
 urgency.tags.coefficient = 0
 urgency.project.coefficient = 0
 
-context.sprint=+sprint
-
 # Bugwarrior
 uda.trellocard.type=string
 uda.trellocard.label=Trello card name
@@ -24,3 +22,7 @@ uda.trelloshorturl.type=string
 uda.trelloshorturl.label=Trello short URL
 uda.trellourl.type=string
 uda.trellourl.label=Trello URL
+
+# Contexts
+context.sprint=+sprint
+context.mach=+mach

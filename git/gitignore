@@ -18,5 +18,8 @@ node_modules/
 .vimrc
 
 tags
+tags.lock
+tags.temp
+.gutctags
 
 .DS_Store

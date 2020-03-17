@@ -5,4 +5,5 @@ set -euo pipefail
 CURDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 comm -13 <(brew list --full-name | sort) <(sort "${CURDIR}/formulae") | xargs brew install
+comm -13 <(brew list --full-name | sort) <(sort "${CURDIR}/head-only") | xargs brew install --HEAD
 comm -13 <(brew cask list) <(sort "${CURDIR}/casks") | xargs brew cask install

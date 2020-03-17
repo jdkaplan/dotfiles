@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -euo pipefail
 
-comm -13 <(brew list --full-name | sort) brew/formulae | xargs brew install
-comm -13 <(brew cask list) brew/casks | xargs brew cask install
+CURDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+comm -13 <(brew list --full-name | sort) <(sort "${CURDIR}/formulae") | xargs brew install
+comm -13 <(brew cask list) <(sort "${CURDIR}/casks") | xargs brew cask install

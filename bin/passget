@@ -25,14 +25,9 @@ elif [ "${#matches[@]}" -eq 1 ]; then
     uuid="$(echo "${item}" | jq -r '.uuid')"
 else
     uuid="$(echo "${matches[@]}" \
-        | jq -r '"\n\(.uuid)\n\(.url)"' \
-        | zenity \
-            --list --radiolist \
-            --title 'passget' \
-            --text 'Choose a match' \
-            --column ' ' \
-            --column 'UUID' \
-            --column 'URL')"
+        | jq -r '"\(.uuid) \(.url)"' \
+        | fzf \
+        | cut -d ' ' -f 1)"
 fi
 
 query_username='.details.fields[] | select(.name == "username") | .value'

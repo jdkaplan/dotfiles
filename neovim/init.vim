@@ -281,4 +281,4 @@ autocmd FileType text     setlocal spell
 
 autocmd BufNewFile,BufRead *.arb set filetype=ruby
 
-autocmd FileType ledger nmap <silent> <leader>s :call ledger#transaction_state_toggle(line('.'), ' !*')<CR>
+autocmd FileType ledger nmap <silent> <leader>' :call ledger#transaction_state_toggle(line('.'), ' !*')<CR>

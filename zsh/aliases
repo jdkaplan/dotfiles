@@ -33,7 +33,10 @@ alias today='nvim $HOME/notes/$(date "+%F").md'
 fe() {
     local files
     IFS=$'\n' files=($(fzf --query="$1" --multi --select-1 --exit-0))
-    [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+    if [[ -n "${files}" ]]; then
+        echo "\n${EDITOR:-vim} ${files[@]}"
+        ${EDITOR:-vim} "${files[@]}"
+    fi
 }
 
 alias t='task'

@@ -262,6 +262,7 @@ command NoCrosshair :set virtualedit= nocursorcolumn
 
 let g:AutoPairsShortcutToggle = ''
 
+autocmd FileType css            setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript.jsx setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript     setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType json           setlocal ts=2 sts=2 sw=2 expandtab

@@ -14,8 +14,10 @@ set -euo pipefail
 #
 # op list vaults >/dev/null 2>&1 || eval "$(op signin)"
 
+# TODO: Print vault name instead of ID
+
 url="$1"
-mapfile -t matches < <(op list items | jq -c '.[] | select(.overview.url and (.overview.url | contains("'"${url}"'"))) | { uuid: .uuid, url: .overview.url }')
+mapfile -t matches < <(op list items | jq -c '.[] | select(.overview.url and (.overview.url | contains("'"${url}"'"))) | { uuid: .uuid, url: .overview.url, vault: .vaultUuid }')
 
 if [ "${#matches[@]}" -eq 0 ]; then
     >&2 echo "No matches found for ${url}"
@@ -25,7 +27,7 @@ elif [ "${#matches[@]}" -eq 1 ]; then
     uuid="$(echo "${item}" | jq -r '.uuid')"
 else
     uuid="$(echo "${matches[@]}" \
-        | jq -r '"\(.uuid) \(.url)"' \
+        | jq -r '"\(.uuid) \(.url) \(.vault)"' \
         | fzf \
         | cut -d ' ' -f 1)"
 fi

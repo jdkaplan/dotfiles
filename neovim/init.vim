@@ -264,6 +264,7 @@ command NoCrosshair :set virtualedit= nocursorcolumn
 let g:AutoPairsShortcutToggle = ''
 
 autocmd FileType css            setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType html           setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript.jsx setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript     setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType json           setlocal ts=2 sts=2 sw=2 expandtab
@@ -287,3 +288,6 @@ autocmd FileType ledger nmap <silent> <leader>' :call ledger#transaction_state_t
 
 nmap ;cc :let @+=expand("%")<CR>
 nmap ;cp :let @+=expand("%:p")<CR>
+
+" For some reason, (neo)vim sees <C-/> as <C-_>, so bind that instead.
+autocmd FileType html inoremap <C-_> </<C-X><C-O>

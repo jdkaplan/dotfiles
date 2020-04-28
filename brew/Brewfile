@@ -35,7 +35,6 @@ brew "youtube-dl"
 
 cask "iterm2"
 cask "karabiner-elements"
-cask "libreoffice"
 cask "spectacle"
 cask "spotify"
 cask "vlc"

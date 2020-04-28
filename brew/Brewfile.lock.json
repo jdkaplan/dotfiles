@@ -565,12 +565,6 @@
           "full_name": "karabiner-elements"
         }
       },
-      "libreoffice": {
-        "version": "6.4.2",
-        "options": {
-          "full_name": "libreoffice"
-        }
-      },
       "spectacle": {
         "version": "1.2",
         "options": {

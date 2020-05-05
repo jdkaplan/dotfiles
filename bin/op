@@ -64,6 +64,11 @@ if [ "${cmd}" = 'find' ]; then
     query='.[] | select(.overview.url and (.overview.url | contains("'"${url}"'"))) | { uuid: .uuid, url: .overview.url }'
     /bin/op list items --session="$(session_token)" | jq -c "${query}"
     exit $?
+elif [ "${cmd}" = 'search' ]; then
+    url="$2"
+    query='.[] | select(.overview.url and (.overview.url | contains("'"${url}"'"))) | .uuid'
+    /bin/op list items --session="$(session_token)" | jq -c "${query}"
+    exit $?
 fi
 
 # TODO: bind file descriptors for `op encode`

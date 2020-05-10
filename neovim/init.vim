@@ -14,6 +14,7 @@ endif
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'cespare/vim-toml'
+Plug 'chrisbra/unicode.vim'
 Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'
 Plug 'fatih/vim-go'
@@ -291,3 +292,6 @@ nmap ;cp :let @+=expand("%:p")<CR>
 
 " For some reason, (neo)vim sees <C-/> as <C-_>, so bind that instead.
 autocmd FileType html inoremap <C-_> </<C-X><C-O>
+
+let g:Unicode_no_default_mappings = 1
+imap <C-G><C-F> <Plug>(UnicodeFuzzy)

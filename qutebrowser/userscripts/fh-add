@@ -9,7 +9,7 @@ title = os.environ["QUTE_TITLE"]
 
 query = {"title": title, "url": url}
 
-share_link = "https://metagram.net/firehose/share?{}".format(urlencode(query))
+share_link = "https://metagram.net/firehose/drops/new?{}".format(urlencode(query))
 
 with open(fifo, "w") as f:
     f.write(":open {}".format(share_link))

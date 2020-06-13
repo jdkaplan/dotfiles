@@ -5,6 +5,7 @@
     ~/.config/git/config-role: git/config-personal
     ~/.config/i3: i3/
     ~/.config/polybar: polybar/
+    ~/.config/tridactyl: tridactyl/
     ~/.config/qutebrowser: qutebrowser/
     ~/.local/share/qutebrowser/userscripts: qutebrowser/userscripts
     ~/.xinitrc: X/.xinitrc

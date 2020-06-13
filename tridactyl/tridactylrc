@@ -6,14 +6,6 @@ set newtab about:blank
 
 set editorcmd urxvt -e nvim
 
-" Use Tridactyl search instead of native Firefox search
-bind / fillcmdline find
-bind ? fillcmdline find -?
-bind n findnext 1
-bind N findnext -1
-bind ;<Space> nohlsearch
-set findcase smart
-
 bind j scrollline  1
 bind k scrollline -1
 bind J tabnext

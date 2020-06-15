@@ -2,25 +2,12 @@
 " drift when using :set commands in-browser.
 sanitize tridactyllocal tridactylsync
 
+" General Settings
 set newtab about:blank
-
 set editorcmd urxvt -e nvim
-
-bind j scrollline  1
-bind k scrollline -1
-bind J tabnext
-bind K tabprev
-bind gh tabmove -1
-bind gl tabmove +1
-
-" This can only cause problems with CapsLock and zz
-unbind ZZ
-
-" Dvorak
 set hintchars dhtnsaoeuifgcrlpybmwvzqjkx
 set hintfiltermode vimperator
 set hintdelay 0
-
 set searchurls.archwiki https://wiki.archlinux.org/index.php?search=%s
 set searchurls.aur https://aur.archlinux.org/packages/?K=%s
 set searchurls.dict https://www.dictionary.com/browse/%s
@@ -35,7 +22,152 @@ set searchurls.py3 https://docs.python.org/3/search.html?q=%s
 set searchurls.rdoc https://rubyapi.org/2.7/o/s?q=%s
 set searchurls.thesaurus https://www.thesaurus.com/browse/%s
 set searchurls.ud https://www.urbandictionary.com/define.php?term=%s
-
 set searchengine ddg
-
 set tabopenpos last
+
+" Binds
+bind j scrollline  1
+bind k scrollline -1
+bind J tabnext
+bind K tabprev
+bind gh tabmove -1
+bind gl tabmove +1
+unbind ZZ
+unbind <C-a>
+unbind <C-x>
+unbind g?
+unbind <S-Insert>
+unbind <AC-Escape>
+unbind <AC-`>
+unbind <AS-ArrowUp><AS-ArrowUp><AS-ArrowDown><AS-ArrowDown><AS-ArrowLeft><AS-ArrowRight><AS-ArrowLeft><AS-ArrowRight>ba
+
+" bind <A-p> pin
+" bind <A-m> mute toggle
+" bind <F1> help
+" bind o fillcmdline open
+" bind O current_url open
+" bind w fillcmdline winopen
+" bind W current_url winopen
+" bind t fillcmdline tabopen
+" bind ]] followpage next
+" bind [[ followpage prev
+" bind [c urlincrement -1
+" bind ]c urlincrement 1
+" bind T current_url tabopen
+" bind yy clipboard yank
+" bind ys clipboard yankshort
+" bind yc clipboard yankcanon
+" bind ym clipboard yankmd
+" bind yt clipboard yanktitle
+" bind gH home true
+" bind p clipboard open
+" bind P clipboard tabopen
+" bind <C-e> scrollline 10
+" bind <C-y> scrollline -10
+" bind h scrollpx -50
+" bind l scrollpx 50
+" bind G scrollto 100
+" bind gg scrollto 0
+" bind <C-u> scrollpage -0.5
+" bind <C-d> scrollpage 0.5
+" bind <C-f> scrollpage 1
+" bind <C-b> scrollpage -1
+" bind <C-v> nmode ignore 1 mode normal
+" bind $ scrollto 100 x
+" bind ^ scrollto 0 x
+" bind <C-6> tab #
+" bind <C-^> tab #
+" bind H back
+" bind L forward
+" bind <C-o> jumpprev
+" bind <C-i> jumpnext
+" bind d tabclose
+" bind D composite tabprev; tabclose #
+" bind gx0 tabclosealltoleft
+" bind gx$ tabclosealltoright
+" bind << tabmove -1
+" bind >> tabmove +1
+" bind u undo
+" bind U undo window
+" bind r reload
+" bind R reloadhard
+" bind x stop
+" bind gi focusinput -l
+" bind g; changelistjump -1
+" bind gt tabnext_gt
+" bind gT tabprev
+" bind g^ tabfirst
+" bind g0 tabfirst
+" bind g$ tablast
+" bind gr reader
+" bind gu urlparent
+" bind gU urlroot
+" bind gf viewsource
+" bind : fillcmdline_notrail
+" bind s fillcmdline open search
+" bind S fillcmdline tabopen search
+" bind M gobble 1 quickmark
+" bind B fillcmdline taball
+" bind b fillcmdline tab
+" bind f hint
+" bind F hint -b
+" bind gF hint -qb
+" bind ;i hint -i
+" bind ;b hint -b
+" bind ;o hint
+" bind ;I hint -I
+" bind ;k hint -k
+" bind ;y hint -y
+" bind ;p hint -p
+" bind ;h hint -h
+" bind v hint -h
+" bind ;P hint -P
+" bind ;r hint -r
+" bind ;s hint -s
+" bind ;S hint -S
+" bind ;a hint -a
+" bind ;A hint -A
+" bind ;; hint -; *
+" bind ;# hint -#
+" bind ;v hint -W mpvsafe
+" bind ;w hint -w
+" bind ;t hint -W tabopen
+" bind ;O hint -W fillcmdline_notrail open
+" bind ;W hint -W fillcmdline_notrail winopen
+" bind ;T hint -W fillcmdline_notrail tabopen
+" bind ;z hint -z
+" bind ;m composite hint -pipe img src | js -p tri.excmds.open('images.google.com/searchbyimage?image_url=' + JS_ARG)
+" bind ;M composite hint -pipe img src | jsb -p tri.excmds.tabopen('images.google.com/searchbyimage?image_url=' + JS_ARG)
+" bind ;gi hint -qi
+" bind ;gI hint -qI
+" bind ;gk hint -qk
+" bind ;gy hint -qy
+" bind ;gp hint -qp
+" bind ;gP hint -qP
+" bind ;gr hint -qr
+" bind ;gs hint -qs
+" bind ;gS hint -qS
+" bind ;ga hint -qa
+" bind ;gA hint -qA
+" bind ;g; hint -q;
+" bind ;g# hint -q#
+" bind ;gv hint -qW mpvsafe
+" bind ;gw hint -qw
+" bind ;gb hint -qb
+" bind ;gF hint -qb
+" bind ;gf hint -q
+" bind <S-Escape> mode ignore
+" bind <Escape> composite mode normal ; hidecmdline
+" bind <C-[> composite mode normal ; hidecmdline
+" bind a current_url bmark
+" bind A bmark
+" bind zi zoom 0.1 true
+" bind zo zoom -0.1 true
+" bind zm zoom 0.5 true
+" bind zr zoom -0.5 true
+" bind zM zoom 0.5 true
+" bind zR zoom -0.5 true
+" bind zz zoom 1
+" bind zI zoom 3
+" bind zO zoom 0.3
+" bind . repeat

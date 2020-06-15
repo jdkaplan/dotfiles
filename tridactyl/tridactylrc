@@ -5,7 +5,7 @@ sanitize tridactyllocal tridactylsync
 " General Settings
 set newtab about:blank
 set editorcmd urxvt -e nvim
-set hintchars dhtnsaoeuifgcrlpybmwvzqjkx
+set hintchars dhtnsfgcrlbmwvz
 set hintfiltermode vimperator
 set hintdelay 0
 set searchurls.archwiki https://wiki.archlinux.org/index.php?search=%s

@@ -19,6 +19,7 @@ unbind ZZ
 " Dvorak
 set hintchars dhtnsaoeuifgcrlpybmwvzqjkx
 set hintfiltermode vimperator
+set hintdelay 0
 
 set searchurls.archwiki https://wiki.archlinux.org/index.php?search=%s
 set searchurls.aur https://aur.archlinux.org/packages/?K=%s

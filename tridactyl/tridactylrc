@@ -40,6 +40,7 @@ set searchurls.poke https://bulbapedia.bulbagarden.net/w/index.php?search=%s
 set searchurls.py2 https://docs.python.org/2/search.html?q=%s
 set searchurls.py3 https://docs.python.org/3/search.html?q=%s
 set searchurls.rdoc https://rubyapi.org/2.7/o/s?q=%s
+set searchurls.railsdoc https://api.rubyonrails.org/?q=%s
 set searchurls.thesaurus https://www.thesaurus.com/browse/%s
 set searchurls.ud https://www.urbandictionary.com/define.php?term=%s
 set searchengine ddg

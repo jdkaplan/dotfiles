@@ -111,11 +111,7 @@ map <silent> ;x :x<CR>
 
 set wildignore+=*.swp,*~
 
-map <silent> ;b :call fzf#run({
-\    'source': map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), 'bufname(v:val)'),
-\    'sink': 'e',
-\})<CR>
-
+map <silent> ;b :Buffers<CR>
 map <silent> ;f :call fzf#run({'source': 'rg --files --hidden', 'sink': 'e'})<CR>
 
 function! s:escape(path)

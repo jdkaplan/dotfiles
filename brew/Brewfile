@@ -36,6 +36,7 @@ brew "youtube-dl"
 
 cask "font-iosevka"
 cask "font-iosevka-slab"
+cask "gimp"
 cask "iterm2"
 cask "karabiner-elements"
 cask "spectacle"

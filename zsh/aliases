@@ -12,7 +12,7 @@ alias g='git'
 alias rg='rg -S'
 
 alias timestamp='date "+%Y-%m-%d_%H-%M-%S"'
-alias humantime='date "+%Y-%m-%d %H:%M"'
+alias humantime='date "+%Y-%m-%d %H:%M %z"'
 
 screenshot() {
     local ts="$(timestamp)"

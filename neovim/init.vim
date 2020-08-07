@@ -163,6 +163,10 @@ let g:ale_linters = {
 \        'flake8',
 \        'mypy',
 \    ],
+\    'ruby': [
+\        'rubocop',
+\        'sorbet',
+\    ],
 \    'rust': [
 \        'cargo',
 \    ],

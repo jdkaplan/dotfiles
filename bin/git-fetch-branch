@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+export USAGE='<branch>
+or: <remote> <branch>
+'
+
+# This is the recommended pattern from `man git-sh-setup`.
+#
+# shellcheck disable=SC1090
+. "$(git --exec-path)/git-sh-setup"
+
+set -euo pipefail
+
+case "$#" in
+    1)
+        remote='origin'
+        branch="$1"
+        ;;
+    2)
+        remote="$1"
+        branch="$2"
+        ;;
+    *) usage ;;
+esac
+
+exec git fetch "${remote}" "${branch}"

@@ -23,4 +23,4 @@ case "$#" in
     *) usage ;;
 esac
 
-exec git fetch "${remote}" "${branch}"
+exec git fetch "${remote}" "${branch}:${branch}"

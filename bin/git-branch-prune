@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+export USAGE='<remote>
+'
+
+# This is the recommended pattern from `man git-sh-setup`.
+#
+# shellcheck disable=SC1090
+. "$(git --exec-path)/git-sh-setup"
+
+set -euo pipefail
+
+case "$#" in
+    0)
+        remote='origin'
+        ;;
+    1)
+        remote="$1"
+        ;;
+    *) usage ;;
+esac
+
+git remote prune "${remote}"
+
+# This grep "fails" if there are no matches, so temporarily disable error
+# checking.
+set +e
+pruned_branches=$(git branch -vv | grep ': gone]')
+set -e
+
+if [ -z "${pruned_branches}" ]; then
+    >&2 echo 'Nothing to do!'
+    exit 0
+fi
+
+vipe <<< "${pruned_branches}" | \
+    awk '{print $1}' | \
+    xargs git branch -D

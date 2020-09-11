@@ -35,6 +35,7 @@ brew "watchman"
 brew "wget"
 brew "youtube-dl"
 
+cask "amethyst"
 cask "font-iosevka"
 cask "font-iosevka-slab"
 cask "gimp"

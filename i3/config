@@ -184,7 +184,6 @@ smart_gaps on
 
 # startup
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id redshift
 exec --no-startup-id polybar eDP1
 exec --no-startup-id unclutter
 exec --no-startup-id autorandr --change

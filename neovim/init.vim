@@ -113,7 +113,7 @@ map <silent> ;x :x<CR>
 set wildignore+=*.swp,*~
 
 map <silent> ;b :Buffers<CR>
-map <silent> ;f :call fzf#run({'source': 'rg --files --hidden', 'sink': 'e'})<CR>
+map <silent> ;f :call fzf#run({'source': 'rg --files --hidden', 'sink': 'e', options: '--multi'})<CR>
 
 function! s:escape(path)
 	return substitute(a:path, ' ', '\\ ', 'g')
@@ -130,12 +130,12 @@ endfunction
 map <silent> ;g :call fzf#run({
 \    'source': 'rg --vimgrep --no-heading --smart-case --hidden --regexp '.shellescape(input('Pattern: ')),
 \    'sink': function('RgHandler'),
-\    'options': '+m',
+\    'options': '--multi',
 \})<CR>
 map <silent> ;* :call fzf#run({
 \    'source': 'rg --vimgrep --no-heading --smart-case --hidden --regexp '.shellescape(expand('<cword>')),
 \    'sink': function('RgHandler'),
-\    'options': '+m',
+\    'options': '--multi',
 \})<CR>
 
 command ALEOff :let b:ale_fix_on_save = 0

@@ -204,6 +204,9 @@ let g:ale_fixers = {
 \    'rust': [
 \        'rustfmt',
 \    ],
+\    'scss': [
+\        'prettier',
+\    ],
 \    'typescript': [
 \        'prettier',
 \    ],

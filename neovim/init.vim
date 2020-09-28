@@ -153,6 +153,9 @@ let g:ale_linters = {
 \    'bash': [
 \        'shellcheck',
 \    ],
+\    'css': [
+\        'stylelint',
+\    ],
 \    'go': [
 \        'go build',
 \        'goimports',

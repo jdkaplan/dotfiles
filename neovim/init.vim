@@ -162,6 +162,9 @@ let g:ale_linters = {
 \        'golangci-lint',
 \        'go vet',
 \    ],
+\    'javascript': [
+\        'eslint',
+\    ],
 \    'python': [
 \        'flake8',
 \        'mypy',

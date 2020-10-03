@@ -33,6 +33,7 @@ dc = diff --cached
 d = diff
 dn = diff --name-only --relative
 dw = diff --word-diff
+dww = diff --word-diff --word-diff-regex=.
 fb = fetch-branch
 f = fetch
 fp = fetch --prune

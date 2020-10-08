@@ -22,6 +22,7 @@ default = simple
 [alias]
 ap = add -p
 b = branch
+bl = branch --list --format='%(refname:lstrip=2)'
 bn = symbolic-ref --short HEAD
 bp = branch-prune
 bv = branch -vv

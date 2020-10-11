@@ -10,6 +10,24 @@ export USAGE='<remote>
 
 set -euo pipefail
 
+POSITIONAL=()
+FORCE=0
+while [[ $# -gt 0 ]]; do
+    key="$1"
+
+    case $key in
+        -f|--force)
+            FORCE=1
+            shift
+            ;;
+        *)
+            POSITIONAL+=("$1")
+            shift
+            ;;
+    esac
+done
+set -- "${POSITIONAL[@]}"
+
 case "$#" in
     0)
         remote='origin'
@@ -33,6 +51,13 @@ if [ -z "${pruned_branches}" ]; then
     exit 0
 fi
 
-vipe <<< "${pruned_branches}" | \
+
+if [ "${FORCE}" -eq 1 ]; then
+    selector='cat'
+else
+    selector='vipe'
+fi
+
+"${selector}" <<< "${pruned_branches}" | \
     awk '{print $1}' | \
     xargs git branch -D

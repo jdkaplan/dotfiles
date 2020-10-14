@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-export USAGE='<remote>
+export USAGE='<remote> [-f]
+
+Flags:
+    -f, --force    Prune branches without confirmation
 '
 
 # This is the recommended pattern from `man git-sh-setup`.
@@ -26,14 +29,13 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
-set -- "${POSITIONAL[@]}"
 
-case "$#" in
+case "${#POSITIONAL[@]}" in
     0)
         remote='origin'
         ;;
     1)
-        remote="$1"
+        remote="${POSITIONAL[0]}"
         ;;
     *) usage ;;
 esac

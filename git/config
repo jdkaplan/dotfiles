@@ -9,6 +9,10 @@ ui = true
 colorMoved = default
 wsErrorHighlight = all
 
+# https://gist.github.com/tekin/12500956bd56784728e490d8cef9cb81#gistcomment-3500150
+[diff "rspec"]
+xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario|background)[ \t].*)$"
+
 [merge]
 conflictStyle = diff3
 ff = only
@@ -58,6 +62,7 @@ helper = cache
 verbose = true
 
 [core]
+attributesfile = ~/.gitattributes
 excludesfile = ~/.gitignore
 
 [include]

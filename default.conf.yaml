@@ -17,6 +17,7 @@
     ~/.config/user-dirs.dirs: etc/user-dirs.dirs
     ~/.config/zsh: zsh/
     ~/.emacs.d: emacs/
+    ~/.gitattributes: git/gitattributes
     ~/.gitignore: git/gitignore
     ~/.my.cnf: mysql/.my.cnf
     ~/.psqlrc: psql/.psqlrc

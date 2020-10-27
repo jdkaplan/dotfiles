@@ -1265,6 +1265,7 @@ c.url.searchengines = {
     "rdoc": "https://rubyapi.org/2.7/o/s?q={}",
     "thesaurus": "https://www.thesaurus.com/browse/{}",
     "ud": "https://www.urbandictionary.com/define.php?term={}",
+    "wiki": "https://en.wikipedia.org/w/index.php?search={}",
 }
 
 # The page(s) to open at the start.

@@ -138,6 +138,7 @@ map <silent> ;* :call fzf#run({
 \    'sink': function('RgHandler'),
 \    'options': '--multi',
 \})<CR>
+map <silent> ;t :execute 'Tags '. expand('<cword>')<CR>
 
 command ALEOff :let b:ale_fix_on_save = 0
 let g:ale_sign_error = '!'

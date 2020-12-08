@@ -311,3 +311,6 @@ autocmd FileType html inoremap <C-_> </<C-X><C-O>
 
 let g:Unicode_no_default_mappings = 1
 imap <C-G><C-F> <Plug>(UnicodeFuzzy)
+
+" https://vim.fandom.com/wiki/Search_for_visually_selected_text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>

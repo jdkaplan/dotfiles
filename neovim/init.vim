@@ -297,6 +297,7 @@ set secure
 
 autocmd FileType markdown setlocal spell
 autocmd FileType text     setlocal spell
+set spellcapcheck=
 
 autocmd BufNewFile,BufRead *.arb set filetype=ruby
 

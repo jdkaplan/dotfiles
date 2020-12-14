@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+export USAGE='[<base>]'
+
+# This is the recommended pattern from `man git-sh-setup`.
+#
+# shellcheck disable=SC1090
+. "$(git --exec-path)/git-sh-setup"
+
+set -euo pipefail
+
+case "$#" in
+    0)
+        base=$(git remote show origin | grep "HEAD branch" | awk '{ print $3 }')
+        ;;
+    1)
+        base="$1"
+        ;;
+    *) usage ;;
+esac
+
+git branch --list --format='%(refname:short)' \
+    | xargs --verbose -n 1 git rebase "${base}"

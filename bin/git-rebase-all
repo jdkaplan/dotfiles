@@ -20,4 +20,4 @@ case "$#" in
 esac
 
 git branch --list --format='%(refname:short)' \
-    | xargs --verbose -n 1 git rebase "${base}"
+    | xargs -t -n 1 git rebase "${base}"

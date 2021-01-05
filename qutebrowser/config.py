@@ -1264,6 +1264,7 @@ c.url.searchengines = {
     "py3": "https://docs.python.org/3/search.html?q={}",
     "rdoc": "https://rubyapi.org/2.7/o/s?q={}",
     "thesaurus": "https://www.thesaurus.com/browse/{}",
+    "tw": "https://tailwindcss.com/docs/{}",
     "ud": "https://www.urbandictionary.com/define.php?term={}",
     "wiki": "https://en.wikipedia.org/w/index.php?search={}",
 }

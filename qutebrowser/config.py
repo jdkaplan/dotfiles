@@ -1257,6 +1257,7 @@ c.url.searchengines = {
     "archwiki": "https://wiki.archlinux.org/index.php?search={}",
     "dict": "https://www.dictionary.com/browse/{}",
     "godoc": "https://godoc.org/?q={}",
+    "gem": "https://rubygems.org/search?query={}",
     "godev": "https://pkg.go.dev/search?q={}",
     "gopkg": "https://golang.org/pkg/{}",
     "mdn": "https://developer.mozilla.org/search?q={}",

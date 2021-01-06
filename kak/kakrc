@@ -1,4 +1,7 @@
-colorscheme jdkaplan-light
+# colorscheme jdkaplan-light
+colorscheme github
+# colorscheme gruvbox
+# colorscheme zenburn
 
 add-highlighter global/number-lines number-lines -separator ' '
 add-highlighter global/show-matching show-matching

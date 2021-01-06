@@ -45,8 +45,8 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'urbit/hoon.vim'
-Plug 'vim-ruby/vim-ruby'
 Plug 'vim-python/python-syntax'
+Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 filetype plugin indent on

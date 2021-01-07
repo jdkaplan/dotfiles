@@ -35,6 +35,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
+Plug 'Shougo/neosnippet.vim'
 Plug 'sirtaj/vim-openscad'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
@@ -315,3 +316,7 @@ imap <C-G><C-F> <Plug>(UnicodeFuzzy)
 
 " https://vim.fandom.com/wiki/Search_for_visually_selected_text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)

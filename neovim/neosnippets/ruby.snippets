@@ -1,0 +1,15 @@
+snippet sigp
+abbr sig { params(...).returns(...) }
+  sig { params(${1}).returns(${2}) }${0}
+
+snippet sigdo
+abbr sig do params(...).returns(...) end
+  sig do
+    params(
+      ${1}
+    ).returns(${2})
+  end${0}
+
+snippet sigv
+abbr sig { params(...).void}
+  sig { params(${1}).void }${0}

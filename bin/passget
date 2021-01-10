@@ -32,8 +32,8 @@ else
         | cut -d ' ' -f 1)"
 fi
 
-query_username='.details.fields[] | select(.name == "username") | .value'
-query_password='.details.fields[] | select(.name == "password") | .value'
+query_username='.details.fields[] | select(.designation == "username") | .value'
+query_password='.details.fields[] | select(.designation == "password") | .value'
 query_url='.overview.url'
 
 item="$(op get item "${uuid}")"

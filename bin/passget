@@ -16,7 +16,11 @@ set -euo pipefail
 
 # TODO: Print vault name instead of ID
 
-url="$1"
+# This cannot be done easily with simple replacement.  It actually needed
+# "real" regexes!
+#
+# shellcheck disable=SC2001
+url=$(sed -E 's%https?://%%' <<< "$1")
 mapfile -t matches < <(op list items | jq -c '.[] | select(.overview.url and (.overview.url | contains("'"${url}"'"))) | { uuid: .uuid, url: .overview.url, vault: .vaultUuid }')
 
 if [ "${#matches[@]}" -eq 0 ]; then

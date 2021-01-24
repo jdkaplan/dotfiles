@@ -30,6 +30,10 @@ monitor = DP-1-1
 inherit = mixins/bar
 monitor = DP-1-2
 
+[bar/DP-2-1]
+inherit = mixins/bar
+monitor = DP-2-1
+
 [bar/DP-2-2]
 inherit = mixins/bar
 monitor = DP-2-2

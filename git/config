@@ -13,6 +13,9 @@ wsErrorHighlight = all
 [diff "rspec"]
 xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario|background)[ \t].*)$"
 
+[init]
+defaultBranch = main
+
 [merge]
 conflictStyle = diff3
 ff = only

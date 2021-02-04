@@ -6,3 +6,8 @@ colorscheme github
 add-highlighter global/number-lines number-lines -separator ' '
 add-highlighter global/show-matching show-matching
 add-highlighter global/wrap wrap -word
+
+map global normal <semicolon> , -docstring 'leader'
+map global user w ':w<ret>'
+map global user b ':b '
+map global user <space> <semicolon>

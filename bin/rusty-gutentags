@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+# https://github.com/ludovicchabant/vim-gutentags/issues/206#issuecomment-422984864
+
+rusty-tags vi
+mv rusty-tags.vi tags.temp

@@ -20,7 +20,7 @@ set -euo pipefail
 # "real" regexes!
 #
 # shellcheck disable=SC2001
-url=$(sed -E 's%https?://%%' <<< "$1")
+url=$(sed -E 's%https?://(www\.)?%%' <<< "$1")
 mapfile -t matches < <(op list items | jq -c '.[] | select(.overview.url and (.overview.url | contains("'"${url}"'"))) | { uuid: .uuid, url: .overview.url, vault: .vaultUuid }')
 
 if [ "${#matches[@]}" -eq 0 ]; then

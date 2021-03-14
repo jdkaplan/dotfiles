@@ -1253,12 +1253,13 @@ c.url.default_page = "about:blank"
 # Type: Dict
 c.url.searchengines = {
     "DEFAULT": "https://duckduckgo.com/?q={}",
-    "aur": "https://aur.archlinux.org/packages/?K={}",
     "archwiki": "https://wiki.archlinux.org/index.php?search={}",
+    "aur": "https://aur.archlinux.org/packages/?K={}",
+    "crate": "https://crates.io/search?q={}",
     "dict": "https://www.dictionary.com/browse/{}",
-    "godoc": "https://godoc.org/?q={}",
     "gem": "https://rubygems.org/search?query={}",
     "godev": "https://pkg.go.dev/search?q={}",
+    "godoc": "https://godoc.org/?q={}",
     "gopkg": "https://golang.org/pkg/{}",
     "mdn": "https://developer.mozilla.org/search?q={}",
     "py2": "https://docs.python.org/2/search.html?q={}",

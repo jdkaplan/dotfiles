@@ -10,12 +10,14 @@ new_float none
 hide_edge_borders none
 
 for_window [class="^.*"] border pixel 0
+
 assign [class="Liferea"] 5
-for_window [class="Spotify"] move to workspace 6
-assign [class="Signal"] 8
-assign [class="Slack"] 8
-assign [class="TelegramDesktop"] 8
+assign [class="Spotify"] 6
 assign [class="discord"] 9
+assign [class="Element"] 9
+assign [class="Signal"] 9
+assign [class="Slack"] 9
+assign [class="TelegramDesktop"] 9
 
 focus_follows_mouse yes
 mouse_warping output

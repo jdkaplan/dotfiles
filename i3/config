@@ -189,3 +189,10 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id polybar eDP1
 exec --no-startup-id unclutter
 exec --no-startup-id autorandr --change
+
+exec --no-startup-id qutebrowser
+exec --no-startup-id signal-desktop
+exec --no-startup-id discord
+exec --no-startup-id element-desktop
+exec --no-startup-id slack
+exec --no-startup-id notion

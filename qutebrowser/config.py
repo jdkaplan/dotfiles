@@ -1265,6 +1265,7 @@ c.url.searchengines = {
     "py2": "https://docs.python.org/2/search.html?q={}",
     "py3": "https://docs.python.org/3/search.html?q={}",
     "rdoc": "https://rubyapi.org/2.7/o/s?q={}",
+    "sc": "https://github.com/koalaman/shellcheck/wiki/SC{}",
     "thesaurus": "https://www.thesaurus.com/browse/{}",
     "tw": "https://tailwindcss.com/docs/{}",
     "ud": "https://www.urbandictionary.com/define.php?term={}",

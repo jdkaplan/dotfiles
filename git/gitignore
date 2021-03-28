@@ -21,5 +21,6 @@ node_modules/
 /tags.lock
 /tags.temp
 .gutctags
+.notags
 
 .DS_Store

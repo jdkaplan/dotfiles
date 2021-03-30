@@ -21,3 +21,5 @@ export LOCAL_SESSION
 export SHELL=$(which zsh)
 
 export FZF_DEFAULT_COMMAND='fd'
+
+export NVM_DIR="${HOME}/.nvm"

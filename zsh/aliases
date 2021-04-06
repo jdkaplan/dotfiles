@@ -80,3 +80,15 @@ mov2gif() {
 relpath() {
     realpath --relative-to=. "$1"
 }
+
+img-placeholder() {
+    local size="$1" # WxH
+    local outfile=''
+    if [ "$#" -gt 1 ]; then
+        outfile="$2"
+    else
+        outfile="${size}.png"
+    fi
+    magick -size "${size}" -background lime -gravity Center caption:"${size}" "${outfile}"
+    echo "${outfile}"
+}

@@ -1270,6 +1270,7 @@ c.url.searchengines = {
     "thesaurus": "https://www.thesaurus.com/browse/{}",
     "tw": "https://tailwindcss.com/docs/{}",
     "ud": "https://www.urbandictionary.com/define.php?term={}",
+    "ug": "https://www.ultimate-guitar.com/search.php?title={}",
     "wiki": "https://en.wikipedia.org/w/index.php?search={}",
 }
 

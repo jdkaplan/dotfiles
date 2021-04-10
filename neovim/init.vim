@@ -305,6 +305,7 @@ autocmd FileType text     setlocal spell
 set spellcapcheck=
 
 autocmd BufNewFile,BufRead *.arb set filetype=ruby
+autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html
 
 autocmd FileType ledger nmap <silent> <leader>' :call ledger#transaction_state_toggle(line('.'), ' !*')<CR>
 

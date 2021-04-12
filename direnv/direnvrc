@@ -60,10 +60,9 @@ read_version_file()
 
 # From https://github.com/direnv/direnv/wiki/Node#using-nvm
 use_nvm() {
-  local node_version=$1
+  local node_version="$1"
 
   nvm_sh="${NVM_DIR}/nvm.sh"
   source $nvm_sh
   nvm install $node_version
-  nvm use $node_version
 }

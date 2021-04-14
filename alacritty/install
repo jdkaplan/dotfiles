@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+CURDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+inputs=(
+    "${CURDIR}/base.yml"
+    "${CURDIR}/colors.yml"
+)
+output="${CURDIR}/alacritty.yml"
+
+cat "${inputs[@]}" > "${output}"

@@ -2,6 +2,7 @@
     - mkdir -p ~/.config
     - mkdir -p ~/.config/direnv
     - mkdir -p ~/.task
+    - ./bin/set-colors dark
 
 - clean: ['~', '~/.config']
 

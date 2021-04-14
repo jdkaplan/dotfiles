@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# "Automate" flipping applications between light and dark themes.
+
+DOTFILES="$(cd "$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")" && pwd)"
+
+scheme="${1:-dark}"
+
+if [ "${scheme}" = 'dark' ]; then
+    ln -sf "${DOTFILES}/alacritty/colors-dark.yml" "${DOTFILES}/alacritty/colors.yml"
+    ln -sf "${DOTFILES}/vim/colors/jdkaplan-dark.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
+    "${DOTFILES}/alacritty/install"
+elif [ "${scheme}" = 'light' ]; then
+    ln -sf "${DOTFILES}/alacritty/colors-light.yml" "${DOTFILES}/alacritty/colors.yml"
+    ln -sf "${DOTFILES}/vim/colors/jdkaplan-light.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
+    "${DOTFILES}/alacritty/install"
+else
+    echo "Unknown color scheme: ${scheme}"
+    exit 1
+fi

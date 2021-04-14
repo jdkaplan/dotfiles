@@ -1,18 +1,17 @@
 " Vim color file jdkaplan
 
-set background=dark
 hi clear
 if exists("syntax_on")
 syntax reset
 endif
-set t_Co=256
+set background=dark
 let colors_name = "jdkaplan"
 
 hi Comment              cterm=none      ctermfg=145
 hi Constant             cterm=none      ctermfg=141
 hi Cursor               cterm=none                  ctermbg=255
-hi CursorLine           cterm=none                  ctermbg=0
-hi CursorColumn         cterm=none                  ctermbg=0
+hi CursorLine           cterm=none                  ctermbg=232
+hi CursorColumn         cterm=none                  ctermbg=232
 hi Directory            cterm=none      ctermfg=33
 hi ExtraWhitespace      cterm=none                  ctermbg=160
 hi Folded               cterm=none      ctermfg=220 ctermbg=59
@@ -44,5 +43,3 @@ hi Whitespace           cterm=none      ctermfg=239 ctermbg=235
 
 hi ALEWarningSign                       ctermfg=184 ctermbg=238
 hi ALEErrorSign                         ctermfg=160 ctermbg=238
-
-hi DeniteMatched   NONE cterm=none      ctermfg=184 ctermbg=235

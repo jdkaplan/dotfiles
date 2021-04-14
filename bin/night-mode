@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+CURDIR="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")" && pwd)"
+exec "${CURDIR}/set-colors" dark

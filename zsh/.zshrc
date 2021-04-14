@@ -32,12 +32,12 @@ zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
 if [[ $TERM =~ '256color' ]]; then
-    local blue="%F{81}"
-    local orange="%F{166}"
-    local purple="%F{135}"
-    local red="%F{196}"
-    local green="%F{118}"
-    local gray="%F{241}"
+    local blue="%F{12}"
+    local orange="%F{11}"
+    local purple="%F{13}"
+    local red="%F{9}"
+    local green="%F{10}"
+    local gray="%F{7}"
 else
     local blue="%{$fg[cyan]%}"
     local orange="%{$fg[yellow]%}"

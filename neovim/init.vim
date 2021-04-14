@@ -59,9 +59,6 @@ set number
 set hidden
 set ruler
 
-set t_Co=256
-
-set background=dark
 colorscheme jdkaplan
 
 set expandtab
@@ -326,3 +323,12 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
 let g:gutentags_ctags_executable_rust = 'rusty-gutentags'
+
+" CTRL-L usually clears and redraws the screen.  Might as well use it to reset
+" the colorscheme too!
+fun s:ResetScreen()
+    colorscheme jdkaplan
+    redraw
+endfun
+command ResetScreen call s:ResetScreen()
+nnoremap <C-l> :ResetScreen<CR>

@@ -1,23 +1,22 @@
-" Vim color file jdkaplan
-
 hi clear
 if exists("syntax_on")
 syntax reset
 endif
 set background=dark
-let colors_name = "jdkaplan"
+let colors_name = "jdkaplan-dark"
 
 hi Comment              cterm=none      ctermfg=145
 hi Constant             cterm=none      ctermfg=141
 hi Cursor               cterm=none                  ctermbg=255
 hi CursorLine           cterm=none                  ctermbg=232
+hi CursorLineNr         cterm=none      ctermfg=222 ctermbg=232
 hi CursorColumn         cterm=none                  ctermbg=232
 hi Directory            cterm=none      ctermfg=33
 hi ExtraWhitespace      cterm=none                  ctermbg=160
 hi Folded               cterm=none      ctermfg=220 ctermbg=59
 hi Function             cterm=none      ctermfg=45
 hi Identifier           cterm=none      ctermfg=45
-hi LineNr               cterm=none      ctermfg=245
+hi LineNr               cterm=none      ctermfg=245 ctermbg=235
 hi MatchParen           cterm=none      ctermfg=209 ctermbg=235
 hi Normal               cterm=none      ctermfg=254 ctermbg=235
 hi NonText              cterm=none      ctermfg=110 ctermbg=238

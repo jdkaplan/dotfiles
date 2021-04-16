@@ -1,4 +1,4 @@
 - link:
-    ~/.config/zsh/os.zshrc: zsh/linux.zshrc
-    ~/.config/nvim/os-plugins.vim: neovim/linux-plugins.vim
-    ~/.config/alacritty/os.yml: alacritty/linux.yml
+    ./alacritty/os.yml: alacritty/linux.yml
+    ./neovim/os-plugins.vim: neovim/linux-plugins.vim
+    ./zsh/os.zshrc: zsh/linux.zshrc

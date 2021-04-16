@@ -6,8 +6,8 @@
       quiet: false
 
 - link:
-    ~/.config/alacritty/os.yml: alacritty/darwin.yml
-    ~/.config/git/config-os: git/config-darwin
+    ./alacritty/os.yml: alacritty/darwin.yml
+    ./git/config-os: git/config-darwin
+    ./neovim/os-plugins.vim: neovim/darwin-plugins.vim
+    ./zsh/os.zshrc: zsh/darwin.zshrc
     ~/.config/karabiner: karabiner/
-    ~/.config/nvim/os-plugins.vim: neovim/darwin-plugins.vim
-    ~/.config/zsh/os.zshrc: zsh/darwin.zshrc

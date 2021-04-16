@@ -6,6 +6,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
 
+brew "coreutils"
 brew "dateutils"
 brew "direnv"
 brew "entr"

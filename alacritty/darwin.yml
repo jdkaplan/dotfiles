@@ -19,7 +19,7 @@
 # * file:///usr/share/doc/fontconfig/fontconfig-user.html
 font:
   normal:
-    family: Iosevka
+    family: Iosevka Term
 
   # Point size of the font
   size: 12
@@ -40,4 +40,4 @@ font:
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
-  use_thin_strokes: false
+  use_thin_strokes: true

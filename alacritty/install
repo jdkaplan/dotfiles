@@ -5,6 +5,7 @@ set -euo pipefail
 CURDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 inputs=(
     "${CURDIR}/base.yml"
+    "${CURDIR}/os.yml"
     "${CURDIR}/colors.yml"
 )
 output="${CURDIR}/alacritty.yml"

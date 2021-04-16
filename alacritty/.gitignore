@@ -3,3 +3,6 @@
 
 # Symlink created by `../bin/set-colors`
 /colors.yml
+
+# Symlink created by `../install`
+/os.yml

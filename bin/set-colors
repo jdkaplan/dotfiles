@@ -9,10 +9,12 @@ scheme="${1:-dark}"
 if [ "${scheme}" = 'dark' ]; then
     ln -sf "${DOTFILES}/alacritty/colors-dark.yml" "${DOTFILES}/alacritty/colors.yml"
     ln -sf "${DOTFILES}/vim/colors/jdkaplan-dark.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
+    ln -sf "${DOTFILES}/task/jdkaplan-dark.theme" "${DOTFILES}/task/color.theme"
     "${DOTFILES}/alacritty/install"
 elif [ "${scheme}" = 'light' ]; then
     ln -sf "${DOTFILES}/alacritty/colors-light.yml" "${DOTFILES}/alacritty/colors.yml"
     ln -sf "${DOTFILES}/vim/colors/jdkaplan-light.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
+    ln -sf "${DOTFILES}/task/jdkaplan-light.theme" "${DOTFILES}/task/color.theme"
     "${DOTFILES}/alacritty/install"
 else
     echo "Unknown color scheme: ${scheme}"

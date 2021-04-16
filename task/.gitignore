@@ -1,2 +1,4 @@
 # The sync config contains secrets.
-sync
+/sync
+
+/color.theme

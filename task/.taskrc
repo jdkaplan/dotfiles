@@ -1,6 +1,7 @@
 # [Created by task 2.5.1 11/24/2019 23:09:25]
 
 include ~/.config/task/sync
+include ~/.config/task/color.theme
 
 data.location=~/.task
 

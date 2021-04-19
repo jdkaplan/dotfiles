@@ -8,13 +8,13 @@
         "revision": "209f59cda890de69b74c224982591642c21323d3"
       },
       "homebrew/bundle": {
-        "revision": "0df097ca87d3bcf762d0f8cbe30eed8c37c35786"
+        "revision": "9ee0d9912401eca4f21310bd19876a8cbac63f6d"
       },
       "homebrew/cask": {
-        "revision": "99b9fe8aa124b06b5e15d7a3d7c31fe4fbe7ba1a"
+        "revision": "1608a242c9392b5c6b32b5d24f387fe0ff98d308"
       },
       "homebrew/core": {
-        "revision": "456a46fbbfb04baee248dfc043ce767de088aca5"
+        "revision": "c838b95c2f8518617edaac157773ce2477251dd9"
       },
       "homebrew/services": {
         "revision": "953a962d37c2cecc01f56d3e5d89814e5772abfb"
@@ -23,13 +23,13 @@
         "revision": "82db2cf9cb0cdecf62ca9405e767ec025b5ba8ed"
       },
       "homebrew/cask-fonts": {
-        "revision": "d3d0c80bd76a6fb8c3d37638174584dfe9248b08"
+        "revision": "2615c0a976f7ae03414e928927141ada2f1edd18"
       },
       "microsoft/git": {
         "revision": "1c8e6de682caf5e1b45d5ef3cca8838ce934ebe5"
       },
       "homebrew/cask-versions": {
-        "revision": "abe42d37cd4aa85d1185d026c90e78870cc84a3b"
+        "revision": "7a95b51be3c5a2f2395d82278c1f0fdbc686bc64"
       }
     },
     "brew": {
@@ -736,30 +736,30 @@
         }
       },
       "youtube-dl": {
-        "version": "2021.4.7",
+        "version": "2021.4.17",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
             "arm64_big_sur": {
               "cellar": ":any_skip_relocation",
-              "url": "https://ghcr.io/v2/homebrew/core/youtube-dl/blobs/sha256:230e90fdbe3cb80760936a7cc4b82fa9652ca5799bcee66d22aa2936447d7824",
-              "sha256": "230e90fdbe3cb80760936a7cc4b82fa9652ca5799bcee66d22aa2936447d7824"
+              "url": "https://ghcr.io/v2/homebrew/core/youtube-dl/blobs/sha256:86a1efbc3610e838caeb51e9f6d579c92d9a356243566c1c0b555486c76038bf",
+              "sha256": "86a1efbc3610e838caeb51e9f6d579c92d9a356243566c1c0b555486c76038bf"
             },
             "big_sur": {
               "cellar": ":any_skip_relocation",
-              "url": "https://ghcr.io/v2/homebrew/core/youtube-dl/blobs/sha256:dfc47da4853b4fa2db047b34270718832e38eb02e35fa644adaf04cf7fccc321",
-              "sha256": "dfc47da4853b4fa2db047b34270718832e38eb02e35fa644adaf04cf7fccc321"
+              "url": "https://ghcr.io/v2/homebrew/core/youtube-dl/blobs/sha256:edabd75f725221fb12e7036f37e6921cae47ca2234f8e4e19062ca190b64d57d",
+              "sha256": "edabd75f725221fb12e7036f37e6921cae47ca2234f8e4e19062ca190b64d57d"
             },
             "catalina": {
               "cellar": ":any_skip_relocation",
-              "url": "https://ghcr.io/v2/homebrew/core/youtube-dl/blobs/sha256:8ae1f30d4abbbd77edfa98883f7cbbb463662b49c68acc52441cc3de4db90909",
-              "sha256": "8ae1f30d4abbbd77edfa98883f7cbbb463662b49c68acc52441cc3de4db90909"
+              "url": "https://ghcr.io/v2/homebrew/core/youtube-dl/blobs/sha256:edabd75f725221fb12e7036f37e6921cae47ca2234f8e4e19062ca190b64d57d",
+              "sha256": "edabd75f725221fb12e7036f37e6921cae47ca2234f8e4e19062ca190b64d57d"
             },
             "mojave": {
               "cellar": ":any_skip_relocation",
-              "url": "https://ghcr.io/v2/homebrew/core/youtube-dl/blobs/sha256:33bc1b43eec130aaa49c05c5436e46148fde418c7c733cd149a9d10da369180b",
-              "sha256": "33bc1b43eec130aaa49c05c5436e46148fde418c7c733cd149a9d10da369180b"
+              "url": "https://ghcr.io/v2/homebrew/core/youtube-dl/blobs/sha256:5bb2b85c53a5519077df1a9d2efd2bed1a4b52259e5ffc4aa6054de2f8383b73",
+              "sha256": "5bb2b85c53a5519077df1a9d2efd2bed1a4b52259e5ffc4aa6054de2f8383b73"
             }
           }
         }
@@ -899,6 +899,35 @@
             }
           }
         }
+      },
+      "coreutils": {
+        "version": "8.32",
+        "bottle": {
+          "rebuild": 2,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_big_sur": {
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/coreutils/blobs/sha256:e7d88d2b7a91a57dfd37c2ea14752d1bb116f25694eab1161d6e8088f7db5921",
+              "sha256": "e7d88d2b7a91a57dfd37c2ea14752d1bb116f25694eab1161d6e8088f7db5921"
+            },
+            "big_sur": {
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/coreutils/blobs/sha256:371ec57703b3646e0113331308b6e03617c2a7f91e15e113380b605455daba20",
+              "sha256": "371ec57703b3646e0113331308b6e03617c2a7f91e15e113380b605455daba20"
+            },
+            "catalina": {
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/coreutils/blobs/sha256:7a97ad96dfbe6abbb5c94424518a077e040af8a77d1946ca960a5f33cd237551",
+              "sha256": "7a97ad96dfbe6abbb5c94424518a077e040af8a77d1946ca960a5f33cd237551"
+            },
+            "mojave": {
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/coreutils/blobs/sha256:10fbad2e35846c7e835cb979b5beb9edf07f3a9742ddcc3c28d9abd5fe9ccb1b",
+              "sha256": "10fbad2e35846c7e835cb979b5beb9edf07f3a9742ddcc3c28d9abd5fe9ccb1b"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -969,9 +998,15 @@
         }
       },
       "firefox": {
-        "version": "87.0",
+        "version": "88.0",
         "options": {
           "full_name": "firefox"
+        }
+      },
+      "slack": {
+        "version": "4.15.0",
+        "options": {
+          "full_name": "slack"
         }
       }
     }
@@ -981,8 +1016,8 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.1.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "456a46fbbfb04baee248dfc043ce767de088aca5",
-        "CLT": "12.4.0.0.1.1610135815",
+        "Homebrew/homebrew-core": "c838b95c2f8518617edaac157773ce2477251dd9",
+        "CLT": "12.0.0.32.29",
         "Xcode": "12.0",
         "macOS": "10.15.7"
       }

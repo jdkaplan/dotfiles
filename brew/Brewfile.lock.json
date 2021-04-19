@@ -11,7 +11,7 @@
         "revision": "9ee0d9912401eca4f21310bd19876a8cbac63f6d"
       },
       "homebrew/cask": {
-        "revision": "1608a242c9392b5c6b32b5d24f387fe0ff98d308"
+        "revision": "c227e6f49ba124fd95c6a15ef68163a36878cfec"
       },
       "homebrew/core": {
         "revision": "c838b95c2f8518617edaac157773ce2477251dd9"
@@ -1007,6 +1007,12 @@
         "version": "4.15.0",
         "options": {
           "full_name": "slack"
+        }
+      },
+      "notion": {
+        "version": "2.0.17",
+        "options": {
+          "full_name": "notion"
         }
       }
     }

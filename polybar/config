@@ -10,53 +10,13 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/eDP1]
+[bar/primary]
 inherit = mixins/bar
-monitor = eDP1
+monitor = ${env:MONITOR}
 
-[bar/eDP-1]
+[bar/secondary]
 inherit = mixins/bar
-monitor = eDP-1
-
-[bar/DP-2]
-inherit = mixins/bar
-monitor = DP-2
-
-[bar/DP-1-1]
-inherit = mixins/bar
-monitor = DP-1-1
-
-[bar/DP-1-2]
-inherit = mixins/bar
-monitor = DP-1-2
-
-[bar/DP-2-1]
-inherit = mixins/bar
-monitor = DP-2-1
-
-[bar/DP-2-2]
-inherit = mixins/bar
-monitor = DP-2-2
-
-[bar/DP2-1]
-inherit = mixins/bar
-monitor = DP2-1
-
-[bar/DP2-2]
-inherit = mixins/bar
-monitor = DP2-2
-
-[bar/HDMI1]
-inherit = mixins/bar
-monitor = HDMI1
-
-[bar/HDMI2]
-inherit = mixins/bar
-monitor = HDMI2
-
-[bar/HDMI-1]
-inherit = mixins/bar
-monitor = HDMI-1
+monitor = ${env:MONITOR}
 
 [mixins/bar]
 bottom = true

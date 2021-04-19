@@ -14,6 +14,16 @@ alert = #bd2c40
 inherit = mixins/bar
 monitor = ${env:MONITOR}
 
+# Set a fixed position that's far enough away to fit the other content.  This
+# leaves a weird gap, but both the tray and the network module are
+# variable-sized, so there's no resolving that until the tray can be positioned
+# like any other module.
+#
+# TODO: https://github.com/polybar/polybar/issues/314
+tray-position = right
+tray-detached = true
+tray-offset-x = -400
+
 [bar/secondary]
 inherit = mixins/bar
 monitor = ${env:MONITOR}

@@ -32,3 +32,6 @@
     ~/.zprofile: zsh/.zprofile
     ~/.zshenv: zsh/.zshenv
     ~/.zshrc: zsh/.zshrc
+
+- shell:
+    - ./neovim/postinstall

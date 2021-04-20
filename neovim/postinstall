@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+CURDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+nvim --headless -s "${CURDIR}/pluginstall.vim"

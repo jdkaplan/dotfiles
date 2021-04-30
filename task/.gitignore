@@ -2,3 +2,6 @@
 /sync
 
 /color.theme
+
+# This contains state for the task CLI
+/.taskrc

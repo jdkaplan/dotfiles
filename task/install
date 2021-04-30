@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+CURDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TEMPLATE="${CURDIR}/taskrc-template"
+DESTINATION="${CURDIR}/.taskrc"
+
+[ -f "${DESTINATION}" ] || cp -v "${TEMPLATE}" "${DESTINATION}"

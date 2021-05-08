@@ -64,5 +64,6 @@ use_nvm() {
 
   nvm_sh="${NVM_DIR}/nvm.sh"
   source $nvm_sh
-  nvm install $node_version
+  # Make sure to run `nvm install $node_version` first.
+  nvm use $node_version
 }

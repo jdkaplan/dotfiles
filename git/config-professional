@@ -1,3 +1,6 @@
 [user]
 name = Jeremy Kaplan
 email = jeremy@stytch.com
+
+[includeIf "gitdir:~/projects/"]
+path = config-personal

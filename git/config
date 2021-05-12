@@ -72,6 +72,3 @@ excludesfile = ~/.gitignore
 path = config-os
 path = config-role
 path = config-secrets
-
-[includeIf "gitdir:~/projects/"]
-path = config-personal

@@ -4,3 +4,4 @@ email = jeremy@stytch.com
 
 [includeIf "gitdir:~/projects/"]
 path = config-personal
+path = config-personal-ssh

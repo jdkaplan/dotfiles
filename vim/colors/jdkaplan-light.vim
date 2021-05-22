@@ -21,6 +21,10 @@ hi MatchParen           cterm=none      ctermfg=202 ctermbg=255
 hi Normal               cterm=none      ctermfg=233 ctermbg=255
 hi NonText              cterm=none      ctermfg=110 ctermbg=251
 hi Number               cterm=none      ctermfg=99
+hi Pmenu                cterm=none      ctermfg=233 ctermbg=251
+hi PmenuSel             cterm=none      ctermfg=233 ctermbg=255
+hi PmenuSbar            cterm=none      ctermbg=251
+hi PmenuThumb           cterm=none      ctermfg=233
 hi PreProc              cterm=none      ctermfg=88
 hi SignColumn                                       ctermbg=251
 hi Statement            cterm=none      ctermfg=88

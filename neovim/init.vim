@@ -4,7 +4,7 @@ endif
 
 let &shell = '/bin/sh'
 let g:python3_host_prog = expand('~/.virtualenvs/neovim3/bin/python')
-let g:python_host_prog  = expand('~/.virtualenvs/neovim2/bin/python')
+let g:loaded_python_provider = 0 " Disable python2 support for plugins
 
 call plug#begin('~/.local/share/nvim/plugged')
 if filereadable(expand("~/.config/nvim/os-plugins.vim"))

@@ -1,6 +1,0 @@
-Configs that support having a local untracked import:
-* polybar
-* qutebrowser
-
-Post-install things:
-* Create neovim2 and neovim3 virtualenvs

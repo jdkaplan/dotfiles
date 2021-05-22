@@ -6,7 +6,6 @@ let &shell = '/bin/sh'
 let g:python3_host_prog = expand('~/.virtualenvs/neovim3/bin/python')
 let g:python_host_prog  = expand('~/.virtualenvs/neovim2/bin/python')
 
-set runtimepath+=~/.config/nvim/autoload
 call plug#begin('~/.local/share/nvim/plugged')
 if filereadable(expand("~/.config/nvim/os-plugins.vim"))
     source ~/.config/nvim/os-plugins.vim

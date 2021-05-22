@@ -4,6 +4,5 @@ set -euo pipefail
 
 CURDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# I wish I could use `--headless` here to avoid screen flashing, but this
-# doesn't seem to work if I set that.
-nvim -s "${CURDIR}/pluginstall.vim"
+# https://github.com/junegunn/vim-plug/wiki/tips#install-plugins-on-the-command-line
+nvim -es -u ~/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"

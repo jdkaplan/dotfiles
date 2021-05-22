@@ -68,7 +68,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smartindent
-set formatoptions+=n
+set formatoptions-=to
+set formatoptions+=crqnlj
 set nofoldenable
 
 set wrap

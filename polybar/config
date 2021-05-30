@@ -10,7 +10,11 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/primary]
+[bar/default]
+inherit = mixins/bar
+monitor = ${env:MONITOR}
+
+[bar/with_tray]
 inherit = mixins/bar
 monitor = ${env:MONITOR}
 
@@ -23,10 +27,6 @@ monitor = ${env:MONITOR}
 tray-position = right
 tray-detached = true
 tray-offset-x = -400
-
-[bar/secondary]
-inherit = mixins/bar
-monitor = ${env:MONITOR}
 
 [mixins/bar]
 bottom = true

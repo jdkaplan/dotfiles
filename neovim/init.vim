@@ -33,6 +33,7 @@ Plug 'LnL7/vim-nix'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'mxw/vim-jsx'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'

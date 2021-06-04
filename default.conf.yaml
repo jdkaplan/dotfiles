@@ -10,6 +10,7 @@
 - link:
     ~/bin: bin/
     ~/.config/alacritty: alacritty/
+    ~/.config/coc: neovim/coc
     ~/.config/direnv/direnvrc: direnv/direnvrc
     ~/.config/flake8: etc/flake8
     ~/.config/git: git/

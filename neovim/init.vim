@@ -30,7 +30,6 @@ Plug 'keith/swift.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'ledger/vim-ledger'
 Plug 'LnL7/vim-nix'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -145,7 +144,6 @@ map <silent> ;* :call fzf#run({
 \    'sink': function('RgHandler'),
 \    'options': '--multi',
 \})<CR>
-map <silent> ;t :execute 'Tags '. expand('<cword>')<CR>
 
 command ALEOff :let b:ale_fix_on_save = 0
 let g:ale_sign_error = '!'
@@ -182,9 +180,6 @@ let g:ale_linters = {
 \        'rubocop',
 \        'sorbet',
 \    ],
-\    'rust': [
-\        'cargo',
-\    ],
 \    'sh': [
 \        'shellcheck',
 \    ],
@@ -215,9 +210,6 @@ let g:ale_fixers = {
 \    ],
 \    'ruby': [
 \        'rubocop',
-\    ],
-\    'rust': [
-\        'rustfmt',
 \    ],
 \    'scss': [
 \        'prettier',
@@ -328,8 +320,6 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
-let g:gutentags_ctags_executable_rust = 'rusty-gutentags'
-
 " CTRL-L usually clears and redraws the screen.  Might as well use it to reset
 " the colorscheme too!
 fun s:ResetScreen()
@@ -338,3 +328,7 @@ fun s:ResetScreen()
 endfun
 command ResetScreen call s:ResetScreen()
 nnoremap <C-l> :ResetScreen<CR>
+
+nmap <silent> <Leader>j <Plug>(coc-diagnostic-next)
+nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev)
+nmap <silent> <Leader>d <Plug>(coc-definition)

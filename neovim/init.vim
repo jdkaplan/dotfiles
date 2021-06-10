@@ -331,4 +331,3 @@ nnoremap <C-l> :ResetScreen<CR>
 
 nmap <silent> <Leader>j <Plug>(coc-diagnostic-next)
 nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev)
-nmap <silent> <Leader>d <Plug>(coc-definition)

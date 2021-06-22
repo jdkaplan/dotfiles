@@ -26,7 +26,7 @@ monitor = ${env:MONITOR}
 # TODO: https://github.com/polybar/polybar/issues/314
 tray-position = right
 tray-detached = true
-tray-offset-x = -400
+tray-offset-x = -500
 
 [mixins/bar]
 bottom = true

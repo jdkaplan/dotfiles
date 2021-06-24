@@ -11,4 +11,5 @@
     ./neovim/os-plugins.vim: neovim/darwin-plugins.vim
     ./zsh/os.zshrc: zsh/darwin.zshrc
     ~/.config/karabiner: karabiner/
+    ~/.config/tridactyl: tridactyl/
     ~/.hammerspoon: hammerspoon/

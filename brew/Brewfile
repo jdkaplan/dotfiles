@@ -43,7 +43,6 @@ brew "youtube-dl"
 
 cask "alacritty"
 cask "amethyst"
-cask "chromium"
 cask "firefox"
 cask "font-iosevka"
 cask "font-iosevka-slab"

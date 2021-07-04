@@ -70,6 +70,7 @@ local exit_code="%(?..${red}%?%f)"
 setopt prompt_subst
 export PROMPT="${lbrkt}${user}${colon}${host}${colon}${dir}${branch}${rbrkt} ${exit_code}
 ${prompt}"
+export RPROMPT=''
 
 # aliases
 source $HOME/.config/zsh/aliases

@@ -4,8 +4,9 @@
     ~/.config/dunst: dunst/
     ~/.config/i3: i3/
     ~/.config/polybar: polybar/
-    ~/.config/tridactyl: tridactyl/
     ~/.config/qutebrowser: qutebrowser/
+    ~/.config/tridactyl: tridactyl/
+    ~/.config/xsettingsd: xsettingsd/
     ~/.local/share/qutebrowser/userscripts: qutebrowser/userscripts
     ~/.xinitrc: X/.xinitrc
     ~/.xserverrc: X/.xserverrc

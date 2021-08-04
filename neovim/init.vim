@@ -172,6 +172,9 @@ let g:ale_linters = {
 \    'javascript': [
 \        'eslint',
 \    ],
+\    'proto': [
+\        'protolint',
+\    ],
 \    'python': [
 \        'flake8',
 \        'mypy',

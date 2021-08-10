@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ "$#" -lt 2 ]; then
+    >&2 echo "usage: $0 dir command [args]"
+    exit 1
+fi
+
+dir="$1"; shift
+cmd=("$@")
+
+echo 'Press Space or edit a file to run tests'
+# I specifically want the command to expand here.
+#
+# shellcheck disable=SC2068
+until fd . "${dir}" | entr -cdp ${cmd[@]}; do
+    echo 'Press Space or edit a file to re-run tests'
+done

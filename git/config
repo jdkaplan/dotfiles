@@ -48,7 +48,7 @@ fp = fetch --prune
 fixup = commit --amend --no-edit
 lag = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%an%C(reset) %C(green)<%ar>%C(reset)'
 lcg = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%cn%C(reset) %C(green)<%cr>%C(reset)'
-lg = lag
+lg = lag --topo-order
 mb = merge-base HEAD
 pushf = push --force-with-lease
 pushu = "!pushu() { git push --set-upstream \"${1:-origin}\" \"${2:-$(git bn)}\"; }; pushu"

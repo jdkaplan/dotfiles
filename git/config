@@ -19,6 +19,7 @@ defaultBranch = main
 [merge]
 conflictStyle = diff3
 ff = only
+tool = nvimdiff
 
 [pull]
 ff = only

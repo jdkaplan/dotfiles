@@ -5,6 +5,7 @@
     ~/.config/i3: i3/
     ~/.config/polybar: polybar/
     ~/.config/qutebrowser: qutebrowser/
+    ~/.config/sway: sway/
     ~/.config/tridactyl: tridactyl/
     ~/.config/xsettingsd: xsettingsd/
     ~/.local/share/qutebrowser/userscripts: qutebrowser/userscripts

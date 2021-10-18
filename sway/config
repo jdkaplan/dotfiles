@@ -1,0 +1,164 @@
+# Modifiers
+set $super Mod4
+set $alt Mod1
+
+# Vim keys!
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+## Input config
+
+input type:keyboard {
+    repeat_delay 250
+    repeat_rate 50
+}
+
+# Use Mouse+$super to drag floating windows.
+# normal => Left-click to move, right-click to resize
+floating_modifier $super normal
+
+bindsym $super+Return exec alacritty
+bindsym $super+Space  exec bemenu-run
+
+# Kill focused window
+bindsym $super+Shift+q kill
+# Reload sway config
+bindsym $super+Escape reload
+# Exit sway
+bindsym $super+$alt+Escape exec swaymsg exit
+
+# Focus: vim
+bindsym $super+$left  focus left
+bindsym $super+$down  focus down
+bindsym $super+$up    focus up
+bindsym $super+$right focus right
+# Focus: arrows
+bindsym $super+Left   focus left
+bindsym $super+Down   focus down
+bindsym $super+Up     focus up
+bindsym $super+Right  focus right
+
+# Move: vim
+bindsym $super+Shift+$left  move left
+bindsym $super+Shift+$down  move down
+bindsym $super+Shift+$up    move up
+bindsym $super+Shift+$right move right
+# Move: arrows
+bindsym $super+Shift+Left   move left
+bindsym $super+Shift+Down   move down
+bindsym $super+Shift+Up     move up
+bindsym $super+Shift+Right  move right
+
+# Change container layout
+bindsym $super+f      fullscreen
+bindsym $super+s      floating enable
+bindsym $super+t      floating disable
+bindsym $super+z      split horizontal
+bindsym $super+v      split vertical
+bindsym $super+e      layout toggle split
+bindsym $super+$alt+s layout stacking
+bindsym $super+$alt+t layout tabbed
+bindsym $super+y      sticky toggle
+
+# Container nesting
+bindsym $super+p focus parent
+bindsym $super+c focus child
+
+# Scratchpad
+bindsym $super+Shift+minus move scratchpad
+bindsym $super+minus       scratchpad show
+
+# Switch focus between tiling / floating windows
+bindsym $super+Shift+space focus mode_toggle
+
+# Switch to workspace
+bindsym $super+1 workspace number 1
+bindsym $super+2 workspace number 2
+bindsym $super+3 workspace number 3
+bindsym $super+4 workspace number 4
+bindsym $super+5 workspace number 5
+bindsym $super+6 workspace number 6
+bindsym $super+7 workspace number 7
+bindsym $super+8 workspace number 8
+bindsym $super+9 workspace number 9
+bindsym $super+0 workspace number 10
+
+# Move focused container to workspace, and follow it
+bindsym $super+Shift+1 move container to workspace number  1; workspace number  1
+bindsym $super+Shift+2 move container to workspace number  2; workspace number  2
+bindsym $super+Shift+3 move container to workspace number  3; workspace number  3
+bindsym $super+Shift+4 move container to workspace number  4; workspace number  4
+bindsym $super+Shift+5 move container to workspace number  5; workspace number  5
+bindsym $super+Shift+6 move container to workspace number  6; workspace number  6
+bindsym $super+Shift+7 move container to workspace number  7; workspace number  7
+bindsym $super+Shift+8 move container to workspace number  8; workspace number  8
+bindsym $super+Shift+9 move container to workspace number  9; workspace number  9
+bindsym $super+Shift+0 move container to workspace number 10; workspace number 10
+
+# Magic workspace movement
+bindsym $super+grave        workspace back_and_forth
+bindsym $super+bracketleft  workspace prev_on_output
+bindsym $super+bracketright workspace next_on_output
+
+# Screens
+bindsym $super+comma        focus output left
+bindsym $super+period       focus output right
+bindsym $super+Shift+comma  move workspace to output left
+bindsym $super+Shift+period move workspace to output right
+
+mode "resize" {
+    bindsym $left  resize shrink width  10px
+    bindsym $down  resize grow   height 10px
+    bindsym $up    resize shrink height 10px
+    bindsym $right resize grow   width  10px
+
+    bindsym Left  resize shrink width  10px
+    bindsym Down  resize grow   height 10px
+    bindsym Up    resize shrink height 10px
+    bindsym Right resize grow   width  10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $super+r mode "resize"
+
+# TODO: man 5 sway-bar
+bar {
+    position bottom
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+set $locker 'swaylock -f -c 000000'
+bindsym $super+Shift+semicolon exec $locker
+# Automatically lock after 5 minutes, suspend after 5 more
+exec swayidle -w \
+    timeout 300  $locker \
+    timeout 600  'swaymsg "output * dpms off"' \
+    resume       'swaymsg "output * dpms on"' \
+    before-sleep $locker
+
+# Only show borders if there's more than one window
+default_border          pixel 1
+default_floating_border pixel 1
+smart_borders no_gaps
+# TODO: border colors: man 5 sway
+
+focus_wrapping no
+focus_follows_mouse yes
+focus_on_window_activation smart
+mouse_warping output
+
+
+include /etc/sway/config.d/*

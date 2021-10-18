@@ -12,7 +12,7 @@ if filereadable(expand("~/.config/nvim/os-plugins.vim"))
 endif
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'cespare/vim-toml'
+Plug 'cespare/vim-toml', { 'branch': 'main' }
 Plug 'chrisbra/unicode.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'dense-analysis/ale'

@@ -38,7 +38,7 @@ else
     profiles=()
 fi
 
-for conf in "${OS_NAME}" "${profiles[@]}" default; do
+for conf in default "${OS_NAME}" "${profiles[@]}" postinstall; do
     echo "Applying config: ${conf}"
     load_config "${conf}${CONFIG_SUFFIX}"
 done

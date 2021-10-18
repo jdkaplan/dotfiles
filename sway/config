@@ -140,7 +140,7 @@ bar {
     }
 }
 
-set $locker 'swaylock -f -c 000000'
+set $locker 'swaylock -f -e -F -k -l -c 000000 --indicator-idle-visible'
 bindsym $super+Shift+semicolon exec $locker
 # Automatically lock after 5 minutes, suspend after 5 more
 exec swayidle -w \

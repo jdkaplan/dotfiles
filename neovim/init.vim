@@ -149,8 +149,6 @@ let g:ale_sign_error = '!'
 let g:ale_sign_warning = '?'
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let g:ale_fix_on_save = 1
-let g:ale_go_golangci_lint_package = 1
-let g:ale_go_golangci_lint_options = ''
 let g:ale_linters = {
 \    '-': [],
 \    'arduino': [
@@ -161,12 +159,6 @@ let g:ale_linters = {
 \    ],
 \    'css': [
 \        'stylelint',
-\    ],
-\    'go': [
-\        'go build',
-\        'goimports',
-\        'golangci-lint',
-\        'go vet',
 \    ],
 \    'javascript': [
 \        'eslint',
@@ -328,6 +320,9 @@ endfun
 command ResetScreen call s:ResetScreen()
 nnoremap <C-l> :ResetScreen<CR>
 
+" Disable vim-go's gd mapping now that nvim-lspconfig uses it.
+let g:go_def_mapping_enabled = 0
+
 lua <<LSPCONFIG
 local nvim_lsp = require('lspconfig')
 
@@ -359,7 +354,7 @@ local on_attach = function(client, bufno)
   vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
 end
 
-local servers = { 'rust_analyzer' }
+local servers = { 'gopls', 'rust_analyzer' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,

@@ -6,6 +6,35 @@ set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")" && pwd)"
 SCHEME_FILE="${DOTFILES}/.color-scheme"
+OSTYPE="$(uname -s)"
+
+install_dark() {
+    ln -sf "${DOTFILES}/alacritty/colors-dark.yml"    "${DOTFILES}/alacritty/colors.yml"
+    ln -sf "${DOTFILES}/task/jdkaplan-dark.theme"     "${DOTFILES}/task/color.theme"
+    ln -sf "${DOTFILES}/vim/colors/jdkaplan-dark.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
+
+    if [ "${OSTYPE}" == 'Linux' ]; then
+        ln -sf "${DOTFILES}/xsettingsd/xsettingsd-dark.conf" "${DOTFILES}/xsettingsd/xsettingsd.conf"
+    fi
+}
+
+install_light() {
+    ln -sf "${DOTFILES}/alacritty/colors-light.yml"    "${DOTFILES}/alacritty/colors.yml"
+    ln -sf "${DOTFILES}/task/jdkaplan-light.theme"     "${DOTFILES}/task/color.theme"
+    ln -sf "${DOTFILES}/vim/colors/jdkaplan-light.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
+
+    if [ "${OSTYPE}" == 'Linux' ]; then
+        ln -sf "${DOTFILES}/xsettingsd/xsettingsd-light.conf" "${DOTFILES}/xsettingsd/xsettingsd.conf"
+    fi
+}
+
+postinstall() {
+    "${DOTFILES}/alacritty/install"
+
+    if [ "${OSTYPE}" == 'Linux' ]; then
+        killall -HUP xsettingsd
+    fi
+}
 
 if [ -f "${SCHEME_FILE}" ]; then
     default_scheme="$(head -n 1 "${SCHEME_FILE}")"
@@ -16,18 +45,14 @@ fi
 scheme="${1:-${default_scheme}}"
 
 if [ "${scheme}" = 'dark' ]; then
-    ln -sf "${DOTFILES}/alacritty/colors-dark.yml" "${DOTFILES}/alacritty/colors.yml"
-    ln -sf "${DOTFILES}/vim/colors/jdkaplan-dark.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
-    ln -sf "${DOTFILES}/task/jdkaplan-dark.theme" "${DOTFILES}/task/color.theme"
-    "${DOTFILES}/alacritty/install"
-    echo "$scheme" > "${SCHEME_FILE}"
+    install_dark
 elif [ "${scheme}" = 'light' ]; then
-    ln -sf "${DOTFILES}/alacritty/colors-light.yml" "${DOTFILES}/alacritty/colors.yml"
-    ln -sf "${DOTFILES}/vim/colors/jdkaplan-light.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
-    ln -sf "${DOTFILES}/task/jdkaplan-light.theme" "${DOTFILES}/task/color.theme"
-    "${DOTFILES}/alacritty/install"
-    echo "$scheme" > "${SCHEME_FILE}"
+    install_light
 else
     echo "Unknown color scheme: ${scheme}"
     exit 1
 fi
+
+postinstall
+
+echo "$scheme" > "${SCHEME_FILE}"

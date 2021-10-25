@@ -39,7 +39,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'qpkorr/vim-bufkill'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'Shougo/neosnippet.vim'
 Plug 'sirtaj/vim-openscad'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
@@ -319,10 +318,6 @@ imap <C-G><C-F> <Plug>(UnicodeFuzzy)
 
 " https://vim.fandom.com/wiki/Search_for_visually_selected_text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " CTRL-L usually clears and redraws the screen.  Might as well use it to reset
 " the colorscheme too!

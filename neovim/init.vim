@@ -343,10 +343,14 @@ local on_attach = function(client, bufno)
   vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
 end
 
-local servers = { 'gopls', 'rust_analyzer' }
-for _, lsp in ipairs(servers) do
+local servers = {
+  gopls = {},
+  rust_analyzer = {},
+}
+for lsp, settings in pairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
+    settings = settings,
   }
 end
 LSPCONFIG

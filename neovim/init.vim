@@ -1,7 +1,3 @@
-if &compatible
-  set nocompatible
-endif
-
 let &shell = '/bin/sh'
 let g:python3_host_prog = expand('~/.virtualenvs/neovim3/bin/python')
 let g:loaded_python_provider = 0 " Disable python2 support for plugins
@@ -54,11 +50,8 @@ Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
-filetype plugin indent on
-syntax enable
 set number
 set hidden
-set ruler
 
 colorscheme jdkaplan
 
@@ -67,8 +60,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smartindent
-set formatoptions-=to
-set formatoptions+=crqnlj
+set formatoptions=crqnlj
 set nofoldenable
 
 set wrap
@@ -76,7 +68,7 @@ set linebreak
 set nolist
 set textwidth=0
 set wrapmargin=0
-set listchars=tab:>-,extends:>,precedes:<
+set listchars=tab:>-,extends:>,precedes:<,nbsp:+,trail:-
 
 set ignorecase
 set smartcase
@@ -93,7 +85,6 @@ set updatetime=250
 set shortmess+=I
 
 set virtualedit=
-set display+=lastline
 noremap <silent> k gk
 noremap <silent> j gj
 

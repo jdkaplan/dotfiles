@@ -219,6 +219,8 @@ noremap <leader>m :NERDTreeFind<Space>
 
 let g:python_highlight_all = 1
 
+" Disable vim-go's gd mapping now that nvim-lspconfig uses it.
+let g:go_def_mapping_enabled = 0
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_functions = 1
@@ -309,9 +311,6 @@ fun s:ResetScreen()
 endfun
 command ResetScreen call s:ResetScreen()
 nnoremap <C-l> :ResetScreen<CR>
-
-" Disable vim-go's gd mapping now that nvim-lspconfig uses it.
-let g:go_def_mapping_enabled = 0
 
 lua <<LSPCONFIG
 local nvim_lsp = require('lspconfig')

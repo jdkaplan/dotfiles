@@ -145,8 +145,7 @@ bindsym $super+Shift+semicolon exec $locker
 # Automatically lock after 5 minutes, suspend after 5 more
 exec swayidle -w \
     timeout 300  $locker \
-    timeout 600  'swaymsg "output * dpms off"' \
-    resume       'swaymsg "output * dpms on"' \
+    timeout 600  'systemctl suspend' \
     before-sleep $locker
 
 # Only show borders if there's more than one window

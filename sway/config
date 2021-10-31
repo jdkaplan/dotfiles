@@ -152,7 +152,11 @@ exec swayidle -w \
 default_border          pixel 1
 default_floating_border pixel 1
 smart_borders no_gaps
-# TODO: border colors: man 5 sway
+# class                 title     bg        text
+client.focused          "#444444" "#444444" "#ffffff"
+client.focused_inactive "#000000" "#000000" "#ffffff"
+client.unfocused        "#000000" "#000000" "#ffffff"
+client.urgent           "#440000" "#440000" "#ffffff"
 
 focus_wrapping no
 focus_follows_mouse yes

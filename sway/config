@@ -162,6 +162,7 @@ focus_wrapping no
 focus_follows_mouse yes
 focus_on_window_activation smart
 mouse_warping output
+seat seat0 hide_cursor 5000
 
 
 include /etc/sway/config.d/*

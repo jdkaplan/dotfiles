@@ -164,5 +164,6 @@ focus_on_window_activation smart
 mouse_warping output
 seat seat0 hide_cursor 5000
 
+bindsym $super+x exec cb-clear
 
 include /etc/sway/config.d/*

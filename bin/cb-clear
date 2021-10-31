@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cb_clear() {
+    wl-copy --foreground --clear "$@"
+}
+
+if cb_clear --primary && cb_clear; then
+    notify-send -t 1000 'cb-clear'
+else
+    notify-send -t 1000 -h 'string:bgcolor:#ff0000' 'cb-clear failed to clear'
+fi

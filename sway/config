@@ -125,19 +125,8 @@ mode "resize" {
 }
 bindsym $super+r mode "resize"
 
-# TODO: man 5 sway-bar
 bar {
-    position bottom
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 set $locker 'swaylock -f -e -F -k -l -c 000000 --indicator-idle-visible'

@@ -1,0 +1,121 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #222222;
+    color: #dfdfdf;
+}
+
+#workspaces button {
+    padding: 0 1px;
+    color: #ffffff;
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -1px transparent;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#workspaces button.focused {
+    background-color: #444444;
+    color: #ffffff;
+    box-shadow: inset 0 -1px #ffb52a;
+}
+
+#workspaces button.urgent {
+    background-color: #bd2c40;
+}
+
+#mode {
+    background-color: #444444;
+    color: #ffb52a;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#mode,
+#idle_inhibitor,
+#mpd {
+    padding: 0;
+    margin: 0 4px;
+    color: #ffffff;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    box-shadow: inset 0 -1px #0a6cf5;
+}
+
+#battery {
+    box-shadow: inset 0 -1px #ffb52a;
+}
+
+#battery.charging, #battery.plugged {
+    box-shadow: inset 0 -1px #2affb5;
+}
+
+#battery.warning {
+    box-shadow: inset 0 -1px #f56c0a;
+}
+
+#battery.critical {
+    box-shadow: inset 0 -1px #f50a0a;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f50a0a;
+    }
+}
+
+#battery.critical:not(.plugged) {
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#network {
+    box-shadow: inset 0 -1px #9f78e1;
+}
+
+#pulseaudio {
+    box-shadow: inset 0 -1px #e83c3a;
+}
+
+#pulseaudio.muted {
+    box-shadow: inset 0 -1px transparent;
+}
+
+#idle_inhibitor.activated {
+    box-shadow: inset 0 -1px #ffffff;
+}

@@ -31,8 +31,8 @@ install_light() {
 postinstall() {
     "${DOTFILES}/alacritty/install"
 
-    if [ "${OSTYPE}" == 'Linux' ]; then
-        killall -HUP xsettingsd
+    if [ "${OSTYPE}" == 'Linux' ] && [ "${XDG_SESSION_TYPE}" != 'wayland' ]; then
+        killall --signal HUP xsettingsd
     fi
 }
 

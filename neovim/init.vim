@@ -62,6 +62,7 @@ set shiftwidth=4
 set smartindent
 set formatoptions=crqnlj
 set nofoldenable
+set nojoinspaces
 
 set wrap
 set linebreak

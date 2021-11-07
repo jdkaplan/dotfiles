@@ -92,7 +92,7 @@ window#waybar {
     }
 }
 
-#battery.critical:not(.plugged) {
+#battery.critical:not(.charging):not(.plugged) {
     animation-name: blink;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;

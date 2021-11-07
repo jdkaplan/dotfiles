@@ -9,6 +9,7 @@
     ],
     "modules-center": [],
     "modules-right": [
+        "tray",
         "idle_inhibitor",
         "network#ethernet",
         "network#wifi",

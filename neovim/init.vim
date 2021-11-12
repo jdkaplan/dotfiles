@@ -141,7 +141,10 @@ let g:ale_sign_error = '!'
 let g:ale_sign_warning = '?'
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let g:ale_fix_on_save = 1
+" Clear the default --enable-all because I disagree with too many linters.
 let g:ale_go_golangci_lint_options=''
+" Lint the whole package to reduce noise in dead code linters.
+let g:ale_go_golangci_lint_package=1
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \    'arduino': [

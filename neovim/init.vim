@@ -287,6 +287,7 @@ autocmd FileType proto          setlocal ts=2 sts=2 sw=2 expandtab
 
 autocmd FileType markdown setlocal commentstring=<!--%s-->
 autocmd FileType hoon     setlocal commentstring=::%s
+autocmd FileType hurl     setlocal commentstring=#%s
 
 set secure
 
@@ -294,8 +295,9 @@ autocmd FileType markdown setlocal spell
 autocmd FileType text     setlocal spell
 set spellcapcheck=
 
-autocmd BufNewFile,BufRead *.arb set filetype=ruby
+autocmd BufNewFile,BufRead *.arb      set filetype=ruby
 autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html
+autocmd BufNewFile,BufRead *.hurl     set filetype=hurl
 
 autocmd FileType ledger nmap <silent> <leader>' :call ledger#transaction_state_toggle(line('.'), ' !*')<CR>
 

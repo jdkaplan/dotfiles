@@ -111,7 +111,7 @@ map <silent> ;x :x<CR>
 set wildignore+=*.swp,*~
 
 map <silent> ;b :Buffers<CR>
-map <silent> ;f :call fzf#run({'source': 'rg --files --hidden', 'sink': 'e', 'options': '--multi'})<CR>
+map <silent> ;f :call fzf#run({'source': 'fd', 'sink': 'e', 'options': '--multi'})<CR>
 
 function! s:escape(path)
 	return substitute(a:path, ' ', '\\ ', 'g')

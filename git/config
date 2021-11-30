@@ -1,3 +1,6 @@
+[advice]
+skippedCherryPicks = false
+
 [blame]
 markIgnoredLines = true
 markUnblameableLines = true

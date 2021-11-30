@@ -5,6 +5,16 @@ markUnblameableLines = true
 [color]
 ui = true
 
+[commit]
+verbose = true
+
+[core]
+attributesfile = ~/.gitattributes
+excludesfile = ~/.gitignore
+
+[credential]
+helper = cache
+
 [diff]
 colorMoved = default
 wsErrorHighlight = all
@@ -60,16 +70,6 @@ s = status
 sw = switch
 untracked = ls-files --others --exclude-standard
 unchk = reset --mixed HEAD~
-
-[credential]
-helper = cache
-
-[commit]
-verbose = true
-
-[core]
-attributesfile = ~/.gitattributes
-excludesfile = ~/.gitignore
 
 [include]
 path = config-os

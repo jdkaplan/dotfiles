@@ -43,12 +43,12 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network#ethernet": {
-        "interface": "eth0",
+        "interface": "eth*",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip": false,
     },
     "network#wifi": {
-        "interface": "wlan0",
+        "interface": "wlp*",
         "format-wifi": "{essid} ",
         "format-linked": "⚠",
         "tooltip-format": "{ipaddr}/{cidr}"

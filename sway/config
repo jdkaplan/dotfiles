@@ -141,8 +141,9 @@ exec swayidle -w \
 default_border          pixel 1
 default_floating_border pixel 1
 smart_borders no_gaps
+
 # class                 title     bg        text      indicator
-client.focused          "#444444" "#444444" "#ffffff" "#444444"
+client.focused          "#444444" "#000000" "#ffffff" "#444444"
 client.focused_inactive "#000000" "#000000" "#ffffff" "#000000"
 client.unfocused        "#000000" "#000000" "#ffffff" "#000000"
 client.urgent           "#440000" "#440000" "#ffffff" "#440000"

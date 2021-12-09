@@ -30,7 +30,10 @@ setnull searchurls.yahoo
 setnull searchurls.youtube
 set searchurls.archwiki https://wiki.archlinux.org/index.php?search=%s
 set searchurls.aur https://aur.archlinux.org/packages/?K=%s
+set searchurls.crate https://crates.io/search?q=%s
 set searchurls.dict https://www.dictionary.com/browse/%s
+set searchurls.gem https://rubygems.org/gems/%s
+set searchurls.gems https://rubygems.org/search?query=%s
 set searchurls.godev https://pkg.go.dev/search?q=%s
 set searchurls.godoc https://godoc.org/?q=%s
 set searchurls.gopkg https://golang.org/pkg/%s
@@ -39,10 +42,14 @@ set searchurls.mdn https://developer.mozilla.org/search?q=%s
 set searchurls.poke https://bulbapedia.bulbagarden.net/w/index.php?search=%s
 set searchurls.py2 https://docs.python.org/2/search.html?q=%s
 set searchurls.py3 https://docs.python.org/3/search.html?q=%s
-set searchurls.rdoc https://rubyapi.org/2.7/o/s?q=%s
 set searchurls.railsdoc https://api.rubyonrails.org/?q=%s
+set searchurls.rdoc https://rubyapi.org/2.7/o/s?q=%s
+set searchurls.sc https://github.com/koalaman/shellcheck/wiki/SC%s
 set searchurls.thesaurus https://www.thesaurus.com/browse/%s
+set searchurls.tw https://tailwindcss.com/docs/%s
 set searchurls.ud https://www.urbandictionary.com/define.php?term=%s
+set searchurls.ug https://www.ultimate-guitar.com/search.php?title=%s
+set searchurls.wiki https://en.wikipedia.org/w/index.php?search=%s
 set searchengine ddg
 set tabopenpos last
 

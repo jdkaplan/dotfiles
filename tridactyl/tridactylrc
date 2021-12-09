@@ -4,7 +4,7 @@ sanitize tridactyllocal tridactylsync
 
 " General Settings
 set newtab about:blank
-set editorcmd urxvt -e nvim
+set editorcmd alacritty -e nvim
 set hintchars dhtnsfgcrlbmwvz
 set hintfiltermode vimperator
 set hintdelay 0

@@ -1,24 +1,24 @@
 #!/usr/bin/env zsh
 
-# Lines configured by zsh-newuser-install
+# History
 HISTFILE=~/.config/zsh/histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
 DIRSTACKSIZE=100
-setopt appendhistory extendedglob nomatch
-setopt autopushd pushdsilent pushdtohome histignorespace
+setopt appendhistory histignorespace histignoredups
+
+setopt extendedglob nomatch
+setopt autopushd pushdsilent pushdtohome
 unsetopt beep autocd notify
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
 
+# Completion
 zstyle ':completion:*' _expand completer _complete _ignored
 zstyle ':completion:*' matcher-list '' 'l:|=* r:|=*' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**'
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
 # prompt
 autoload -U colors

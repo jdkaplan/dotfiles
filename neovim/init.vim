@@ -176,6 +176,9 @@ let g:ale_linters = {
 \    'sh': [
 \        'shellcheck',
 \    ],
+\    'typescript': [
+\        'eslint',
+\    ],
 \    'zsh': [
 \        'shellcheck',
 \    ],

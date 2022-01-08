@@ -29,6 +29,9 @@ xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scen
 [init]
 defaultBranch = main
 
+[log]
+date = iso
+
 [merge]
 conflictStyle = diff3
 ff = only

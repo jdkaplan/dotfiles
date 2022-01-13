@@ -17,7 +17,7 @@ install_dark() {
         ln -sf "${DOTFILES}/xsettingsd/xsettingsd-dark.conf" "${DOTFILES}/xsettingsd/xsettingsd.conf"
     fi
 
-    if [ "${XDG_SESSION_TYPE}" == 'wayland' ]; then
+    if [ "${XDG_SESSION_TYPE-}" == 'wayland' ]; then
         gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita:dark'
     fi
 }
@@ -31,7 +31,7 @@ install_light() {
         ln -sf "${DOTFILES}/xsettingsd/xsettingsd-light.conf" "${DOTFILES}/xsettingsd/xsettingsd.conf"
     fi
 
-    if [ "${XDG_SESSION_TYPE}" == 'wayland' ]; then
+    if [ "${XDG_SESSION_TYPE-}" == 'wayland' ]; then
         gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
     fi
 }
@@ -39,7 +39,7 @@ install_light() {
 postinstall() {
     "${DOTFILES}/alacritty/install"
 
-    if [ "${OSTYPE}" != 'Linux' ]; then
+    if [ "${OSTYPE}" == 'Linux' ]; then
         killall --signal HUP xsettingsd
     fi
 }

@@ -23,5 +23,7 @@ path_if "$HOME/.local/bin"
 unset -f source_if
 unset -f path_if
 
-eval "$(gnome-keyring-daemon --start)"
-export SSH_AUTH_SOCK
+if command -V gnome-keyring-daemon > /dev/null; then
+    eval "$(gnome-keyring-daemon --start)"
+    export SSH_AUTH_SOCK
+fi

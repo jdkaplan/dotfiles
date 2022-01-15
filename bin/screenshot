@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+ts="$(date "+%Y-%m-%d_%H-%M-%S")"
+f="${HOME}/images/screenshots/${ts}.png"
+
+grim -g "$(slurp)" "$f"
+
+echo "$f" >&2
+echo "$f"

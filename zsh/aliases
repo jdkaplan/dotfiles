@@ -14,14 +14,6 @@ alias rg='rg -S'
 alias timestamp='date "+%Y-%m-%d_%H-%M-%S"'
 alias humantime='date "+%Y-%m-%d %H:%M %z"'
 
-screenshot() {
-    local ts="$(timestamp)"
-    local f="${HOME}/images/screenshots/${ts}.png"
-    import "$@" "$f"
-    echo "$f" >&2
-    echo "$f"
-}
-
 docker-ip() {
     docker inspect "$1" --format='{{.NetworkSettings.Networks.bridge.IPAddress}}'
 }

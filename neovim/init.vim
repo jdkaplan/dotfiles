@@ -275,19 +275,20 @@ command NoCrosshair :set virtualedit= nocursorcolumn
 let g:AutoPairsShortcutToggle = ''
 
 autocmd FileType css            setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType scss           setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType eruby          setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType html           setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript.jsx setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript     setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType jinja          setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType jinja.html     setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType jinja          setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType json           setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType eruby          setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType proto          setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType ruby           setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType scss           setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType typescript.tsx setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType typescript     setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType xml            setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml           setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType proto          setlocal ts=2 sts=2 sw=2 expandtab
 
 autocmd FileType markdown setlocal commentstring=<!--%s-->
 autocmd FileType hoon     setlocal commentstring=::%s

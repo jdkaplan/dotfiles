@@ -1,6 +1,7 @@
 - shell:
     - mkdir -p ~/.config
     - mkdir -p ~/.config/direnv
+    - mkdir -p ~/.config/gh
     - mkdir -p ~/.task
     - ./bin/set-colors
     - ./task/install
@@ -12,6 +13,7 @@
     ~/.config/alacritty: alacritty/
     ~/.config/direnv/direnvrc: direnv/direnvrc
     ~/.config/flake8: etc/flake8
+    ~/.config/gh/config.yml: gh/config.yml
     ~/.config/git: git/
     ~/.config/hg: hg/
     ~/.config/jrnl: jrnl/

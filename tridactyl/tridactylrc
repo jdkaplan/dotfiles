@@ -39,6 +39,7 @@ set searchurls.godoc https://godoc.org/?q=%s
 set searchurls.gopkg https://golang.org/pkg/%s
 set searchurls.mc https://minecraft.gamepedia.com/index.php?search=%s
 set searchurls.mdn https://developer.mozilla.org/search?q=%s
+set searchurls.moves4 https://pokemondb.net/pokedex/%s/moves/4
 set searchurls.mysql57 https://dev.mysql.com/doc/search/?d=12&q=%s
 set searchurls.pg https://www.postgresql.org/search/?q=%s
 set searchurls.poke https://bulbapedia.bulbagarden.net/w/index.php?search=%s

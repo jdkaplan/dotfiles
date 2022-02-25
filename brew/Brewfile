@@ -8,6 +8,7 @@ tap "universal-ctags/universal-ctags"
 tap "yoheimuta/protolint"
 
 brew "coreutils"
+brew "curlie"
 brew "dateutils"
 brew "direnv"
 brew "entr"

@@ -361,6 +361,7 @@ end
 
 local servers = {
   gopls = {},
+  jedi_language_server = {},
   rust_analyzer = {},
 }
 for lsp, settings in pairs(servers) do

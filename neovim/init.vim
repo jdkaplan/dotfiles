@@ -362,6 +362,7 @@ local servers = {
   gopls = {},
   jedi_language_server = {},
   rust_analyzer = {},
+  tsserver = {},
 }
 for lsp, settings in pairs(servers) do
   nvim_lsp[lsp].setup {

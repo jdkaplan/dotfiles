@@ -63,6 +63,11 @@ bind J tabnext
 bind K tabprev
 bind gh tabmove -1
 bind gl tabmove +1
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext  1
+bind N findnext -1
+bind ;<Space> nohlsearch
 unbind ZZ
 unbind <C-a>
 unbind <C-x>

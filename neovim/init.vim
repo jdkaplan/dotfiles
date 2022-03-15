@@ -108,6 +108,8 @@ map <silent> ;w :w<CR>
 map <silent> ;q :q<CR>
 map <silent> ;x :x<CR>
 
+map ;G :Git<Space>
+
 set wildignore+=*.swp,*~
 
 map <silent> ;b :Buffers<CR>

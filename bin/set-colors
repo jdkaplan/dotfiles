@@ -10,6 +10,7 @@ OSTYPE="$(uname -s)"
 
 install_dark() {
     ln -sf "${DOTFILES}/alacritty/colors-dark.yml"    "${DOTFILES}/alacritty/colors.yml"
+    ln -sf "${DOTFILES}/bat/config-dark"              "${DOTFILES}/bat/config"
     ln -sf "${DOTFILES}/task/jdkaplan-dark.theme"     "${DOTFILES}/task/color.theme"
     ln -sf "${DOTFILES}/vim/colors/jdkaplan-dark.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
 
@@ -24,6 +25,7 @@ install_dark() {
 
 install_light() {
     ln -sf "${DOTFILES}/alacritty/colors-light.yml"    "${DOTFILES}/alacritty/colors.yml"
+    ln -sf "${DOTFILES}/bat/config-light"              "${DOTFILES}/bat/config"
     ln -sf "${DOTFILES}/task/jdkaplan-light.theme"     "${DOTFILES}/task/color.theme"
     ln -sf "${DOTFILES}/vim/colors/jdkaplan-light.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
 

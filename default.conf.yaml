@@ -11,6 +11,7 @@
 - link:
     ~/bin: bin/
     ~/.config/alacritty: alacritty/
+    ~/.config/bat: bat/
     ~/.config/direnv/direnvrc: direnv/direnvrc
     ~/.config/flake8: etc/flake8
     ~/.config/gh/config.yml: gh/config.yml

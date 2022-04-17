@@ -26,6 +26,9 @@ wsErrorHighlight = all
 [diff "rspec"]
 xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario|background)[ \t].*)$"
 
+[difftool "difftastic"]
+cmd = difft "$LOCAL" "$REMOTE"
+
 [init]
 defaultBranch = main
 
@@ -36,6 +39,9 @@ date = iso
 conflictStyle = diff3
 ff = only
 tool = nvimdiff
+
+[pager]
+difftool = true
 
 [pull]
 ff = only
@@ -56,6 +62,7 @@ co = checkout
 cp = cherry-pick
 dc = diff --cached
 d = diff
+dft = difftool --tool=difftastic --no-prompt
 dn = diff --name-only --relative
 dw = diff --word-diff
 dww = diff --word-diff --word-diff-regex=.

@@ -21,7 +21,6 @@
     ~/.config/jrnl: jrnl/
     ~/.config/kak: kak/
     ~/.config/nvim: neovim/
-    ~/.config/rubocop: rubocop/
     ~/.config/task: task/
     ~/.config/user-dirs.dirs: etc/user-dirs.dirs
     ~/.config/zsh: zsh/

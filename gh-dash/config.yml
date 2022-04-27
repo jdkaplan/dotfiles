@@ -10,11 +10,7 @@ prSections:
     filters: is:open author:@me
   - title: To Review
     filters: is:open review-requested:@me
-  - title: Tracking
-    filters: is:open -author:@me
 
 issuesSections:
   - title: Assigned
     filters: is:open assignee:@me
-  - title: Subscribed
-    filters: is:open -author:@me

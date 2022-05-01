@@ -31,7 +31,7 @@ Plug 'mxw/vim-jsx'
 Plug 'neovim/nvim-lspconfig'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
-Plug 'plasticboy/vim-markdown'
+Plug 'preservim/vim-markdown'
 Plug 'qpkorr/vim-bufkill'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
@@ -258,6 +258,7 @@ noremap <silent> <leader>cd :execute 'cd' fnameescape(FindRootDirectory())<CR>:p
 
 let g:AutoPairsMultilineClose = 0
 let g:AutoPairsShortcutBackInsert = ''
+let g:AutoPairsShortcutToggle = ''
 
 let g:javascript_plugin_flow = 1
 let g:ale_javascript_flow_use_respect_pragma = 0
@@ -272,8 +273,6 @@ nmap <silent> [h <Plug>(GitGutterPrevHunk)
 
 command Crosshair :set virtualedit=all cursorcolumn
 command NoCrosshair :set virtualedit= nocursorcolumn
-
-let g:AutoPairsShortcutToggle = ''
 
 autocmd FileType css            setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType eruby          setlocal ts=2 sts=2 sw=2 expandtab
@@ -328,6 +327,8 @@ fun s:ResetScreen()
 endfun
 command ResetScreen call s:ResetScreen()
 nnoremap <C-l> :ResetScreen<CR>
+
+let g:vim_markdown_folding_disabled = 1
 
 lua <<LSPCONFIG
 local nvim_lsp = require('lspconfig')

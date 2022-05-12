@@ -62,8 +62,10 @@ chk = commit -a -n -m 'CHECKPOINT'
 co = checkout
 cp = cherry-pick
 d = diff
+db = diff-branch
 dc = diff --cached
 dft = difftool --tool=difftastic --no-prompt
+diff-branch = "!diff_branch() { git diff \"$(git merge-base HEAD \"${1:-main}\")\"; }; diff_branch"
 dn = diff --name-only --relative
 dw = diff --word-diff
 dww = diff --word-diff --word-diff-regex=.

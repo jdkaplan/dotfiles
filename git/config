@@ -61,16 +61,16 @@ c = commit
 chk = commit -a -n -m 'CHECKPOINT'
 co = checkout
 cp = cherry-pick
-dc = diff --cached
 d = diff
+dc = diff --cached
 dft = difftool --tool=difftastic --no-prompt
 dn = diff --name-only --relative
 dw = diff --word-diff
 dww = diff --word-diff --word-diff-regex=.
-fb = fetch-branch
 f = fetch
-fp = fetch --prune
+fb = fetch-branch
 fixup = commit --amend --no-edit
+fp = fetch --prune
 lag = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%an%C(reset) %C(green)<%ar>%C(reset)'
 lcg = log --graph --decorate --pretty='%C(auto)%h%d %s | %C(cyan)%cn%C(reset) %C(green)<%cr>%C(reset)'
 lg = lag --topo-order
@@ -79,11 +79,11 @@ pushf = push --force-with-lease
 pushu = "!pushu() { git push --set-upstream \"${1:-origin}\" \"${2:-$(git bn)}\"; }; pushu"
 rb = rebase
 root = rev-parse --show-toplevel
-sb = show-branch
 s = status
+sb = show-branch
 sw = switch
-untracked = ls-files --others --exclude-standard
 unchk = reset --mixed HEAD~
+untracked = ls-files --others --exclude-standard
 
 [include]
 path = config-os

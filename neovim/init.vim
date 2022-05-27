@@ -375,7 +375,13 @@ lsp_installer.setup({})
 local lsp_settings = {
   gopls = {},
   jedi_language_server = {},
-  rust_analyzer = {},
+  rust_analyzer = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
   solargraph = {},
   tsserver = {},
 }

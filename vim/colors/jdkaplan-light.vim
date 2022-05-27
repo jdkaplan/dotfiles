@@ -12,6 +12,7 @@ hi CursorLine           cterm=none                  ctermbg=254
 hi CursorLineNr         cterm=none      ctermfg=21  ctermbg=254
 hi CursorColumn         cterm=none                  ctermbg=254
 hi Directory            cterm=none      ctermfg=26
+hi DiffText             cterm=none      ctermfg=255 ctermbg=9
 hi ExtraWhitespace      cterm=none                  ctermbg=160
 hi Folded               cterm=none      ctermfg=27  ctermbg=254
 hi Function             cterm=none      ctermfg=166
@@ -23,7 +24,7 @@ hi NonText              cterm=none      ctermfg=110 ctermbg=251
 hi Number               cterm=none      ctermfg=99
 hi Pmenu                cterm=none      ctermfg=233 ctermbg=251
 hi PmenuSel             cterm=none      ctermfg=233 ctermbg=255
-hi PmenuSbar            cterm=none      ctermbg=251
+hi PmenuSbar            cterm=none                  ctermbg=251
 hi PmenuThumb           cterm=none      ctermfg=233
 hi PreProc              cterm=none      ctermfg=88
 hi SignColumn                                       ctermbg=251

@@ -39,6 +39,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'rust-lang/rust.vim'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'scrooloose/nerdtree'
+Plug 'simrat39/rust-tools.nvim'
 Plug 'sirtaj/vim-openscad'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
@@ -387,12 +388,39 @@ local lsp_settings = {
 }
 
 for _, server in ipairs(lsp_installer.get_installed_servers()) do
+  -- rust-analyzer will be configured by rust-tools.
+  if server.name == 'rust_analyzer' then goto continue end
+
   nvim_lsp[server.name].setup {
     on_attach = on_attach,
     settings = lsp_settings[server.name],
     capabilities = capabilities,
   }
+  ::continue::
 end
+
+require('rust-tools').setup({
+  tools = {
+    autoSetHints = true,
+    hover_with_actions = false,
+    inlay_hints = {
+      only_current_line = true,
+      -- Parameter hints are more annoying than useful here. Neovim can't show
+      -- virtual text in the middle of the line like other editors do. It would
+      -- mess with grid-based motion anyway.
+      show_parameter_hints = false,
+      parameter_hints_prefix = "",
+      other_hints_prefix = "//",
+    },
+  },
+
+  server = {
+    standalone = false,
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = lsp_settings.rust_analyzer,
+  },
+})
 
 local luasnip = require 'luasnip'
 

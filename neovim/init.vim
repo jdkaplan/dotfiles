@@ -52,6 +52,7 @@ Plug 'udalov/kotlin-vim'
 Plug 'urbit/hoon.vim'
 Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
+Plug 'williamboman/nvim-lsp-installer', { 'branch': 'main' }
 call plug#end()
 
 set number
@@ -368,17 +369,21 @@ local on_attach = function(client, bufno)
   vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
 end
 
-local servers = {
+local lsp_installer = require('nvim-lsp-installer')
+lsp_installer.setup({})
+
+local lsp_settings = {
   gopls = {},
   jedi_language_server = {},
   rust_analyzer = {},
   solargraph = {},
   tsserver = {},
 }
-for lsp, settings in pairs(servers) do
-  nvim_lsp[lsp].setup {
+
+for _, server in ipairs(lsp_installer.get_installed_servers()) do
+  nvim_lsp[server.name].setup {
     on_attach = on_attach,
-    settings = settings,
+    settings = lsp_settings[server.name],
     capabilities = capabilities,
   }
 end

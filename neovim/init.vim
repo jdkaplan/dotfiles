@@ -15,6 +15,8 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'glts/vim-textobj-comment'
+Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main' }
+Plug 'hrsh7th/nvim-cmp', { 'branch': 'main' }
 Plug 'ianks/vim-tsx'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'jiangmiao/auto-pairs'
@@ -23,6 +25,7 @@ Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'keith/swift.vim'
+Plug 'L3MON4D3/LuaSnip'
 Plug 'leafgarland/typescript-vim'
 Plug 'ledger/vim-ledger'
 Plug 'LnL7/vim-nix'
@@ -34,6 +37,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'preservim/vim-markdown'
 Plug 'qpkorr/vim-bufkill'
 Plug 'rust-lang/rust.vim'
+Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'scrooloose/nerdtree'
 Plug 'sirtaj/vim-openscad'
 Plug 'tpope/vim-abolish'
@@ -331,6 +335,9 @@ nnoremap <C-l> :ResetScreen<CR>
 let g:vim_markdown_folding_disabled = 1
 
 lua <<LSPCONFIG
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 local nvim_lsp = require('lspconfig')
 
 local on_attach = function(client, bufno)
@@ -372,6 +379,50 @@ for lsp, settings in pairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     settings = settings,
+    capabilities = capabilities,
   }
 end
+
+local luasnip = require 'luasnip'
+
+local cmp = require 'cmp'
+cmp.setup {
+  completion = {
+    autocomplete = false,
+  },
+  snippet = {
+    expand = function(args) luasnip.lsp_expand(args.body) end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  }),
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+  },
+}
 LSPCONFIG

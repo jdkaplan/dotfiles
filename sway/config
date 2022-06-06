@@ -156,7 +156,7 @@ seat seat0 hide_cursor 5000
 
 bindsym $super+x exec cb-clear
 
-bindsym Ctrl+Backspace exec makoctl dismiss
-bindsym Ctrl+Alt+Space exec makoctl restore
+bindsym $super+Alt+Space exec makoctl dismiss
+bindsym $super+Alt+Backspace exec makoctl restore
 
 include /etc/sway/config.d/*

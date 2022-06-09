@@ -10,7 +10,7 @@ hi Normal               cterm=none      ctermfg=254 ctermbg=235
 
 hi Cursor               cterm=none                  ctermbg=255
 hi CursorLine           cterm=none                  ctermbg=232
-hi link CursorColumn CursorLine
+hi! link CursorColumn CursorLine
 
 hi LineNr               cterm=none      ctermfg=245 ctermbg=235
 " hi link LineNrAbove LineNr
@@ -41,9 +41,9 @@ hi PmenuSbar            cterm=none                  ctermbg=236
 hi PmenuThumb           cterm=none      ctermfg=254
 
 hi SpellBad       NONE  cterm=underline
-hi link SpellCap   SpellBad
-hi link SpellLocal SpellBad
-hi link SpellRare  SpellBad
+hi! link SpellCap   SpellBad
+hi! link SpellLocal SpellBad
+hi! link SpellRare  SpellBad
 
 hi StatusLine           cterm=none      ctermfg=255 ctermbg=238
 hi StatusLineNC         cterm=none      ctermfg=243 ctermbg=236
@@ -98,7 +98,7 @@ hi PreProc              cterm=none      ctermfg=77
 " hi link PreCondit PreProc
 
 hi Type                 cterm=none      ctermfg=184
-hi link StorageClass Type
+hi! link StorageClass Type
 " hi link Structure Type
 " hi link Typedef Type
 

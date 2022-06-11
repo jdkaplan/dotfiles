@@ -53,6 +53,12 @@
         "format-linked": "⚠",
         "tooltip-format": "{ipaddr}/{cidr}"
     },
+    "network#wifi": {
+        "interface": "wlan*",
+        "format-wifi": "{essid} ",
+        "format-linked": "⚠",
+        "tooltip-format": "{ipaddr}/{cidr}"
+    },
     "pulseaudio": {
         "scroll-step": 0,
         "format": "{volume}% {icon} {format_source}",

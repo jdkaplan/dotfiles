@@ -1,3 +1,7 @@
 #!/bin/sh
 
-pbpaste | vipe | pbcopy
+# Somehow, this pipeline ends up with a bunch of newlines at the end that make
+# pasting it annoying. Use sed to remove all trailing newlines.
+#
+# https://stackoverflow.com/a/7359879/2472163
+pbpaste | vipe | sed -e :a -e '/^\n*$/{$d;N;};/\n$/ba' | pbcopy

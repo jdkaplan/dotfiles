@@ -13,6 +13,7 @@
     ~/.config/alacritty: alacritty/
     ~/.config/bat: bat/
     ~/.config/direnv/direnvrc: direnv/direnvrc
+    ~/.config/dlv: dlv/
     ~/.config/flake8: etc/flake8
     ~/.config/gh/config.yml: gh/config.yml
     ~/.config/gh-dash: gh-dash/

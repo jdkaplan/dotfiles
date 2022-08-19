@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+timestamp() {
+    date "+%Y-%m-%dT%H:%M:%S%z"
+}
+
+log() {
+    echo "[$(timestamp)]" "$@"
+}
+
+notify() {
+    title="$1"
+    body="$2"
+    log "${body}"
+    notify-send "${title}" "${body}"
+}
+
+prompt_continue() {
+    read -rp 'Press ENTER to continue > '
+}
+
+default_workflow() {
+    root=$(git rev-parse --show-toplevel)
+    cat "${root}/.gh-autosquash-default-workflow"
+}
+
+branch="${1-$(git symbolic-ref --short HEAD)}"
+workflow="${2-$(default_workflow)}"
+
+data=$(gh pr view "${branch}" --json 'body,number,title')
+body=$(jq -r '.body' <<< "${data}")
+number=$(jq -r '.number' <<< "${data}")
+title=$(jq -r '.title' <<< "${data}")
+
+log "Squash-merging PR #${number}: ${branch}"
+
+# Use the commit title and description as the commit message by default.
+commit_title=$(vipe <<< "${title} (#${number})"); unset title
+commit_message=$(vipe <<< "${body}"); unset body
+
+log "Waiting for workflow: ${workflow}"
+
+gh run list \
+    --branch "${branch}" \
+    --workflow "${workflow}" \
+    --json 'status,databaseId' \
+    --jq '.[] | select(.status != "completed") | .databaseId' \
+    | xargs -n 1 gh run watch
+
+notify "${branch}" 'Workflow complete!'
+
+log "Confirming squash-merge for ${branch} (#${number})"
+echo ''
+echo '|------------------------------------------------------------------------------|-------------------|'
+echo "${commit_title}"
+echo ''
+echo "${commit_message}"
+echo '|------------------------------------------------------------------------------|-------------------|'
+echo ''
+
+prompt_continue
+
+gh pr merge "${branch}" \
+    --squash \
+    --delete-branch \
+    --subject "${commit_title}" \
+    --body "${commit_message}"
+
+notify "${branch}" 'PR merged!'

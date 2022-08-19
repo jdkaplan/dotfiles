@@ -24,3 +24,5 @@ node_modules/
 .notags
 
 .DS_Store
+
+.gh-autosquash-default-workflow

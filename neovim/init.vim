@@ -53,6 +53,7 @@ Plug 'udalov/kotlin-vim'
 Plug 'urbit/hoon.vim'
 Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
+Plug 'wellle/context.vim'
 Plug 'williamboman/nvim-lsp-installer', { 'branch': 'main' }
 call plug#end()
 
@@ -335,6 +336,10 @@ command ResetScreen call s:ResetScreen()
 nnoremap <C-l> :ResetScreen<CR>
 
 let g:vim_markdown_folding_disabled = 1
+
+let g:context_enabled = 0
+map <silent> <leader>cc :ContextToggleWindow<CR>
+map <silent> <leader>cp :ContextPeek<CR>
 
 lua <<LSPCONFIG
 local capabilities = vim.lsp.protocol.make_client_capabilities()

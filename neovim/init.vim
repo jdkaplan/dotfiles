@@ -341,6 +341,8 @@ let g:context_enabled = 0
 map <silent> <leader>cc :ContextToggleWindow<CR>
 map <silent> <leader>cp :ContextPeek<CR>
 
+set completeopt=menu,menuone,noselect
+
 lua <<LSPCONFIG
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -429,6 +431,9 @@ require('rust-tools').setup({
 })
 
 local luasnip = require 'luasnip'
+
+-- Put snippets in ./snippets/<filetype>.snippets
+require("luasnip.loaders.from_snipmate").lazy_load()
 
 local cmp = require 'cmp'
 cmp.setup {

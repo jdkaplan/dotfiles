@@ -10,6 +10,7 @@
 
 - link:
     ~/bin: bin/
+    ~/.cargo/config.toml: cargo/config.toml
     ~/.config/alacritty: alacritty/
     ~/.config/bat: bat/
     ~/.config/direnv/direnvrc: direnv/direnvrc

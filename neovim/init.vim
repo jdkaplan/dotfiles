@@ -315,6 +315,7 @@ autocmd FileType ledger nmap <silent> <leader>' :call ledger#transaction_state_t
 
 nmap ;cc :let @+=expand("%")<CR>
 nmap ;cl :let @+=join([expand("%"), line(".")], ":")<CR>
+nmap ;cg :let @+=join([expand("%"), line(".")], "#L")<CR>
 nmap ;cp :let @+=expand("%:p")<CR>
 
 " For some reason, (neo)vim sees <C-/> as <C-_>, so bind that instead.

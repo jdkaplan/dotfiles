@@ -1,5 +1,6 @@
 - shell:
     - mkdir -p ~/.config
+    - mkdir -p ~/.cargo
     - mkdir -p ~/.config/direnv
     - mkdir -p ~/.config/gh
     - mkdir -p ~/.task

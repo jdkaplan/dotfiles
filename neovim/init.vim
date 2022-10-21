@@ -383,7 +383,7 @@ lsp_installer.setup({})
 
 local lsp_settings = {
   gopls = {},
-  jedi_language_server = {},
+  pyright = {},
   rust_analyzer = {
     ["rust-analyzer"] = {
       checkOnSave = {

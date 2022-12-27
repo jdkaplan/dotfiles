@@ -23,6 +23,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'jjo/vim-cue'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-user'
 Plug 'keith/swift.vim'
 Plug 'L3MON4D3/LuaSnip'
@@ -343,6 +344,9 @@ map <silent> <leader>cc :ContextToggleWindow<CR>
 map <silent> <leader>cp :ContextPeek<CR>
 
 set completeopt=menu,menuone,noselect
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 lua <<LSPCONFIG
 local capabilities = require('cmp_nvim_lsp').default_capabilities()

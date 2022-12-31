@@ -8,7 +8,6 @@
 - link:
     ./alacritty/os.yml: alacritty/darwin.yml
     ./git/config-os: git/config-darwin
-    ./neovim/os-plugins.vim: neovim/darwin-plugins.vim
     ./zsh/os.zshrc: zsh/darwin.zshrc
     ~/.config/karabiner: karabiner/
     ~/.config/tridactyl: tridactyl/

@@ -4,6 +4,3 @@ set -exuo pipefail
 
 [ -d ~/.virtualenvs/neovim3 ] || python3 -m venv ~/.virtualenvs/neovim3
 ~/.virtualenvs/neovim3/bin/python -c 'import pynvim' || ~/.virtualenvs/neovim3/bin/pip install pynvim
-
-# https://github.com/junegunn/vim-plug/wiki/tips#install-plugins-on-the-command-line
-nvim -es -u ~/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"

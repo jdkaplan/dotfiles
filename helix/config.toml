@@ -1,8 +1,15 @@
 theme = "onedark"
 
 [editor]
-scrolloff = 0
+scrolloff = 1
 cursorline = true
+gutters = [
+    "diff",
+    "diagnostics",
+    "spacer",
+    "line-numbers",
+    "spacer",
+]
 
 [editor.cursor-shape]
 insert = "bar"
@@ -13,3 +20,9 @@ select = "underline"
 left = ["mode", "spinner", "file-name"]
 center = []
 right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding"]
+
+[keys.normal]
+"\\" = { w = ":w" }
+
+"C-e" = "scroll_down"
+"C-y" = "scroll_up"

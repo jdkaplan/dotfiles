@@ -11,6 +11,8 @@ alias trr='transmission-remote'
 alias g='git'
 alias rg='rg -S'
 
+alias tf='terraform'
+
 alias timestamp='date "+%Y-%m-%d_%H-%M-%S"'
 alias humantime='date "+%Y-%m-%d %H:%M %z"'
 

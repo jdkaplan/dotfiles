@@ -32,9 +32,11 @@
     ~/.fdignore: etc/fdignore
     ~/.gitattributes: git/gitattributes
     ~/.gitignore: git/gitignore
+    ~/.ignore: etc/ignore
     ~/.my.cnf: mysql/.my.cnf
     ~/.profile: etc/profile
     ~/.psqlrc: psql/.psqlrc
+    ~/.rgignore: etc/rgignore
     ~/.task/hooks: task/hooks/
     ~/.taskrc: task/.taskrc
     ~/.tmux.conf: tmux/.tmux.conf

@@ -1,5 +1,5 @@
 has() {
-    command -V "$1" > /dev/null
+    command -V "$1" > /dev/null 2>&1
 }
 
 source_if() {

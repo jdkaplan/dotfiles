@@ -273,16 +273,18 @@ plugins = {
         "windwp/nvim-autopairs",
         opts = {
             map_cr = true,
-            enable_moveright = false,
-            enable_check_bracket_line = true,
+            enable_moveright = true,
+            enable_check_bracket_line = false,
             check_ts = true,
         },
         config = function(_plugin, opts)
             local npairs = require("nvim-autopairs")
+            local conds = require("nvim-autopairs.conds")
             npairs.setup(opts)
 
-            -- Allow tick-quoting in Lisps
-            npairs.get_rule("'")[1].not_filetypes = { "clojure", "lisp", "scheme" }
+            -- Allow Lisp tick-quotes. The non-Rust rule happens to be the
+            -- first one.
+            npairs.get_rules("'")[1].not_filetypes = { "clojure", "lisp", "scheme" }
         end,
     },
     {

@@ -271,7 +271,7 @@ plugins = {
 
                         lookahead = true,
 
-                        include_surrounding_whitespace = true,
+                        include_surrounding_whitespace = false,
 
                         -- TODO: more keymaps
                         keymaps = {
@@ -572,10 +572,11 @@ end
 
 for _, server in ipairs(lsp_installer.get_installed_servers()) do
     -- rust-analyzer will be configured by rust-tools.
-    if server.name == 'rust_analyzer' then goto continue end
+    if server.name == 'rust_analyzer' then
+        goto continue
+    end
 
     -- Go needs special logic to run goimports on save.
-    -- TODO: gopls via null_ls?
     if server.name == 'gopls' then
         vim.api.nvim_create_autocmd('BufWritePre', {
             pattern = '*.go',

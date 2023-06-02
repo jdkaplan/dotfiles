@@ -20,7 +20,9 @@ install_dark() {
     fi
 
     if [ "${XDG_SESSION_TYPE-}" == 'wayland' ]; then
-        gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita:dark'
+        gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+        gsettings set org.gnome.desktop.interface icon-theme 'Adwaita-dark'
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
     fi
 }
 
@@ -37,6 +39,8 @@ install_light() {
 
     if [ "${XDG_SESSION_TYPE-}" == 'wayland' ]; then
         gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+        gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
     fi
 }
 

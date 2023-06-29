@@ -74,11 +74,6 @@ plugins = {
     },
     "MarcWeber/vim-addon-local-vimrc",
     {
-        "MunifTanjim/prettier.nvim",
-        dependencies = { "jose-elias-alvarez/null-ls.nvim" },
-        config = true,
-    },
-    {
         "jose-elias-alvarez/null-ls.nvim",
         dependencies = {
             "neovim/nvim-lspconfig",
@@ -358,7 +353,125 @@ plugins = {
             vim.keymap.set("", "<leader>cp", ":ContextPeek<CR>", { silent = true })
         end,
     },
-    { "williamboman/nvim-lsp-installer", branch = "main" },
+    {
+        "williamboman/mason.nvim",
+        build = function(_plugin)
+            require("mason-registry").refresh()
+        end,
+        config = true,
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        dependencies = { "williamboman/mason.nvim" },
+        config = function(_plugin, opts)
+            local mason_lspconfig = require("mason-lspconfig")
+            mason_lspconfig.setup(opts)
+
+            local lsp_settings = {
+                rust_analyzer = {
+                    ["rust-analyzer"] = {
+                        checkOnSave = {
+                            command = "clippy",
+                        },
+                    },
+                },
+            }
+
+            local on_attach = function(client, bufno)
+                local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufno, ...) end
+                local function buf_set_option(...) vim.api.nvim_buf_set_option(bufno, ...) end
+
+                -- Enable completion through omnifunc, triggered by <C-x><C-o>
+                buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+                -- Mappings.
+                local opts = { noremap=true, silent=true }
+
+                buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+                buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+                buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+                buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+                buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+                buf_set_keymap('n', '<Leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+                buf_set_keymap('n', '<Leader>R', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+                buf_set_keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+                buf_set_keymap('v', '<Leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts)
+                buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+                buf_set_keymap('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+                buf_set_keymap('n', '<Leader>j', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+                buf_set_keymap('n', '<Leader>k', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+                buf_set_keymap('n', '<Leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+
+                vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+            end
+
+            local default_setup = function(server_name)
+                local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+                require("lspconfig")[server_name].setup({
+                    on_attach = on_attach,
+                    settings = lsp_settings[server_name] or {},
+                    capabilities = capabilities,
+                })
+            end
+
+            mason_lspconfig.setup_handlers({
+                -- This is the default handler for servers not named below.
+                default_setup,
+
+                ["rust_analyzer"] = function()
+                    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+                    -- rust-analyzer will be configured by rust-tools. Don't use lspconfig
+                    -- directly (or through the default setup) for this.
+                    require('rust-tools').setup({
+                        tools = {
+                            autoSetHints = true,
+                            hover_with_actions = false,
+                            inlay_hints = {
+                                only_current_line = true,
+                                -- Parameter hints are more annoying than useful here. Neovim can't show
+                                -- virtual text in the middle of the line like other editors do. It would
+                                -- mess with grid-based motion anyway.
+                                show_parameter_hints = false,
+                                parameter_hints_prefix = "",
+                                other_hints_prefix = "//",
+                            },
+                        },
+
+                        server = {
+                            standalone = false,
+                            capabilities = capabilities,
+                            on_attach = on_attach,
+                            settings = lsp_settings.rust_analyzer,
+                        },
+                    })
+                end,
+            })
+        end,
+    },
+    {
+        "jay-babu/mason-null-ls.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            "jose-elias-alvarez/null-ls.nvim",
+            "williamboman/mason.nvim",
+        },
+        init = function()
+            local mason_null_ls = require("mason-null-ls")
+            local null_ls = require("null-ls")
+
+            mason_null_ls.setup({
+                handlers = {
+                    black = function(source_name, methods)
+                        null_ls.register(null_ls.builtins.formatting.black)
+
+                        mason_null_ls.default_setup(source_name, methods)
+                    end,
+                },
+            })
+        end,
+    },
     {
         "windwp/nvim-autopairs",
         opts = {

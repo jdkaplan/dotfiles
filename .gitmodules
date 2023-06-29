@@ -4,6 +4,3 @@
 [submodule "zsh/z-zsh"]
 	path = zsh/z-zsh
 	url = https://github.com/sjl/z-zsh.git
-[submodule "neovim/plugins/github.com/junegunn/vim-plug"]
-	path = neovim/plugins/github.com/junegunn/vim-plug
-	url = https://github.com/junegunn/vim-plug.git

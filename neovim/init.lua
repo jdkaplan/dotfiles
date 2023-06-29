@@ -273,7 +273,7 @@ plugins = {
 
                         include_surrounding_whitespace = false,
 
-                        -- TODO: more keymaps
+                        -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects#overriding-or-extending-textobjects
                         keymaps = {
                             ["af"] = "@function.outer",
                             ["if"] = "@function.inner",
@@ -439,11 +439,11 @@ vim.opt.completeopt = "menu,menuone,noselect"
 
 vim.o.secure = true
 
-vim.keymap.set("", "<Space>wh", ":wincmd h<CR>")
-vim.keymap.set("", "<Space>wj", ":wincmd j<CR>")
-vim.keymap.set("", "<Space>wk", ":wincmd k<CR>")
-vim.keymap.set("", "<Space>wl", ":wincmd l<CR>")
-
+vim.keymap.set("", "<Space>w", "<C-w>")
+-- <Space>wh <C-w>h
+-- <Space>wj <C-w>j
+-- <Space>wk <C-w>k
+-- <Space>wl <C-w>l
 vim.keymap.set("", '<Space>w"', ":split<CR>")
 vim.keymap.set("", '<Space>w%', ":vsplit<CR>")
 vim.keymap.set("", '<Space>w0', ":close<CR>")

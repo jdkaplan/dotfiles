@@ -538,7 +538,6 @@ lsp_installer.setup({})
 
 local lsp_settings = {
     gopls = {},
-    pyright = {},
     rust_analyzer = {
         ["rust-analyzer"] = {
             checkOnSave = {

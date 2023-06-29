@@ -549,6 +549,12 @@ local lsp_settings = {
     tsserver = {},
 }
 
+local null_ls_sources = {
+    null_ls.builtins.formatting.black,
+    -- Prettier is done with MunifTanjim/prettier.nvim which runs with
+    -- project-local settings.
+}
+
 -- In theory, this can be used for all languages. In practice, I just need this
 -- to pretend that gopls will run goimports for me.
 function goimports(wait_ms, opts)
@@ -591,6 +597,7 @@ for _, server in ipairs(lsp_installer.get_installed_servers()) do
 
     null_ls.setup({
         on_attach = on_attach,
+        sources = null_ls_sources,
     })
 
     ::continue::

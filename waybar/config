@@ -28,8 +28,8 @@
     },
     "clock": {
         "interval": 1,
-        "format": "{:%a %Y-%m-%d %H:%M:%S}",
-        "tooltip-format": "<big>{:%B %Y (W%U)}</big>\n<tt>{calendar}</tt>",
+        "format": "{:%a %Y-%m-%d %H:%M:%OS}",
+        "tooltip-format": "<tt>{:W%U} {calendar}</tt>",
     },
     "battery": {
         "states": {

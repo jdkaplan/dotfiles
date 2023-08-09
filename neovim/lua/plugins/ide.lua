@@ -405,6 +405,13 @@ return {
                             on_attach = on_attach,
                             settings = lsp_settings.rust_analyzer,
                         },
+
+                        dap = {
+                            adapter = require('rust-tools.dap').get_codelldb_adapter(
+                                '/usr/bin/codelldb',
+                                '/usr/lib/liblldb.so'
+                            ),
+                        },
                     })
                 end,
             })
@@ -495,5 +502,21 @@ return {
                 },
             }
         end,
+    },
+
+    -- Debugging
+    {
+        'mfussenegger/nvim-dap',
+        lazy = false,
+        keys = {
+            { "<Leader>db", function() require('dap').toggle_breakpoint() end },
+            { "<Leader>dB", function() require('dap').set_breakpoint() end },
+            { "<Leader>dc", function() require('dap').continue() end },
+            { "<Leader>dn", function() require('dap').step_over() end },
+            { "<Leader>dsi", function() require('dap').step_into() end },
+            { "<Leader>dso", function() require('dap').step_out() end },
+            { "<Leader>dj", function() require('dap').down() end },
+            { "<Leader>dk", function() require('dap').up() end },
+        },
     },
 }

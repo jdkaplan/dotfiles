@@ -369,6 +369,16 @@ return {
                 -- This is the default handler for servers not named below.
                 default_setup,
 
+                ["gopls"] = function()
+                    vim.api.nvim_create_autocmd('BufWritePre', {
+                        pattern = '*.go',
+                        callback = function()
+                            vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+                        end
+                    })
+                    default_setup("gopls")
+                end,
+
                 ["rust_analyzer"] = function()
                     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 

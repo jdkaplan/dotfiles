@@ -34,12 +34,10 @@ return {
             local gitsigns = require("gitsigns")
 
             local toggle = function(value)
-                -- Order matters here! If I toggle signs first (before blame),
-                -- it seems like the blame gets an extra chance to render while
-                -- it's being disabled, which leaves a ghost blame around
-                -- forever. If I toggle blame first, it stays truly off and
-                -- there aren't any ghost signs (or at least they're not
-                -- obvious because the sign column goes away).
+                -- BUG: (?) If the blame delay is not zero, the setting can
+                -- enter a race with cursor movement and leave a ghost blame in
+                -- the buffer.
+
                 gitsigns.toggle_current_line_blame(value)
                 gitsigns.toggle_signs(value)
             end
@@ -62,7 +60,7 @@ return {
             current_line_blame_opts = {
                 virt_text = true,
                 virt_text_pos = 'eol',
-                delay = 500,
+                delay = 0,
                 ignore_whitespace = false,
             },
         },

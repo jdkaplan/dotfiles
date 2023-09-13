@@ -384,7 +384,9 @@ return {
 
                     -- rust-analyzer will be configured by rust-tools. Don't use lspconfig
                     -- directly (or through the default setup) for this.
-                    require('rust-tools').setup({
+                    local rt = require('rust-tools')
+
+                    rt.setup({
                         tools = {
                             autoSetHints = true,
                             hover_with_actions = false,
@@ -402,7 +404,11 @@ return {
                         server = {
                             standalone = false,
                             capabilities = capabilities,
-                            on_attach = on_attach,
+                            on_attach = function(client, bufno)
+                                on_attach(client, bufno)
+
+                                vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufno })
+                            end,
                             settings = lsp_settings.rust_analyzer,
                         },
 

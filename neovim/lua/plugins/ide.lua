@@ -323,6 +323,9 @@ return {
                         },
                     },
                 },
+                gopls = {
+                    gofumpt = true,
+                },
             }
 
             local on_attach = function(client, bufno)
@@ -349,15 +352,16 @@ return {
                 buf_set_keymap('n', '<Leader>j', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
                 buf_set_keymap('n', '<Leader>k', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
                 buf_set_keymap('n', '<Leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-
-                vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
             end
 
             local default_setup = function(server_name)
                 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
                 require("lspconfig")[server_name].setup({
-                    on_attach = on_attach,
+                    on_attach = function(client, bufno)
+                        on_attach(client, bufno)
+                        vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+                    end,
                     settings = lsp_settings[server_name] or {},
                     capabilities = capabilities,
                 })
@@ -368,13 +372,35 @@ return {
                 default_setup,
 
                 ["gopls"] = function()
-                    vim.api.nvim_create_autocmd('BufWritePre', {
-                        pattern = '*.go',
+                    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+                    require("lspconfig")["gopls"].setup({
+                        on_attach = on_attach,
+                        settings = lsp_settings["gopls"] or {},
+                        capabilities = capabilities,
+                    })
+
+                    -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-imports
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        pattern = "*.go",
                         callback = function()
-                            vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+                            local params = vim.lsp.util.make_range_params()
+                            params.context = {only = {"source.organizeImports"}}
+
+                            local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
+
+                            for cid, res in pairs(result or {}) do
+                                for _, r in pairs(res.result or {}) do
+                                    if r.edit then
+                                        local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+                                        vim.lsp.util.apply_workspace_edit(r.edit, enc)
+                                    end
+                                end
+                            end
+
+                            vim.lsp.buf.format({async = false})
                         end
                     })
-                    default_setup("gopls")
                 end,
 
                 ["rust_analyzer"] = function()
@@ -404,6 +430,8 @@ return {
                             capabilities = capabilities,
                             on_attach = function(client, bufno)
                                 on_attach(client, bufno)
+
+                                vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
                                 vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufno })
                             end,

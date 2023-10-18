@@ -1,3 +1,6 @@
+.git/
+.direnv/
+
 # These are gitignore'd by default, but I edit and search them often.
 !.env
 !.envrc

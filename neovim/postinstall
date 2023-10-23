@@ -2,7 +2,7 @@
 
 set -exuo pipefail
 
-VENV="~/.virtualenvs/neovim3"
+VENV="${HOME}/.virtualenvs/neovim3"
 PYTHON="${VENV}/bin/python"
 
 if [ -d "${VENV}" ]; then

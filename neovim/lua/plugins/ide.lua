@@ -136,6 +136,15 @@ return {
             "nvim-treesitter/nvim-treesitter",
         },
     },
+    {
+        "windwp/nvim-ts-autotag",
+        config = {
+            autotag = {
+                enabled = true,
+                enable_close_on_slash = false,
+            },
+        },
+    },
 
     -- Telescope
     {

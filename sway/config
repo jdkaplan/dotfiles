@@ -159,4 +159,8 @@ bindsym $super+x exec cb-clear
 bindsym $super+Backspace       exec makoctl dismiss
 bindsym $super+Shift+Backspace exec makoctl restore
 
+assign [class="Beeper"]  workspace number 9
+assign [class="discord"] workspace number 9
+assign [class="Signal"]  workspace number 9
+
 include /etc/sway/config.d/*

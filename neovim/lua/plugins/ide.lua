@@ -302,13 +302,6 @@ return {
     "simrat39/rust-tools.nvim",
     "neovim/nvim-lspconfig",
     {
-        "jose-elias-alvarez/null-ls.nvim",
-        dependencies = {
-            "neovim/nvim-lspconfig",
-            "nvim-lua/plenary.nvim",
-        },
-    },
-    {
         "williamboman/mason.nvim",
         build = function(_plugin)
             require("mason-registry").refresh()
@@ -456,28 +449,6 @@ return {
                         },
                     })
                 end,
-            })
-        end,
-    },
-    {
-        "jay-babu/mason-null-ls.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        dependencies = {
-            "jose-elias-alvarez/null-ls.nvim",
-            "williamboman/mason.nvim",
-        },
-        init = function()
-            local mason_null_ls = require("mason-null-ls")
-            local null_ls = require("null-ls")
-
-            mason_null_ls.setup({
-                handlers = {
-                    black = function(source_name, methods)
-                        null_ls.register(null_ls.builtins.formatting.black)
-
-                        mason_null_ls.default_setup(source_name, methods)
-                    end,
-                },
             })
         end,
     },

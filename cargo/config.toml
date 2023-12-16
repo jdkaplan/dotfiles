@@ -1,4 +1,4 @@
 [alias]
-c = "clippy"
+c = "clippy --all-features"
 it = "insta test --review"
 tarp = "tarpaulin --skip-clean --target-dir=target/coverage"

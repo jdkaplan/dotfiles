@@ -153,6 +153,7 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-fzf-native.nvim",
+            "nvim-telescope/telescope-ui-select.nvim",
             "MunifTanjim/nui.nvim",
             "stevearc/aerial.nvim",
         },
@@ -160,6 +161,7 @@ return {
             local telescope = require('telescope')
             telescope.load_extension('fzf')
             telescope.load_extension('aerial')
+            telescope.load_extension('ui-select')
 
             local builtin = require('telescope.builtin')
 

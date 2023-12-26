@@ -329,6 +329,7 @@ return {
                 gopls = {
                     gofumpt = true,
                 },
+                sorbet = {}, -- This one is _extra_ special for some reason.
             }
 
             local on_attach = function(client, bufno)
@@ -447,6 +448,18 @@ return {
                                 '/usr/lib/liblldb.so'
                             ),
                         },
+                    })
+                end,
+
+                ["sorbet"] = function()
+                    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+                    require("lspconfig").sorbet.setup({
+                        on_attach = function(client, bufno)
+                            on_attach(client, bufno)
+                        end,
+                        cmd = { "bundle", "exec", "srb", "typecheck", "--lsp", "--disable-watchman" },
+                        capabilities = capabilities,
                     })
                 end,
             })

@@ -2,7 +2,7 @@
 Bundler/OrderedGems:
   TreatCommentsAsGroupSeparators: true
 
-Gemspec/DateAssignment:
+Gemspec/DeprecatedAttributeAssignment:
   Enabled: true
 
 Lint/AmbiguousAssignment:

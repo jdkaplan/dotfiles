@@ -6,7 +6,7 @@
       quiet: false
 
 - link:
-    ./alacritty/os.yml: alacritty/darwin.yml
+    ./alacritty/os.toml: alacritty/darwin.toml
     ./git/config-os: git/config-darwin
     ./zsh/os.zshrc: zsh/darwin.zshrc
     ~/.config/karabiner: karabiner/

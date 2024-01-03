@@ -1,0 +1,5 @@
+import = [
+    "~/.config/alacritty/base.toml",
+    "~/.config/alacritty/os.toml",
+    "~/.config/alacritty/colors.toml",
+]

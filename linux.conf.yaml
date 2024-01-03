@@ -1,3 +1,3 @@
 - link:
-    ./alacritty/os.yml: alacritty/linux.yml
+    ./alacritty/os.toml: alacritty/linux.toml
     ./zsh/os.zshrc: zsh/linux.zshrc

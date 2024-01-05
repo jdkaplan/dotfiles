@@ -9,10 +9,10 @@ SCHEME_FILE="${DOTFILES}/.color-scheme"
 OSTYPE="$(uname -s)"
 
 install_dark() {
-    ln -sf "${DOTFILES}/alacritty/colors-dark.toml"    "${DOTFILES}/alacritty/colors.toml"
-    ln -sf "${DOTFILES}/bat/config-dark"              "${DOTFILES}/bat/config"
-    ln -sf "${DOTFILES}/task/jdkaplan-dark.theme"     "${DOTFILES}/task/color.theme"
-    ln -sf "${DOTFILES}/vim/colors/jdkaplan-dark.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
+    ln -sf "${DOTFILES}/alacritty/colors-dark.toml"      "${DOTFILES}/alacritty/colors.toml"
+    ln -sf "${DOTFILES}/bat/config-dark"                 "${DOTFILES}/bat/config"
+    ln -sf "${DOTFILES}/task/jdkaplan-dark.theme"        "${DOTFILES}/task/color.theme"
+    ln -sf "${DOTFILES}/vim/colors/jdkaplan-dark.vim"    "${DOTFILES}/vim/colors/jdkaplan.vim"
     ln -sf "${DOTFILES}/neovim/colors/jdkaplan-cool.lua" "${DOTFILES}/neovim/colors/jdkaplan-temp.lua"
 
     if [ "${OSTYPE}" == 'Linux' ]; then
@@ -27,10 +27,10 @@ install_dark() {
 }
 
 install_light() {
-    ln -sf "${DOTFILES}/alacritty/colors-light.toml"    "${DOTFILES}/alacritty/colors.toml"
-    ln -sf "${DOTFILES}/bat/config-light"              "${DOTFILES}/bat/config"
-    ln -sf "${DOTFILES}/task/jdkaplan-light.theme"     "${DOTFILES}/task/color.theme"
-    ln -sf "${DOTFILES}/vim/colors/jdkaplan-light.vim" "${DOTFILES}/vim/colors/jdkaplan.vim"
+    ln -sf "${DOTFILES}/alacritty/colors-light.toml"     "${DOTFILES}/alacritty/colors.toml"
+    ln -sf "${DOTFILES}/bat/config-light"                "${DOTFILES}/bat/config"
+    ln -sf "${DOTFILES}/task/jdkaplan-light.theme"       "${DOTFILES}/task/color.theme"
+    ln -sf "${DOTFILES}/vim/colors/jdkaplan-light.vim"   "${DOTFILES}/vim/colors/jdkaplan.vim"
     ln -sf "${DOTFILES}/neovim/colors/jdkaplan-warm.lua" "${DOTFILES}/neovim/colors/jdkaplan-temp.lua"
 
     if [ "${OSTYPE}" == 'Linux' ]; then
@@ -45,6 +45,11 @@ install_light() {
 }
 
 postinstall() {
+    # Alacritty doesn't automatically reload config when the symlink to
+    # `colors.toml` is replaced with the new target. So touch the main config
+    # to trigger the reload.
+    touch "${DOTFILES}/alacritty/alacritty.toml"
+
     if [ "${OSTYPE}" == 'Linux' ]; then
         killall --signal HUP xsettingsd
     fi

@@ -65,6 +65,12 @@ return {
             },
         },
     },
+    {
+        "RRethy/vim-illuminate",
+        keys = {
+            { "<leader>i", ":IlluminateToggle<cr>" },
+        },
+    },
 
     -- Treesitter
     {

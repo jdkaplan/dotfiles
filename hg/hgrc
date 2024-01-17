@@ -1,5 +1,5 @@
 [ui]
-username = Jeremy Kaplan <jdkaplan@metagram.net>
+username = Jeremy Kaplan <code@jdkaplan.dev>
 ignore = ~/.config/hg/hgignore
 [extensions]
 color =

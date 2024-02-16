@@ -163,5 +163,6 @@ assign [class="Beeper"]  workspace number 9
 assign [class="discord"] workspace number 9
 assign [class="Signal"]  workspace number 9
 assign [class="Slack"]   workspace number 9
+assign [class="zoom"]    workspace number 8
 
 include /etc/sway/config.d/*

@@ -314,7 +314,9 @@ return {
         build = function(_plugin)
             require("mason-registry").refresh()
         end,
-        config = true,
+        config = {
+            PATH = "append",
+        },
     },
     {
         "williamboman/mason-lspconfig.nvim",

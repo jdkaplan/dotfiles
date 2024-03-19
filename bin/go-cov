@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -exuo pipefail
+
+# This `go test` will exit nonzero for test failures. But we still want the
+# coverage processing to continue, so force success here.
+go test -covermode count -coverpkg ./... -coverprofile cover.out ./... || true
+go tool cover -html=cover.out -o cover.html

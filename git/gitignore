@@ -26,3 +26,7 @@ node_modules/
 .DS_Store
 
 .gh-autosquash-default-workflow
+
+# Go coverage profiles
+cover.out
+cover.html

@@ -11,3 +11,4 @@ pager:
 aliases:
     co: pr checkout
     prw: pr view -w
+version: "1"

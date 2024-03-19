@@ -36,7 +36,7 @@ defaultBranch = main
 date = iso
 
 [merge]
-conflictStyle = diff3
+conflictStyle = zdiff3
 ff = only
 tool = nvimdiff
 

@@ -10,6 +10,7 @@ alias units='units --verbose'
 alias trr='transmission-remote'
 alias g='git'
 alias rg='rg -S'
+alias sg='ast-grep'
 
 alias tf='terraform'
 

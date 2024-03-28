@@ -14,6 +14,68 @@ return {
             { "<Space>G", ":Git<Space>", mode = "n" },
         },
     },
+    {
+        "tummetott/unimpaired.nvim",
+        config = {
+            keymaps = {
+                -- Tags
+                tprevious = false,
+                tnext = false,
+                tfirst = false,
+                tlast = false,
+                ptprevious = false,
+                ptnext = false,
+
+                -- Files
+                previous_file = false,
+                next_file = false,
+
+                -- Settings
+                enable_cursorline = false,
+                disable_cursorline = false,
+                toggle_cursorline = false,
+                enable_diff = false,
+                disable_diff = false,
+                toggle_diff = false,
+                enable_hlsearch = false,
+                disable_hlsearch = false,
+                toggle_hlsearch = false,
+                enable_ignorecase = false,
+                disable_ignorecase = false,
+                toggle_ignorecase = false,
+                enable_list = false,
+                disable_list = false,
+                toggle_list = false,
+                enable_number = false,
+                disable_number = false,
+                toggle_number = false,
+                enable_relativenumber = false,
+                disable_relativenumber = false,
+                toggle_relativenumber = false,
+                enable_spell = false,
+                disable_spell = false,
+                toggle_spell = false,
+                enable_background = false,
+                disable_background = false,
+                toggle_background = false,
+                enable_colorcolumn = false,
+                disable_colorcolumn = false,
+                toggle_colorcolumn = false,
+                enable_cursorcolumn = false,
+                disable_cursorcolumn = false,
+                toggle_cursorcolumn = false,
+                enable_virtualedit = false,
+                disable_virtualedit = false,
+                toggle_virtualedit = false,
+                enable_wrap = false,
+                disable_wrap = false,
+                toggle_wrap = false,
+                enable_cursorcross = false,
+                disable_cursorcross = false,
+                toggle_cursorcross = false,
+            }
+        }
+    },
 
     -- etc.
     "MarcWeber/vim-addon-local-vimrc",

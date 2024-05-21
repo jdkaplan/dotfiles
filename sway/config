@@ -167,4 +167,6 @@ assign [class="Slack"]   workspace number 9
 assign [class="Zulip"]   workspace number 9
 assign [class="zoom"]    workspace number 8
 
+for_window [class="zoom"] floating enable
+
 include /etc/sway/config.d/*

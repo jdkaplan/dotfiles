@@ -34,6 +34,7 @@
     ~/.gitignore: git/gitignore
     ~/.ignore: etc/ignore
     ~/.my.cnf: mysql/.my.cnf
+    ~/.npmrc: npm/.npmrc
     ~/.profile: etc/profile
     ~/.psqlrc: psql/.psqlrc
     ~/.rgignore: etc/rgignore

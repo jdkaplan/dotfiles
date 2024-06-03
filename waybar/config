@@ -10,8 +10,7 @@
     "modules-right": [
         "tray",
         "idle_inhibitor",
-        "network#ethernet",
-        "network#wifi",
+        "network",
         "pulseaudio",
         "battery",
         "clock",
@@ -41,21 +40,10 @@
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
-    "network#ethernet": {
-        "interface": "eth*",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip": false,
-    },
-    "network#wifi": {
-        "interface": "wlp*",
+    "network": {
+        "format-ethernet": "{ifname} ",
         "format-wifi": "{essid} ",
-        "format-linked": "⚠",
-        "tooltip-format": "{ipaddr}/{cidr}"
-    },
-    "network#wifi": {
-        "interface": "wlan*",
-        "format-wifi": "{essid} ",
-        "format-linked": "⚠",
+        "format-linked": "{ifname} ⚠",
         "tooltip-format": "{ipaddr}/{cidr}"
     },
     "pulseaudio": {

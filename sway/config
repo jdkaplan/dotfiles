@@ -52,15 +52,15 @@ bindsym $super+Shift+Up     move up
 bindsym $super+Shift+Right  move right
 
 # Change container layout
-bindsym $super+f      fullscreen
-bindsym $super+s      floating enable
-bindsym $super+t      floating disable
-bindsym $super+z      split horizontal
-bindsym $super+v      split vertical
-bindsym $super+e      layout toggle split
-bindsym $super+$alt+s layout stacking
-bindsym $super+$alt+t layout tabbed
-bindsym $super+y      sticky toggle
+bindsym $super+f       fullscreen
+bindsym $super+s       floating enable
+bindsym $super+t       floating disable
+bindsym $super+z       split horizontal
+bindsym $super+v       split vertical
+bindsym $super+e       layout toggle split
+bindsym $super+Shift+s layout stacking
+bindsym $super+Shift+t layout tabbed
+bindsym $super+y       sticky toggle
 
 # Container nesting
 bindsym $super+p focus parent

@@ -8,6 +8,7 @@
     ],
     "modules-center": [],
     "modules-right": [
+        "privacy",
         "tray",
         "idle_inhibitor",
         "network",
@@ -64,5 +65,12 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
+    },
+    "privacy": {
+        "modules": [
+            { "type": "screenshare" },
+            { "type": "audio-in" },
+            { "type": "audio-out" },
+        ]
     },
 }

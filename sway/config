@@ -152,7 +152,12 @@ focus_wrapping no
 focus_follows_mouse yes
 focus_on_window_activation smart
 mouse_warping output
-seat seat0 hide_cursor 5000
+
+# I usually like hiding the cursor after a few seconds. But it seems like
+# there's a Zulip bug that causes me to scroll down infinitely if I switch to
+# it without showing the cursor first.
+#
+# seat seat0 hide_cursor 5000
 
 bindsym $super+x exec cb-clear
 

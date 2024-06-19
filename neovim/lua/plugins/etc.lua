@@ -126,4 +126,6 @@ return {
             check_ts = true,
         },
     },
+
+    "tidalcycles/vim-tidal",
 }

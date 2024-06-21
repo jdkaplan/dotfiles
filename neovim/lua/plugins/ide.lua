@@ -46,16 +46,8 @@ return {
             vim.keymap.set("n", "]h", gitsigns.next_hunk)
             vim.keymap.set("n", "[h", gitsigns.prev_hunk)
         end,
-        config = {
+        opts = {
             signcolumn = false,
-            signs = {
-                add          = { hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
-                change       = { hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
-                delete       = { hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
-                topdelete    = { hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
-                changedelete = { hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
-                untracked    = { hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
-            },
             current_line_blame_formatter = '  <author> <author_time:%Y-%m-%d> <summary>',
             current_line_blame_opts = {
                 virt_text = true,
@@ -144,7 +136,7 @@ return {
     },
     {
         "windwp/nvim-ts-autotag",
-        config = {
+        opts = {
             autotag = {
                 enabled = true,
                 enable_close_on_slash = false,
@@ -314,7 +306,7 @@ return {
         build = function(_plugin)
             require("mason-registry").refresh()
         end,
-        config = {
+        opts = {
             PATH = "append",
         },
     },

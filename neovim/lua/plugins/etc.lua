@@ -16,7 +16,7 @@ return {
     },
     {
         "tummetott/unimpaired.nvim",
-        config = {
+        opts = {
             keymaps = {
                 -- Tags
                 tprevious = false,

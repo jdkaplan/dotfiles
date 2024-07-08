@@ -29,6 +29,7 @@ return {
     },
     {
         "lewis6991/gitsigns.nvim",
+        commit = "220446c8c86a280180d852efac60991eaf1a21d4",
         lazy = false,
         init = function()
             local gitsigns = require("gitsigns")
@@ -38,16 +39,20 @@ return {
                 -- enter a race with cursor movement and leave a ghost blame in
                 -- the buffer.
 
-                gitsigns.toggle_current_line_blame(value)
-                gitsigns.toggle_signs(value)
+                show = not show
+                gitsigns.toggle_current_line_blame(show)
+                gitsigns.toggle_deleted(show)
+                gitsigns.toggle_signs(show)
             end
 
             vim.keymap.set("n", "<leader>g", toggle)
-            vim.keymap.set("n", "]h", gitsigns.next_hunk)
             vim.keymap.set("n", "[h", gitsigns.prev_hunk)
+            vim.keymap.set("n", "]h", gitsigns.next_hunk)
         end,
         opts = {
             signcolumn = false,
+            show_deleted = false,
+            current_line_blame = false,
             current_line_blame_formatter = '  <author> <author_time:%Y-%m-%d> <summary>',
             current_line_blame_opts = {
                 virt_text = true,

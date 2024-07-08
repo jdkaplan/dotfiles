@@ -2,4 +2,8 @@
 
 set -exuo pipefail
 
-curl "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz" -o "$1.tar.gz"
+TAR="$1.tar.gz"
+
+curl "https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz" -o "${TAR}"
+tar zxvf "${TAR}"
+rm "${TAR}"

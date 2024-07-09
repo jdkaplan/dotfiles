@@ -28,7 +28,7 @@ alias today='nvim $HOME/notes/$(date "+%F").md'
 
 fe() {
     local files
-    IFS=$'\n' files=($(fd --type=f --hidden | fzf --query="$1" --multi --select-1 --exit-0))
+    IFS=$'\n' files=($(fd --type=f --hidden | fzf --query="$1" --multi --exit-0))
     if [[ -n "${files}" ]]; then
         print -s "${EDITOR:-vim}" "${files[@]}"
         ${EDITOR:-vim} "${files[@]}"

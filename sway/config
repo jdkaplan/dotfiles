@@ -125,6 +125,23 @@ mode "resize" {
 }
 bindsym $super+r mode "resize"
 
+mode "move" {
+    bindsym $left  move left  10px
+    bindsym $down  move down  10px
+    bindsym $up    move up    10px
+    bindsym $right move right 10px
+
+    bindsym Left  move left  10px
+    bindsym Down  move down  10px
+    bindsym Up    move up    10px
+    bindsym Right move right 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $super+m mode "move"
+
 bar {
     swaybar_command waybar
 }

@@ -17,6 +17,9 @@ alias tf='terraform'
 alias timestamp='date "+%Y-%m-%d_%H-%M-%S"'
 alias datestamp='date "+%Y-%m-%d"'
 alias humantime='date "+%Y-%m-%d %H:%M %z"'
+alias unixstamp='date "+%s"'
+alias  isostamp='date --iso-8601=seconds'
+alias filestamp='date --utc "+%Y%m%dT%H%M%S"'
 
 docker-ip() {
     docker inspect "$1" --format='{{.NetworkSettings.Networks.bridge.IPAddress}}'

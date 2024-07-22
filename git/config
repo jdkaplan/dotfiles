@@ -14,9 +14,13 @@ verbose = true
 [core]
 attributesfile = ~/.gitattributes
 excludesfile = ~/.gitignore
+pager = delta
 
 [credential]
 helper = cache
+
+[delta]
+navigate = true
 
 [diff]
 colorMoved = dimmed-zebra
@@ -31,6 +35,9 @@ cmd = difft "$LOCAL" "$REMOTE"
 
 [init]
 defaultBranch = main
+
+[interactive]
+diffFilter = delta --color-only
 
 [log]
 date = iso

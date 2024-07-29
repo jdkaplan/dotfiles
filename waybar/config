@@ -45,6 +45,7 @@
         "format-ethernet": "{ifname} ",
         "format-wifi": "{essid} ",
         "format-linked": "{ifname} ⚠",
+        "format-disconnected": "{ifname} ∅",
         "tooltip-format": "{ipaddr}/{cidr}"
     },
     "pulseaudio": {

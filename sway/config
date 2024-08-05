@@ -149,11 +149,12 @@ bar {
 set $locker '_locker'
 set $dimmer '_locker dim'
 set $suspend 'systemctl suspend'
-bindsym $super+Shift+semicolon exec $locker
+bindsym $super+Shift+semicolon exec 'loginctl lock-session'
 # Automatically lock after 5 minutes, suspend after 5 more
 exec swayidle -w \
     timeout 300  $dimmer \
     timeout 600  $suspend \
+    lock         $locker \
     before-sleep $locker
 
 # Only show borders if there's more than one window

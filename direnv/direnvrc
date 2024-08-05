@@ -62,10 +62,10 @@ read_version_file()
 use_nvm() {
   local node_version="$1"
 
-  nvm_sh="${NVM_DIR}/nvm.sh"
-  source $nvm_sh
-  # Make sure to run `nvm install $node_version` first.
-  nvm use $node_version
+  source "${NVM_DIR}/nvm.sh"
+
+  # This automatically does `nvm use` afterward.
+  nvm install "$node_version"
 }
 
 # From https://github.com/direnv/direnv/wiki/Python#poetry

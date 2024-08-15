@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-
-if [ "${1-}" = 'dim' ]; then
-    chayang -d 5
-fi
-
-exec swaylock -f -e -F -k -l -c 000000 --indicator-idle-visible

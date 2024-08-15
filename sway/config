@@ -146,16 +146,17 @@ bar {
     swaybar_command waybar
 }
 
-set $locker '_locker'
-set $dimmer '_locker dim'
-set $suspend 'systemctl suspend'
 bindsym $super+Shift+semicolon exec 'loginctl lock-session'
-# Automatically lock after 5 minutes, suspend after 5 more
+# Automatically lock after 5 minutes, suspend after 5 more.
+#
+# It seems like chayang fails if the screen is already locked in a way that
+# prevents the suspend from occurring. For now, checking that the screen isn't
+# already locked is good enough.
 exec swayidle -w \
-    timeout 300  $dimmer \
-    timeout 600  $suspend \
-    lock         $locker \
-    before-sleep $locker
+    timeout 300  'pgrep swaylock -c || chayang -d 10 && loginctl lock-session' \
+    timeout 600  'systemctl suspend' \
+    lock         'swaylock -f -e -F -k -l -c 000000 --indicator-idle-visible' \
+    before-sleep 'loginctl lock-session'
 
 # Only show borders if there's more than one window
 default_border          pixel 1

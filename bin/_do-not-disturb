@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+modes="$(makoctl mode)"
+
+if [[ "$modes" =~ 'do-not-disturb' ]]; then
+    makoctl mode -r do-not-disturb
+    notify-send -t 1000 "Notifications on"
+else
+    notify-send -t 500 "Notifications off"
+    sleep 1 # Give it a chance to be seen!
+    makoctl mode -a do-not-disturb
+fi

@@ -3,6 +3,7 @@
     ~/.Xresources: X/.Xresources
     ~/.config/dunst: dunst/
     ~/.config/i3: i3/
+    ~/.config/mako: mako/
     ~/.config/polybar: polybar/
     ~/.config/qutebrowser: qutebrowser/
     ~/.config/sway: sway/

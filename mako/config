@@ -1,0 +1,6 @@
+group-by=app-name,summary,urgency
+max-history=10
+default-timeout=500
+
+[mode=do-not-disturb]
+invisible=1

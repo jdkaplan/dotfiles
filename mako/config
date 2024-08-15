@@ -4,3 +4,6 @@ default-timeout=500
 
 [mode=do-not-disturb]
 invisible=1
+
+[app-name="zulip"]
+ignore-timeout=1

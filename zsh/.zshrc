@@ -85,7 +85,14 @@ source $HOME/.config/zsh/j.sh
 autoload -U select-word-style
 select-word-style bash
 
-which direnv > /dev/null && eval "$(direnv hook zsh)" || true
+_has() {
+    command -V "$1" > /dev/null 2> /dev/null
+}
+
+_has direnv && eval "$(direnv hook zsh)" || true
+
+FZF_CTRL_T_COMMAND=''
+_has fzf && eval "$(fzf --zsh)" || true
 
 setopt interactivecomments
 

@@ -33,6 +33,7 @@ brew "shellcheck"
 brew "syncthing"
 brew "tree"
 brew "watch"
+brew "zoxide"
 
 cask "alacritty"
 cask "amethyst"

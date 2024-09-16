@@ -75,11 +75,6 @@ export RPROMPT=''
 # aliases
 source $HOME/.config/zsh/aliases
 
-source $HOME/.config/zsh/z-zsh/z.sh
-function precmd () {
-    z --add "$(pwd -P)"
-}
-
 source $HOME/.config/zsh/j.sh
 
 autoload -U select-word-style

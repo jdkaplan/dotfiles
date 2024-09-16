@@ -89,6 +89,8 @@ _has direnv && eval "$(direnv hook zsh)" || true
 FZF_CTRL_T_COMMAND=''
 _has fzf && eval "$(fzf --zsh)" || true
 
+_has zoxide && eval "$(zoxide init zsh)" || true
+
 setopt interactivecomments
 
 if [ -f "$HOME/.config/zsh/os.zshrc" ]; then

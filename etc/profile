@@ -21,12 +21,11 @@ path_if() {
 
 source_if "${HOME}/.nix-profile/etc/profile.d/nix.sh"
 
-if has brew; then
-    source_if "$(brew --prefix asdf)/libexec/asdf.sh"
-fi
-
 path_if "$HOME/bin"
 path_if "$HOME/.local/bin"
+path_if /usr/local/bin
+path_if /opt/homebrew/bin
+path_if /opt/homebrew/sbin
 
 unset -f source_if
 unset -f path_if

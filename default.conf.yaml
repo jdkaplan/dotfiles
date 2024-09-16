@@ -22,11 +22,8 @@
     ~/.config/git: git/
     ~/.config/helix: helix/
     ~/.config/hg: hg/
-    ~/.config/jrnl: jrnl/
     ~/.config/kak: kak/
     ~/.config/nvim: neovim/
-    ~/.config/task: task/
-    ~/.config/user-dirs.dirs: etc/user-dirs.dirs
     ~/.config/zsh: zsh/
     ~/.emacs.d: emacs/
     ~/.fdignore: etc/fdignore
@@ -38,8 +35,6 @@
     ~/.profile: etc/profile
     ~/.psqlrc: psql/.psqlrc
     ~/.rgignore: etc/rgignore
-    ~/.task/hooks: task/hooks/
-    ~/.taskrc: task/.taskrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vimrc: vim/.vimrc
     ~/.vim: vim/

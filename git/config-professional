@@ -1,6 +1,6 @@
 [user]
 name = Jeremy Kaplan
-email = jeremy@stytch.com
+email = jeremy@kaizenlabs.co
 
 [includeIf "gitdir:~/projects/"]
 path = config-personal

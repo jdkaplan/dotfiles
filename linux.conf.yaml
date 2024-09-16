@@ -1,3 +1,4 @@
 - link:
+    ~/.config/user-dirs.dirs: etc/user-dirs.dirs
     ./alacritty/os.toml: alacritty/linux.toml
     ./zsh/os.zshrc: zsh/linux.zshrc

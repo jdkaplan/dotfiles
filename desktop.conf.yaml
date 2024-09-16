@@ -1,16 +1,12 @@
 - link:
     ~/.Xdefaults: X/.Xdefaults
     ~/.Xresources: X/.Xresources
-    ~/.config/dunst: dunst/
     ~/.config/i3: i3/
     ~/.config/mako: mako/
-    ~/.config/polybar: polybar/
-    ~/.config/qutebrowser: qutebrowser/
     ~/.config/sway: sway/
     ~/.config/tridactyl: tridactyl/
     ~/.config/waybar: waybar/
     ~/.config/xsettingsd: xsettingsd/
-    ~/.local/share/qutebrowser/userscripts: qutebrowser/userscripts
     ~/.xinitrc: X/.xinitrc
     ~/.xserverrc: X/.xserverrc
     ~/.xsessionrc: X/.xsessionrc

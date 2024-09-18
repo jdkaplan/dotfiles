@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 
+brew "bat"
 brew "coreutils"
 brew "dateutils"
 brew "difftastic"

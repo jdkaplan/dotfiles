@@ -9,6 +9,7 @@
     ./alacritty/os.toml: alacritty/darwin.toml
     ./git/config-os: git/config-darwin
     ./zsh/os.zshrc: zsh/darwin.zshrc
+    ~/.config/aerospace: aerospace/
     ~/.config/karabiner: karabiner/
     ~/.config/tridactyl: tridactyl/
     ~/.hammerspoon: hammerspoon/

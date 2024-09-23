@@ -1,0 +1,95 @@
+after-login-command = []
+after-startup-command = []
+
+start-at-login = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+[gaps]
+inner.horizontal = 0
+inner.vertical =   0
+outer.left =       0
+outer.bottom =     0
+outer.top =        0
+outer.right =      0
+
+# Keys:
+# - Letters.        a, b, c, ..., z
+# - Numbers.        0, 1, 2, ..., 9
+# - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
+# - F-keys.         f1, f2, ..., f20
+# - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
+#                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
+# - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
+#                   keypadMinus, keypadMultiply, keypadPlus
+# - Arrows.         left, down, up, right
+#
+# Modifiers: cmd, alt, ctrl, shift
+#
+# Commands: https://nikitabobko.github.io/AeroSpace/commands
+[mode.main.binding]
+alt-tab = 'workspace-back-and-forth'
+
+alt-shift-j = 'focus down'
+alt-shift-k = 'focus up'
+alt-shift-h = 'focus left'
+alt-shift-l = 'focus right'
+
+ctrl-alt-shift-j = 'move down'
+ctrl-alt-shift-k = 'move up'
+ctrl-alt-shift-h = 'move left'
+ctrl-alt-shift-l = 'move right'
+
+alt-shift-f = 'fullscreen'
+alt-shift-space = 'layout floating tiling'
+
+alt-shift-s = 'layout v_accordion' # stacking
+alt-shift-t = 'layout h_accordion' # tabbed
+alt-shift-e = 'layout tiles horizontal vertical' # toggle split
+alt-shift-v = 'layout tiles vertical'
+alt-shift-z = 'layout tiles horizontal'
+
+ctrl-1 = 'workspace 1'
+ctrl-2 = 'workspace 2'
+ctrl-3 = 'workspace 3'
+ctrl-4 = 'workspace 4'
+ctrl-5 = 'workspace 5'
+ctrl-6 = 'workspace 6'
+ctrl-7 = 'workspace 7'
+ctrl-8 = 'workspace 8'
+ctrl-9 = 'workspace 9'
+ctrl-0 = 'workspace 10'
+
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-0 = 'move-node-to-workspace 10'
+
+alt-shift-comma  = 'move-workspace-to-monitor prev'
+alt-shift-period = 'move-workspace-to-monitor next'
+
+alt-shift-esc = 'reload-config'
+
+alt-shift-r = 'mode resize'
+
+[mode.resize.binding]
+j = 'resize height +50'
+k = 'resize height -50'
+h = 'resize width -50'
+l = 'resize width +50'
+enter = 'mode main'
+esc = 'mode main'

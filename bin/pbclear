@@ -8,3 +8,5 @@ clear_pasteboard general
 clear_pasteboard ruler
 clear_pasteboard find
 clear_pasteboard font
+
+osascript -e 'display notification "pbclear" with title "Clipboard cleared"'

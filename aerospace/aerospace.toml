@@ -82,9 +82,12 @@ alt-shift-0 = 'move-node-to-workspace 10'
 alt-shift-comma  = 'move-workspace-to-monitor prev'
 alt-shift-period = 'move-workspace-to-monitor next'
 
-alt-shift-esc = 'reload-config'
-
 alt-shift-r = 'mode resize'
+
+# -n: Always open a new instance because I want it to open in my home directory.
+alt-shift-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+
+alt-shift-x = 'exec-and-forget sh -c ~/bin/pbclear'
 
 [mode.resize.binding]
 j = 'resize height +50'

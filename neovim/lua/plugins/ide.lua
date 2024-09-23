@@ -378,9 +378,22 @@ return {
                 })
             end
 
+            local default_setup_nofmt = function(server_name)
+                local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+                require("lspconfig")[server_name].setup({
+                    on_attach = on_attach,
+                    settings = lsp_settings[server_name] or {},
+                    capabilities = capabilities,
+                })
+            end
+
             mason_lspconfig.setup_handlers({
                 -- This is the default handler for servers not named below.
                 default_setup,
+
+                ["eslint"] = default_setup_nofmt,
+                ["tsserver"] = default_setup_nofmt,
 
                 ["gopls"] = function()
                     local capabilities = require('cmp_nvim_lsp').default_capabilities()

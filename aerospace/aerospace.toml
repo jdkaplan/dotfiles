@@ -36,7 +36,8 @@ outer.right =      0
 #
 # Commands: https://nikitabobko.github.io/AeroSpace/commands
 [mode.main.binding]
-alt-tab = 'workspace-back-and-forth'
+alt-tab      = 'workspace-back-and-forth'
+alt-backtick = 'workspace-back-and-forth'
 
 alt-j = 'focus down'
 alt-k = 'focus up'
@@ -48,14 +49,14 @@ alt-shift-k = 'move up'
 alt-shift-h = 'move left'
 alt-shift-l = 'move right'
 
-alt-f = 'fullscreen'
-alt-space = 'layout floating tiling'
+alt-shift-f = 'fullscreen'
+alt-shift-space = 'layout floating tiling'
 
-alt-s = 'layout v_accordion' # stacking
-alt-t = 'layout h_accordion' # tabbed
-alt-e = 'layout tiles horizontal vertical' # toggle split
-alt-v = 'layout tiles vertical'
-alt-z = 'layout tiles horizontal'
+alt-shift-s = 'layout v_accordion' # stacking
+alt-shift-t = 'layout h_accordion' # tabbed
+alt-shift-e = 'layout tiles horizontal vertical' # toggle split
+alt-shift-v = 'layout tiles vertical'
+alt-shift-z = 'layout tiles horizontal'
 
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
@@ -79,15 +80,15 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
-alt-comma  = 'move-workspace-to-monitor prev'
-alt-period = 'move-workspace-to-monitor next'
+alt-shift-comma  = 'move-workspace-to-monitor prev'
+alt-shift-period = 'move-workspace-to-monitor next'
 
-alt-r = 'mode resize'
+alt-shift-r = 'mode resize'
 
 # -n: Always open a new instance because I want it to open in my home directory.
 alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 
-alt-x = 'exec-and-forget sh -c ~/bin/pbclear'
+alt-shift-x = 'exec-and-forget sh -c ~/bin/pbclear'
 
 [mode.resize.binding]
 j = 'resize height +50'

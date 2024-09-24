@@ -38,35 +38,35 @@ outer.right =      0
 [mode.main.binding]
 alt-tab = 'workspace-back-and-forth'
 
-alt-shift-j = 'focus down'
-alt-shift-k = 'focus up'
-alt-shift-h = 'focus left'
-alt-shift-l = 'focus right'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-h = 'focus left'
+alt-l = 'focus right'
 
-ctrl-alt-shift-j = 'move down'
-ctrl-alt-shift-k = 'move up'
-ctrl-alt-shift-h = 'move left'
-ctrl-alt-shift-l = 'move right'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-h = 'move left'
+alt-shift-l = 'move right'
 
-alt-shift-f = 'fullscreen'
-alt-shift-space = 'layout floating tiling'
+alt-f = 'fullscreen'
+alt-space = 'layout floating tiling'
 
-alt-shift-s = 'layout v_accordion' # stacking
-alt-shift-t = 'layout h_accordion' # tabbed
-alt-shift-e = 'layout tiles horizontal vertical' # toggle split
-alt-shift-v = 'layout tiles vertical'
-alt-shift-z = 'layout tiles horizontal'
+alt-s = 'layout v_accordion' # stacking
+alt-t = 'layout h_accordion' # tabbed
+alt-e = 'layout tiles horizontal vertical' # toggle split
+alt-v = 'layout tiles vertical'
+alt-z = 'layout tiles horizontal'
 
-ctrl-1 = 'workspace 1'
-ctrl-2 = 'workspace 2'
-ctrl-3 = 'workspace 3'
-ctrl-4 = 'workspace 4'
-ctrl-5 = 'workspace 5'
-ctrl-6 = 'workspace 6'
-ctrl-7 = 'workspace 7'
-ctrl-8 = 'workspace 8'
-ctrl-9 = 'workspace 9'
-ctrl-0 = 'workspace 10'
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+alt-0 = 'workspace 10'
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
@@ -79,15 +79,15 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
-alt-shift-comma  = 'move-workspace-to-monitor prev'
-alt-shift-period = 'move-workspace-to-monitor next'
+alt-comma  = 'move-workspace-to-monitor prev'
+alt-period = 'move-workspace-to-monitor next'
 
-alt-shift-r = 'mode resize'
+alt-r = 'mode resize'
 
 # -n: Always open a new instance because I want it to open in my home directory.
-alt-shift-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 
-alt-shift-x = 'exec-and-forget sh -c ~/bin/pbclear'
+alt-x = 'exec-and-forget sh -c ~/bin/pbclear'
 
 [mode.resize.binding]
 j = 'resize height +50'

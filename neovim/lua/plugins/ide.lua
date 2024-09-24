@@ -483,9 +483,6 @@ return {
                     })
                 end,
             })
-
-            -- This is managed by the Gleam installation, not Mason.
-            default_setup('gleam')
         end,
     },
 

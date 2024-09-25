@@ -1,4 +1,5 @@
 - link:
     ~/.config/user-dirs.dirs: etc/user-dirs.dirs
+    ~/.profile: etc/profile.linux
     ./alacritty/os.toml: alacritty/linux.toml
     ./zsh/os.zshrc: zsh/linux.zshrc

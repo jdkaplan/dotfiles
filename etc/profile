@@ -1,8 +1,0 @@
-has() {
-    command -V "$1" > /dev/null 2>&1
-}
-
-if has gnome-keyring-daemon; then
-    eval "$(gnome-keyring-daemon --start)"
-    export SSH_AUTH_SOCK
-fi

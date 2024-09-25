@@ -1,6 +1,5 @@
 - shell:
-    -
-      command: brew/install
+    - command: brew/install
       stdout: true
       stderr: true
       quiet: false
@@ -12,3 +11,4 @@
     ~/.config/aerospace: aerospace/
     ~/.config/karabiner: karabiner/
     ~/.config/tridactyl: tridactyl/
+    ~/.profile: etc/profile.darwin

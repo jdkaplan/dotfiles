@@ -32,12 +32,10 @@
     ~/.ignore: etc/ignore
     ~/.my.cnf: mysql/.my.cnf
     ~/.npmrc: npm/.npmrc
-    ~/.profile: etc/profile
     ~/.psqlrc: psql/.psqlrc
     ~/.rgignore: etc/rgignore
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vimrc: vim/.vimrc
     ~/.vim: vim/
-    ~/.zprofile: zsh/.zprofile
     ~/.zshenv: zsh/.zshenv
     ~/.zshrc: zsh/.zshrc

@@ -73,7 +73,6 @@ ${prompt}"
 export RPROMPT=''
 
 # aliases
-source $HOME/.zprofile
 source $HOME/.config/zsh/aliases
 
 source $HOME/.config/zsh/j.sh

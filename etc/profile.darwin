@@ -1,3 +1,7 @@
+has() {
+    command -V "$1" > /dev/null 2>&1
+}
+
 source_if() {
     if [ -e "$1" ]; then
         source "$1"

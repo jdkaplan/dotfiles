@@ -80,6 +80,9 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
+alt-comma  = 'focus-monitor prev'
+alt-period = 'focus-monitor next'
+
 alt-shift-comma  = 'move-workspace-to-monitor prev'
 alt-shift-period = 'move-workspace-to-monitor next'
 

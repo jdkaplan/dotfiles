@@ -100,3 +100,6 @@ h = 'resize width -50'
 l = 'resize width +50'
 enter = 'mode main'
 esc = 'mode main'
+
+[workspace-to-monitor-force-assignment]
+6 = 'Built-in Retina Display'

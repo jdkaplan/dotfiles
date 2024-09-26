@@ -1,0 +1,8 @@
+#compdef git-fetch-branch
+#description fetch a branch by name
+
+_git-fetch-branch() {
+  __git_branch_names "$@"
+}
+
+_git-fetch-branch "$@"

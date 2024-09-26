@@ -17,6 +17,8 @@ zstyle ':completion:*' _expand completer _complete _ignored
 zstyle ':completion:*' matcher-list '' 'l:|=* r:|=*' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**'
 zstyle :compinstall filename "$HOME/.zshrc"
 
+fpath=("$HOME/.config/zsh/completions" $fpath)
+
 autoload -Uz compinit
 compinit
 

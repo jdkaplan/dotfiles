@@ -23,4 +23,8 @@ case "$#" in
     *) usage ;;
 esac
 
-exec git fetch "${remote}" "${branch}:${branch}"
+
+# I often change the fetch refmap to only watch my development branches and
+# permanent shared ones. Explicitly use a default-ish refmap to undo that and
+# make this create a named local branch.
+exec git fetch --refmap='+refs/heads/*:refs/remotes/origin/*' "${remote}" "${branch}:${branch}"

@@ -12,6 +12,11 @@ alias g='git'
 alias rg='rg -S'
 alias sg='ast-grep'
 
+# I have never actually meant to start Ghostscript, but I'm sure that I'll want
+# to be able to someday.
+alias gs='git status'
+alias ghostscript="command gs"
+
 alias tf='terraform'
 
 alias timestamp='date "+%Y-%m-%d_%H-%M-%S"'

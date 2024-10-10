@@ -114,6 +114,10 @@ vim.keymap.set("n", ";cc", ':let @+=expand("%")<CR>')
 vim.keymap.set("n", ";cl", ':let @+=join([expand("%"), line(".")], ":")<CR>')
 vim.keymap.set("n", ";cp", ':let @+=expand("%:p")<CR>')
 
+-- Open/close quickfix list
+vim.keymap.set("n", "<Space>q", ":cclose<CR>")
+vim.keymap.set("n", "<Space>Q", ":botright copen<CR>")
+
 vim.cmd([[
 command Crosshair :set virtualedit=all cursorcolumn
 command NoCrosshair :set virtualedit= nocursorcolumn

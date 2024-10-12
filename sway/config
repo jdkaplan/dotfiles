@@ -11,8 +11,8 @@ set $right l
 ## Input config
 
 input type:keyboard {
-    repeat_delay 250
-    repeat_rate 50
+    repeat_delay 200
+    repeat_rate 80
 }
 
 # Use Mouse+$super to drag floating windows.

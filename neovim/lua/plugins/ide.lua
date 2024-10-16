@@ -431,7 +431,7 @@ return {
                 default_setup,
 
                 ["eslint"] = default_setup_nofmt,
-                ["tsserver"] = default_setup_nofmt,
+                ["ts_ls"] = default_setup_nofmt,
 
                 ["gopls"] = function()
                     local capabilities = require('cmp_nvim_lsp').default_capabilities()

@@ -64,8 +64,7 @@ use_nvm() {
 
   source "${NVM_DIR}/nvm.sh"
 
-  # This automatically does `nvm use` afterward.
-  nvm install "$node_version"
+  nvm use "$node_version" || nvm install "$node_version"
 }
 
 # From https://github.com/direnv/direnv/wiki/Python#poetry

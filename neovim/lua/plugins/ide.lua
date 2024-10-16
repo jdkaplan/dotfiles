@@ -159,6 +159,7 @@ return {
             "nvim-telescope/telescope-ui-select.nvim",
             "MunifTanjim/nui.nvim",
             "stevearc/aerial.nvim",
+            "nvim-telescope/telescope-symbols.nvim",
         },
         init = function()
             local telescope = require('telescope')
@@ -179,12 +180,15 @@ return {
             vim.keymap.set('n', '<Space>b', builtin.buffers)
             vim.keymap.set('n', '<Space>*', builtin.grep_string)
             vim.keymap.set('n', '<Space>o', telescope.extensions.aerial.aerial)
+            vim.keymap.set('n', '<Space>t', builtin.builtin)
 
             -- TODO: Delete these ; fake-leader bindings
             vim.keymap.set('n', ';f', find_files)
             vim.keymap.set('n', ';g', builtin.live_grep)
             vim.keymap.set('n', ';b', builtin.buffers)
             vim.keymap.set('n', ';*', builtin.grep_string)
+
+            vim.keymap.set('i', '<C-G><C-F>', builtin.symbols)
         end,
         opts = function(_plugin, _config)
             local actions = require("telescope.actions")

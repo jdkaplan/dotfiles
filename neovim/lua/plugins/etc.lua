@@ -88,19 +88,6 @@ return {
         },
     },
     {
-        "chrisbra/unicode.vim",
-        lazy = false,
-        dependencies = {
-            "junegunn/fzf",
-        },
-        keys = {
-            { "<C-G><C-F>", "<Plug>(UnicodeFuzzy)<cr>", mode = "i" },
-        },
-        init = function()
-            vim.g.Unicode_no_default_mappings = 1
-        end,
-    },
-    {
         "junegunn/vim-easy-align",
         keys = {
             { "ga", "<Plug>(EasyAlign)", mode = "x" },

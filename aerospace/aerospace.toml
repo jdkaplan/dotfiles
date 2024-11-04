@@ -110,4 +110,20 @@ enter = 'mode main'
 esc = 'mode main'
 
 [workspace-to-monitor-force-assignment]
-6 = 'Built-in Retina Display'
+6  = 'Built-in Retina Display'
+7  = [3, 'main']
+8  = [3, 'main']
+9  = [3, 'main']
+10 = [3, 'main']
+
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
+if.app-id = 'com.linear'
+run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.app-id = 'notion.id'
+run = 'move-node-to-workspace 10'

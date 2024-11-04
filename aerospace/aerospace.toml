@@ -49,6 +49,11 @@ alt-shift-k = 'join-with up'
 alt-shift-h = 'join-with left'
 alt-shift-l = 'join-with right'
 
+alt-shift-ctrl-j = 'move down'
+alt-shift-ctrl-k = 'move up'
+alt-shift-ctrl-h = 'move left'
+alt-shift-ctrl-l = 'move right'
+
 alt-shift-f = 'fullscreen'
 alt-shift-space = 'layout floating tiling'
 

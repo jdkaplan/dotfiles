@@ -82,17 +82,34 @@ return {
                     enable = true,
                     select = {
                         enable = true,
-
                         lookahead = true,
-
                         include_surrounding_whitespace = false,
-
                         -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects#overriding-or-extending-textobjects
                         keymaps = {
                             ["af"] = "@function.outer",
                             ["if"] = "@function.inner",
                             ["ac"] = "@comment.outer",
                             ["ic"] = "@comment.outer",
+                        },
+                    },
+                    move = {
+                        enable = true,
+                        set_jumps = true,
+                        goto_next_start = {
+                            ["]m"] = "@function.outer",
+                            ["]{"] = "@block.outer",
+                        },
+                        goto_next_end = {
+                            ["]M"] = "@function.outer",
+                            ["]}"] = "@block.outer",
+                        },
+                        goto_previous_start = {
+                            ["[m"] = "@function.outer",
+                            ["[{"] = "@block.outer",
+                        },
+                        goto_previous_end = {
+                            ["[M"] = "@function.outer",
+                            ["[}"] = "@block.outer",
                         },
                     },
                 },

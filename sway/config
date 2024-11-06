@@ -169,6 +169,8 @@ client.focused_inactive "#000000" "#000000" "#ffffff" "#000000"
 client.unfocused        "#000000" "#000000" "#ffffff" "#000000"
 client.urgent           "#440000" "#440000" "#ffffff" "#440000"
 
+exec swaybg --color 444444
+
 focus_wrapping no
 focus_follows_mouse yes
 focus_on_window_activation smart

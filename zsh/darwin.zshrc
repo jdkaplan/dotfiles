@@ -4,6 +4,8 @@ alias ls='ls --color=auto'
 export LSCOLORS='Exgxbxdxcxegedabagacad'
 
 alias units='gunits --verbose'
+alias date='gdate'
+alias awk='gawk'
 
 source ~/.profile
 

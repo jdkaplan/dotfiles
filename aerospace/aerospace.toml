@@ -112,7 +112,7 @@ esc = 'mode main'
 [workspace-to-monitor-force-assignment]
 6  = 'Built-in Retina Display'
 7  = [3, 'main']
-8  = [3, 'main']
+8  = [3, 'Built-in Retina Display', 'main']
 9  = [3, 'main']
 10 = [3, 'main']
 

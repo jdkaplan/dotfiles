@@ -3,6 +3,7 @@
     ~/.Xresources: X/.Xresources
     ~/.config/i3: i3/
     ~/.config/mako: mako/
+    ~/.config/rofi: rofi/
     ~/.config/sway: sway/
     ~/.config/tridactyl: tridactyl/
     ~/.config/waybar: waybar/

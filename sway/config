@@ -20,7 +20,7 @@ input type:keyboard {
 floating_modifier $super normal
 
 bindsym $super+Return exec alacritty
-bindsym $super+Space  exec bemenu-run
+bindsym $super+Space  exec rofi -show run
 
 # Kill focused window
 bindsym $super+Shift+q kill

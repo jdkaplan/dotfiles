@@ -39,5 +39,4 @@
   "vim-fugitive": { "branch": "master", "commit": "320b18fba2a4f2fe3c8225c778c687e0d2620384" },
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-repeat": { "branch": "master", "commit": "65846025c15494983dafe5e3b46c8f88ab2e9635" },
-  "vim-tidal": { "branch": "master", "commit": "e440fe5bdfe07f805e21e6872099685d38e8b761" }
 }

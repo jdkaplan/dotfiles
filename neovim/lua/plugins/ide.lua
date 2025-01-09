@@ -453,6 +453,12 @@ return {
 
                 ["eslint"] = default_setup_nofmt,
                 ["ts_ls"] = default_setup_nofmt,
+                ["zls"] = function()
+                    -- The default filetype competes with zls formatting, so skip it.
+                    -- TODO(neovim v0.11): This will become the default.
+                    vim.g.zig_fmt_autosave = 0
+                    default_setup("zls")
+                end,
 
                 ["gopls"] = function()
                     local capabilities = require('cmp_nvim_lsp').default_capabilities()

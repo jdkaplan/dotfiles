@@ -12,7 +12,7 @@ local theme = lush(function(injected_functions)
         Cursor       { reverse = true }, -- Character under the cursor
         lCursor      {}, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
         CursorIM     {}, -- Like Cursor, but used when in IME mode |CursorIM|
-        CursorLine   { bg = '#E6E6E6' }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+        CursorLine   { bg = '#eeeeee' }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
         CursorColumn { CursorLine }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
         Directory    { fg = '#1B15FD' }, -- Directory names (and other special names in listings)
         DiffAdd      { bg = '#e5ffe5' }, -- Diff mode: Added line |diff.txt|
@@ -32,8 +32,8 @@ local theme = lush(function(injected_functions)
         ModeMsg      { bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
         MsgArea      {}, -- Area for messages and cmdline
         MoreMsg      { bold = true }, -- |more-prompt|
-        NonText      { fg = '#8EB1D5', bg = '#C6C6C6' }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-        EndOfBuffer  { NonText }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
+        NonText      { fg = '#8EB1D5', bg = '#eeeeee' }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+        EndOfBuffer  { fg = '#dddddd', bg = "#f8f8f8" }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
         Normal       { fg = "#000000" }, -- Normal text
         NormalFloat  { bg = "#eeeeee" }, -- Normal text in floating windows.
         NormalNC     {}, -- normal text in non-current windows

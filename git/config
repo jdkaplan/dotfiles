@@ -91,6 +91,7 @@ root = rev-parse --show-toplevel
 s = status
 sb = show-branch
 sw = switch
+swi = "!git switch \"$(git bl | fzf)\""
 unchk = reset --mixed HEAD~
 untracked = ls-files --others --exclude-standard
 

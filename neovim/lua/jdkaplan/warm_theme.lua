@@ -142,6 +142,9 @@ local theme = lush(function(injected_functions)
         GitSignsDelete   { bg = '#f9acb5', fg = '#FFFFFF' },
         GitSignsCurrentLineBlame { CursorLine, fg = '#337ADA' },
 
+        -- lukas-reineke/indent-blankline.nvim
+        IblIndent { fg = "#eeeeee" },
+
         -- For :Lushify to work, the groups have to be spelled as `sym` called
         -- on a string literal.
 

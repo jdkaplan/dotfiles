@@ -576,6 +576,7 @@ return {
             "hrsh7th/nvim-cmp",
             "hrsh7th/cmp-nvim-lsp",
         },
+        build = "make install_jsregexp",
         init = function()
             local luasnip = require('luasnip')
 
@@ -583,6 +584,7 @@ return {
 
             -- Put snippets in ./snippets/<filetype>.snippets
             require("luasnip.loaders.from_snipmate").lazy_load()
+            require("luasnip.loaders.from_lua").lazy_load()
 
             local cmp = require('cmp')
             cmp.setup {

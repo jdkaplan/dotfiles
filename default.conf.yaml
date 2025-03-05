@@ -7,7 +7,7 @@
     - ./bin/set-colors
     - ./task/install
 
-- clean: ['~', '~/.config']
+- clean: ["~", "~/.config"]
 
 - link:
     ~/bin: bin/
@@ -33,6 +33,7 @@
     ~/.my.cnf: mysql/.my.cnf
     ~/.npmrc: npm/.npmrc
     ~/.psqlrc: psql/.psqlrc
+    ~/.psqlrc-readonly: psql/.psqlrc-readonly
     ~/.rgignore: etc/rgignore
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vimrc: vim/.vimrc

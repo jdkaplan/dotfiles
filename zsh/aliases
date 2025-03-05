@@ -29,6 +29,8 @@ alias filestamp='date --utc "+%Y%m%dT%H%M%S"'
 
 alias see='pee "cat >&2"'
 
+alias psql-ro='PSQLRC=~/.psqlrc-readonly psql'
+
 docker-ip() {
     docker inspect "$1" --format='{{.NetworkSettings.Networks.bridge.IPAddress}}'
 }

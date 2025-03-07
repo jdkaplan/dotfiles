@@ -194,6 +194,6 @@ assign [class="zoom"]    workspace number 8
 for_window [class="zoom"] floating enable
 
 for_window [class="zoom"]   inhibit_idle focus
-for_window [class="Signal"] inhibit_idle focus
+for_window [class="Signal"] inhibit_idle visible
 
 include /etc/sway/config.d/*

@@ -118,6 +118,10 @@ vim.keymap.set("n", ";cp", ':let @+=expand("%:p")<CR>')
 vim.keymap.set("n", "<Space>q", ":cclose<CR>")
 vim.keymap.set("n", "<Space>Q", ":botright copen<CR>")
 
+-- Enable/disable diff mode
+vim.keymap.set("n", "<Space>dt", ":diffthis<CR>")
+vim.keymap.set("n", "<Space>do", ":diffoff<CR>")
+
 vim.cmd([[
 command Crosshair :set virtualedit=all cursorcolumn
 command NoCrosshair :set virtualedit= nocursorcolumn

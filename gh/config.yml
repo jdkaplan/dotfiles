@@ -12,4 +12,6 @@ aliases:
   co: >
     !(ref="$(gh pr view "$1" --json 'headRefName' --jq '.headRefName')" && git fetch-branch "$ref" && git switch "$ref")
   prw: pr view -w
+  commit: >
+    !(repo=$(gh repo view --json url --jq .url) && ref="${1-HEAD}" && commit=$(git rev-parse "$ref") && open "${repo}/commit/${commit}")
 version: "1"

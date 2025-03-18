@@ -39,10 +39,10 @@ outer.right =      0
 alt-tab      = 'workspace-back-and-forth'
 alt-backtick = 'workspace-back-and-forth'
 
-alt-j = 'focus --boundaries all-monitors-outer-frame down'
-alt-k = 'focus --boundaries all-monitors-outer-frame up'
-alt-h = 'focus --boundaries all-monitors-outer-frame left'
-alt-l = 'focus --boundaries all-monitors-outer-frame right'
+alt-j = 'focus --boundaries workspace down'
+alt-k = 'focus --boundaries workspace up'
+alt-h = 'focus --boundaries workspace left'
+alt-l = 'focus --boundaries workspace right'
 
 alt-shift-j = 'join-with down'
 alt-shift-k = 'join-with up'

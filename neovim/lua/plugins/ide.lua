@@ -344,9 +344,17 @@ return {
 
             local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
 
+            local prettier_filetypes = {}
+            for k, v in ipairs(null_ls.builtins.formatting.prettier.filetypes) do
+                prettier_filetypes[k] = v
+            end
+            table.insert(prettier_filetypes, "htmldjango") -- Jinja templates
+
             null_ls.setup({
                 sources = {
-                    null_ls.builtins.formatting.prettier,
+                    null_ls.builtins.formatting.prettier.with({
+                        filetypes = prettier_filetypes,
+                    }),
                 },
                 on_attach = function(client, bufnr)
                     if client.supports_method("textDocument/formatting") then

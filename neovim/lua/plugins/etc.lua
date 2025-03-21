@@ -82,6 +82,7 @@ return {
     "qpkorr/vim-bufkill",
     {
         "almo7aya/openingh.nvim",
+        url = "https://github.com/jdkaplan/openingh.nvim",
         keys = {
             { "<Leader>gh", "V:OpenInGHFile<CR>", mode = {"n"} },
             { "<Leader>gh",  ":OpenInGHFile<CR>", mode = {"v"} },

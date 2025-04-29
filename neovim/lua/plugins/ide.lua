@@ -588,7 +588,8 @@ return {
         init = function()
             local luasnip = require('luasnip')
 
-            luasnip.filetype_extend("typescriptreact", { "react" })
+            luasnip.filetype_extend("typescript", { "javascript" })
+            luasnip.filetype_extend("typescriptreact", { "javascript", "react" })
 
             -- Put snippets in ./snippets/<filetype>.snippets
             require("luasnip.loaders.from_snipmate").lazy_load()

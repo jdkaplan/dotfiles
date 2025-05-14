@@ -25,6 +25,7 @@ navigate = true
 [diff]
 algorithm = histogram
 colorMoved = dimmed-zebra
+mnemonicPrefix = true
 wsErrorHighlight = all
 
 # https://gist.github.com/tekin/12500956bd56784728e490d8cef9cb81#gistcomment-3500150

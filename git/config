@@ -61,6 +61,9 @@ ff = only
 [push]
 default = simple
 
+[rebase]
+updateRefs = true
+
 [tag]
 sort = version:refname
 

@@ -23,6 +23,7 @@ helper = cache
 navigate = true
 
 [diff]
+algorithm = histogram
 colorMoved = dimmed-zebra
 wsErrorHighlight = all
 

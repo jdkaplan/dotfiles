@@ -30,6 +30,7 @@ vim.o.shiftwidth = 4
 vim.o.smartindent = true
 vim.o.foldenable = false
 vim.o.joinspaces = false
+vim.o.nrformats = vim.o.nrformats .. ",blank"
 
 -- Some ftplugin files will add 'o' back in again, so remove it again after the
 -- filetype has been determined.

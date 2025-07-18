@@ -23,6 +23,7 @@
     ~/.config/helix: helix/
     ~/.config/hg: hg/
     ~/.config/kak: kak/
+    ~/.config/lazygit: lazygit/
     ~/.config/nvim: neovim/
     ~/.config/zsh: zsh/
     ~/.emacs.d: emacs/

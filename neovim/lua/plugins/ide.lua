@@ -92,6 +92,14 @@ return {
         dependencies = { "nvim-treesitter/nvim-treesitter" },
         opts = {},
     },
+    {
+        "jfryy/keytrail.nvim",
+        url = "https://github.com/jdkaplan/keytrail.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        opts = {
+            key_mapping = '<Space>j',
+        },
+    },
 
     -- Treesitter
     {

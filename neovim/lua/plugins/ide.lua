@@ -64,8 +64,17 @@ return {
     },
     {
         "RRethy/vim-illuminate",
+        init = function()
+            local illuminate = require('illuminate')
+            illuminate.configure({
+                delay = 500,
+            })
+        end,
         keys = {
-            { "<leader>i", ":IlluminateToggle<cr>" },
+            { "<leader>ii", function() require('illuminate').toggle_buf() end },
+            { "<leader>in", function() require('illuminate').goto_next_reference() end },
+            { "<leader>ip", function() require('illuminate').goto_prev_reference() end },
+            { "<leader>if", function() require('illuminate').toggle_freeze_buf() end },
         },
     },
     {

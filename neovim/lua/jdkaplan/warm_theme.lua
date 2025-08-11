@@ -145,6 +145,11 @@ local theme = lush(function(injected_functions)
         -- lukas-reineke/indent-blankline.nvim
         IblIndent { fg = "#eeeeee" },
 
+        -- RRethy/vim-illuminate
+        IlluminatedWordText  { bold = true },
+        IlluminatedWordRead  { IlluminatedWordText },
+        IlluminatedWordWrite { IlluminatedWordText, underline = true },
+
         -- For :Lushify to work, the groups have to be spelled as `sym` called
         -- on a string literal.
 

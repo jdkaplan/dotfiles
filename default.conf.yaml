@@ -22,6 +22,7 @@
     ~/.config/git: git/
     ~/.config/helix: helix/
     ~/.config/hg: hg/
+    ~/.config/jj: jj/
     ~/.config/kak: kak/
     ~/.config/lazygit: lazygit/
     ~/.config/nvim: neovim/

@@ -436,9 +436,8 @@ return {
             local lsp_settings = {
                 rust_analyzer = {
                     ["rust-analyzer"] = {
-                        checkOnSave = {
-                            command = "clippy",
-                        },
+                        checkOnSave = true,
+                        check = { command = "clippy" },
                     },
                 },
                 gopls = {

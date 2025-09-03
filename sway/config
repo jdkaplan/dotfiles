@@ -155,7 +155,7 @@ bindsym $super+Shift+semicolon exec 'loginctl lock-session'
 exec swayidle -w \
     timeout 300  'pgrep swaylock -c || chayang -d 10 && loginctl lock-session' \
     timeout 600  'systemctl suspend' \
-    lock         'swaylock -f -e -F -k -l -c 000000 --indicator-idle-visible' \
+    lock         'swaylock -f -F -k -l -c 000000 --indicator-idle-visible' \
     before-sleep 'loginctl lock-session'
 
 # Only show borders if there's more than one window

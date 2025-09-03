@@ -15,6 +15,8 @@ install_dark() {
     ln -sf "${DOTFILES}/vim/colors/jdkaplan-dark.vim"    "${DOTFILES}/vim/colors/jdkaplan.vim"
     ln -sf "${DOTFILES}/neovim/colors/jdkaplan-cool.lua" "${DOTFILES}/neovim/colors/jdkaplan-temp.lua"
 
+    cat "${DOTFILES}/helix/dark.toml" "${DOTFILES}/helix/main.toml" > "${DOTFILES}/helix/config.toml"
+
     if [ "${OSTYPE}" == 'Linux' ]; then
         ln -sf "${DOTFILES}/xsettingsd/xsettingsd-dark.conf" "${DOTFILES}/xsettingsd/xsettingsd.conf"
     fi
@@ -32,6 +34,8 @@ install_light() {
     ln -sf "${DOTFILES}/task/jdkaplan-light.theme"       "${DOTFILES}/task/color.theme"
     ln -sf "${DOTFILES}/vim/colors/jdkaplan-light.vim"   "${DOTFILES}/vim/colors/jdkaplan.vim"
     ln -sf "${DOTFILES}/neovim/colors/jdkaplan-warm.lua" "${DOTFILES}/neovim/colors/jdkaplan-temp.lua"
+
+    cat "${DOTFILES}/helix/light.toml" "${DOTFILES}/helix/main.toml" > "${DOTFILES}/helix/config.toml"
 
     if [ "${OSTYPE}" == 'Linux' ]; then
         ln -sf "${DOTFILES}/xsettingsd/xsettingsd-light.conf" "${DOTFILES}/xsettingsd/xsettingsd.conf"

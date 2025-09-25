@@ -81,6 +81,7 @@ bp = branch-prune
 bpf = branch-prune --force
 bv = branch -vv
 c = commit
+changed = "!changed() { git dn \"${1:-HEAD}\"{,~}; }; changed"
 chk = commit --all --no-verify --allow-empty-message --message ''
 co = checkout
 cp = cherry-pick

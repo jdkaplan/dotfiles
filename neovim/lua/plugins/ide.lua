@@ -89,10 +89,16 @@ return {
     },
     {
         "andythigpen/nvim-coverage",
+        requires = { "nvim-lua/plenary.nvim" },
         version = "*",
         config = function()
             require("coverage").setup({
                 auto_reload = true,
+                signs = {
+                    covered = { text="▎" },
+                    partial = { text="▌" },
+                    uncovered = { text="█" },
+                },
             })
         end,
     },

@@ -10,6 +10,7 @@ return {
     { "kylechui/nvim-surround", config = true },
     {
         "tpope/vim-fugitive",
+        lazy = false,
         keys = {
             { "<Space>G", ":Git<Space>", mode = "n" },
         },

@@ -45,7 +45,7 @@ return {
                 gitsigns.toggle_signs(show)
             end
 
-            vim.keymap.set("n", "<leader>g", toggle)
+            vim.keymap.set("n", "<leader>gg", toggle)
             vim.keymap.set("n", "[h", gitsigns.prev_hunk)
             vim.keymap.set("n", "]h", gitsigns.next_hunk)
         end,

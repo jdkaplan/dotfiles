@@ -73,14 +73,8 @@ vim.opt.completeopt = "menu,menuone,noselect"
 vim.o.secure = true
 
 vim.keymap.set("", "<Space>w", "<C-w>")
--- <Space>wh <C-w>h
--- <Space>wj <C-w>j
--- <Space>wk <C-w>k
--- <Space>wl <C-w>l
 vim.keymap.set("", '<Space>w"', ":split<CR>")
 vim.keymap.set("", '<Space>w%', ":vsplit<CR>")
-vim.keymap.set("", '<Space>w0', ":close<CR>")
-vim.keymap.set("", '<Space>w1', ":only<CR>")
 
 -- TODO: Delete these ; fake-leader bindings
 vim.keymap.set("", ";h", ":wincmd h<CR>")
@@ -91,7 +85,6 @@ vim.keymap.set("", ";l", ":wincmd l<CR>")
 vim.keymap.set("", ';"', ":split<CR>")
 vim.keymap.set("", ';%', ":vsplit<CR>")
 vim.keymap.set("", ';0', ":close<CR>")
-vim.keymap.set("", ';1', ":only<CR>")
 
 vim.keymap.set("", '<Leader>w', ":w<CR>")
 

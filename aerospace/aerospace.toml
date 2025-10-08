@@ -117,13 +117,5 @@ esc = 'mode main'
 10 = [3, 'main']
 
 [[on-window-detected]]
-if.app-id = 'us.zoom.xos'
-run = 'move-node-to-workspace 8'
-
-[[on-window-detected]]
-if.app-id = 'com.linear'
+if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace 9'
-
-[[on-window-detected]]
-if.app-id = 'notion.id'
-run = 'move-node-to-workspace 10'

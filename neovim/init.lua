@@ -72,7 +72,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 
 vim.o.secure = true
 
-vim.keymap.set("", "<Space>w", "<C-w>")
+vim.keymap.set("", "<Space>w", "<C-w>", { remap = true })
 vim.keymap.set("", '<Space>w"', ":split<CR>")
 vim.keymap.set("", '<Space>w%', ":vsplit<CR>")
 
@@ -87,6 +87,8 @@ vim.keymap.set("", ';%', ":vsplit<CR>")
 vim.keymap.set("", ';0', ":close<CR>")
 
 vim.keymap.set("", '<Leader>w', ":w<CR>")
+
+vim.keymap.set("n", "<C-w>]", ":rightbelow wincmd ]<CR>")
 
 -- TODO: Delete these ; fake-leader bindings
 vim.keymap.set("", ';w', ":w<CR>")
@@ -133,3 +135,18 @@ vim.keymap.set("n", "<C-l>", function()
     vim.cmd.colorscheme(theme)
     vim.cmd.redraw()
 end)
+
+-- Split windows vertically if there's enough width for two "full size" panes.
+-- Otherwise, split horizontally.
+vim.api.nvim_create_autocmd('WinNew', {
+  callback = function()
+    if vim.fn.win_gettype(0) ~= '' then
+      return
+    end
+    if vim.api.nvim_win_get_width(0) > 2 * 80 then
+      vim.cmd.wincmd(vim.o.splitright and 'L' or 'H')
+    end
+  end
+})
+
+vim.diagnostic.config({ jump = { float = true } })

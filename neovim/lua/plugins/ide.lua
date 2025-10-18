@@ -1,3 +1,5 @@
+vim.lsp.inlay_hint.enable(true)
+
 return {
     -- HUD
     {
@@ -16,7 +18,7 @@ return {
             { "<leader>m", "<cmd>AerialToggle<cr>" },
             { "<leader>n", "<cmd>AerialNavToggle<cr>" },
         },
-        config =true,
+        config = true,
     },
     {
         "wellle/context.vim",
@@ -369,239 +371,24 @@ return {
         build = "make",
     },
 
-    -- Mason + LSP
-    "alaviss/nim.nvim",
-    "simrat39/rust-tools.nvim",
-    "neovim/nvim-lspconfig",
+    -- LSP
     {
-        "nvimtools/none-ls.nvim",
-        config = function(_plugin, opts)
-            local null_ls = require("null-ls")
-
-            local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-
-            local prettier_filetypes = {}
-            for k, v in ipairs(null_ls.builtins.formatting.prettier.filetypes) do
-                prettier_filetypes[k] = v
-            end
-            table.insert(prettier_filetypes, "htmldjango") -- Jinja templates
-
-            null_ls.setup({
-                sources = {
-                    null_ls.builtins.formatting.prettier.with({
-                        filetypes = prettier_filetypes,
-                    }),
-                },
-                on_attach = function(client, bufnr)
-                    if client.supports_method("textDocument/formatting") then
-                        vim.keymap.set("n", "<Leader>f", function()
-                            vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-                        end, { buffer = bufnr, desc = "[lsp] format" })
-
-                        -- format on save
-                        vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
-                        vim.api.nvim_create_autocmd("BufWritePre", {
-                            buffer = bufnr,
-                            group = group,
-                            callback = function()
-                                vim.lsp.buf.format({ bufnr = bufnr, async = false })
-                            end,
-                            desc = "[lsp] format on save",
-                        })
-                    end
-
-                    if client.supports_method("textDocument/rangeFormatting") then
-                        vim.keymap.set("x", "<Leader>f", function()
-                            vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-                        end, { buffer = bufnr, desc = "[lsp] format" })
-                    end
-                end,
-            })
-        end,
+        "mrcjkb/rustaceanvim",
+        version = '^6',
+        lazy = false,
     },
     {
-        "williamboman/mason.nvim",
-        build = function(_plugin)
-            require("mason-registry").refresh()
-        end,
-        opts = {
-            PATH = "append",
-        },
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
         dependencies = {
             "neovim/nvim-lspconfig",
-            "williamboman/mason.nvim",
+            {
+                "mason-org/mason.nvim",
+                opts = {
+                    PATH = "append",
+                },
+            },
         },
-        config = function(_plugin, opts)
-            local mason_lspconfig = require("mason-lspconfig")
-            mason_lspconfig.setup(opts)
-
-            local lsp_settings = {
-                rust_analyzer = {
-                    ["rust-analyzer"] = {
-                        checkOnSave = true,
-                        check = { command = "clippy" },
-                    },
-                },
-                gopls = {
-                    gofumpt = true,
-                },
-                sorbet = {}, -- This one is _extra_ special for some reason.
-            }
-
-            local on_attach = function(client, bufno)
-                local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufno, ...) end
-                local function buf_set_option(...) vim.api.nvim_buf_set_option(bufno, ...) end
-
-                -- Enable completion through omnifunc, triggered by <C-x><C-o>
-                buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-                -- Mappings.
-                local opts = { noremap=true, silent=true }
-
-                buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-                buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-                buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-                buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-                buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-                buf_set_keymap('n', '<Leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-                buf_set_keymap('n', '<Leader>R', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-                buf_set_keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-                buf_set_keymap('v', '<Leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts)
-                buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-                buf_set_keymap('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-                buf_set_keymap('n', '<Leader>j', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-                buf_set_keymap('n', '<Leader>k', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-                buf_set_keymap('n', '<Leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-            end
-
-            local default_setup = function(server_name)
-                local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-                require("lspconfig")[server_name].setup({
-                    on_attach = function(client, bufno)
-                        on_attach(client, bufno)
-                        vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-                    end,
-                    settings = lsp_settings[server_name] or {},
-                    capabilities = capabilities,
-                })
-            end
-
-            local default_setup_nofmt = function(server_name)
-                local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-                require("lspconfig")[server_name].setup({
-                    on_attach = on_attach,
-                    settings = lsp_settings[server_name] or {},
-                    capabilities = capabilities,
-                })
-            end
-
-            mason_lspconfig.setup_handlers({
-                -- This is the default handler for servers not named below.
-                default_setup,
-
-                ["eslint"] = default_setup_nofmt,
-                ["ts_ls"] = default_setup_nofmt,
-                ["zls"] = function()
-                    -- The default filetype competes with zls formatting, so skip it.
-                    -- TODO(neovim v0.11): This will become the default.
-                    vim.g.zig_fmt_autosave = 0
-                    default_setup("zls")
-                end,
-
-                ["gopls"] = function()
-                    local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-                    require("lspconfig")["gopls"].setup({
-                        on_attach = on_attach,
-                        settings = lsp_settings["gopls"] or {},
-                        capabilities = capabilities,
-                    })
-
-                    -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-imports
-                    vim.api.nvim_create_autocmd("BufWritePre", {
-                        pattern = "*.go",
-                        callback = function()
-                            local params = vim.lsp.util.make_range_params()
-                            params.context = {only = {"source.organizeImports"}}
-
-                            local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
-
-                            for cid, res in pairs(result or {}) do
-                                for _, r in pairs(res.result or {}) do
-                                    if r.edit then
-                                        local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
-                                        vim.lsp.util.apply_workspace_edit(r.edit, enc)
-                                    end
-                                end
-                            end
-
-                            vim.lsp.buf.format({async = false})
-                        end
-                    })
-                end,
-
-                ["rust_analyzer"] = function()
-                    local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-                    -- rust-analyzer will be configured by rust-tools. Don't use lspconfig
-                    -- directly (or through the default setup) for this.
-                    local rt = require('rust-tools')
-
-                    rt.setup({
-                        tools = {
-                            autoSetHints = true,
-                            hover_with_actions = false,
-                            inlay_hints = {
-                                only_current_line = true,
-                                -- Parameter hints are more annoying than useful here. Neovim can't show
-                                -- virtual text in the middle of the line like other editors do. It would
-                                -- mess with grid-based motion anyway.
-                                show_parameter_hints = false,
-                                parameter_hints_prefix = "",
-                                other_hints_prefix = "//",
-                            },
-                        },
-
-                        server = {
-                            standalone = false,
-                            capabilities = capabilities,
-                            on_attach = function(client, bufno)
-                                on_attach(client, bufno)
-
-                                vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-
-                                vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufno })
-                            end,
-                            settings = lsp_settings.rust_analyzer,
-                        },
-
-                        dap = {
-                            adapter = require('rust-tools.dap').get_codelldb_adapter(
-                                '/usr/bin/codelldb',
-                                '/usr/lib/liblldb.so'
-                            ),
-                        },
-                    })
-                end,
-
-                ["sorbet"] = function()
-                    local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-                    require("lspconfig").sorbet.setup({
-                        on_attach = function(client, bufno)
-                            on_attach(client, bufno)
-                        end,
-                        cmd = { "bundle", "exec", "srb", "typecheck", "--lsp", "--disable-watchman" },
-                        capabilities = capabilities,
-                    })
-                end,
-            })
-        end,
     },
 
     -- Completion + snippets

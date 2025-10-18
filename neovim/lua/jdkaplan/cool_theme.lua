@@ -108,7 +108,7 @@ local theme = lush(function(injected_functions)
         Error          { fg = '#EEEEEE', bg = '#AF0000' }, -- Any erroneous construct
         Todo           { fg = '#D70000' }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-        LspInlayHint                { fg = '#777777' },
+        LspInlayHint                { Comment },
         LspReferenceText            {} , -- Used for highlighting "text" references
         LspReferenceRead            {} , -- Used for highlighting "read" references
         LspReferenceWrite           {} , -- Used for highlighting "write" references

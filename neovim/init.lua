@@ -76,16 +76,6 @@ vim.keymap.set("", "<Space>w", "<C-w>", { remap = true })
 vim.keymap.set("", '<Space>w"', ":split<CR>")
 vim.keymap.set("", '<Space>w%', ":vsplit<CR>")
 
--- TODO: Delete these ; fake-leader bindings
-vim.keymap.set("", ";h", ":wincmd h<CR>")
-vim.keymap.set("", ";j", ":wincmd j<CR>")
-vim.keymap.set("", ";k", ":wincmd k<CR>")
-vim.keymap.set("", ";l", ":wincmd l<CR>")
-
-vim.keymap.set("", ';"', ":split<CR>")
-vim.keymap.set("", ';%', ":vsplit<CR>")
-vim.keymap.set("", ';0', ":close<CR>")
-
 vim.keymap.set("", '<Leader>w', ":w<CR>")
 
 vim.keymap.set("n", "<C-w>]", function()
@@ -143,3 +133,22 @@ vim.keymap.set("n", "<C-l>", function()
 end)
 
 vim.diagnostic.config({ jump = { float = true } })
+
+function auto_correct(mode, old, new, scale, limit, cmd)
+    delay = scale
+
+    vim.keymap.set(mode, old, function()
+        vim.print("You should use " .. new)
+        vim.cmd.sleep(delay .. "m")
+        cmd()
+        delay = math.min(delay + scale, limit)
+    end)
+end
+
+auto_correct("n", ';"', '<C-w>s', 100, 1000, vim.cmd.split)
+auto_correct("n", ';%', '<C-w>v', 100, 1000, vim.cmd.vsplit)
+auto_correct("n", ';0', '<C-w>c', 100, 1000, vim.cmd.close)
+auto_correct("n", ";h", "<C-w>h", 10, 500, function() vim.cmd.wincmd("h") end)
+auto_correct("n", ";j", "<C-w>j", 10, 500, function() vim.cmd.wincmd("j") end)
+auto_correct("n", ";k", "<C-w>k", 10, 500, function() vim.cmd.wincmd("k") end)
+auto_correct("n", ";l", "<C-w>l", 10, 500, function() vim.cmd.wincmd("l") end)

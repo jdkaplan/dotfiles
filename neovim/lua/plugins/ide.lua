@@ -24,6 +24,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+vim.lsp.config("eslint", {
+  on_attach = function()
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      callback = function()
+        vim.lsp.buf.code_action({ context = { only = { "source.fixAll.eslint" } }, apply = true })
+      end,
+    })
+  end,
+})
+
 return {
   -- HUD
   {

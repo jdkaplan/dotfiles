@@ -25,10 +25,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 vim.lsp.config("eslint", {
-  on_attach = function()
+  on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
       callback = function()
-        vim.lsp.buf.code_action({ context = { only = { "source.fixAll.eslint" } }, apply = true })
+        client:request_sync("workspace/executeCommand", {
+          command = "eslint.applyAllFixes",
+          arguments = {
+            {
+              uri = vim.uri_from_bufnr(bufnr),
+              version = vim.lsp.util.buf_versions[bufnr],
+            },
+          },
+        })
       end,
     })
   end,
@@ -427,28 +435,6 @@ return {
   },
 
   -- LSP
-  {
-    "nvimtools/none-ls.nvim",
-    config = function(_plugin, opts)
-      local null_ls = require("null-ls")
-
-      local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-
-      local prettier_filetypes = {}
-      for k, v in ipairs(null_ls.builtins.formatting.prettier.filetypes) do
-        prettier_filetypes[k] = v
-      end
-      table.insert(prettier_filetypes, "htmldjango") -- Jinja templates
-
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.prettier.with({
-            filetypes = prettier_filetypes,
-          }),
-        },
-      })
-    end,
-  },
   {
     "mrcjkb/rustaceanvim",
     version = "^6",

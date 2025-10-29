@@ -453,6 +453,28 @@ return {
       },
     },
   },
+  {
+    "nvimtools/none-ls.nvim",
+    config = function(_plugin, opts)
+        local null_ls = require("null-ls")
+
+        local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
+
+        local prettier_filetypes = {}
+        for k, v in ipairs(null_ls.builtins.formatting.prettier.filetypes) do
+            prettier_filetypes[k] = v
+        end
+        table.insert(prettier_filetypes, "htmldjango") -- Jinja templates
+
+        null_ls.setup({
+            sources = {
+                null_ls.builtins.formatting.prettier.with({
+                    filetypes = prettier_filetypes,
+                }),
+            },
+        })
+    end,
+  },
 
   -- Completion + snippets
   { "hrsh7th/cmp-nvim-lsp", branch = "main" },

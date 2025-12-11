@@ -42,6 +42,8 @@ vim.lsp.config("eslint", {
   end,
 })
 
+vim.lsp.enable("uiua")
+
 return {
   -- HUD
   {
@@ -439,6 +441,10 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^6",
     lazy = false,
+  },
+  {
+      "Apeiros-46B/uiua.vim",
+      lazy = false,
   },
   {
     "mason-org/mason-lspconfig.nvim",

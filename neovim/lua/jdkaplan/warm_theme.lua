@@ -152,6 +152,22 @@ local theme = lush(function(injected_functions)
     IlluminatedWordRead  { IlluminatedWordText },
     IlluminatedWordWrite { IlluminatedWordText, underline = true },
 
+    -- Apeiros-46B/uiua.vim
+    uiuaRed             { fg='#ed5e6a' },
+    uiuaOrange          { fg='#f08050' },
+    uiuaYellow          { fg='#f0c36f' },
+    uiuaBeige           { fg='#d7be8c' },
+    uiuaGreen           { fg='#95d16a' },
+    uiuaAqua            { fg='#11cc99' }, --
+    uiuaBlue            { fg='#54b0fc' },
+    uiuaIndigo          { fg='#8078f1' },
+    uiuaPurple          { fg='#cc6be9' },
+    uiuaPink            { fg='#f576d8' },
+    uiuaLightPink       { fg='#f5a9b8' },
+    uiuaFaded           { fg='#888888' },
+    -- uiuaForegroundDark
+    -- uiuaForegroundLight
+
     -- For :Lushify to work, the groups have to be spelled as `sym` called
     -- on a string literal.
 

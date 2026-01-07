@@ -12,7 +12,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
     already_waits = client:supports_method("textDocument/willSaveWaitUntil")
     can_fmt = client:supports_method("textDocument/formatting")
-    if not already_waits and can_fmt then
+    -- But tsserver/ts_ls seems to have no other way of disabling formatting.
+    deny_fmt = client.name == "ts_ls"
+    if not already_waits and can_fmt and not deny_fmt then
       vim.api.nvim_create_autocmd("BufWritePre", {
         group = vim.api.nvim_create_augroup("jdkaplan.lsp", { clear = false }),
         buffer = args.buf,

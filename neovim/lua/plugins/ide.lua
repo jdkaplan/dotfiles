@@ -479,6 +479,7 @@ return {
           null_ls.builtins.formatting.prettier.with({
             filetypes = prettier_filetypes,
           }),
+          null_ls.builtins.formatting.pg_format,
         },
       })
     end,

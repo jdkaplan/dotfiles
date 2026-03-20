@@ -576,48 +576,56 @@ return {
         function()
           require("dap").toggle_breakpoint()
         end,
+        desc = "Toggle breakpoint",
       },
       {
         "<Leader>dB",
         function()
           require("dap").set_breakpoint()
         end,
+        desc = "Set breakpoint",
       },
       {
         "<Leader>dc",
         function()
           require("dap").continue()
         end,
+        desc = "Continue",
       },
       {
         "<Leader>dn",
         function()
           require("dap").step_over()
         end,
+        desc = "Step over",
       },
       {
         "<Leader>dsi",
         function()
           require("dap").step_into()
         end,
+        desc = "Step into",
       },
       {
         "<Leader>dso",
         function()
           require("dap").step_out()
         end,
+        desc = "Step out",
       },
       {
         "<Leader>dj",
         function()
           require("dap").down()
         end,
+        desc = "Down",
       },
       {
         "<Leader>dk",
         function()
           require("dap").up()
         end,
+        desc = "Up",
       },
     },
   },

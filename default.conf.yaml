@@ -26,6 +26,7 @@
     ~/.config/kak: kak/
     ~/.config/lazygit: lazygit/
     ~/.config/nvim: neovim/
+    ~/.config/pg_format: pg_format/
     ~/.config/zsh: zsh/
     ~/.emacs.d: emacs/
     ~/.fdignore: etc/fdignore
